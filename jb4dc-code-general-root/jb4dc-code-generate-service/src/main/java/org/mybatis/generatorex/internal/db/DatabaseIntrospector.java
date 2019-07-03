@@ -15,12 +15,12 @@
  */
 package org.mybatis.generatorex.internal.db;
 
-import com.jbuild4d.base.dbaccess.general.DBProp;
-import com.jbuild4d.base.service.IMetadataService;
-import com.jbuild4d.base.tools.BeanUtility;
-import com.jbuild4d.core.base.exception.JBuild4DGenerallyException;
-import com.jbuild4d.core.base.list.IListWhereCondition;
-import com.jbuild4d.core.base.list.ListUtility;
+import com.jb4dc.base.dbaccess.general.DBProp;
+import com.jb4dc.base.service.IMetadataService;
+import com.jb4dc.base.tools.BeanUtility;
+import com.jb4dc.core.base.exception.JBuild4DGenerallyException;
+import com.jb4dc.core.base.list.IListWhereCondition;
+import com.jb4dc.core.base.list.ListUtility;
 import org.mybatis.generatorex.api.FullyQualifiedTable;
 import org.mybatis.generatorex.api.IntrospectedColumn;
 import org.mybatis.generatorex.api.IntrospectedTable;

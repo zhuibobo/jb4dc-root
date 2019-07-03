@@ -11,5 +11,7 @@
 
     <artifactId>jb4dc-code-generate-service</artifactId>
 
+    <dependencies>
 
+    </dependencies>
 </project>

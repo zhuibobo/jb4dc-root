@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-general-root.iml" filepath="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-general-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" filepath="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/jb4dc-core-base.iml" filepath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/jb4dc-core-base.iml" />

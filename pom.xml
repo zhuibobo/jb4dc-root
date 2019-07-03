@@ -64,6 +64,21 @@
                 <artifactId>jb4dc-core-base</artifactId>
                 <version>${platform.version}</version>
             </dependency>
+            <dependency>
+                <groupId>jb4dc</groupId>
+                <artifactId>jb4dc-base-tools</artifactId>
+                <version>${platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jb4dc</groupId>
+                <artifactId>jb4dc-base-service</artifactId>
+                <version>${platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jb4dc</groupId>
+                <artifactId>jb4dc-base-db-access</artifactId>
+                <version>${platform.version}</version>
+            </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
             <dependency>
