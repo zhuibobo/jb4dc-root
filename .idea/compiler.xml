@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jb4dc-core-base" />
+        <module name="jb4dc-code-generate-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jb4dc-base-root" target="1.8" />
+      <module name="jb4dc-code-general-root" target="1.8" />
+      <module name="jb4dc-code-generate-service" target="1.8" />
+      <module name="jb4dc-core-base" target="1.8" />
+      <module name="jb4dc-core-root" target="1.8" />
+      <module name="jb4dc-front-ent-root" target="1.8" />
+      <module name="jb4dc-root" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

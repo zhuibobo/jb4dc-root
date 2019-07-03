@@ -7,7 +7,13 @@
         <platform.version>1.0-SNAPSHOT</platform.version>
         <flowable.version>6.4.1</flowable.version>
     </properties>
+    <modules>
 
+        <module>jb4dc-base-root</module>
+        <module>jb4dc-code-general-root</module>
+        <module>jb4dc-core-root</module>
+        <module>jb4dc-front-ent-root</module>
+    </modules>
     <modelVersion>4.0.0</modelVersion>
     <groupId>jb4dc</groupId>
     <artifactId>jb4dc-root</artifactId>
@@ -53,21 +59,11 @@
     <dependencyManagement>
         <dependencies>
             <!--内部引用-->
-            <!--<dependency>
-                <groupId>jbuild4d-cloud</groupId>
-                <artifactId>jbuild4d-cloud-core-base</artifactId>
+            <dependency>
+                <groupId>jb4dc</groupId>
+                <artifactId>jb4dc-core-base</artifactId>
                 <version>${platform.version}</version>
             </dependency>
-            <dependency>
-                <groupId>jbuild4d-cloud</groupId>
-                <artifactId>jbuild4d-cloud-base-tools</artifactId>
-                <version>${platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>jbuild4d-cloud</groupId>
-                <artifactId>jbuild4d-cloud-base-db-access</artifactId>
-                <version>${platform.version}</version>
-            </dependency>-->
 
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
             <dependency>
