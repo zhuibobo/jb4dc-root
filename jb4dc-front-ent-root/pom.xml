@@ -11,5 +11,9 @@
 
     <artifactId>jb4dc-front-ent-root</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>jb4dc-front-end-base-source</module>
+        <module>jb4dc-front-end-base-dist</module>
+    </modules>
 
 </project>

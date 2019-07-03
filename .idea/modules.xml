@@ -8,8 +8,12 @@
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-general-root.iml" filepath="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-general-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" filepath="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-web-jar/jb4dc-code-generate-web-jar.iml" filepath="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-web-jar/jb4dc-code-generate-web-jar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-web-server/jb4dc-code-generate-web-server.iml" filepath="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-web-server/jb4dc-code-generate-web-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/jb4dc-core-base.iml" filepath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/jb4dc-core-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-root.iml" filepath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/jb4dc-front-end-base-dist.iml" filepath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/jb4dc-front-end-base-dist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-source/jb4dc-front-end-base-source.iml" filepath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-source/jb4dc-front-end-base-source.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-ent-root.iml" filepath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-ent-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/jb4dc-root.iml" filepath="$PROJECT_DIR$/.idea/jb4dc-root.iml" />
     </modules>

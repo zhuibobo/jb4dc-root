@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>jb4dc-code-generate-service</module>
+        <module>jb4dc-code-generate-web-jar</module>
+        <module>jb4dc-code-generate-web-server</module>
     </modules>
     <dependencies>
         <dependency>
