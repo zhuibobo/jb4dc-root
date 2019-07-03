@@ -1,0 +1,17 @@
+##############################
+## Folders                  ##
+##############################
+target
+out
+log
+t3plibs
+node_modules
+GenerateCodeFiles/
+!GenerateCodeFiles/GenerateCodeFiles.txt
+
+##############################
+## Files                    ##
+##############################
+DB.properties
+~$列表数据逻辑.mmap.~$lock
+*.~vsdx
