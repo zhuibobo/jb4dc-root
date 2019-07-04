@@ -6,6 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-web-server/jb4dc-cloud-config-web-server.iml" filepath="$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-web-server/jb4dc-cloud-config-web-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-eureka-web-server/jb4dc-cloud-eureka-web-server.iml" filepath="$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-eureka-web-server/jb4dc-cloud-eureka-web-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-root.iml" filepath="$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-general-root.iml" filepath="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-general-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" filepath="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-web-jar/jb4dc-code-generate-web-jar.iml" filepath="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-web-jar/jb4dc-code-generate-web-jar.iml" />

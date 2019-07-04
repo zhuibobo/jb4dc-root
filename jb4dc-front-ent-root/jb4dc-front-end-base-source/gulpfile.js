@@ -72,6 +72,11 @@ gulp.task('front-end-base-js-external',()=>{
     return gulp.src(jarFromResourcePath+"/Js/External/**/*", {base:jarFromResourcePath+"/Js/External"}).pipe(gulp.dest(jarToResourcePath+"/Js/External"));
 });
 
+/*拷贝HTML下的模版片段*/
+gulp.task('front-end-base-html-fragment',()=>{
+    return gulp.src(jarFromResourcePath+"/HTML/Fragment/**/*", {base:jarFromResourcePath+"/HTML/Fragment"}).pipe(gulp.dest(jarToResourcePath+"/HTML/Fragment"));
+});
+
 //endregion
 
 function copyAndResolveHtml(sourcePath,base,toPath) {

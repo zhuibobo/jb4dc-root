@@ -1,23 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>JBuild4D-Cloud</title>
-    <script type="text/javascript" src="../../Js/External/JQuery/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../../Js/External/VUE-2.5.16/vue.js"></script>
-    <script type="text/javascript" src="../../Js/External/IView-3.X/dist/iview.min.js"></script>
-    <script type="text/javascript" src="../../Js/External/JQuery-UI-1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="../../Js/External/ZTree-V3/js/jquery.ztree.all.js"></script>
-    <script type="text/javascript" src="../../Js/External/perfect-scrollbar-14/perfect-scrollbar.js"></script>
-    <script type="text/javascript" src="../../Js/CustBaseUtility.js?refVersion=1"></script>
-    <script type="text/javascript" src="../../Js/CustUIComponent.js?refVersion=1"></script>
-    <script type="text/javascript" src="../../Js/CustVueComponent.js?refVersion=1"></script>
-    <link rel="stylesheet" type="text/css" href="../../Themes/Default/Css/ZDXTPlatStyle.css?refVersion=1">
-    <link rel="stylesheet" type="text/css" href="../../Themes/Default/IView-3.X/iview.css">
-    <link rel="stylesheet" type="text/css" href="../../Themes/Default/JQueryUI/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="../../Themes/Default/ZTree/zTreeStyle/zTreeStyle.css">
+    <th:block th:replace="Fragment/GeneralLib::GeneralLib"></th:block>
+    <th:block th:replace="Fragment/GeneralLib::ThemesLib"></th:block>
     <style>.right-outer-wrap-c div {
         font-size: 12px
     }</style>

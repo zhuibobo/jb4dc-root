@@ -14,6 +14,7 @@
         <module>jb4dc-core-root</module>
         <module>jb4dc-front-ent-root</module>
         <module>jb4dc-dev-mock-root</module>
+        <module>jb4dc-cloud-root</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
     <groupId>jb4dc</groupId>
