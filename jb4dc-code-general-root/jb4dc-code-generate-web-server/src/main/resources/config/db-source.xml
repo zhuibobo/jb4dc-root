@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Config>
+<Config desc="desc">
     <DataSource>
-        <Id></Id>
-        <Caption></Caption>
-        <DBType></DBType>
-        <DriverName></DriverName>
-        <DatabaseName></DatabaseName>
-        <Url></Url>
-        <User></User>
-        <Password></Password>
+        <Id>1</Id>
+        <Caption>2</Caption>
+        <DBType>3</DBType>
+        <DriverName>4</DriverName>
+        <DatabaseName>5</DatabaseName>
+        <Url>6</Url>
+        <User>7</User>
+        <Password>8</Password>
+    </DataSource>
+    <DataSource>
+        <Id>1</Id>
+        <Caption>2</Caption>
+        <DBType>3</DBType>
+        <DriverName>4</DriverName>
+        <DatabaseName>5</DatabaseName>
+        <Url>6</Url>
+        <User>7</User>
+        <Password>8</Password>
+    </DataSource>
+    <DataSource>
+        <Id>1</Id>
+        <Caption>2</Caption>
+        <DBType>3</DBType>
+        <DriverName>4</DriverName>
+        <DatabaseName>5</DatabaseName>
+        <Url>6</Url>
+        <User>7</User>
+        <Password>8</Password>
     </DataSource>
 </Config>

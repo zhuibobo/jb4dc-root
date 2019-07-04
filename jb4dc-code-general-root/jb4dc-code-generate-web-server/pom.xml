@@ -43,9 +43,20 @@
         </plugins>
         <resources>
             <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+            <resource>
                 <directory>${basedir}/src/main/resources/config</directory>
                 <targetPath>../public/config</targetPath>
             </resource>
+            <!--<resource>
+                <directory>${basedir}/src/main/resources/config</directory>
+                <targetPath>config</targetPath>
+            </resource>-->
         </resources>
         <!--<resources>
             <resource>
