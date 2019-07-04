@@ -12,6 +12,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-general-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-web-jar/pom.xml" />
         <option value="$PROJECT_DIR$/jb4dc-code-general-root/jb4dc-code-generate-web/pom.xml" />
       </set>
     </option>

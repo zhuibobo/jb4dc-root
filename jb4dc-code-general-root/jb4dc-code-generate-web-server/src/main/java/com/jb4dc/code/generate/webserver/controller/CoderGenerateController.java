@@ -1,4 +1,4 @@
-package com.jb4dc.code.generate.web.controller;
+package com.jb4dc.code.generate.webserver.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
