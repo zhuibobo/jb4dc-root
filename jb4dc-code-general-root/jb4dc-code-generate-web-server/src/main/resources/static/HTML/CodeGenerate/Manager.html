@@ -9,14 +9,20 @@
 </head>
 <body>
 <div id="appList" class="list-2column">
-    <div class="left-outer-wrap" style="width:385px">
-        <div class="inner-wrap iv-list-page-wrap" style="padding:10px">
-            <div class="list-simple-search-wrap" id="list-simple-search-wrap" style="border-width:0">
+    <div class="left-outer-wrap" style="width:385px;top: 10px;bottom: 10px;left: 10px">
+        <div class="inner-wrap iv-list-page-wrap" style="padding:10px;margin-top: 8px;margin-bottom: 8px;height: auto">
+            <div class="list-simple-search-wrap" id="list-simple-search-wrap" style="border-width:0;">
                 <table class="ls-table">
                     <colgroup>
                         <col style="">
                         <col style="width:80px">
                     </colgroup>
+                    <tr class="ls-table-row">
+                        <td>
+                            <i-input v-model="searchCondition.tableName.value" placeholder=""
+                                     @on-change="searchTable"></i-input>
+                        </td>
+                    </tr>
                     <tr class="ls-table-row">
                         <td>
                             <i-input v-model="searchCondition.tableName.value" placeholder=""
@@ -36,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="right-outer-wrap" style="padding:10px;left:400px">
+    <div class="right-outer-wrap" style="padding:10px;left:410px;top: 10px;bottom: 10px;right: 10px">
         <spin size="large" fix v-if="codeIsGenerateing"></spin>
         <card :bordered="false" style="margin-bottom:10px"><p slot="title">参数设置</p>
             <row>
@@ -108,7 +114,7 @@
     mounted: function () {
         this.reloadData();
         window.setTimeout(function () {
-            appList.listHeight = ListPageUtility.GetGeneralPageHeight(-20);
+            appList.listHeight = ListPageUtility.GetGeneralPageHeight(-56);
             $("[name='txtAreaCode']").css("height", appList.listHeight - 160);
         }, 500);
     },
@@ -187,8 +193,7 @@
                     //_self.generateCode.ServiceImplContent = result.data.ServiceImplContent;
                     _self.generateCode.EntityWithBLOBContent = result.data.EntityWithBLOBContent;
                     _self.generateCode.CodeFragmentContent = result.data.CodeFragmentContent;
-                }
-                else {
+                } else {
                     DialogUtility.AlertError(window, DialogUtility.DialogAlertId, {}, result.message, function () {
                     });
                 }
@@ -222,8 +227,7 @@
                             _self.formValidate.statusFieldName = field.fieldName;
                         }
                     }
-                }
-                else {
+                } else {
                     DialogUtility.AlertError(window, DialogUtility.DialogAlertId, {}, result.message, function () {
                     });
                 }
