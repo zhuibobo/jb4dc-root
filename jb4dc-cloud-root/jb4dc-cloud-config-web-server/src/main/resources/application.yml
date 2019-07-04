@@ -25,5 +25,4 @@ eureka:
       defaultZone: http://127.0.0.1:9092/eureka/
   instance:
     prefer-ip-address: true
-  #preferIpAddress: true
     instanceId: ${spring.cloud.inetutils.preferred-networks}:${server.port}
