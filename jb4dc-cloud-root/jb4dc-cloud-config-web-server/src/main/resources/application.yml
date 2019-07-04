@@ -7,7 +7,10 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:/config
+          searchLocations: classpath:/config
+    inetutils:
+      #客户端的IP
+      preferred-networks: 192.168.3.153
 
 server:
   port: 9093
@@ -17,8 +20,10 @@ server:
 
 eureka:
   client:
-    service-url:
+    serviceUrl:
+      #服务端的地址
       defaultZone: http://127.0.0.1:9092/eureka/
   instance:
-    preferIpAddress: true
-    #instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+  #preferIpAddress: true
+    instanceId: ${spring.cloud.inetutils.preferred-networks}:${server.port}
