@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: JB4DC-CLOUD-CONFIG-WEB-SERVER
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+
+server:
+  port: 9093
+  servlet:
+    session:
+      timeout: 7200
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9092/eureka/
+  instance:
+    preferIpAddress: true
+    #instance-id: ${spring.cloud.client.ipAddress}:${server.port}
