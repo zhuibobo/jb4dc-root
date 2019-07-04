@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <DataSource>
+        <Id></Id>
+        <Caption></Caption>
+        <DBType></DBType>
+        <DriverName></DriverName>
+        <DatabaseName></DatabaseName>
+        <Url></Url>
+        <User></User>
+        <Password></Password>
+    </DataSource>
+</Config>
