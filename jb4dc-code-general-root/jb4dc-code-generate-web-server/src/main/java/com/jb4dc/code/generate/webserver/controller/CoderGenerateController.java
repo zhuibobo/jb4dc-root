@@ -12,10 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
  */
 
 @Controller
-@RequestMapping("/codegenerate")
+@RequestMapping("Controller/CodeGenerate")
 public class CoderGenerateController {
 
-    @RequestMapping("/manager")
+    @RequestMapping("/Manager")
     public ModelAndView manager(){
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("CodeGenerate/Manager");

@@ -9,6 +9,7 @@ package com.jb4dc.base.dbaccess.dynamic;
 
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,7 @@ import java.util.Map;
  * 不建议将参数直接拼到字符串中，当大量这么使用的时候由于缓存MappedStatement而占用更多的内存
  *
  */
+
 public class SQLBuilderMapper implements ISQLBuilderMapper {
     private final SQLBuilderUtility msUtils;
     private final SqlSession sqlSession;

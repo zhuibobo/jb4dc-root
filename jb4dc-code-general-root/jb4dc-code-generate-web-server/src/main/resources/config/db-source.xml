@@ -11,7 +11,7 @@
         <Password>zhenx#88DATA</Password>
     </DataSource>
     <DataSource>
-        <Id>DataSource0001</Id>
+        <Id>DataSource0002</Id>
         <Caption>单点登录与统一用户管理</Caption>
         <DBType>3</DBType>
         <DriverName>4</DriverName>
@@ -21,7 +21,7 @@
         <Password>8</Password>
     </DataSource>
     <DataSource>
-        <Id>DataSource0002</Id>
+        <Id>DataSource0003</Id>
         <Caption>开发示例系统</Caption>
         <DBType>3</DBType>
         <DriverName>4</DriverName>

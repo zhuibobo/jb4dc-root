@@ -7,11 +7,14 @@ import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.base.tools.PathUtility;
 import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
 import com.jb4dc.code.generate.service.ICodeGenerateService;
+import com.jb4dc.code.generate.service.IDataSourceManager;
+import com.jb4dc.code.generate.service.IDataSourceService;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGCodeFragment;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGIService;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGMapperEX;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGServiceImpl;
 import com.jb4dc.code.generate.vo.CodeGenerateVo;
+import com.jb4dc.code.generate.vo.DataSourceSingleVo;
 import com.jb4dc.code.generate.vo.SimpleTableFieldVo;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
@@ -26,10 +29,13 @@ import org.mybatis.generatorex.exception.XMLParserException;
 import org.mybatis.generatorex.internal.DefaultShellCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
+import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
+import java.beans.PropertyVetoException;
 import java.io.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -43,45 +49,56 @@ import java.util.Map;
  * Date: 2018/7/25
  * To change this template use File | Settings | File Templates.
  */
+
 public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
     Logger logger= LoggerFactory.getLogger(CodeGenerateServiceImpl.class);
 
-    ISQLBuilderService sqlBuilderService;
-    public CodeGenerateServiceImpl(ISQLBuilderService _sqlBuilderService) {
-        sqlBuilderService=_sqlBuilderService;
+    //ISQLBuilderService sqlBuilderService;
+
+    IDataSourceService dataSourceService;
+    IDataSourceManager dataSourceManager;
+
+    public CodeGenerateServiceImpl(IDataSourceService dataSourceService, IDataSourceManager dataSourceManager) {
+        //sqlBuilderService=_sqlBuilderService;
         //Select Name FROM SysObjects Where XType='U' orDER BY Name
         //DBType=MSSQLSERVER
         //#DBType=ORACLE
         //#DBType=MYSQL
+
+        this.dataSourceService=dataSourceService;
+        this.dataSourceManager=dataSourceManager;
     }
 
+
+
     @Override
-    public PageInfo<List<Map<String, Object>>> getTables(JB4DCSession jb4DSession, Integer pageNum, Integer pageSize, Map<String, Object> searchMap) throws JBuild4DCGenerallyException {
+    public PageInfo<List<Map<String, Object>>> getTables(String dataSourceId,String searchTableName,Integer pageNum, Integer pageSize) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException {
         String sql="";
 
-        String searchTableName="%%";
-        if(searchMap.size()>0){
-            searchTableName="%"+searchMap.get("tableName").toString()+"%";
+        String _searchTableName="%%";
+        if(searchTableName!=null&&!searchTableName.equals("")){
+            _searchTableName="%"+searchTableName+"%";
         }
-        if(DBProp.isSqlServer()){
-            sql="Select Name as TableName FROM SysObjects Where XType='U' and Name like #{searchTableName} orDER BY Name";
+        DataSourceSingleVo dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
+        if(dataSourceSingleVo.getDbType().equals("sqlserver")){
+            sql="Select Name as TableName FROM SysObjects Where XType='U' and Name like ? order BY Name";
         }
-        else if(DBProp.isMySql()){
+        if(dataSourceSingleVo.getDbType().equals("mysql")){
             sql="select upper(table_name) TableName from information_schema.tables where table_schema='"+DBProp.getDatabaseName()+"' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
         }
-        else if(DBProp.isOracle()){
+        if(dataSourceSingleVo.getDbType().equals("oracle")){
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
-        PageHelper.startPage(pageNum, pageSize);
+        //PageHelper.startPage(pageNum, pageSize);
         //PageHelper.
-        List<Map<String, Object>> list=sqlBuilderService.selectList(sql,searchTableName);
+        List<Map<String, Object>> list=dataSourceManager.selectList(dataSourceId,sql, _searchTableName);
         PageInfo<List<Map<String, Object>>> pageInfo = new PageInfo(list);
         return pageInfo;
     }
 
     @Override
-    public List<SimpleTableFieldVo> getTableFields(JB4DCSession jb4DSession, String tableName) throws JBuild4DCGenerallyException {
+    public List<SimpleTableFieldVo> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException {
         String sql="";
         List<SimpleTableFieldVo> result=new ArrayList<>();
         if(DBProp.isSqlServer()){
@@ -93,7 +110,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         else if(DBProp.isOracle()){
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
-        List<Map<String, Object>> fieldList=sqlBuilderService.selectList(sql,tableName);
+        List<Map<String, Object>> fieldList=dataSourceManager.selectList(dataSourceId,sql, new String[]{"1"});
         for (Map<String, Object> map : fieldList) {
             SimpleTableFieldVo simpleTableFieldVo=new SimpleTableFieldVo();
             simpleTableFieldVo.setTableName(map.get("TABLE_NAME").toString());
@@ -238,7 +255,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     }
 
     @Override
-    public Map<String, String> getTableGenerateCode(JB4DCSession jb4DSession, String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException {
+    public Map<String, String> getTableGenerateCode(String dataSourceId,String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException {
         //根据单表生成代码
         Map<String, String> generateCodeMap = new HashMap<>();
         List<String> warnings = new ArrayList<String>();

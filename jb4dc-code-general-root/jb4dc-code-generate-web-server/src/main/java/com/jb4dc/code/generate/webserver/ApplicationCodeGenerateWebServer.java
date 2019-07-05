@@ -5,6 +5,7 @@ import com.jb4dc.base.tools.XMLUtility;
 import com.jb4dc.code.generate.vo.DataSourceConfigVo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.system.ApplicationHome;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -13,7 +14,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-@SpringBootApplication
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 @ComponentScan("com.jb4dc")
 public class ApplicationCodeGenerateWebServer {
     public static void main(String[] args) {

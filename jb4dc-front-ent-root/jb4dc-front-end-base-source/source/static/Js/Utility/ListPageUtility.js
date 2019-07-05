@@ -191,7 +191,7 @@ var ListPageUtility={
         });
     },
 
-    IViewTableLoadDataSearch:function (url,pageNum,pageSize,searchCondition,pageAppObj,idField,autoSelectedOldRows,successFunc,loadDict) {
+    IViewTableLoadDataSearch:function (url,pageNum,pageSize,searchCondition,pageAppObj,idField,autoSelectedOldRows,successFunc,loadDict,custParas) {
         //var loadDict=false;
         //if(pageNum===1) {
         //    loadDict = true;
@@ -199,14 +199,21 @@ var ListPageUtility={
         if(loadDict==undefined||loadDict==null){
             loadDict=false;
         }
+        if(!custParas){
+            custParas={};
+        }
+        var sendData={
+            "pageNum": pageNum,
+            "pageSize": pageSize,
+            "searchCondition":SearchUtility.SerializationSearchCondition(searchCondition),
+            "loadDict":loadDict
+        };
+        for(var key in custParas){
+            sendData[key]=custParas[key];
+        }
         //debugger;
         AjaxUtility.Post(url,
-            {
-                "pageNum": pageNum,
-                "pageSize": pageSize,
-                "searchCondition":SearchUtility.SerializationSearchCondition(searchCondition),
-                "loadDict":loadDict
-            },
+            sendData,
             function (result) {
                 if (result.success) {
                     if(typeof (successFunc)=="function") {

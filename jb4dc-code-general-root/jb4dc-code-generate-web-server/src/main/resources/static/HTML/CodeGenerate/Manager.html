@@ -19,13 +19,14 @@
                     </colgroup>
                     <tr class="ls-table-row">
                         <td>
-                            <i-input v-model="searchCondition.tableName.value" placeholder=""
-                                     @on-change="searchTable"></i-input>
+                            <i-select v-model="selectedDataSourceId" @on-change="changeDataSource" style="width:360px">
+                                <i-option v-for="item in dataSource" :value="item.id" :key="item.id">{{ item.caption }}[{{ item.databaseName }}]</i-option>
+                            </i-select>
                         </td>
                     </tr>
                     <tr class="ls-table-row">
                         <td>
-                            <i-input v-model="searchCondition.tableName.value" placeholder=""
+                            <i-input v-model="searchTableName" placeholder=""
                                      @on-change="searchTable"></i-input>
                         </td>
                     </tr>
@@ -113,7 +114,7 @@
     el: "#appList",
     mounted: function () {
         this.bindDataSource();
-        this.reloadData();
+
         window.setTimeout(function () {
             appList.listHeight = ListPageUtility.GetGeneralPageHeight(-56);
             $("[name='txtAreaCode']").css("height", appList.listHeight - 160);
@@ -121,6 +122,12 @@
     },
     data: {
         codeIsGenerateing: false,
+        acInterface:{
+            getDataSourceConfigUrl:"/Rest/DataSource/GetConfig",
+            getTableListUrl:"/Rest/CodeGenerate/GetListData"
+        },
+        dataSource:[],
+        selectedDataSourceId:"",
         formValidate: {
             tableName: "",
             packageType: "ZDXT-PlatForm",
@@ -140,12 +147,13 @@
         },
         <!--List-->
         idFieldName: "TableName",
-        searchCondition: {
+        /*searchCondition: {
             tableName: {
                 value: "",
                 type: SearchUtility.SearchFieldType.StringType
             }
-        },
+        },*/
+        searchTableName:"",
         columnsConfig: [
             {
                 title: '表名',
@@ -172,16 +180,21 @@
         tableData: [],
         selectionRows: null,
         pageTotal: 0,
-        pageSize: 12,
+        pageSize: 1000,
         pageNum: 1,
         listHeight: ListPageUtility.DefaultListHeight()
     },
     methods: {
         <!--绑定默认数据-->
         bindDataSource:function() {
-            AjaxUtility.Get("/DataSource/GetConfig", {}, function (result) {
+            AjaxUtility.Get(this.acInterface.getDataSourceConfigUrl, {}, function (result) {
                 console.log(result);
+                appList.dataSource=result.data.dataSourceSingleVoList;
             });
+        },
+        changeDataSource:function(dataSourceId){
+            //alert(dataSourceId);
+            this.reloadData(dataSourceId);
         },
         beginGenerateCode: function () {
             if (this.formValidate.tableName == "") {
@@ -211,10 +224,13 @@
         selectionChange: function (selection) {
             this.selectionRows = selection;
         },
-        reloadData: function () {
-            var url = '/ZdxtPlat/CodeGenerate/GetListData';
+        reloadData: function (dataSourceId) {
+            //var url = '/ZdxtPlat/CodeGenerate/GetListData';
             //debugger;
-            ListPageUtility.IViewTableLoadDataSearch(url, this.pageNum, this.pageSize, this.searchCondition, this, this.idFieldName, true, null);
+            ListPageUtility.IViewTableLoadDataSearch(this.acInterface.getTableListUrl, this.pageNum, this.pageSize, null, this, this.idFieldName, true, null,null,{
+                searchTableName:this.searchTableName,
+                dataSourceId:dataSourceId
+            });
             //this.selectionRows=null;
         },
         selectedTable: function (tableName) {

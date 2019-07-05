@@ -2,6 +2,7 @@ package com.jb4dc.base.service.impl;
 
 import com.jb4dc.base.dbaccess.dynamic.ISQLBuilderMapper;
 import com.jb4dc.base.service.ISQLBuilderService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import java.util.Map;
  * Date: 2018/7/11
  * To change this template use File | Settings | File Templates.
  */
+
 public class SQLBuilderServiceImpl implements ISQLBuilderService {
 
     ISQLBuilderMapper sqlBuilderMapper;

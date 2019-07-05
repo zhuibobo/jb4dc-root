@@ -12,19 +12,21 @@ var SearchUtility={
         ArrayLikeStringType:"ArrayLikeStringType"
     },
     SerializationSearchCondition:function (searchCondition) {
-        var searchConditionClone=JsonUtility.CloneSimple(searchCondition);
-        //debugger;
-        for(var key in searchConditionClone){
-            if(searchConditionClone[key].type==SearchUtility.SearchFieldType.ArrayLikeStringType){
-                if(searchConditionClone[key].value!=null&&searchConditionClone[key].value.length>0) {
-                    searchConditionClone[key].value = searchConditionClone[key].value.join(";");
-                }
-                else{
-                    searchConditionClone[key].value="";
+        if(searchCondition) {
+            var searchConditionClone = JsonUtility.CloneSimple(searchCondition);
+            //debugger;
+            for (var key in searchConditionClone) {
+                if (searchConditionClone[key].type == SearchUtility.SearchFieldType.ArrayLikeStringType) {
+                    if (searchConditionClone[key].value != null && searchConditionClone[key].value.length > 0) {
+                        searchConditionClone[key].value = searchConditionClone[key].value.join(";");
+                    } else {
+                        searchConditionClone[key].value = "";
+                    }
                 }
             }
+            //debugger;
+            return JSON.stringify(searchConditionClone);
         }
-        //debugger;
-        return JSON.stringify(searchConditionClone);
+        return "";
     }
 }

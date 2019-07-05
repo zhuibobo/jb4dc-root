@@ -1,6 +1,7 @@
 package com.jb4dc.code.generate.service;
 
 import com.jb4dc.code.generate.vo.DataSourceConfigVo;
+import com.jb4dc.code.generate.vo.DataSourceSingleVo;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
@@ -13,4 +14,8 @@ import java.io.FileNotFoundException;
  */
 public interface IDataSourceService {
     DataSourceConfigVo getConfig() throws FileNotFoundException, JAXBException;
+
+    DataSourceConfigVo getSimpleConfig() throws FileNotFoundException, JAXBException;
+
+    DataSourceSingleVo getSingleDataSourceConfig(String dataSourceId) throws FileNotFoundException, JAXBException;
 }

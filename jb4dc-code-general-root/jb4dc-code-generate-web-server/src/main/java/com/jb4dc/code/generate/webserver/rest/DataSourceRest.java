@@ -21,7 +21,7 @@ import java.io.InputStream;
  */
 
 @RestController
-@RequestMapping(value = "/DataSource")
+@RequestMapping(value = "/Rest/DataSource")
 public class DataSourceRest {
 
     @Autowired
@@ -30,7 +30,10 @@ public class DataSourceRest {
     @RequestMapping(value = "/GetConfig", method = RequestMethod.GET)
     public JBuild4DCResponseVo getConfig() throws FileNotFoundException, JAXBException {
         //List<TableGroupEntity> tableGroupEntityList=tableGroupService.getALLASC(JB4DSessionUtility.getSession());
-        DataSourceConfigVo config = dataSourceService.getConfig();
+        DataSourceConfigVo config = dataSourceService.getSimpleConfig();
+        //config.getDataSourceSingleVoList().forEach(vo->{vo.setUrl("");vo.setUser("");vo.setPassword("");vo.setDriverName("");});
+        //config.getDataSourceSingleVoList().forEach(vo->(vo.setUser(""));
+        //config.
         return JBuild4DCResponseVo.getDataSuccess(config);
     }
 }
