@@ -1,6 +1,6 @@
 package com.jb4dc.core.base.tools;
 
-import com.jb4dc.core.base.exception.JBuild4DSQLKeyWordException;
+import com.jb4dc.core.base.exception.JBuild4DCSQLKeyWordException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,7 +10,7 @@ import com.jb4dc.core.base.exception.JBuild4DSQLKeyWordException;
  */
 public class SQLKeyWordUtility {
 
-    public static boolean validateSqlInjectForSelectOnly(String sqlString) throws JBuild4DSQLKeyWordException {
+    public static boolean validateSqlInjectForSelectOnly(String sqlString) throws JBuild4DCSQLKeyWordException {
         //boolean ReturnValue = false;
         try
         {
@@ -23,7 +23,7 @@ public class SQLKeyWordUtility {
                 String[] anySqlStr = SqlStrKeyWord.split("\\|");
                 for (String keyWord : anySqlStr) {
                     if(sqlString.indexOf(keyWord)>0){
-                        throw new JBuild4DSQLKeyWordException(sqlString + "中可能存在SQL关键字"+keyWord);
+                        throw new JBuild4DCSQLKeyWordException(sqlString + "中可能存在SQL关键字"+keyWord);
                     }
                 }
             }
@@ -31,7 +31,7 @@ public class SQLKeyWordUtility {
         }
         catch(Exception ex)
         {
-            throw new JBuild4DSQLKeyWordException(ex.getMessage());
+            throw new JBuild4DCSQLKeyWordException(ex.getMessage());
         }
     }
 
@@ -39,14 +39,14 @@ public class SQLKeyWordUtility {
         return "'"+source.replaceAll("'","''")+"'";
     }
 
-    public static boolean singleWord(String source) throws JBuild4DSQLKeyWordException {
+    public static boolean singleWord(String source) throws JBuild4DCSQLKeyWordException {
         if(StringUtility.isNotEmpty(source)){
             source=source.trim();
             if(source.indexOf(" ")>=0){
-                throw new JBuild4DSQLKeyWordException("单词"+source+"中不能存在空格");
+                throw new JBuild4DCSQLKeyWordException("单词"+source+"中不能存在空格");
             }
             if(source.indexOf("'")>=0){
-                throw new JBuild4DSQLKeyWordException("单词"+source+"中不能存在单引号");
+                throw new JBuild4DCSQLKeyWordException("单词"+source+"中不能存在单引号");
             }
         }
         return true;

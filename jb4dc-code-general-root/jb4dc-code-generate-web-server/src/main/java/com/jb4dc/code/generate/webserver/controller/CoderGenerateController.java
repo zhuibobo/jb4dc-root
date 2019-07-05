@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 
 @Controller
-@RequestMapping("/jb4dc/codegenerate")
+@RequestMapping("/codegenerate")
 public class CoderGenerateController {
 
     @RequestMapping("/manager")

@@ -7,7 +7,7 @@ package com.jb4dc.base.dbaccess.anno;
  * To change this template use File | Settings | File Templates.
  */
 
-import com.jb4dc.core.base.exception.JBuild4DGenerallyException;
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 
 import java.lang.reflect.Field;
 
@@ -37,10 +37,10 @@ public class DBAnnoUtility {
                 }
             }
         }
-        throw new JBuild4DGenerallyException("类型"+object.getClass().getName()+"中找不到标记了注解DBKeyField,设定为主键的字段！");
+        throw new JBuild4DCGenerallyException("类型"+object.getClass().getName()+"中找不到标记了注解DBKeyField,设定为主键的字段！");
     }
 
-    public static void setIdValue(Object object, Object value) throws IllegalAccessException, JBuild4DGenerallyException, InstantiationException {
+    public static void setIdValue(Object object, Object value) throws IllegalAccessException, JBuild4DCGenerallyException, InstantiationException {
         Field[] fields=object.getClass().getDeclaredFields();
         //Field[] fields=DictionaryGroupEntity.class.getDeclaredFields();
         for (Field field : fields) {
@@ -65,6 +65,6 @@ public class DBAnnoUtility {
                 }
             }
         }
-        throw new JBuild4DGenerallyException("类型"+object.getClass().getName()+"中找不到标记了注解DBKeyField,设定为主键的字段！");
+        throw new JBuild4DCGenerallyException("类型"+object.getClass().getName()+"中找不到标记了注解DBKeyField,设定为主键的字段！");
     }
 }

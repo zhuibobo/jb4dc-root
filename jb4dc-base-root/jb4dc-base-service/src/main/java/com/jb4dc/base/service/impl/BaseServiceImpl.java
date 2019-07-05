@@ -6,8 +6,8 @@ import com.jb4dc.base.dbaccess.anno.DBAnnoUtility;
 import com.jb4dc.base.dbaccess.dao.BaseMapper;
 import com.jb4dc.base.service.*;
 import com.jb4dc.base.service.general.JBuild4DProp;
-import com.jb4dc.core.base.exception.JBuild4DGenerallyException;
-import com.jb4dc.core.base.session.JB4DSession;
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.tools.UUIDUtility;
 import org.mybatis.spring.SqlSessionTemplate;
 
@@ -52,51 +52,51 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     }
 
     @Override
-    public int deleteByKey(JB4DSession jb4DSession, String id) throws JBuild4DGenerallyException {
+    public int deleteByKey(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException {
         return defaultBaseMapper.deleteByPrimaryKey(id);
     }
 
     @Override
-    public int deleteByKeyNotValidate(JB4DSession jb4DSession, String id, String warningOperationCode ) throws JBuild4DGenerallyException {
+    public int deleteByKeyNotValidate(JB4DCSession jb4DSession, String id, String warningOperationCode ) throws JBuild4DCGenerallyException {
         if(JBuild4DProp.getWarningOperationCode().equals(warningOperationCode)) {
             return defaultBaseMapper.deleteByPrimaryKey(id);
         }
-        throw new JBuild4DGenerallyException("删除失败WarningOperationCode错误");
+        throw new JBuild4DCGenerallyException("删除失败WarningOperationCode错误");
     }
 
     @Override
-    public int deleteAll(JB4DSession jb4DSession) throws JBuild4DGenerallyException {
+    public int deleteAll(JB4DCSession jb4DSession) throws JBuild4DCGenerallyException {
         return defaultBaseMapper.deleteAll();
     }
 
     @Override
-    public int add(JB4DSession jb4DSession,T entity) {
+    public int add(JB4DCSession jb4DSession, T entity) {
         return defaultBaseMapper.insert(entity);
     }
 
     @Override
-    public int addSelective(JB4DSession jb4DSession,T entity) {
+    public int addSelective(JB4DCSession jb4DSession, T entity) {
         return defaultBaseMapper.insertSelective(entity);
     }
 
     @Override
-    public T getByPrimaryKey(JB4DSession jb4DSession,String id) throws JBuild4DGenerallyException {
+    public T getByPrimaryKey(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException {
         return defaultBaseMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public int updateByKeySelective(JB4DSession jb4DSession,T entity) {
+    public int updateByKeySelective(JB4DCSession jb4DSession, T entity) {
         return defaultBaseMapper.updateByPrimaryKeySelective(entity);
     }
 
     @Override
-    public int updateByKey(JB4DSession jb4DSession,T entity) {
+    public int updateByKey(JB4DCSession jb4DSession, T entity) {
         return defaultBaseMapper.updateByPrimaryKey(entity);
     }
 
 
     @Override
-    public int save(JB4DSession jb4DSession,String id, T entity, IAddBefore<T> addBefore) throws JBuild4DGenerallyException {
+    public int save(JB4DCSession jb4DSession, String id, T entity, IAddBefore<T> addBefore) throws JBuild4DCGenerallyException {
         if(getByPrimaryKey(jb4DSession,id)==null){
             autoSetEntityId(entity);
             entity=addBefore.run(jb4DSession,entity);
@@ -107,19 +107,19 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
         }
     }
 
-    private void autoSetEntityId(T entity) throws JBuild4DGenerallyException {
+    private void autoSetEntityId(T entity) throws JBuild4DCGenerallyException {
         try {
             String entId= DBAnnoUtility.getIdValue(entity);
             if(entId==null||entId.equals("")){
                 DBAnnoUtility.setIdValue(entity, UUIDUtility.getUUID());
             }
         } catch (Exception e) {
-            throw new JBuild4DGenerallyException(e.getMessage(),e.getCause());
+            throw new JBuild4DCGenerallyException(e.getMessage(),e.getCause());
         }
     }
 
     @Override
-    public int save(JB4DSession jb4DSession, String id, T entity, IAddBefore<T> addBefore, IUpdateBefore<T> updateBefore) throws JBuild4DGenerallyException {
+    public int save(JB4DCSession jb4DSession, String id, T entity, IAddBefore<T> addBefore, IUpdateBefore<T> updateBefore) throws JBuild4DCGenerallyException {
         if(getByPrimaryKey(jb4DSession,id)==null){
             autoSetEntityId(entity);
             entity=addBefore.run(jb4DSession,entity);
@@ -132,17 +132,17 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     }
 
     @Override
-    public List<T> getALL(JB4DSession jb4DSession) {
+    public List<T> getALL(JB4DCSession jb4DSession) {
         return defaultBaseMapper.selectAll();
     }
 
     @Override
-    public List<T> getALLASC(JB4DSession jb4DSession) {
+    public List<T> getALLASC(JB4DCSession jb4DSession) {
         return defaultBaseMapper.selectAllASC();
     }
 
     @Override
-    public PageInfo<T> getPage(JB4DSession jb4DSession,int pageNum, int pageSize){
+    public PageInfo<T> getPage(JB4DCSession jb4DSession, int pageNum, int pageSize){
         PageHelper.startPage(pageNum, pageSize);
         //PageHelper.
         List<T> list=defaultBaseMapper.selectAll();
@@ -155,7 +155,7 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     }
 
     @Override
-    public PageInfo<T> getPage(JB4DSession jb4DSession,int pageNum, int pageSize, Map<String,Object> searchItemMap){
+    public PageInfo<T> getPage(JB4DCSession jb4DSession, int pageNum, int pageSize, Map<String,Object> searchItemMap){
         PageHelper.startPage(pageNum, pageSize);
         List<T> list=defaultBaseMapper.selectBySearch(searchItemMap);
         PageInfo<T> pageInfo = new PageInfo<T>(list);
@@ -167,22 +167,22 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     }
 
     @Override
-    public int getNextOrderNum(JB4DSession jb4DSession){
+    public int getNextOrderNum(JB4DCSession jb4DSession){
         return defaultBaseMapper.nextOrderNum();
     }
 
     @Override
-    public void statusChange(JB4DSession jb4DSession,String ids, String status) throws JBuild4DGenerallyException {
-        throw new JBuild4DGenerallyException("请在"+this.getClass().getSimpleName()+"中实现statusChange方法!");
+    public void statusChange(JB4DCSession jb4DSession, String ids, String status) throws JBuild4DCGenerallyException {
+        throw new JBuild4DCGenerallyException("请在"+this.getClass().getSimpleName()+"中实现statusChange方法!");
     }
 
     @Override
-    public void moveUp(JB4DSession jb4DSession,String id) throws JBuild4DGenerallyException {
-        throw new JBuild4DGenerallyException("请在"+this.getClass().getSimpleName()+"中重写moveUp方法！");
+    public void moveUp(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException {
+        throw new JBuild4DCGenerallyException("请在"+this.getClass().getSimpleName()+"中重写moveUp方法！");
     }
 
     @Override
-    public void moveDown(JB4DSession jb4DSession,String id) throws JBuild4DGenerallyException {
-        throw new JBuild4DGenerallyException("请在"+this.getClass().getSimpleName()+"中重写moveDown方法！");
+    public void moveDown(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException {
+        throw new JBuild4DCGenerallyException("请在"+this.getClass().getSimpleName()+"中重写moveDown方法！");
     }
 }

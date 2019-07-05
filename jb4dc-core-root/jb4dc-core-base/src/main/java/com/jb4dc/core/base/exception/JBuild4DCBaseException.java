@@ -1,17 +1,17 @@
 package com.jb4dc.core.base.exception;
 
-public class JBuild4DBaseException extends Exception {
+public class JBuild4DCBaseException extends Exception {
     /**
      * 错误码
      */
     private Integer errorCode;
 
-    public JBuild4DBaseException(int errorCode, String message) {
+    public JBuild4DCBaseException(int errorCode, String message) {
         super(message);
         this.errorCode = errorCode;
     }
 
-    public JBuild4DBaseException(int errorCode, String message, Throwable cause) {
+    public JBuild4DCBaseException(int errorCode, String message, Throwable cause) {
         super(message, cause);
         this.errorCode = errorCode;
     }

@@ -18,7 +18,7 @@ package org.mybatis.generatorex.internal.db;
 import com.jb4dc.base.dbaccess.general.DBProp;
 import com.jb4dc.base.service.IMetadataService;
 import com.jb4dc.base.tools.BeanUtility;
-import com.jb4dc.core.base.exception.JBuild4DGenerallyException;
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.list.IListWhereCondition;
 import com.jb4dc.core.base.list.ListUtility;
 import org.mybatis.generatorex.api.FullyQualifiedTable;
@@ -202,7 +202,7 @@ public class DatabaseIntrospector {
                                         }
                                     }
                                 }
-                            } catch (JBuild4DGenerallyException e) {
+                            } catch (JBuild4DCGenerallyException e) {
                                 e.printStackTrace();
                             }
                         }

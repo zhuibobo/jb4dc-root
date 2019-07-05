@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Config desc="desc">
     <DataSource>
-        <Id>1</Id>
-        <Caption>2</Caption>
+        <Id>DataSource0001</Id>
+        <Caption>应用构建套件</Caption>
+        <DBType>sqlserver</DBType>
+        <DriverName>com.microsoft.sqlserver.jdbc.SQLServerDriver</DriverName>
+        <DatabaseName>JBuild4D_V08</DatabaseName>
+        <Url>jdbc:sqlserver://120.77.56.220:1433; DatabaseName=JBuild4D_V08</Url>
+        <User>sa</User>
+        <Password>zhenx#88DATA</Password>
+    </DataSource>
+    <DataSource>
+        <Id>DataSource0001</Id>
+        <Caption>单点登录与统一用户管理</Caption>
         <DBType>3</DBType>
         <DriverName>4</DriverName>
         <DatabaseName>5</DatabaseName>
@@ -11,18 +21,8 @@
         <Password>8</Password>
     </DataSource>
     <DataSource>
-        <Id>1</Id>
-        <Caption>2</Caption>
-        <DBType>3</DBType>
-        <DriverName>4</DriverName>
-        <DatabaseName>5</DatabaseName>
-        <Url>6</Url>
-        <User>7</User>
-        <Password>8</Password>
-    </DataSource>
-    <DataSource>
-        <Id>1</Id>
-        <Caption>2</Caption>
+        <Id>DataSource0002</Id>
+        <Caption>开发示例系统</Caption>
         <DBType>3</DBType>
         <DriverName>4</DriverName>
         <DatabaseName>5</DatabaseName>

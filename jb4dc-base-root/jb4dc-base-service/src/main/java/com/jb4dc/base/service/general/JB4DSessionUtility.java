@@ -2,8 +2,8 @@ package com.jb4dc.base.service.general;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jb4dc.base.tools.JsonUtility;
-import com.jb4dc.core.base.exception.SessionTimeoutException;
-import com.jb4dc.core.base.session.JB4DSession;
+import com.jb4dc.core.base.exception.JBuild4DCSessionTimeoutException;
+import com.jb4dc.core.base.session.JB4DCSession;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,26 +18,26 @@ public class JB4DSessionUtility {
     /**
      * 返回必须通过request请求调用
      * @return
-     * @throws SessionTimeoutException session超时时抛出
+     * @throws JBuild4DCSessionTimeoutException session超时时抛出
      */
-    public static JB4DSession getSession() throws SessionTimeoutException {
+    public static JB4DCSession getSession() throws JBuild4DCSessionTimeoutException {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         if(request == null) {
-            throw new SessionTimeoutException();
+            throw new JBuild4DCSessionTimeoutException();
         }
-        JB4DSession b4DSession = (JB4DSession)request.getSession().getAttribute(UserLoginSessionKey);
+        JB4DCSession b4DSession = (JB4DCSession)request.getSession().getAttribute(UserLoginSessionKey);
         if(b4DSession == null) {
-            throw new SessionTimeoutException();
+            throw new JBuild4DCSessionTimeoutException();
         }
         return b4DSession;
     }
 
-    public static JB4DSession getSessionNotException() {
+    public static JB4DCSession getSessionNotException() {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         if(request == null) {
-            throw new SessionTimeoutException();
+            throw new JBuild4DCSessionTimeoutException();
         }
-        JB4DSession b4DSession = (JB4DSession)request.getSession().getAttribute(UserLoginSessionKey);
+        JB4DCSession b4DSession = (JB4DCSession)request.getSession().getAttribute(UserLoginSessionKey);
         if(b4DSession == null) {
             return null;
         }
@@ -47,7 +47,7 @@ public class JB4DSessionUtility {
     public static void addSessionAttr(String key,Object value){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         if(request == null) {
-            throw new SessionTimeoutException();
+            throw new JBuild4DCSessionTimeoutException();
         }
         request.getSession().setAttribute(key,value);
     }
@@ -55,7 +55,7 @@ public class JB4DSessionUtility {
     public static Object getSessionAttr(String key){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         if(request == null) {
-            throw new SessionTimeoutException();
+            throw new JBuild4DCSessionTimeoutException();
         }
         return request.getSession().getAttribute(key);
     }
@@ -63,7 +63,7 @@ public class JB4DSessionUtility {
     public static boolean containKey(String key){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         if(request == null) {
-            throw new SessionTimeoutException();
+            throw new JBuild4DCSessionTimeoutException();
         }
         Object tempObj=request.getSession().getAttribute(key);
         if(tempObj==null){
@@ -78,7 +78,7 @@ public class JB4DSessionUtility {
     }
 
     public static void setUserInfoToMV(ModelAndView modelAndView) throws JsonProcessingException {
-        JB4DSession jb4DSession=getSession();
+        JB4DCSession jb4DSession=getSession();
         modelAndView.addObject("currUserEntity", JsonUtility.toObjectString(jb4DSession));
     }
 }

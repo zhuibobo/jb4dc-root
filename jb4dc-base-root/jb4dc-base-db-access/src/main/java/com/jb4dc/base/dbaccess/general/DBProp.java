@@ -1,7 +1,7 @@
 package com.jb4dc.base.dbaccess.general;
 
 import com.jb4dc.base.dbaccess.exenum.DBTypeEnum;
-import com.jb4dc.core.base.exception.JBuild4DGenerallyException;
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -79,27 +79,27 @@ public class DBProp {
         return getValue("Password");
     }
 
-    public static void validateConfig() throws JBuild4DGenerallyException {
+    public static void validateConfig() throws JBuild4DCGenerallyException {
         if(getDBType().equals("")){
-            throw new JBuild4DGenerallyException("DB.properties中的DBType不能为空!");
+            throw new JBuild4DCGenerallyException("DB.properties中的DBType不能为空!");
         }
         if(getDriverName().equals("")){
-            throw new JBuild4DGenerallyException("DB.properties中的DriverName不能为空!");
+            throw new JBuild4DCGenerallyException("DB.properties中的DriverName不能为空!");
         }
         if(getDatabaseName().equals("")){
-            throw new JBuild4DGenerallyException("DB.properties中的DatabaseName不能为空!");
+            throw new JBuild4DCGenerallyException("DB.properties中的DatabaseName不能为空!");
         }
         if(getUrl().equals("")){
-            throw new JBuild4DGenerallyException("DB.properties中的Url不能为空!");
+            throw new JBuild4DCGenerallyException("DB.properties中的Url不能为空!");
         }
         if(getUser().equals("")){
-            throw new JBuild4DGenerallyException("DB.properties中的User不能为空!");
+            throw new JBuild4DCGenerallyException("DB.properties中的User不能为空!");
         }
         if(getPassword().equals("")){
-            throw new JBuild4DGenerallyException("DB.properties中的Password不能为空!");
+            throw new JBuild4DCGenerallyException("DB.properties中的Password不能为空!");
         }
         if (getUrl().toLowerCase().indexOf(getDatabaseName().toLowerCase())<0){
-            throw new JBuild4DGenerallyException("请检查DB.properties中的DatabaseName与Url中配置的是否相同!");
+            throw new JBuild4DCGenerallyException("请检查DB.properties中的DatabaseName与Url中配置的是否相同!");
         }
     }
 }

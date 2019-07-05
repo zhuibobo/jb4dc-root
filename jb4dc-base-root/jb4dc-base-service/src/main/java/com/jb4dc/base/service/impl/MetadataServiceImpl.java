@@ -3,8 +3,8 @@ package com.jb4dc.base.service.impl;
 import com.jb4dc.base.dbaccess.general.DBProp;
 import com.jb4dc.base.service.IMetadataService;
 import com.jb4dc.base.service.ISQLBuilderService;
-import com.jb4dc.core.base.exception.JBuild4DGenerallyException;
-import com.jb4dc.core.base.session.JB4DSession;
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+import com.jb4dc.core.base.session.JB4DCSession;
 
 import java.util.List;
 import java.util.Map;
@@ -18,7 +18,7 @@ public class MetadataServiceImpl implements IMetadataService {
     }
 
     @Override
-    public String getTableComment(JB4DSession jb4DSession, String tableName) throws JBuild4DGenerallyException {
+    public String getTableComment(JB4DCSession jb4DSession, String tableName) throws JBuild4DCGenerallyException {
         String sql="";
         if(DBProp.isSqlServer()){
             //throw JBuild4DGenerallyException.getNotSupportMSSQLException();
@@ -32,7 +32,7 @@ public class MetadataServiceImpl implements IMetadataService {
             sql="SELECT * FROM information_schema.tables WHERE table_schema = '"+DBProp.getDatabaseName()+"' and table_name=#{tableName}";
         }
         else if(DBProp.isOracle()){
-            throw JBuild4DGenerallyException.getNotSupportOracleException();
+            throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
         Map<String, Object> tableInfo=sqlBuilderService.selectOne(sql,tableName);
         if(tableInfo!=null) {
@@ -44,7 +44,7 @@ public class MetadataServiceImpl implements IMetadataService {
     }
 
     @Override
-    public List<Map<String, Object>>  getTableFiledComment(String tableName) throws JBuild4DGenerallyException {
+    public List<Map<String, Object>>  getTableFiledComment(String tableName) throws JBuild4DCGenerallyException {
         String sql="";
         if(DBProp.isSqlServer()){
             sql="SELECT " +
@@ -57,10 +57,10 @@ public class MetadataServiceImpl implements IMetadataService {
                     "WHERE A.name = #{tableName}";
         }
         else if(DBProp.isMySql()){
-            throw JBuild4DGenerallyException.getNotSupportMySQLException();
+            throw JBuild4DCGenerallyException.getNotSupportMySQLException();
         }
         else if(DBProp.isOracle()){
-            throw JBuild4DGenerallyException.getNotSupportOracleException();
+            throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
         List<Map<String, Object>> fieldsInfo=sqlBuilderService.selectList(sql,tableName);
         return fieldsInfo;

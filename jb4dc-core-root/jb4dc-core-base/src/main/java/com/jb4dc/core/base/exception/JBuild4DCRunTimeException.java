@@ -1,26 +1,26 @@
 package com.jb4dc.core.base.exception;
 
-public class JBuild4DRunTimeException extends RuntimeException  {
+public class JBuild4DCRunTimeException extends RuntimeException  {
 
     /**
      * 错误码
      */
     private Integer errorCode;
 
-    public JBuild4DRunTimeException(String message) {
+    public JBuild4DCRunTimeException(String message) {
         super(message);
     }
 
-    public JBuild4DRunTimeException(Integer errorCode, String message) {
+    public JBuild4DCRunTimeException(Integer errorCode, String message) {
         super(message);
         this.errorCode = errorCode;
     }
 
-    public JBuild4DRunTimeException(String message, Throwable cause) {
+    public JBuild4DCRunTimeException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public JBuild4DRunTimeException(Integer errorCode, String message, Throwable cause) {
+    public JBuild4DCRunTimeException(Integer errorCode, String message, Throwable cause) {
         super(message, cause);
         this.errorCode = errorCode;
     }

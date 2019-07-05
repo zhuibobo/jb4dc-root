@@ -112,6 +112,7 @@
 <script>var appList = new Vue({
     el: "#appList",
     mounted: function () {
+        this.bindDataSource();
         this.reloadData();
         window.setTimeout(function () {
             appList.listHeight = ListPageUtility.GetGeneralPageHeight(-56);
@@ -176,6 +177,12 @@
         listHeight: ListPageUtility.DefaultListHeight()
     },
     methods: {
+        <!--绑定默认数据-->
+        bindDataSource:function() {
+            AjaxUtility.Get("/DataSource/GetConfig", {}, function (result) {
+                console.log(result);
+            });
+        },
         beginGenerateCode: function () {
             if (this.formValidate.tableName == "") {
                 return false;

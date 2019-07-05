@@ -10,7 +10,7 @@ var AjaxUtility={
     Post:function (_url,sendData,func,dataType,contentType,isAsync) {
         var url = BaseUtility.BuildAction(_url);
         if (dataType == undefined || dataType == null) {
-            dataType = "text";
+            dataType = "json";
         }
         if (isAsync == undefined || isAsync == null) {
             isAsync = true;
@@ -65,9 +65,9 @@ var AjaxUtility={
         this.Post(_url,sendData,func,dataType,false);
     },
     Get:function (_url,sendData,func,dataType,isAsync) {
-        var url = BaseUtility.BuildUrl(_url);
+        var url = BaseUtility.BuildAction(_url);
         if (dataType == undefined || dataType == null) {
-            dataType = "text";
+            dataType = "json";
         }
         if (isAsync == undefined || isAsync == null) {
             isAsync = true;
@@ -94,7 +94,7 @@ var AjaxUtility={
     Delete:function (_url,sendData,func,dataType,contentType,isAsync) {
         var url = BaseUtility.BuildAction(_url);
         if (dataType == undefined || dataType == null) {
-            dataType = "text";
+            dataType = "json";
         }
         if (isAsync == undefined || isAsync == null) {
             isAsync = true;

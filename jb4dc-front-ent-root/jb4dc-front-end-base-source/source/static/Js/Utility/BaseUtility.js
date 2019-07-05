@@ -82,7 +82,7 @@ var BaseUtility = {
         if (para) {
             urlPara = $.param(para);
         }
-        var _url = this.GetRootPath() + action + ".do";
+        var _url = this.GetRootPath() + action;
         if (urlPara != "") {
             _url += "?" + urlPara;
         }

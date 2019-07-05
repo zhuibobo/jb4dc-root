@@ -1,6 +1,6 @@
 package com.jb4dc.core.base.exception;
 
-public class JBuild4DErrorCode {
+public class JBuild4DCErrorCode {
 
     /**
      * 用户session过期

@@ -13,8 +13,8 @@ import com.jb4dc.code.generate.service.impl.codegenerate.CGMapperEX;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGServiceImpl;
 import com.jb4dc.code.generate.vo.CodeGenerateVo;
 import com.jb4dc.code.generate.vo.SimpleTableFieldVo;
-import com.jb4dc.core.base.exception.JBuild4DGenerallyException;
-import com.jb4dc.core.base.session.JB4DSession;
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.tools.DateUtility;
 import com.jb4dc.core.base.tools.StringUtility;
 import org.mybatis.generatorex.api.IntrospectedTable;
@@ -57,7 +57,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     }
 
     @Override
-    public PageInfo<List<Map<String, Object>>> getTables(JB4DSession jb4DSession, Integer pageNum, Integer pageSize, Map<String, Object> searchMap) throws JBuild4DGenerallyException {
+    public PageInfo<List<Map<String, Object>>> getTables(JB4DCSession jb4DSession, Integer pageNum, Integer pageSize, Map<String, Object> searchMap) throws JBuild4DCGenerallyException {
         String sql="";
 
         String searchTableName="%%";
@@ -71,7 +71,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             sql="select upper(table_name) TableName from information_schema.tables where table_schema='"+DBProp.getDatabaseName()+"' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
         }
         else if(DBProp.isOracle()){
-            throw JBuild4DGenerallyException.getNotSupportOracleException();
+            throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
         PageHelper.startPage(pageNum, pageSize);
         //PageHelper.
@@ -81,7 +81,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     }
 
     @Override
-    public List<SimpleTableFieldVo> getTableFields(JB4DSession jb4DSession, String tableName) throws JBuild4DGenerallyException {
+    public List<SimpleTableFieldVo> getTableFields(JB4DCSession jb4DSession, String tableName) throws JBuild4DCGenerallyException {
         String sql="";
         List<SimpleTableFieldVo> result=new ArrayList<>();
         if(DBProp.isSqlServer()){
@@ -91,7 +91,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             sql="select * from information_schema.columns where table_schema='"+DBProp.getDatabaseName()+"' and table_name=#{tableName}";
         }
         else if(DBProp.isOracle()){
-            throw JBuild4DGenerallyException.getNotSupportOracleException();
+            throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
         List<Map<String, Object>> fieldList=sqlBuilderService.selectList(sql,tableName);
         for (Map<String, Object> map : fieldList) {
@@ -238,7 +238,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     }
 
     @Override
-    public Map<String, String> getTableGenerateCode(JB4DSession jb4DSession, String tableName,String orderFieldName,String statusFieldName,String packageType,String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException {
+    public Map<String, String> getTableGenerateCode(JB4DCSession jb4DSession, String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException {
         //根据单表生成代码
         Map<String, String> generateCodeMap = new HashMap<>();
         List<String> warnings = new ArrayList<String>();

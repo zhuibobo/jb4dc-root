@@ -6,19 +6,19 @@ package com.jb4dc.core.base.exception;
  * Date: 2018/8/2
  * To change this template use File | Settings | File Templates.
  */
-public class JBuild4DSQLKeyWordException extends JBuild4DBaseException {
+public class JBuild4DCSQLKeyWordException extends JBuild4DCBaseException {
 
     static int defaultCode=100001;
 
-    public JBuild4DSQLKeyWordException(String message) {
+    public JBuild4DCSQLKeyWordException(String message) {
         super(defaultCode, message);
     }
 
-    public JBuild4DSQLKeyWordException(int errorCode, String message) {
+    public JBuild4DCSQLKeyWordException(int errorCode, String message) {
         super(errorCode, message);
     }
 
-    public JBuild4DSQLKeyWordException(int errorCode, String message, Throwable cause) {
+    public JBuild4DCSQLKeyWordException(int errorCode, String message, Throwable cause) {
         super(errorCode, message, cause);
     }
 }

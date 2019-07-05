@@ -2,8 +2,8 @@ package com.jb4dc.base.service;
 
 import com.github.pagehelper.PageInfo;
 import com.jb4dc.base.dbaccess.dao.BaseMapper;
-import com.jb4dc.core.base.exception.JBuild4DGenerallyException;
-import com.jb4dc.core.base.session.JB4DSession;
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+import com.jb4dc.core.base.session.JB4DCSession;
 import org.mybatis.spring.SqlSessionTemplate;
 
 import java.util.List;
@@ -23,41 +23,41 @@ public interface IBaseService<T> {
 
     void setDefaultBaseMapper(BaseMapper<T> _defaultBaseMapper);
 
-    int deleteByKey(JB4DSession jb4DSession, String id) throws JBuild4DGenerallyException;
+    int deleteByKey(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException;
 
-    int deleteByKeyNotValidate(JB4DSession jb4DSession, String id, String warningOperationCode) throws JBuild4DGenerallyException;
+    int deleteByKeyNotValidate(JB4DCSession jb4DSession, String id, String warningOperationCode) throws JBuild4DCGenerallyException;
 
-    int deleteAll(JB4DSession jb4DSession) throws JBuild4DGenerallyException;
+    int deleteAll(JB4DCSession jb4DSession) throws JBuild4DCGenerallyException;
 
-    int add(JB4DSession jb4DSession, T entity);
+    int add(JB4DCSession jb4DSession, T entity);
 
-    int addSelective(JB4DSession jb4DSession, T entity);
+    int addSelective(JB4DCSession jb4DSession, T entity);
 
-    T getByPrimaryKey(JB4DSession jb4DSession, String id) throws JBuild4DGenerallyException;
+    T getByPrimaryKey(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException;
 
-    int updateByKeySelective(JB4DSession jb4DSession, T entity);
+    int updateByKeySelective(JB4DCSession jb4DSession, T entity);
 
-    int updateByKey(JB4DSession jb4DSession, T entity);
+    int updateByKey(JB4DCSession jb4DSession, T entity);
 
-    int saveSimple(JB4DSession jb4DSession, String id, T entity) throws JBuild4DGenerallyException;
+    int saveSimple(JB4DCSession jb4DSession, String id, T entity) throws JBuild4DCGenerallyException;
 
-    int save(JB4DSession jb4DSession, String id, T entity, IAddBefore<T> addBefore) throws JBuild4DGenerallyException;
+    int save(JB4DCSession jb4DSession, String id, T entity, IAddBefore<T> addBefore) throws JBuild4DCGenerallyException;
 
-    int save(JB4DSession jb4DSession, String id, T entity, IAddBefore<T> addBefore, IUpdateBefore<T> updateBefore) throws JBuild4DGenerallyException;
+    int save(JB4DCSession jb4DSession, String id, T entity, IAddBefore<T> addBefore, IUpdateBefore<T> updateBefore) throws JBuild4DCGenerallyException;
 
-    PageInfo<T> getPage(JB4DSession jb4DSession, int pageNum, int pageSize);
+    PageInfo<T> getPage(JB4DCSession jb4DSession, int pageNum, int pageSize);
 
-    PageInfo<T> getPage(JB4DSession jb4DSession, int pageNum, int pageSize, Map<String, Object> searchItemMap);
+    PageInfo<T> getPage(JB4DCSession jb4DSession, int pageNum, int pageSize, Map<String, Object> searchItemMap);
 
-    List<T> getALL(JB4DSession jb4DSession);
+    List<T> getALL(JB4DCSession jb4DSession);
 
-    List<T> getALLASC(JB4DSession jb4DSession);
+    List<T> getALLASC(JB4DCSession jb4DSession);
 
-    int getNextOrderNum(JB4DSession jb4DSession);
+    int getNextOrderNum(JB4DCSession jb4DSession);
 
-    void statusChange(JB4DSession jb4DSession, String ids, String status) throws JBuild4DGenerallyException;
+    void statusChange(JB4DCSession jb4DSession, String ids, String status) throws JBuild4DCGenerallyException;
 
-    void moveUp(JB4DSession jb4DSession, String id) throws JBuild4DGenerallyException;
+    void moveUp(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException;
 
-    void moveDown(JB4DSession jb4DSession, String id) throws JBuild4DGenerallyException;
+    void moveDown(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException;
 }

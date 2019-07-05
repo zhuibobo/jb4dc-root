@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.List;
 import java.util.Map;
 
-public class JB4DSession implements Serializable {
+public class JB4DCSession implements Serializable {
 
     /**
      * 用户所在的组织ID
@@ -70,7 +70,7 @@ public class JB4DSession implements Serializable {
     /**
      * @return 拷贝Session对象
      */
-    public JB4DSession deepClone() {
+    public JB4DCSession deepClone() {
         Object o = null;
         try {
             if (this != null) {
@@ -88,7 +88,7 @@ public class JB4DSession implements Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return (JB4DSession) o;
+        return (JB4DCSession) o;
     }
 
     public String getOrganId() {
