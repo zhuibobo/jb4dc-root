@@ -40,6 +40,9 @@ public class CodeGenerateRest {
     public JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum,String dataSourceId, String searchTableName) throws IOException, ParseException, JBuild4DCGenerallyException, PropertyVetoException, JAXBException {
         //JB4DCSession jb4DSession = JB4DSessionUtility.getSession();
         //Map<String,Object> searchMap= GeneralSearchUtility.deserializationToMap(searchCondition);
+        if(dataSourceId==null||dataSourceId.equals("")){
+            return JBuild4DCResponseVo.error("请设置数据源!");
+        }
         PageInfo<List<Map<String, Object>>> proOrganPageInfo=codeGenerateService.getTables(dataSourceId,searchTableName,pageNum,pageSize);
         return JBuild4DCResponseVo.success("获取成功",proOrganPageInfo);
     }

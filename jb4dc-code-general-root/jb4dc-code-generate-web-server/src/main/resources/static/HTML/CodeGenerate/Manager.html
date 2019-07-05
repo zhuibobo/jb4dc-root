@@ -180,7 +180,7 @@
         tableData: [],
         selectionRows: null,
         pageTotal: 0,
-        pageSize: 1000,
+        pageSize: 1000,//由于后端没有处理分页,所以设置为1000,避免产生分页的情况
         pageNum: 1,
         listHeight: ListPageUtility.DefaultListHeight()
     },
@@ -194,7 +194,7 @@
         },
         changeDataSource:function(dataSourceId){
             //alert(dataSourceId);
-            this.reloadData(dataSourceId);
+            this.reloadData();
         },
         beginGenerateCode: function () {
             if (this.formValidate.tableName == "") {
@@ -224,12 +224,12 @@
         selectionChange: function (selection) {
             this.selectionRows = selection;
         },
-        reloadData: function (dataSourceId) {
+        reloadData: function () {
             //var url = '/ZdxtPlat/CodeGenerate/GetListData';
             //debugger;
             ListPageUtility.IViewTableLoadDataSearch(this.acInterface.getTableListUrl, this.pageNum, this.pageSize, null, this, this.idFieldName, true, null,null,{
                 searchTableName:this.searchTableName,
-                dataSourceId:dataSourceId
+                dataSourceId:this.selectedDataSourceId
             });
             //this.selectionRows=null;
         },
