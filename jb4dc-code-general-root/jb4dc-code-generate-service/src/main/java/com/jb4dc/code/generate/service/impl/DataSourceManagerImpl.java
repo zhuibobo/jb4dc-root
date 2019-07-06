@@ -23,6 +23,7 @@ import java.util.Map;
  * Date: 2019/7/5
  * To change this template use File | Settings | File Templates.
  */
+/*
 public class DataSourceManagerImpl implements IDataSourceManager {
 
     IDataSourceService dataSourceService;
@@ -35,13 +36,15 @@ public class DataSourceManagerImpl implements IDataSourceManager {
     public JdbcTemplate getJdbcTemplate(String dataSourceId) throws PropertyVetoException, FileNotFoundException, JAXBException {
         ComboPooledDataSource comboPooledDataSource=new ComboPooledDataSource();
         DataSourceSingleBO dataSourceSingleVo=dataSourceService.getDataSourceSingleConfig(dataSourceId);
-        /*if(dbLinkEntity.getDbIsLocation().equals(TrueFalseEnum.True.getDisplayName())){
+        */
+/*if(dbLinkEntity.getDbIsLocation().equals(TrueFalseEnum.True.getDisplayName())){
             dbLinkEntity.setDbDriverName(DBProp.getDriverName());
             dbLinkEntity.setDbDatabaseName(DBProp.getDatabaseName());
             dbLinkEntity.setDbUser(DBProp.getUser());
             dbLinkEntity.setDbPassword(DBProp.getPassword());
             dbLinkEntity.setDbUrl(DBProp.getUrl());
-        }*/
+        }*//*
+
 
         comboPooledDataSource.setDriverClass(dataSourceSingleVo.getDriverName());
         comboPooledDataSource.setJdbcUrl(dataSourceSingleVo.getUrl());
@@ -83,7 +86,8 @@ public class DataSourceManagerImpl implements IDataSourceManager {
     public List<Map<String,Object>> selectList(String dataSourceId, String sql,@Nullable Object... args) throws PropertyVetoException, FileNotFoundException, JAXBException {
         JdbcTemplate jdbcTemplate=getJdbcTemplate(dataSourceId);
         //jdbcTemplate.
-        /*List<Object> strLst=jdbcTemplate.query(sql, new RowMapper<Object>() {
+        */
+/*List<Object> strLst=jdbcTemplate.query(sql, new RowMapper<Object>() {
             @Override
             public Object mapRow(ResultSet resultSet, int i) throws SQLException {
                 return 1;
@@ -91,7 +95,9 @@ public class DataSourceManagerImpl implements IDataSourceManager {
         });
         if(strLst.isEmpty()){
             return null;
-        }*/
+        }*//*
+
         return jdbcTemplate.queryForList(sql,args);
     }
 }
+*/

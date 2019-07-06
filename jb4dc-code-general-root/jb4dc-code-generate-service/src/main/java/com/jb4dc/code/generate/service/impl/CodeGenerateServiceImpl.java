@@ -1,6 +1,11 @@
 package com.jb4dc.code.generate.service.impl;
 
 import com.github.pagehelper.PageInfo;
+import com.jb4dc.base.dbaccess.dynamic.ISQLBuilderMapper;
+import com.jb4dc.base.dbaccess.dynamic.impl.SQLBuilderMapper;
+import com.jb4dc.base.dbaccess.dynamic.impl.TemporarySqlSessionFactoryBuilder;
+import com.jb4dc.base.service.ISQLBuilderService;
+import com.jb4dc.base.service.impl.SQLBuilderServiceImpl;
 import com.jb4dc.base.tools.PathUtility;
 import com.jb4dc.code.generate.bo.DataSourceSingleBO;
 import com.jb4dc.code.generate.bo.PackageSingleBO;
@@ -16,6 +21,8 @@ import com.jb4dc.code.generate.service.impl.codegenerate.CGServiceImpl;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.tools.DateUtility;
 import com.jb4dc.core.base.tools.StringUtility;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.generatorex.api.IntrospectedTable;
 import org.mybatis.generatorex.api.MyBatisGenerator;
 import org.mybatis.generatorex.config.*;
@@ -52,10 +59,10 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     //ISQLBuilderService sqlBuilderService;
 
     IDataSourceService dataSourceService;
-    IDataSourceManager dataSourceManager;
+    //IDataSourceManager dataSourceManager;
     IPackageService packageService;
 
-    public CodeGenerateServiceImpl(IDataSourceService dataSourceService, IDataSourceManager dataSourceManager,IPackageService packageService) {
+    public CodeGenerateServiceImpl(IDataSourceService dataSourceService,IPackageService packageService) {
         //sqlBuilderService=_sqlBuilderService;
         //Select Name FROM SysObjects Where XType='U' orDER BY Name
         //DBType=MSSQLSERVER
@@ -63,7 +70,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         //#DBType=MYSQL
 
         this.dataSourceService=dataSourceService;
-        this.dataSourceManager=dataSourceManager;
+        //this.dataSourceManager=dataSourceManager;
         this.packageService=packageService;
     }
 
@@ -79,7 +86,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         }
         DataSourceSingleBO dataSourceSingleVo=dataSourceService.getDataSourceSingleConfig(dataSourceId);
         if(dataSourceSingleVo.getDbType().equals("sqlserver")){
-            sql="Select Name as TableName FROM SysObjects Where XType='U' and Name like ? order BY Name";
+            sql="Select Name as TableName FROM SysObjects Where XType='U' and Name like #{searchTableName} order BY Name";
         }
         if(dataSourceSingleVo.getDbType().equals("mysql")){
             sql="select upper(table_name) TableName from information_schema.tables where table_schema='"+dataSourceSingleVo.getDatabaseName()+"' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
@@ -89,7 +96,13 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         }
         //PageHelper.startPage(pageNum, pageSize);
         //PageHelper.
-        List<Map<String, Object>> list=dataSourceManager.selectList(dataSourceId,sql, _searchTableName);
+        SqlSessionFactory sqlSessionFactory = TemporarySqlSessionFactoryBuilder.build(dataSourceSingleVo.getDriverName(),dataSourceSingleVo.getUrl(),dataSourceSingleVo.getUser(),dataSourceSingleVo.getPassword());
+        SqlSession sqlSession=sqlSessionFactory.openSession();
+        ISQLBuilderMapper sqlBuilderMapper=new SQLBuilderMapper(sqlSession);
+        ISQLBuilderService sqlBuilderService=new SQLBuilderServiceImpl(sqlBuilderMapper);
+
+        List<Map<String, Object>> list=sqlBuilderService.selectList(sql, _searchTableName);
+
         PageInfo<List<Map<String, Object>>> pageInfo = new PageInfo(list);
         return pageInfo;
     }
@@ -108,7 +121,13 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         if(dataSourceSingleVo.getDbType().equals("oracle")){
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
-        List<Map<String, Object>> fieldList=dataSourceManager.selectList(dataSourceId,sql, tableName);
+
+        SqlSessionFactory sqlSessionFactory = TemporarySqlSessionFactoryBuilder.build(dataSourceSingleVo.getDriverName(),dataSourceSingleVo.getUrl(),dataSourceSingleVo.getUser(),dataSourceSingleVo.getPassword());
+        SqlSession sqlSession=sqlSessionFactory.openSession();
+        ISQLBuilderMapper sqlBuilderMapper=new SQLBuilderMapper(sqlSession);
+        ISQLBuilderService sqlBuilderService=new SQLBuilderServiceImpl(sqlBuilderMapper);
+
+        List<Map<String, Object>> fieldList=sqlBuilderService.selectList(sql, tableName);
         for (Map<String, Object> map : fieldList) {
             SimpleTableFieldBO simpleTableFieldVo=new SimpleTableFieldBO();
             simpleTableFieldVo.setTableName(map.get("TABLE_NAME").toString());
@@ -116,6 +135,9 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             simpleTableFieldVo.setFieldType(map.get("DATA_TYPE").toString());
             result.add(simpleTableFieldVo);
         }
+
+        sqlSession.close();
+
         return result;
     }
 

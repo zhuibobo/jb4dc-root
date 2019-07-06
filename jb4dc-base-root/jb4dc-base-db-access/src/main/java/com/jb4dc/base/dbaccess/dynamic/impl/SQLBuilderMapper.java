@@ -1,4 +1,4 @@
-package com.jb4dc.base.dbaccess.dynamic;
+package com.jb4dc.base.dbaccess.dynamic.impl;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,9 +7,9 @@ package com.jb4dc.base.dbaccess.dynamic;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.jb4dc.base.dbaccess.dynamic.ISQLBuilderMapper;
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;

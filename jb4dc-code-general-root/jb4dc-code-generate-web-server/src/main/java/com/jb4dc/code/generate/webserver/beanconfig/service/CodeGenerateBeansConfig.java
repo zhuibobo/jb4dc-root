@@ -1,13 +1,9 @@
 package com.jb4dc.code.generate.webserver.beanconfig.service;
 
-import com.jb4dc.base.service.IMetadataService;
-import com.jb4dc.base.service.impl.MetadataServiceImpl;
 import com.jb4dc.code.generate.service.ICodeGenerateService;
-import com.jb4dc.code.generate.service.IDataSourceManager;
 import com.jb4dc.code.generate.service.IDataSourceService;
 import com.jb4dc.code.generate.service.IPackageService;
 import com.jb4dc.code.generate.service.impl.CodeGenerateServiceImpl;
-import com.jb4dc.code.generate.service.impl.DataSourceManagerImpl;
 import com.jb4dc.code.generate.service.impl.DataSourceServiceImpl;
 import com.jb4dc.code.generate.service.impl.PackageServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -35,11 +31,11 @@ public class CodeGenerateBeansConfig {
         return packageService;
     }
 
-    @Bean
+    /*@Bean
     public IDataSourceManager dataSourceManager(){
         IDataSourceManager dataSourceManager=new DataSourceManagerImpl(dataSourceService());
         return dataSourceManager;
-    }
+    }*/
 
     /*@Bean
     public IMetadataService metadataService(){
@@ -48,7 +44,7 @@ public class CodeGenerateBeansConfig {
 
     @Bean
     public ICodeGenerateService codeGenerateService(){
-        ICodeGenerateService codeGenerateService=new CodeGenerateServiceImpl(dataSourceService(),dataSourceManager(),packageService());
+        ICodeGenerateService codeGenerateService=new CodeGenerateServiceImpl(dataSourceService(),packageService());
         return codeGenerateService;
     }
 }

@@ -16,18 +16,19 @@
 package org.mybatis.generatorex.internal.db;
 
 import com.jb4dc.base.dbaccess.dynamic.ISQLBuilderMapper;
-import com.jb4dc.base.dbaccess.dynamic.SQLBuilderMapper;
+import com.jb4dc.base.dbaccess.dynamic.impl.SQLBuilderMapper;
+import com.jb4dc.base.dbaccess.dynamic.impl.TemporarySqlSessionFactoryBuilder;
 import com.jb4dc.base.service.IMetadataService;
 import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.base.service.impl.MetadataServiceImpl;
 import com.jb4dc.base.service.impl.SQLBuilderServiceImpl;
-import com.jb4dc.base.tools.BeanUtility;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.exenum.DBTypeEnum;
 import com.jb4dc.core.base.list.IListWhereCondition;
 import com.jb4dc.core.base.list.ListUtility;
 import org.apache.ibatis.datasource.unpooled.UnpooledDataSource;
 import org.apache.ibatis.mapping.Environment;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
@@ -196,7 +197,7 @@ public class DatabaseIntrospector {
                         }
                         if(notanyComment){
 
-                            org.apache.ibatis.session.Configuration configuration=new org.apache.ibatis.session.Configuration();
+                            /*org.apache.ibatis.session.Configuration configuration=new org.apache.ibatis.session.Configuration();
 
                             TransactionFactory transactionFactory=new JdbcTransactionFactory();
                             //Connection dbConn= DriverManager.getConnection(context.getJdbcConnectionConfiguration().getConnectionURL(),context.getJdbcConnectionConfiguration().getUserId(),context.getJdbcConnectionConfiguration().getPassword());
@@ -206,15 +207,15 @@ public class DatabaseIntrospector {
                             Environment environment=new Environment("Environment1",transactionFactory,dataSource);
                             //configuration.setEnvironment(Env);
                             configuration.setEnvironment(environment);
-                            SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(configuration);
-                            ISQLBuilderMapper isqlBuilderMapper=new SQLBuilderMapper(sessionFactory.openSession());
-                            ISQLBuilderService isqlBuilderService=new SQLBuilderServiceImpl(isqlBuilderMapper);
-                            IMetadataService metadataService=new MetadataServiceImpl(isqlBuilderService);
+                            SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(configuration);*/
+                            SqlSessionFactory sqlSessionFactory= TemporarySqlSessionFactoryBuilder.build(context.getJdbcConnectionConfiguration().getDriverClass(),context.getJdbcConnectionConfiguration().getConnectionURL(),context.getJdbcConnectionConfiguration().getUserId(),context.getJdbcConnectionConfiguration().getPassword());
+                            SqlSession sqlSession=sqlSessionFactory.openSession();
 
-                            //IMetadataService metadataService= BeanUtility.getBean(IMetadataService.class);
+                            ISQLBuilderMapper sqlBuilderMapper=new SQLBuilderMapper(sqlSession);
+                            ISQLBuilderService sqlBuilderService=new SQLBuilderServiceImpl(sqlBuilderMapper);
+                            IMetadataService metadataService=new MetadataServiceImpl(sqlBuilderService);
+
                             try {
-
-                                //context.getJdbcConnectionConfiguration().
 
                                 List<Map<String,Object>> fieldsInfo=metadataService.getTableFiledComment(DBTypeEnum.sqlserver,tc.getTableName());
                                 for (IntrospectedColumn introspectedColumn : allIntrospectedColumnList) {
@@ -232,6 +233,9 @@ public class DatabaseIntrospector {
                                 }
                             } catch (JBuild4DCGenerallyException e) {
                                 e.printStackTrace();
+                            }
+                            finally {
+                                sqlSession.close();
                             }
                         }
                     }

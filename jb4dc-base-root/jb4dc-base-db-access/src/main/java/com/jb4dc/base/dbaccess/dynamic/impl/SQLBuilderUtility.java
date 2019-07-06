@@ -1,4 +1,4 @@
-package com.jb4dc.base.dbaccess.dynamic;
+package com.jb4dc.base.dbaccess.dynamic.impl;
 
 import org.apache.ibatis.builder.StaticSqlSource;
 import org.apache.ibatis.mapping.*;
