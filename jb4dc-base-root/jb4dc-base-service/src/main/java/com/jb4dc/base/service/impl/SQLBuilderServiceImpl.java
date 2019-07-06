@@ -1,7 +1,11 @@
 package com.jb4dc.base.service.impl;
 
 import com.jb4dc.base.dbaccess.dynamic.ISQLBuilderMapper;
+import com.jb4dc.base.dbaccess.dynamic.impl.SQLBuilderMapper;
+import com.jb4dc.base.dbaccess.dynamic.impl.TemporarySqlSessionFactoryBuilder;
 import com.jb4dc.base.service.ISQLBuilderService;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +14,7 @@ import java.util.Map;
 /**
  * Created with IntelliJ IDEA.
  * User: zhuangrb
- * Date: 2018/7/11
+ * Date: 2019/7/6
  * To change this template use File | Settings | File Templates.
  */
 
@@ -46,4 +50,5 @@ public class SQLBuilderServiceImpl implements ISQLBuilderService {
     public int execute(String sql){
         return sqlBuilderMapper.insert(sql);
     }
+
 }
