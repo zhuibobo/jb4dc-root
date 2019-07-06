@@ -1,13 +1,13 @@
 //Ajax处理工具类
 var AjaxUtility={
-    PostRequestBody:function (_url,sendData,func,dataType) {
-        this.Post(_url,sendData,func,dataType,"application/json; charset=utf-8");
+    PostRequestBody:function (_url,sendData,func,caller,dataType) {
+        this.Post(_url,sendData,func,caller,dataType,"application/json; charset=utf-8");
     },
-    PostSync:function (_url,sendData,func,dataType,contentType) {
-        var result=this.Post(_url,sendData,func,dataType,contentType,false);
+    PostSync:function (_url,sendData,func,caller,dataType,contentType) {
+        var result=this.Post(_url,sendData,func,dataType,caller,contentType,false);
         return result;
     },
-    Post:function (_url,sendData,func,dataType,contentType,isAsync) {
+    Post:function (_url,sendData,func,caller,dataType,contentType,isAsync) {
         var url = BaseUtility.BuildAction(_url);
         if (dataType == undefined || dataType == null) {
             dataType = "json";
@@ -40,7 +40,12 @@ var AjaxUtility={
                 catch(e) {
                     console.log("AjaxUtility.Post Exception "+url);
                 }
-                func(result);
+                if(caller){
+                    func.call(caller,result);
+                }
+                else {
+                    func(result);
+                }
                 try{
                     if(result.success==false){
                         DialogUtility.AlertError(window, DialogUtility.DialogAlertErrorId, {}, result.message, function () {})
@@ -69,10 +74,10 @@ var AjaxUtility={
         });
         return innerResult;
     },
-    GetSync:function (_url,sendData,func,dataType) {
-        this.Post(_url,sendData,func,dataType,false);
+    GetSync:function (_url,sendData,func,caller,dataType) {
+        this.Get(_url,sendData,func,caller,dataType,false);
     },
-    Get:function (_url,sendData,func,dataType,isAsync) {
+    Get:function (_url,sendData,func,caller,dataType,isAsync) {
         var url = BaseUtility.BuildAction(_url);
         if (dataType == undefined || dataType == null) {
             dataType = "json";
@@ -80,6 +85,7 @@ var AjaxUtility={
         if (isAsync == undefined || isAsync == null) {
             isAsync = true;
         }
+        var innerResult=null;
         $.ajax({
             type: "GET",
             url: url,
@@ -89,7 +95,33 @@ var AjaxUtility={
             dataType: dataType,
             data: sendData,
             success: function (result) {
-                func(result);
+                try{
+                    if(result!=null&&result.success!=null&&!result.success){
+                        if(result.message=="登录Session过期"){
+                            DialogUtility.Alert(window,DialogUtility.DialogAlertId,{},"Session超时，请重新登陆系统",function () {
+                                BaseUtility.RedirectToLogin();
+                            });
+                        }
+                    }
+                }
+                catch(e) {
+                    console.log("AjaxUtility.Post Exception "+url);
+                }
+                if(caller){
+                    func.call(caller,result);
+                }
+                else {
+                    func(result);
+                }
+                try{
+                    if(result.success==false){
+                        DialogUtility.AlertError(window, DialogUtility.DialogAlertErrorId, {}, result.message, function () {})
+                    }
+                }
+                catch (e) {
+
+                }
+                innerResult=result;
             },
             complete: function (msg) {
                 //debugger;
@@ -98,8 +130,9 @@ var AjaxUtility={
                 debugger;
             }
         });
+        return innerResult;
     },
-    Delete:function (_url,sendData,func,dataType,contentType,isAsync) {
+    Delete:function (_url,sendData,func,caller,dataType,contentType,isAsync) {
         var url = BaseUtility.BuildAction(_url);
         if (dataType == undefined || dataType == null) {
             dataType = "json";
@@ -132,7 +165,12 @@ var AjaxUtility={
                 catch(e) {
                     console.log("AjaxUtility.Post Exception "+url);
                 }
-                func(result);
+                if(caller){
+                    func.call(caller,result);
+                }
+                else {
+                    func(result);
+                }
                 innerResult=result;
             },
             complete: function (msg) {

@@ -14,9 +14,12 @@ public class FileUtility {
 
     public static InputStream getStreamByLevel(String filePath) throws FileNotFoundException {
         //"/builder/htmldesign/DesignThemesConfig.xml"
-        ApplicationHome home = new ApplicationHome(FileUtility.class);
-        File jarFile = home.getSource();
-        String fullPath=jarFile.getPath()+filePath;
+        //ApplicationHome home = new ApplicationHome(FileUtility.class);
+        //ApplicationHome home=new ApplicationHome();
+        //System.out.println("getDir:"+home.getDir().getPath());
+        //File jarFile = home.getSource();
+        String fullPath=PathUtility.getThreadRunRootPath()+filePath;
+        //System.out.println(fullPath);
         File file=new File(fullPath);
         if(file.exists()){
             return new FileInputStream(file);

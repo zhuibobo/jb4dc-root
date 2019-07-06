@@ -1,17 +1,19 @@
 package com.jb4dc.base.tools;
 
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class PathUtility {
 
-    private static WebApplicationContext context;
+    /*public static String getAppPath(){
+        ApplicationHome home = new ApplicationHome(PathUtility.class);
+        File jarFile = home.getSource();
+        return jarFile.getPath();
+    }*/
+
+    public static String getThreadRunRootPath(){
+        String path = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+        return path.substring(0,path.length()-1);
+    }
+
+    /*private static WebApplicationContext context;
 
     public static WebApplicationContext getContext() {
         return context;
@@ -45,5 +47,5 @@ public class PathUtility {
 
     public static URL getResource(String path) throws MalformedURLException {
         return getServletContext().getResource(path);
-    }
+    }*/
 }

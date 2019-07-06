@@ -122,7 +122,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     private String DaoRootFolderKey="DaoRootFolderKey";
     private String XmlRootFolderKey="XmlRootFolderKey";
     private Map<CodeGenerateTypeEnum, CodeGenerateBO> createAboutFolder(Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap){
-        String GenerateCodeFilesPath=PathUtility.getWebInfPath()+"/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
+        String GenerateCodeFilesPath=PathUtility.getThreadRunRootPath()+"/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
         File tempRootFolder=new File(GenerateCodeFilesPath);
         tempRootFolder.mkdirs();
 

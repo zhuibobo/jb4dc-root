@@ -124,7 +124,8 @@
             getDataSourceConfigUrl:"/Rest/DataSource/GetConfig",
             getPackageConfigUrl:"/Rest/Package/GetConfig",
             getTableListUrl:"/Rest/CodeGenerate/GetListData",
-            getTableFieldsUrl:"/Rest/CodeGenerate/GetTableFields"
+            getTableFieldsUrl:"/Rest/CodeGenerate/GetTableFields",
+            codeGenerateUrl:"/Rest/CodeGenerate/GetTableGenerateCode"
         },
         dataSource:[],
         selectedDataSourceId:"",
@@ -193,14 +194,15 @@
         bindDataSource:function() {
             AjaxUtility.Get(this.acInterface.getDataSourceConfigUrl, {}, function (result) {
                 //console.log(result);
-                appList.dataSource=result.data.dataSourceSingleVoList;
-            });
+                //debugger;
+                this.dataSource=result.data.dataSourceSingleVoList;
+            },this);
         },
         bindPackage:function(){
             AjaxUtility.Get(this.acInterface.getPackageConfigUrl, {}, function (result) {
-                console.log(result);
-                appList.package=result.data.packageSingleBOList;
-            });
+                //console.log(result);
+                this.package=result.data.packageSingleBOList;
+            },this);
         },
         changeDataSource:function(dataSourceId){
             //alert(dataSourceId);
@@ -210,25 +212,25 @@
             if (this.formValidate.tableName == "") {
                 return false;
             }
-            var _self = this;
-            _self.codeIsGenerateing = true;
-            var url = '/ZdxtPlat/CodeGenerate/GetTableGenerateCode';
-            AjaxUtility.Post(url, this.formValidate, function (result) {
+            //var _self = this;
+            //_self.codeIsGenerateing = true;
+            AjaxUtility.Post(this.acInterface.codeGenerateUrl, this.formValidate, function (result) {
                 if (result.success) {
-                    _self.generateCode.EntityContent = result.data.EntityContent;
-                    _self.generateCode.DaoContent = result.data.DaoContent;
-                    _self.generateCode.MapperACContent = result.data.MapperACContent;
-                    _self.generateCode.MapperEXContent = result.data.MapperEXContent;
-                    _self.generateCode.IServiceContent = "//逻辑接口\n" + result.data.IServiceContent + "\n\n//逻辑实现类\n" + result.data.ServiceImplContent;
+                    this.generateCode.EntityContent = result.data.EntityContent;
+                    this.generateCode.DaoContent = result.data.DaoContent;
+                    this.generateCode.MapperACContent = result.data.MapperACContent;
+                    this.generateCode.MapperEXContent = result.data.MapperEXContent;
+                    this.generateCode.IServiceContent = "//逻辑接口\n" + result.data.IServiceContent + "\n\n//逻辑实现类\n" + result.data.ServiceImplContent;
                     //_self.generateCode.ServiceImplContent = result.data.ServiceImplContent;
-                    _self.generateCode.EntityWithBLOBContent = result.data.EntityWithBLOBContent;
-                    _self.generateCode.CodeFragmentContent = result.data.CodeFragmentContent;
+                    this.generateCode.EntityWithBLOBContent = result.data.EntityWithBLOBContent;
+                    this.generateCode.CodeFragmentContent = result.data.CodeFragmentContent;
                 } else {
                     DialogUtility.AlertError(window, DialogUtility.DialogAlertId, {}, result.message, function () {
+
                     });
                 }
                 _self.codeIsGenerateing = false;
-            }, "json");
+            }, this);
         },
         <!--List-->
         selectionChange: function (selection) {
