@@ -254,6 +254,10 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
     @Override
     public Map<String, String> getTableGenerateCode(String dataSourceId,String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException, JAXBException {
+        if(!packageLevel2Name.equals("")){
+            packageLevel2Name="."+packageLevel2Name;
+        }
+
         DataSourceSingleBO dataSourceSingleBO=dataSourceService.getDataSourceSingleConfig(dataSourceId);
 
         //根据单表生成代码
@@ -290,21 +294,21 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
         //设置model的相关信息
         JavaModelGeneratorConfiguration javaModelGeneratorConfiguration=context.getJavaModelGeneratorConfiguration();
-        String modelPackageName=packageSingleBO.getEntity()+"."+packageLevel2Name;
+        String modelPackageName=packageSingleBO.getEntity()+packageLevel2Name;
         javaModelGeneratorConfiguration.setTargetPackage(modelPackageName);
         javaModelGeneratorConfiguration.setTargetProject(packageSingleBO.getEntitySavePath());
         context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 
         //设置dao的相关的信息
         JavaClientGeneratorConfiguration javaClientGeneratorConfiguration=context.getJavaClientGeneratorConfiguration();
-        String daoPackageName=packageSingleBO.getDao()+"."+packageLevel2Name;
+        String daoPackageName=packageSingleBO.getDao()+packageLevel2Name;
         javaClientGeneratorConfiguration.setTargetPackage(daoPackageName);
         javaClientGeneratorConfiguration.setTargetProject(packageSingleBO.getDaoSavePath());
         context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 
         //设置mapper的相关信息
         SqlMapGeneratorConfiguration sqlMapGeneratorConfiguration=context.getSqlMapGeneratorConfiguration();
-        String mapperPackageName=packageSingleBO.getMapperAC()+"."+packageLevel2Name;
+        String mapperPackageName=packageSingleBO.getMapperAC()+packageLevel2Name;
         sqlMapGeneratorConfiguration.setTargetPackage(mapperPackageName);
         sqlMapGeneratorConfiguration.setTargetProject(packageSingleBO.getMapperACSavePath());
         context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
