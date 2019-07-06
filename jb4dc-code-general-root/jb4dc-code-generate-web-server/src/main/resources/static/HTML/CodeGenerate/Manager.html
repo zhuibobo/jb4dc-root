@@ -124,7 +124,8 @@
         codeIsGenerateing: false,
         acInterface:{
             getDataSourceConfigUrl:"/Rest/DataSource/GetConfig",
-            getTableListUrl:"/Rest/CodeGenerate/GetListData"
+            getTableListUrl:"/Rest/CodeGenerate/GetListData",
+            getTableFieldsUrl:"/Rest/CodeGenerate/GetTableFields"
         },
         dataSource:[],
         selectedDataSourceId:"",
@@ -236,10 +237,10 @@
         selectedTable: function (tableName) {
             this.formValidate.tableName = tableName;
             var _self = this;
-            var url = '/ZdxtPlat/CodeGenerate/GetTableFields';
             _self.formValidate.orderFieldName = "";
             _self.formValidate.statusFieldName = "";
-            AjaxUtility.Post(url, this.formValidate, function (result) {
+            _self.formValidate.dataSourceId = this.selectedDataSourceId;
+            AjaxUtility.Post(this.acInterface.getTableFieldsUrl, this.formValidate, function (result) {
                 if (result.success) {
                     for (var i = 0; i < result.data.length; i++) {
                         var field = result.data[i];

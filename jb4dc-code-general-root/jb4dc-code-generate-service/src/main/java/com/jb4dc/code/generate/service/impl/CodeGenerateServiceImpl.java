@@ -101,16 +101,17 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     public List<SimpleTableFieldVo> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException {
         String sql="";
         List<SimpleTableFieldVo> result=new ArrayList<>();
-        if(DBProp.isSqlServer()){
-            sql="SELECT * FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME=#{tableName}";
+        DataSourceSingleVo dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
+        if(dataSourceSingleVo.getDbType().equals("sqlserver")){
+            sql="SELECT * FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME=?";
         }
-        else if(DBProp.isMySql()){
-            sql="select * from information_schema.columns where table_schema='"+DBProp.getDatabaseName()+"' and table_name=#{tableName}";
+        if(dataSourceSingleVo.getDbType().equals("mysql")){
+            sql="select * from information_schema.columns where table_schema='"+DBProp.getDatabaseName()+"' and table_name=?";
         }
-        else if(DBProp.isOracle()){
+        if(dataSourceSingleVo.getDbType().equals("oracle")){
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
-        List<Map<String, Object>> fieldList=dataSourceManager.selectList(dataSourceId,sql, new String[]{"1"});
+        List<Map<String, Object>> fieldList=dataSourceManager.selectList(dataSourceId,sql, tableName);
         for (Map<String, Object> map : fieldList) {
             SimpleTableFieldVo simpleTableFieldVo=new SimpleTableFieldVo();
             simpleTableFieldVo.setTableName(map.get("TABLE_NAME").toString());
