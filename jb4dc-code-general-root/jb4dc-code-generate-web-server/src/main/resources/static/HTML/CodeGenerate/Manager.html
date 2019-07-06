@@ -135,8 +135,8 @@
         },
         formValidate: {
             tableName: "",
-            packageType: "ZDXT-PlatForm",
-            packageLevel2Name: "system",
+            packageType: "",
+            packageLevel2Name: "",
             orderFieldName: "",
             statusFieldName: ""
         },
@@ -210,10 +210,15 @@
         },
         beginGenerateCode: function () {
             if (this.formValidate.tableName == "") {
+                DialogUtility.AlertText("请先选定表!");
+                return false;
+            }
+            if (this.formValidate.packageType == "") {
+                DialogUtility.AlertText("请先选定包名类型!");
                 return false;
             }
             //var _self = this;
-            //_self.codeIsGenerateing = true;
+            this.codeIsGenerateing = true;
             AjaxUtility.Post(this.acInterface.codeGenerateUrl, this.formValidate, function (result) {
                 if (result.success) {
                     this.generateCode.EntityContent = result.data.EntityContent;
@@ -229,7 +234,7 @@
 
                     });
                 }
-                _self.codeIsGenerateing = false;
+                this.codeIsGenerateing = false;
             }, this);
         },
         <!--List-->
@@ -237,8 +242,6 @@
             this.selectionRows = selection;
         },
         reloadData: function () {
-            //var url = '/ZdxtPlat/CodeGenerate/GetListData';
-            //debugger;
             ListPageUtility.IViewTableLoadDataSearch(this.acInterface.getTableListUrl, this.pageNum, this.pageSize, null, this, this.idFieldName, true, null,null,{
                 searchTableName:this.searchTableName,
                 dataSourceId:this.selectedDataSourceId
