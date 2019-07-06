@@ -6,6 +6,7 @@ import com.jb4dc.base.dbaccess.dynamic.impl.SQLBuilderMapper;
 import com.jb4dc.base.dbaccess.dynamic.impl.TemporarySqlSessionFactoryBuilder;
 import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.base.service.impl.SQLBuilderServiceImpl;
+import com.jb4dc.base.service.impl.TemporarySQLBuilderService;
 import com.jb4dc.base.tools.PathUtility;
 import com.jb4dc.code.generate.bo.DataSourceSingleBO;
 import com.jb4dc.code.generate.bo.PackageSingleBO;
@@ -78,30 +79,31 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
     @Override
     public PageInfo<List<Map<String, Object>>> getTables(String dataSourceId,String searchTableName,Integer pageNum, Integer pageSize) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException {
-        String sql="";
+        String sql = "";
 
-        String _searchTableName="%%";
-        if(searchTableName!=null&&!searchTableName.equals("")){
-            _searchTableName="%"+searchTableName+"%";
+        String _searchTableName = "%%";
+        if (searchTableName != null && !searchTableName.equals("")) {
+            _searchTableName = "%" + searchTableName + "%";
         }
-        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getDataSourceSingleConfig(dataSourceId);
-        if(dataSourceSingleVo.getDbType().equals("sqlserver")){
-            sql="Select Name as TableName FROM SysObjects Where XType='U' and Name like #{searchTableName} order BY Name";
+        DataSourceSingleBO dataSourceSingleVo = dataSourceService.getDataSourceSingleConfig(dataSourceId);
+        if (dataSourceSingleVo.getDbType().equals("sqlserver")) {
+            sql = "Select Name as TableName FROM SysObjects Where XType='U' and Name like #{searchTableName} order BY Name";
         }
-        if(dataSourceSingleVo.getDbType().equals("mysql")){
-            sql="select upper(table_name) TableName from information_schema.tables where table_schema='"+dataSourceSingleVo.getDatabaseName()+"' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
+        if (dataSourceSingleVo.getDbType().equals("mysql")) {
+            sql = "select upper(table_name) TableName from information_schema.tables where table_schema='" + dataSourceSingleVo.getDatabaseName() + "' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
         }
-        if(dataSourceSingleVo.getDbType().equals("oracle")){
+        if (dataSourceSingleVo.getDbType().equals("oracle")) {
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
         //PageHelper.startPage(pageNum, pageSize);
         //PageHelper.
-        SqlSessionFactory sqlSessionFactory = TemporarySqlSessionFactoryBuilder.build(dataSourceSingleVo.getDriverName(),dataSourceSingleVo.getUrl(),dataSourceSingleVo.getUser(),dataSourceSingleVo.getPassword());
+        /*SqlSessionFactory sqlSessionFactory = TemporarySqlSessionFactoryBuilder.build(dataSourceSingleVo.getDriverName(),dataSourceSingleVo.getUrl(),dataSourceSingleVo.getUser(),dataSourceSingleVo.getPassword());
         SqlSession sqlSession=sqlSessionFactory.openSession();
         ISQLBuilderMapper sqlBuilderMapper=new SQLBuilderMapper(sqlSession);
         ISQLBuilderService sqlBuilderService=new SQLBuilderServiceImpl(sqlBuilderMapper);
 
-        List<Map<String, Object>> list=sqlBuilderService.selectList(sql, _searchTableName);
+        List<Map<String, Object>> list=sqlBuilderService.selectList(sql, _searchTableName);*/
+        List<Map<String, Object>> list = TemporarySQLBuilderService.selectList(dataSourceSingleVo.getDriverName(), dataSourceSingleVo.getUrl(), dataSourceSingleVo.getUser(), dataSourceSingleVo.getPassword(), sql, _searchTableName);
 
         PageInfo<List<Map<String, Object>>> pageInfo = new PageInfo(list);
         return pageInfo;
