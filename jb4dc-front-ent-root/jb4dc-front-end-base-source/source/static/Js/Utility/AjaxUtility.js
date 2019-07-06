@@ -41,6 +41,14 @@ var AjaxUtility={
                     console.log("AjaxUtility.Post Exception "+url);
                 }
                 func(result);
+                try{
+                    if(result.success==false){
+                        DialogUtility.AlertError(window, DialogUtility.DialogAlertErrorId, {}, result.message, function () {})
+                    }
+                }
+                catch (e) {
+
+                }
                 innerResult=result;
             },
             complete: function (msg) {

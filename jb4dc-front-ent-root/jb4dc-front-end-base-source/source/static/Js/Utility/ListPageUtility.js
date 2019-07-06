@@ -236,7 +236,7 @@ var ListPageUtility={
                 }
                 else
                 {
-                    DialogUtility.AlertError(window, DialogUtility.DialogAlertId, {}, result.message, function () {});
+                    //DialogUtility.AlertError(window, DialogUtility.DialogAlertId, {}, result.message, function () {});
                 }
             }, "json");
     },

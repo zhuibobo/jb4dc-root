@@ -1,6 +1,7 @@
 //对话框工具类
 var DialogUtility={
     DialogAlertId:"DefaultDialogAlertUtility01",
+    DialogAlertErrorId:"DefaultDialogAlertErrorUtility01",
     DialogPromptId:"DefaultDialogPromptUtility01",
     DialogId:"DefaultDialogUtility01",
     DialogId02:"DefaultDialogUtility02",
@@ -59,8 +60,8 @@ var DialogUtility={
     },
     AlertError:function (opererWindow,dialogId,config,htmlmsg,sFunc) {
         var defaultConfig={
-            height: 400,
-            width: 600
+            height: 200,
+            width: 400
         };
         defaultConfig = $.extend(true, {}, defaultConfig, config);
         this.Alert(opererWindow,dialogId,defaultConfig,htmlmsg,sFunc);
