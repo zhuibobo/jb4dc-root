@@ -1,6 +1,4 @@
-package com.jb4dc.base.dbaccess.exenum;
-
-import com.jb4dc.core.base.exenum.BaseEnum;
+package com.jb4dc.core.base.exenum;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,26 +6,26 @@ import java.util.Map;
 /**
  * Created with IntelliJ IDEA.
  * User: zhuangrb
- * Date: 2018/7/17
+ * Date: 2018/7/26
  * To change this template use File | Settings | File Templates.
  */
-public enum MenuTypeEnum implements BaseEnum<EnableTypeEnum, Integer> {
-    Root(0,"根菜单"),
-    GroupTopMenu(1,"顶部分组"),
-    LeftGroup(2,"左侧分组"),
-    LeftMenu(3,"左侧菜单");
+public enum DBTypeEnum implements BaseEnum<DBTypeEnum, Integer> {
+
+    mysql(1,"mysql"),
+    sqlserver(0,"sqlserver"),
+    oracle(2,"oracle");
 
     private Integer value;
     private String displayName;
 
-    static Map<Integer,MenuTypeEnum> enumMap=new HashMap<Integer, MenuTypeEnum>();
+    static Map<String,DBTypeEnum> enumMap=new HashMap<String, DBTypeEnum>();
     static{
-        for(MenuTypeEnum type: MenuTypeEnum.values()){
-            enumMap.put(type.getValue(), type);
+        for(DBTypeEnum type: DBTypeEnum.values()){
+            enumMap.put(type.getDisplayName(), type);
         }
     }
 
-    private MenuTypeEnum(int value,String displayName) {
+    private DBTypeEnum(int value,String displayName) {
         this.value=value;
         this.displayName=displayName;
     }
@@ -45,7 +43,7 @@ public enum MenuTypeEnum implements BaseEnum<EnableTypeEnum, Integer> {
         this.displayName = displayName;
     }
 
-    public static MenuTypeEnum getEnum(Integer value) {
+    public static DBTypeEnum getEnum(Integer value) {
         return enumMap.get(value);
     }
 }

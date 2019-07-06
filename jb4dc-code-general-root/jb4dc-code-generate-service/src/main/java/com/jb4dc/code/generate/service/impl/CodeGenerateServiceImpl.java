@@ -1,19 +1,18 @@
 package com.jb4dc.code.generate.service.impl;
 
 import com.github.pagehelper.PageInfo;
-import com.jb4dc.base.dbaccess.general.DBProp;
 import com.jb4dc.base.tools.PathUtility;
-import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
+import com.jb4dc.code.generate.bo.DataSourceSingleBO;
+import com.jb4dc.code.generate.bo.PackageSingleBO;
+import com.jb4dc.code.generate.bo.SimpleTableFieldBO;
 import com.jb4dc.code.generate.service.ICodeGenerateService;
 import com.jb4dc.code.generate.service.IDataSourceManager;
 import com.jb4dc.code.generate.service.IDataSourceService;
+import com.jb4dc.code.generate.service.IPackageService;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGCodeFragment;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGIService;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGMapperEX;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGServiceImpl;
-import com.jb4dc.code.generate.bo.CodeGenerateBO;
-import com.jb4dc.code.generate.bo.DataSourceSingleBO;
-import com.jb4dc.code.generate.bo.SimpleTableFieldBO;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.tools.DateUtility;
 import com.jb4dc.core.base.tools.StringUtility;
@@ -54,8 +53,9 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
     IDataSourceService dataSourceService;
     IDataSourceManager dataSourceManager;
+    IPackageService packageService;
 
-    public CodeGenerateServiceImpl(IDataSourceService dataSourceService, IDataSourceManager dataSourceManager) {
+    public CodeGenerateServiceImpl(IDataSourceService dataSourceService, IDataSourceManager dataSourceManager,IPackageService packageService) {
         //sqlBuilderService=_sqlBuilderService;
         //Select Name FROM SysObjects Where XType='U' orDER BY Name
         //DBType=MSSQLSERVER
@@ -64,6 +64,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
         this.dataSourceService=dataSourceService;
         this.dataSourceManager=dataSourceManager;
+        this.packageService=packageService;
     }
 
 
@@ -81,7 +82,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             sql="Select Name as TableName FROM SysObjects Where XType='U' and Name like ? order BY Name";
         }
         if(dataSourceSingleVo.getDbType().equals("mysql")){
-            sql="select upper(table_name) TableName from information_schema.tables where table_schema='"+DBProp.getDatabaseName()+"' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
+            sql="select upper(table_name) TableName from information_schema.tables where table_schema='"+dataSourceSingleVo.getDatabaseName()+"' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
         }
         if(dataSourceSingleVo.getDbType().equals("oracle")){
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
@@ -102,7 +103,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             sql="SELECT * FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME=?";
         }
         if(dataSourceSingleVo.getDbType().equals("mysql")){
-            sql="select * from information_schema.columns where table_schema='"+DBProp.getDatabaseName()+"' and table_name=?";
+            sql="select * from information_schema.columns where table_schema='"+dataSourceSingleVo.getDatabaseName()+"' and table_name=?";
         }
         if(dataSourceSingleVo.getDbType().equals("oracle")){
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
@@ -121,35 +122,35 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     private String EntityRootFolderKey="EntityRootFolderKey";
     private String DaoRootFolderKey="DaoRootFolderKey";
     private String XmlRootFolderKey="XmlRootFolderKey";
-    private Map<CodeGenerateTypeEnum, CodeGenerateBO> createAboutFolder(Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap){
+    private PackageSingleBO createAboutFolder(PackageSingleBO packageSingleBO){
         String GenerateCodeFilesPath=PathUtility.getThreadRunRootPath()+"/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
         File tempRootFolder=new File(GenerateCodeFilesPath);
         tempRootFolder.mkdirs();
 
         Map<String,String> result=new HashMap<>();
         //Entity
-        String tempPath=GenerateCodeFilesPath+"/"+codeGenerateVoMap.get(CodeGenerateTypeEnum.Entity).saveFolderName;
+        String tempPath=GenerateCodeFilesPath+"/Entity";
         File temp=new File(tempPath);
         temp.mkdirs();
-        codeGenerateVoMap.get(CodeGenerateTypeEnum.Entity).setFullSavePath(tempPath);
+        packageSingleBO.setEntitySavePath(tempPath);
         //result.put(EntityRootFolderKey,tempPath);
 
         //Dao
-        tempPath=GenerateCodeFilesPath+"/"+codeGenerateVoMap.get(CodeGenerateTypeEnum.Dao).saveFolderName;
+        tempPath=GenerateCodeFilesPath+"/Dao";
         temp=new File(tempPath);
         temp.mkdirs();
-        codeGenerateVoMap.get(CodeGenerateTypeEnum.Dao).setFullSavePath(tempPath);
+        packageSingleBO.setDaoSavePath(tempPath);
 
         //XmlMapperAC
-        tempPath=GenerateCodeFilesPath+"/"+codeGenerateVoMap.get(CodeGenerateTypeEnum.MapperAC).saveFolderName;
+        tempPath=GenerateCodeFilesPath+"/XMLACMapper";
         temp=new File(tempPath);
         temp.mkdirs();
-        codeGenerateVoMap.get(CodeGenerateTypeEnum.MapperAC).setFullSavePath(tempPath);
+        packageSingleBO.setMapperACSavePath(tempPath);
 
-        return codeGenerateVoMap;
+        return packageSingleBO;
     }
 
-    @Override
+    /*@Override
     public IntrospectedTable getTableInfo(String tableName){
         Map<String, String> generateCodeMap = new HashMap<>();
         List<String> warnings = new ArrayList<String>();
@@ -207,7 +208,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         String mapperName=StringUtility.fisrtCharUpperThenLower(tableName)+"ACMapper";
         String daoMapperName=StringUtility.fisrtCharUpperThenLower(tableName)+"Mapper";
 
-        /*if(tableName.indexOf("_")>0){
+        *//*if(tableName.indexOf("_")>0){
             //String shortName=tableName.substring(tableName.indexOf("_")+1);
             String name="";
             String[] names=tableName.split("_");
@@ -217,7 +218,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             domainObjectName=name+"Entity";
             mapperName=name+"ACMapper";
             daoMapperName=name+"Mapper";
-        }*/
+        }*//*
         //设置表名称
         TableConfiguration tc = new TableConfiguration(context);
         tc.setTableName(tableName);
@@ -249,10 +250,12 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         List<IntrospectedTable> introspectedTableList=context.getIntrospectedTables();
         IntrospectedTable introspectedTable=introspectedTableList.get(0);
         return introspectedTable;
-    }
+    }*/
 
     @Override
-    public Map<String, String> getTableGenerateCode(String dataSourceId,String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException {
+    public Map<String, String> getTableGenerateCode(String dataSourceId,String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException, JAXBException {
+        DataSourceSingleBO dataSourceSingleBO=dataSourceService.getDataSourceSingleConfig(dataSourceId);
+
         //根据单表生成代码
         Map<String, String> generateCodeMap = new HashMap<>();
         List<String> warnings = new ArrayList<String>();
@@ -260,9 +263,9 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
         InputStream is = this.getClass().getClassLoader().getResourceAsStream("MybatisGenerator/generatorConfigToCode.xml");
 
-        Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap= CodeGenerateBO.generateTypeEnumCodeGenerateVoMap().get(packageType);
+        PackageSingleBO packageSingleBO= packageService.getPackageSingleBO(packageType);
 
-        codeGenerateVoMap=createAboutFolder(codeGenerateVoMap);
+        packageSingleBO=createAboutFolder(packageSingleBO);
 
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = null;
@@ -279,31 +282,31 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         Context context = config.getContexts().get(0);
         //设置数据库连接
         JDBCConnectionConfiguration jdbcConnectionConfiguration=new JDBCConnectionConfiguration();
-        jdbcConnectionConfiguration.setDriverClass(DBProp.getDriverName());
-        jdbcConnectionConfiguration.setConnectionURL(DBProp.getUrl());
-        jdbcConnectionConfiguration.setUserId(DBProp.getUser());
-        jdbcConnectionConfiguration.setPassword(DBProp.getPassword());
+        jdbcConnectionConfiguration.setDriverClass(dataSourceSingleBO.getDriverName());
+        jdbcConnectionConfiguration.setConnectionURL(dataSourceSingleBO.getUrl());
+        jdbcConnectionConfiguration.setUserId(dataSourceSingleBO.getUser());
+        jdbcConnectionConfiguration.setPassword(dataSourceSingleBO.getPassword());
         context.setJdbcConnectionConfiguration(jdbcConnectionConfiguration);
 
         //设置model的相关信息
         JavaModelGeneratorConfiguration javaModelGeneratorConfiguration=context.getJavaModelGeneratorConfiguration();
-        String modelPackageName=codeGenerateVoMap.get(CodeGenerateTypeEnum.Entity).packageName+"."+packageLevel2Name;
+        String modelPackageName=packageSingleBO.getEntity()+"."+packageLevel2Name;
         javaModelGeneratorConfiguration.setTargetPackage(modelPackageName);
-        javaModelGeneratorConfiguration.setTargetProject(codeGenerateVoMap.get(CodeGenerateTypeEnum.Entity).getFullSavePath());
+        javaModelGeneratorConfiguration.setTargetProject(packageSingleBO.getEntitySavePath());
         context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 
         //设置dao的相关的信息
         JavaClientGeneratorConfiguration javaClientGeneratorConfiguration=context.getJavaClientGeneratorConfiguration();
-        String daoPackageName=codeGenerateVoMap.get(CodeGenerateTypeEnum.Dao).packageName+"."+packageLevel2Name;
+        String daoPackageName=packageSingleBO.getDao()+"."+packageLevel2Name;
         javaClientGeneratorConfiguration.setTargetPackage(daoPackageName);
-        javaClientGeneratorConfiguration.setTargetProject(codeGenerateVoMap.get(CodeGenerateTypeEnum.Dao).getFullSavePath());
+        javaClientGeneratorConfiguration.setTargetProject(packageSingleBO.getDaoSavePath());
         context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 
         //设置mapper的相关信息
         SqlMapGeneratorConfiguration sqlMapGeneratorConfiguration=context.getSqlMapGeneratorConfiguration();
-        String mapperPackageName=codeGenerateVoMap.get(CodeGenerateTypeEnum.MapperAC).packageName+"."+packageLevel2Name;
+        String mapperPackageName=packageSingleBO.getMapperAC()+"."+packageLevel2Name;
         sqlMapGeneratorConfiguration.setTargetPackage(mapperPackageName);
-        sqlMapGeneratorConfiguration.setTargetProject(codeGenerateVoMap.get(CodeGenerateTypeEnum.MapperAC).getFullSavePath());
+        sqlMapGeneratorConfiguration.setTargetProject(packageSingleBO.getMapperACSavePath());
         context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
 
         String domainObjectName= StringUtility.fisrtCharUpperThenLower(tableName)+"Entity";
@@ -353,7 +356,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
         //读取文件作为结果返回
         //Entity文件
-        String tempPath=codeGenerateVoMap.get(CodeGenerateTypeEnum.Entity).fullSavePath+"/"+modelPackageName.replaceAll("\\.","/");
+        String tempPath=packageSingleBO.getEntitySavePath()+"/"+modelPackageName.replaceAll("\\.","/");
         logger.info("Entity生成路径:"+tempPath);
         generateCodeMap.put("EntityContent",readFolderSingleFileToString(tempPath));
 
@@ -365,11 +368,11 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             generateCodeMap.put("EntityWithBLOBContent","不存在二进制字段!");
         }
 
-        tempPath=codeGenerateVoMap.get(CodeGenerateTypeEnum.Dao).fullSavePath+"/"+daoPackageName.replaceAll("\\.","/");
+        tempPath=packageSingleBO.getDaoSavePath()+"/"+daoPackageName.replaceAll("\\.","/");
         logger.info("DAO生成路径:"+tempPath);
         generateCodeMap.put("DaoContent",readFolderSingleFileToString(tempPath));
 
-        tempPath=codeGenerateVoMap.get(CodeGenerateTypeEnum.MapperAC).fullSavePath+"/"+mapperPackageName.replaceAll("\\.","/");
+        tempPath=packageSingleBO.getMapperACSavePath()+"/"+mapperPackageName.replaceAll("\\.","/");
         logger.info("MAPPER生成路径:"+tempPath);
         generateCodeMap.put("MapperACContent",readFolderSingleFileToString(tempPath));
 
@@ -387,15 +390,15 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         IntrospectedTable introspectedTable=introspectedTableList.get(0);
         logger.info("---------------------------生成MapperEX:生成列数为"+introspectedTable.getNonPrimaryKeyColumns().size()+"---------------------------");
 
-        generateCodeMap.put("MapperEXContent", CGMapperEX.generate(keyFieldName,introspectedTable,tableName,orderFieldName,statusFieldName,codeGenerateVoMap,generateCodeMap.get("MapperACContent")));
+        generateCodeMap.put("MapperEXContent", CGMapperEX.generate(keyFieldName,introspectedTable,tableName,orderFieldName,statusFieldName,packageSingleBO,generateCodeMap.get("MapperACContent")));
         //生成IService
         logger.info("---------------------------生成IService---------------------------");
-        generateCodeMap.put("IServiceContent", CGIService.generate(introspectedTableList,tableName,orderFieldName,statusFieldName,codeGenerateVoMap,generateCodeMap.get("MapperACContent")));
+        generateCodeMap.put("IServiceContent", CGIService.generate(introspectedTableList,tableName,orderFieldName,statusFieldName,packageSingleBO,generateCodeMap.get("MapperACContent")));
         //生成ServiceImpl
         logger.info("---------------------------生成ServiceImpl---------------------------");
-        generateCodeMap.put("ServiceImplContent", CGServiceImpl.generate(introspectedTableList,tableName,orderFieldName,statusFieldName,codeGenerateVoMap,generateCodeMap.get("MapperACContent"),daoMapperName));
+        generateCodeMap.put("ServiceImplContent", CGServiceImpl.generate(introspectedTableList,tableName,orderFieldName,statusFieldName,packageSingleBO,generateCodeMap.get("MapperACContent"),daoMapperName));
         //生成Js实体片段
-        generateCodeMap.put("CodeFragmentContent", CGCodeFragment.generate(introspectedTableList,tableName,orderFieldName,statusFieldName,codeGenerateVoMap,generateCodeMap.get("MapperACContent"),daoMapperName));
+        generateCodeMap.put("CodeFragmentContent", CGCodeFragment.generate(introspectedTableList,tableName,orderFieldName,statusFieldName,packageSingleBO,generateCodeMap.get("MapperACContent"),daoMapperName));
         //生成ListHTML
 
 

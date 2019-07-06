@@ -1,5 +1,7 @@
 package com.jb4dc.base.dbaccess.exenum;
 
+import com.jb4dc.core.base.exenum.BaseEnum;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +11,7 @@ import java.util.Map;
  * Date: 2018/7/17
  * To change this template use File | Settings | File Templates.
  */
-public enum TrueFalseEnum implements BaseEnum<EnableTypeEnum, Integer>{
+public enum TrueFalseEnum implements BaseEnum<EnableTypeEnum, Integer> {
     True(1,true,"是"),
     False(0,false,"否");
 

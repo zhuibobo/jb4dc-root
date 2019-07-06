@@ -28,11 +28,20 @@ public class PackageSingleBO {
     @XmlAttribute(name = "entity")
     private String entity;
 
+    @XmlTransient
+    private String entitySavePath;
+
     @XmlAttribute(name = "dao")
     private String dao;
 
+    @XmlTransient
+    private String daoSavePath;
+
     @XmlAttribute(name = "mapperAC")
     private String mapperAC;
+
+    @XmlTransient
+    private String mapperACSavePath;
 
     @XmlElement(name = "PackageLevel2Name")
     private List<PackageLevel2BO> packageLevel2BOList;
@@ -75,5 +84,29 @@ public class PackageSingleBO {
 
     public void setPackageLevel2BOList(List<PackageLevel2BO> packageLevel2BOList) {
         this.packageLevel2BOList = packageLevel2BOList;
+    }
+
+    public String getEntitySavePath() {
+        return entitySavePath;
+    }
+
+    public void setEntitySavePath(String entitySavePath) {
+        this.entitySavePath = entitySavePath;
+    }
+
+    public String getDaoSavePath() {
+        return daoSavePath;
+    }
+
+    public void setDaoSavePath(String daoSavePath) {
+        this.daoSavePath = daoSavePath;
+    }
+
+    public String getMapperACSavePath() {
+        return mapperACSavePath;
+    }
+
+    public void setMapperACSavePath(String mapperACSavePath) {
+        this.mapperACSavePath = mapperACSavePath;
     }
 }

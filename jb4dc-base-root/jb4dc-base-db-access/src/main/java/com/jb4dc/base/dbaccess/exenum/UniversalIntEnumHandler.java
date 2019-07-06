@@ -1,5 +1,6 @@
 package com.jb4dc.base.dbaccess.exenum;
 
+import com.jb4dc.core.base.exenum.BaseEnum;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 

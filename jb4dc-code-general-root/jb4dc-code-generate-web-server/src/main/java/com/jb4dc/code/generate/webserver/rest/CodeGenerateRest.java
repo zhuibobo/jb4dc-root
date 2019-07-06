@@ -45,7 +45,7 @@ public class CodeGenerateRest {
     }
 
     @RequestMapping(value = "/GetTableGenerateCode", method = RequestMethod.POST)
-    public JBuild4DCResponseVo getTableGenerateCode(String dataSourceId,String tableName,String packageType,String packageLevel2Name,String orderFieldName,String statusFieldName) throws IOException, ParseException, XPathExpressionException, SAXException, ParserConfigurationException {
+    public JBuild4DCResponseVo getTableGenerateCode(String dataSourceId,String tableName,String packageType,String packageLevel2Name,String orderFieldName,String statusFieldName) throws IOException, ParseException, XPathExpressionException, SAXException, ParserConfigurationException, JAXBException {
         //JB4DCSession jb4DSession = JB4DSessionUtility.getSession();
         Map<String,String> result=codeGenerateService.getTableGenerateCode(dataSourceId,tableName,orderFieldName,statusFieldName,packageType,packageLevel2Name);
         return JBuild4DCResponseVo.success("获取成功",result);

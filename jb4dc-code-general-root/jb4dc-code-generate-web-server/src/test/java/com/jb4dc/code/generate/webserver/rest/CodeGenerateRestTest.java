@@ -65,5 +65,6 @@ public class CodeGenerateRestTest extends RestTestBase {
         requestBuilder.param("statusFieldName","DS_STATUS");
         requestBuilder.param("dataSourceId","DataSource0001");
         MvcResult result=mockMvc.perform(requestBuilder).andReturn();
+        System.out.println(result.getResponse().getContentAsString());
     }
 }

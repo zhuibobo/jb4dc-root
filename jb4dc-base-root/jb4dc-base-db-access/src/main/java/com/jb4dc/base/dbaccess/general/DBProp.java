@@ -1,14 +1,8 @@
 package com.jb4dc.base.dbaccess.general;
 
-import com.jb4dc.base.dbaccess.exenum.DBTypeEnum;
-import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+//import com.jb4dc.base.dbaccess.exenum.DBTypeEnum;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-
-public class DBProp {
+/*public class DBProp {
     private static Properties propertie;
     private static final String filePath = "DB.properties";
 
@@ -102,4 +96,4 @@ public class DBProp {
             throw new JBuild4DCGenerallyException("请检查DB.properties中的DatabaseName与Url中配置的是否相同!");
         }
     }
-}
+}*/

@@ -1,5 +1,7 @@
 package com.jb4dc.code.generate.webserver.beanconfig.service;
 
+import com.jb4dc.base.service.IMetadataService;
+import com.jb4dc.base.service.impl.MetadataServiceImpl;
 import com.jb4dc.code.generate.service.ICodeGenerateService;
 import com.jb4dc.code.generate.service.IDataSourceManager;
 import com.jb4dc.code.generate.service.IDataSourceService;
@@ -39,9 +41,14 @@ public class CodeGenerateBeansConfig {
         return dataSourceManager;
     }
 
+    /*@Bean
+    public IMetadataService metadataService(){
+        IMetadataService metadataService=new MetadataServiceImpl();
+    }*/
+
     @Bean
     public ICodeGenerateService codeGenerateService(){
-        ICodeGenerateService codeGenerateService=new CodeGenerateServiceImpl(dataSourceService(),dataSourceManager());
+        ICodeGenerateService codeGenerateService=new CodeGenerateServiceImpl(dataSourceService(),dataSourceManager(),packageService());
         return codeGenerateService;
     }
 }

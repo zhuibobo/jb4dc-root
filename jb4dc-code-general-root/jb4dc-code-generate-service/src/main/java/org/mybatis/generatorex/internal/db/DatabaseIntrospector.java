@@ -15,12 +15,23 @@
  */
 package org.mybatis.generatorex.internal.db;
 
-import com.jb4dc.base.dbaccess.general.DBProp;
+import com.jb4dc.base.dbaccess.dynamic.ISQLBuilderMapper;
+import com.jb4dc.base.dbaccess.dynamic.SQLBuilderMapper;
 import com.jb4dc.base.service.IMetadataService;
+import com.jb4dc.base.service.ISQLBuilderService;
+import com.jb4dc.base.service.impl.MetadataServiceImpl;
+import com.jb4dc.base.service.impl.SQLBuilderServiceImpl;
 import com.jb4dc.base.tools.BeanUtility;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+import com.jb4dc.core.base.exenum.DBTypeEnum;
 import com.jb4dc.core.base.list.IListWhereCondition;
 import com.jb4dc.core.base.list.ListUtility;
+import org.apache.ibatis.datasource.unpooled.UnpooledDataSource;
+import org.apache.ibatis.mapping.Environment;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.transaction.TransactionFactory;
+import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.mybatis.generatorex.api.FullyQualifiedTable;
 import org.mybatis.generatorex.api.IntrospectedColumn;
 import org.mybatis.generatorex.api.IntrospectedTable;
@@ -32,10 +43,8 @@ import org.mybatis.generatorex.internal.ObjectFactory;
 import org.mybatis.generatorex.logging.Log;
 import org.mybatis.generatorex.logging.LogFactory;
 
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
+import javax.sql.DataSource;
+import java.sql.*;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -171,7 +180,7 @@ public class DatabaseIntrospector {
         Map<ActualTableName, List<IntrospectedColumn>> columns = getColumns(tc);
 
         //如果获取不到备注字段,尝试重新获取
-        if(DBProp.isSqlServer()){
+        if(context.getJdbcConnectionConfiguration().getDriverClass().toLowerCase().equals("com.microsoft.sqlserver.jdbc.sqlserverdriver")){
             /*for (ActualTableName actualTableName : columns.keySet()) {
                 actualTableName.
             }*/
@@ -186,9 +195,28 @@ public class DatabaseIntrospector {
                             }
                         }
                         if(notanyComment){
-                            IMetadataService metadataService= BeanUtility.getBean(IMetadataService.class);
+
+                            org.apache.ibatis.session.Configuration configuration=new org.apache.ibatis.session.Configuration();
+
+                            TransactionFactory transactionFactory=new JdbcTransactionFactory();
+                            //Connection dbConn= DriverManager.getConnection(context.getJdbcConnectionConfiguration().getConnectionURL(),context.getJdbcConnectionConfiguration().getUserId(),context.getJdbcConnectionConfiguration().getPassword());
+                            DataSource dataSource=new UnpooledDataSource(context.getJdbcConnectionConfiguration().getDriverClass(),context.getJdbcConnectionConfiguration().getConnectionURL(),context.getJdbcConnectionConfiguration().getUserId(),context.getJdbcConnectionConfiguration().getPassword());
+                            //dataSource.set
+
+                            Environment environment=new Environment("Environment1",transactionFactory,dataSource);
+                            //configuration.setEnvironment(Env);
+                            configuration.setEnvironment(environment);
+                            SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(configuration);
+                            ISQLBuilderMapper isqlBuilderMapper=new SQLBuilderMapper(sessionFactory.openSession());
+                            ISQLBuilderService isqlBuilderService=new SQLBuilderServiceImpl(isqlBuilderMapper);
+                            IMetadataService metadataService=new MetadataServiceImpl(isqlBuilderService);
+
+                            //IMetadataService metadataService= BeanUtility.getBean(IMetadataService.class);
                             try {
-                                List<Map<String,Object>> fieldsInfo=metadataService.getTableFiledComment(tc.getTableName());
+
+                                //context.getJdbcConnectionConfiguration().
+
+                                List<Map<String,Object>> fieldsInfo=metadataService.getTableFiledComment(DBTypeEnum.sqlserver,tc.getTableName());
                                 for (IntrospectedColumn introspectedColumn : allIntrospectedColumnList) {
                                     Map<String,Object> singleFieldInfo= ListUtility.WhereSingle(fieldsInfo, new IListWhereCondition<Map<String, Object>>() {
                                         @Override

@@ -1,7 +1,7 @@
 package com.jb4dc.code.generate.service.impl.codegenerate;
 
+import com.jb4dc.code.generate.bo.PackageSingleBO;
 import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
-import com.jb4dc.code.generate.bo.CodeGenerateBO;
 import com.jb4dc.core.base.tools.StringUtility;
 import org.mybatis.generatorex.api.IntrospectedColumn;
 import org.mybatis.generatorex.api.IntrospectedTable;
@@ -17,14 +17,14 @@ import java.util.Map;
  */
 public class CGCodeFragment {
     public static String generate(List<IntrospectedTable> introspectedTableList, String tableName, String orderFieldName, String statusFieldName,
-                                  Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap, String xmlMapperACStr, String daoMapperName){
+                                  PackageSingleBO packageSingleBO, String xmlMapperACStr, String daoMapperName){
         StringBuilder builder=new StringBuilder();
-        builder.append(generateJsBean(introspectedTableList,tableName,orderFieldName,statusFieldName,codeGenerateVoMap,xmlMapperACStr,daoMapperName));
+        builder.append(generateJsBean(introspectedTableList,tableName,orderFieldName,statusFieldName,packageSingleBO,xmlMapperACStr,daoMapperName));
         return builder.toString();
     }
 
     private static String generateJsBean(List<IntrospectedTable> introspectedTableList, String tableName, String orderFieldName, String statusFieldName,
-                                         Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap, String xmlMapperACStr, String daoMapperName){
+                                         PackageSingleBO packageSingleBO, String xmlMapperACStr, String daoMapperName){
         StringBuilder builder=new StringBuilder();
 
         IntrospectedTable introspectedTable=introspectedTableList.get(0);

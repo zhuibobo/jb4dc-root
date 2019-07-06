@@ -1,10 +1,9 @@
 package com.jb4dc.base.service.impl;
 
-import com.jb4dc.base.dbaccess.general.DBProp;
 import com.jb4dc.base.service.IMetadataService;
 import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
-import com.jb4dc.core.base.session.JB4DCSession;
+import com.jb4dc.core.base.exenum.DBTypeEnum;
 
 import java.util.List;
 import java.util.Map;
@@ -18,9 +17,9 @@ public class MetadataServiceImpl implements IMetadataService {
     }
 
     @Override
-    public String getTableComment(JB4DCSession jb4DSession, String tableName) throws JBuild4DCGenerallyException {
+    public String getTableComment(DBTypeEnum dbType, String tableName, String dataBaseName) throws JBuild4DCGenerallyException {
         String sql="";
-        if(DBProp.isSqlServer()){
+        if(dbType==DBTypeEnum.sqlserver){
             //throw JBuild4DGenerallyException.getNotSupportMSSQLException();
             sql="SELECT " +
                     "convert(nvarchar(100), A.name) TABLE_NAME,"+
@@ -28,10 +27,10 @@ public class MetadataServiceImpl implements IMetadataService {
                     "FROM sys.tables A " +
                     "inner JOIN sys.extended_properties C ON C.major_id = A.object_id  and minor_id=0 and A.name='"+tableName+"'";
         }
-        else if(DBProp.isMySql()){
-            sql="SELECT * FROM information_schema.tables WHERE table_schema = '"+DBProp.getDatabaseName()+"' and table_name=#{tableName}";
+        else if(dbType==DBTypeEnum.mysql){
+            sql="SELECT * FROM information_schema.tables WHERE table_schema = '"+dataBaseName+"' and table_name=#{tableName}";
         }
-        else if(DBProp.isOracle()){
+        else if(dbType==DBTypeEnum.oracle){
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
         Map<String, Object> tableInfo=sqlBuilderService.selectOne(sql,tableName);
@@ -44,9 +43,9 @@ public class MetadataServiceImpl implements IMetadataService {
     }
 
     @Override
-    public List<Map<String, Object>>  getTableFiledComment(String tableName) throws JBuild4DCGenerallyException {
+    public List<Map<String, Object>>  getTableFiledComment(DBTypeEnum dbType,String tableName) throws JBuild4DCGenerallyException {
         String sql="";
-        if(DBProp.isSqlServer()){
+        if(dbType==DBTypeEnum.sqlserver){
             sql="SELECT " +
                     "convert(nvarchar(100),A.name) AS TABLE_NAME," +
                     "convert(nvarchar(100),B.name) AS COLUMN_NAME," +
@@ -56,10 +55,10 @@ public class MetadataServiceImpl implements IMetadataService {
                     "LEFT JOIN sys.extended_properties C ON C.major_id = B.object_id AND C.minor_id = B.column_id " +
                     "WHERE A.name = #{tableName}";
         }
-        else if(DBProp.isMySql()){
+        else if(dbType==DBTypeEnum.mysql){
             throw JBuild4DCGenerallyException.getNotSupportMySQLException();
         }
-        else if(DBProp.isOracle()){
+        else if(dbType==DBTypeEnum.oracle){
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
         }
         List<Map<String, Object>> fieldsInfo=sqlBuilderService.selectList(sql,tableName);

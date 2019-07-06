@@ -28,7 +28,7 @@ public interface ICodeGenerateService {
 
     //String getTableComment(JB4DSession jb4DSession, String tableName) throws JBuild4DGenerallyException;
 
-    IntrospectedTable getTableInfo(String tableName);
+    //IntrospectedTable getTableInfo(String tableName);
 
-    Map<String,String> getTableGenerateCode(String dataSourceId, String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException;
+    Map<String,String> getTableGenerateCode(String dataSourceId, String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException, JAXBException;
 }

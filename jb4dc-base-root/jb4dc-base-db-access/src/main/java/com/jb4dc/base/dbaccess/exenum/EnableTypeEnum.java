@@ -1,5 +1,7 @@
 package com.jb4dc.base.dbaccess.exenum;
 
+import com.jb4dc.core.base.exenum.BaseEnum;
+
 import java.util.HashMap;
 import java.util.Map;
 
