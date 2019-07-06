@@ -54,23 +54,21 @@
                             <i-input v-model="formValidate.tableName"></i-input>
                         </i-col>
                         <i-col span="3" style="text-align:center;padding-top:6px">包名类型：</i-col>
-                        <i-col span="9">
-                            <radio-group v-model="formValidate.packageType" vertical>
-                                <radio label="ZDXT-PlatForm"><span>ZDXT-PlatForm</span></radio>
-                                <radio label="ZDXT-Project"><span>ZDXT-Project</span></radio>
-                            </radio-group>
+                        <i-col span="4">
+                            <i-select v-model="formValidate.packageType" @on-change="changePackage" style="width:90%">
+                                <i-option v-for="item in package" :value="item.name" :key="item.name">{{ item.name }}</i-option>
+                            </i-select>
+                        </i-col>
+                        <i-col span="5">
+                            <i-select v-model="formValidate.packageLevel2Name">
+                                <i-option v-for="item in selectedPackage.packageLevel2BOList" :value="item.value" :key="item.value">{{ item.value }}</i-option>
+                            </i-select>
                         </i-col>
                     </row>
                     <row>
-                        <i-col span="2" style="text-align:center">二级包名：</i-col>
+                        <i-col span="2" style="text-align:center"></i-col>
                         <i-col span="22" style="margin-bottom:14px">
-                            <radio-group v-model="formValidate.packageLevel2Name">
-                                <radio label="category"><span>category</span></radio>
-                                <radio label="devmock"><span>devmock</span></radio>
-                                <radio label="sso"><span>sso</span></radio>
-                                <radio label="system"><span>system</span></radio>
-                                <radio label="file"><span>file</span></radio>
-                            </radio-group>
+
                         </i-col>
                     </row>
                     <row>
@@ -114,7 +112,7 @@
     el: "#appList",
     mounted: function () {
         this.bindDataSource();
-
+        this.bindPackage();
         window.setTimeout(function () {
             appList.listHeight = ListPageUtility.GetGeneralPageHeight(-56);
             $("[name='txtAreaCode']").css("height", appList.listHeight - 160);
@@ -124,11 +122,16 @@
         codeIsGenerateing: false,
         acInterface:{
             getDataSourceConfigUrl:"/Rest/DataSource/GetConfig",
+            getPackageConfigUrl:"/Rest/Package/GetConfig",
             getTableListUrl:"/Rest/CodeGenerate/GetListData",
             getTableFieldsUrl:"/Rest/CodeGenerate/GetTableFields"
         },
         dataSource:[],
         selectedDataSourceId:"",
+        package:[],
+        selectedPackage:{
+            packageLevel2BOList:[]
+        },
         formValidate: {
             tableName: "",
             packageType: "ZDXT-PlatForm",
@@ -189,8 +192,14 @@
         <!--绑定默认数据-->
         bindDataSource:function() {
             AjaxUtility.Get(this.acInterface.getDataSourceConfigUrl, {}, function (result) {
-                console.log(result);
+                //console.log(result);
                 appList.dataSource=result.data.dataSourceSingleVoList;
+            });
+        },
+        bindPackage:function(){
+            AjaxUtility.Get(this.acInterface.getPackageConfigUrl, {}, function (result) {
+                console.log(result);
+                appList.package=result.data.packageSingleBOList;
             });
         },
         changeDataSource:function(dataSourceId){
@@ -261,6 +270,13 @@
             this.pageNum = pageNum;
             this.reloadData();
             this.selectionRows = null;
+        },
+        changePackage:function(packageName){
+            for(var i=0;i<this.package.length;i++){
+                if(this.package[i].name==packageName){
+                    this.selectedPackage=this.package[i];
+                }
+            }
         },
         search: function () {
             this.pageNum = 1;

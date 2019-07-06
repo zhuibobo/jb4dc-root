@@ -76,7 +76,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         if(searchTableName!=null&&!searchTableName.equals("")){
             _searchTableName="%"+searchTableName+"%";
         }
-        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
+        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getDataSourceSingleConfig(dataSourceId);
         if(dataSourceSingleVo.getDbType().equals("sqlserver")){
             sql="Select Name as TableName FROM SysObjects Where XType='U' and Name like ? order BY Name";
         }
@@ -97,7 +97,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     public List<SimpleTableFieldBO> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException {
         String sql="";
         List<SimpleTableFieldBO> result=new ArrayList<>();
-        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
+        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getDataSourceSingleConfig(dataSourceId);
         if(dataSourceSingleVo.getDbType().equals("sqlserver")){
             sql="SELECT * FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME=?";
         }

@@ -34,7 +34,7 @@ public class DataSourceManagerImpl implements IDataSourceManager {
     @Override
     public JdbcTemplate getJdbcTemplate(String dataSourceId) throws PropertyVetoException, FileNotFoundException, JAXBException {
         ComboPooledDataSource comboPooledDataSource=new ComboPooledDataSource();
-        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
+        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getDataSourceSingleConfig(dataSourceId);
         /*if(dbLinkEntity.getDbIsLocation().equals(TrueFalseEnum.True.getDisplayName())){
             dbLinkEntity.setDbDriverName(DBProp.getDriverName());
             dbLinkEntity.setDbDatabaseName(DBProp.getDatabaseName());

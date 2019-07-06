@@ -34,7 +34,7 @@ public class DataSourceServiceImpl implements IDataSourceService {
     }
 
     @Override
-    public DataSourceSingleBO getSingleDataSourceConfig(String dataSourceId) throws FileNotFoundException, JAXBException {
+    public DataSourceSingleBO getDataSourceSingleConfig(String dataSourceId) throws FileNotFoundException, JAXBException {
         return getConfig().getDataSourceSingleVoList().parallelStream().filter(vo->vo.getId().equals(dataSourceId)).findAny().orElse(null);
     }
 }

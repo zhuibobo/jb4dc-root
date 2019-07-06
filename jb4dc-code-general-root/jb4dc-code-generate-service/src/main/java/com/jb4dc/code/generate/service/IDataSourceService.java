@@ -17,5 +17,5 @@ public interface IDataSourceService {
 
     DataSourceConfigBO getSimpleConfig() throws FileNotFoundException, JAXBException;
 
-    DataSourceSingleBO getSingleDataSourceConfig(String dataSourceId) throws FileNotFoundException, JAXBException;
+    DataSourceSingleBO getDataSourceSingleConfig(String dataSourceId) throws FileNotFoundException, JAXBException;
 }
