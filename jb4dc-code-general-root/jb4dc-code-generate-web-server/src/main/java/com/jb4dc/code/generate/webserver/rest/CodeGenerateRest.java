@@ -1,12 +1,9 @@
 package com.jb4dc.code.generate.webserver.rest;
 
 import com.github.pagehelper.PageInfo;
-import com.jb4dc.base.service.general.JB4DSessionUtility;
-import com.jb4dc.base.service.search.GeneralSearchUtility;
 import com.jb4dc.code.generate.service.ICodeGenerateService;
-import com.jb4dc.code.generate.vo.SimpleTableFieldVo;
+import com.jb4dc.code.generate.bo.SimpleTableFieldBO;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
-import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.vo.JBuild4DCResponseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,7 +54,7 @@ public class CodeGenerateRest {
     @RequestMapping(value = "/GetTableFields", method = RequestMethod.POST)
     public JBuild4DCResponseVo getTableFields(String dataSourceId,String tableName) throws IOException, ParseException, JBuild4DCGenerallyException, PropertyVetoException, JAXBException {
         //JB4DCSession jb4DSession = JB4DSessionUtility.getSession();
-        List<SimpleTableFieldVo> result=codeGenerateService.getTableFields(dataSourceId,tableName);
+        List<SimpleTableFieldBO> result=codeGenerateService.getTableFields(dataSourceId,tableName);
         return JBuild4DCResponseVo.success("获取成功",result);
     }
 }

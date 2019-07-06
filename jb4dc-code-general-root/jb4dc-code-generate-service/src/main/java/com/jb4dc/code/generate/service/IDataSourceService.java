@@ -1,7 +1,7 @@
 package com.jb4dc.code.generate.service;
 
-import com.jb4dc.code.generate.vo.DataSourceConfigVo;
-import com.jb4dc.code.generate.vo.DataSourceSingleVo;
+import com.jb4dc.code.generate.bo.DataSourceConfigBO;
+import com.jb4dc.code.generate.bo.DataSourceSingleBO;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
@@ -13,9 +13,9 @@ import java.io.FileNotFoundException;
  * To change this template use File | Settings | File Templates.
  */
 public interface IDataSourceService {
-    DataSourceConfigVo getConfig() throws FileNotFoundException, JAXBException;
+    DataSourceConfigBO getConfig() throws FileNotFoundException, JAXBException;
 
-    DataSourceConfigVo getSimpleConfig() throws FileNotFoundException, JAXBException;
+    DataSourceConfigBO getSimpleConfig() throws FileNotFoundException, JAXBException;
 
-    DataSourceSingleVo getSingleDataSourceConfig(String dataSourceId) throws FileNotFoundException, JAXBException;
+    DataSourceSingleBO getSingleDataSourceConfig(String dataSourceId) throws FileNotFoundException, JAXBException;
 }

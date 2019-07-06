@@ -1,7 +1,7 @@
 package com.jb4dc.code.generate.service.impl.codegenerate;
 
 import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
-import com.jb4dc.code.generate.vo.CodeGenerateVo;
+import com.jb4dc.code.generate.bo.CodeGenerateBO;
 import com.jb4dc.core.base.tools.StringUtility;
 import org.mybatis.generatorex.api.IntrospectedTable;
 
@@ -17,7 +17,7 @@ import java.util.Map;
 public class CGServiceImpl {
 
     public static String generate(List<IntrospectedTable> introspectedTableList, String tableName, String orderFieldName, String statusFieldName,
-                                  Map<CodeGenerateTypeEnum, CodeGenerateVo> codeGenerateVoMap, String xmlMapperACStr, String daoMapperName){
+                                  Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap, String xmlMapperACStr, String daoMapperName){
         StringBuilder builder=new StringBuilder();
 
         IntrospectedTable introspectedTable=introspectedTableList.get(0);

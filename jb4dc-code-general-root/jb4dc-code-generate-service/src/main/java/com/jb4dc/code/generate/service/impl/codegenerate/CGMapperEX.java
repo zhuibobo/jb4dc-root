@@ -1,7 +1,7 @@
 package com.jb4dc.code.generate.service.impl.codegenerate;
 
 import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
-import com.jb4dc.code.generate.vo.CodeGenerateVo;
+import com.jb4dc.code.generate.bo.CodeGenerateBO;
 import com.jb4dc.core.base.tools.XMLDocumentUtility;
 import org.mybatis.generatorex.api.IntrospectedColumn;
 import org.mybatis.generatorex.api.IntrospectedTable;
@@ -26,7 +26,7 @@ import java.util.Map;
 public class CGMapperEX {
 
     public static String generate(String idFieldName, IntrospectedTable introspectedTable, String tableName, String orderFieldName, String statusFieldName,
-                                  Map<CodeGenerateTypeEnum, CodeGenerateVo> codeGenerateVoMap, String xmlMapperACStr) throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
+                                  Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap, String xmlMapperACStr) throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
         StringBuilder builder=new StringBuilder();
 
         //String idFieldName=introspectedTableList.get(0).getPrimaryKeyColumns().get(0).getActualColumnName();

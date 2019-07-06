@@ -1,4 +1,4 @@
-package com.jb4dc.code.generate.vo;
+package com.jb4dc.code.generate.bo;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;
@@ -18,12 +18,12 @@ import java.util.List;
         "desc",
         "dataSourceSingleVoList"
 })
-public class DataSourceConfigVo {
+public class DataSourceConfigBO {
     @XmlAttribute(name = "desc")
     private String desc;
 
     @XmlElement(name = "DataSource")
-    private List<DataSourceSingleVo> dataSourceSingleVoList;
+    private List<DataSourceSingleBO> dataSourceSingleVoList;
 
     public String getDesc() {
         return desc;
@@ -33,11 +33,11 @@ public class DataSourceConfigVo {
         this.desc = desc;
     }
 
-    public List<DataSourceSingleVo> getDataSourceSingleVoList() {
+    public List<DataSourceSingleBO> getDataSourceSingleVoList() {
         return dataSourceSingleVoList;
     }
 
-    public void setDataSourceSingleVoList(List<DataSourceSingleVo> dataSourceSingleVoList) {
+    public void setDataSourceSingleVoList(List<DataSourceSingleBO> dataSourceSingleVoList) {
         this.dataSourceSingleVoList = dataSourceSingleVoList;
     }
 }

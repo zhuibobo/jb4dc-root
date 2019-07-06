@@ -1,9 +1,8 @@
 package com.jb4dc.code.generate.service;
 
 import com.github.pagehelper.PageInfo;
-import com.jb4dc.code.generate.vo.SimpleTableFieldVo;
+import com.jb4dc.code.generate.bo.SimpleTableFieldBO;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
-import com.jb4dc.core.base.session.JB4DCSession;
 import org.mybatis.generatorex.api.IntrospectedTable;
 import org.xml.sax.SAXException;
 
@@ -25,7 +24,7 @@ import java.util.Map;
 public interface ICodeGenerateService {
     PageInfo<List<Map<String, Object>>> getTables(String dataSourceId,String searchTableName,Integer pageNum, Integer pageSize) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException;
 
-    List<SimpleTableFieldVo> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException;
+    List<SimpleTableFieldBO> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException;
 
     //String getTableComment(JB4DSession jb4DSession, String tableName) throws JBuild4DGenerallyException;
 

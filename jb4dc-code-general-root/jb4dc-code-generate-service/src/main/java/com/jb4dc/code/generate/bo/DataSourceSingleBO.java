@@ -1,4 +1,4 @@
-package com.jb4dc.code.generate.vo;
+package com.jb4dc.code.generate.bo;
 
 import javax.xml.bind.annotation.*;
 
@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.*;
         "user",
         "password"
 })
-public class DataSourceSingleVo {
+public class DataSourceSingleBO {
     @XmlElement(name = "Id")
     private String id;
 

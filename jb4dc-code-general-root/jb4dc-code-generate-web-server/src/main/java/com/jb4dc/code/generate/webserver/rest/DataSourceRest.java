@@ -1,8 +1,7 @@
 package com.jb4dc.code.generate.webserver.rest;
 
-import com.jb4dc.base.tools.FileUtility;
 import com.jb4dc.code.generate.service.IDataSourceService;
-import com.jb4dc.code.generate.vo.DataSourceConfigVo;
+import com.jb4dc.code.generate.bo.DataSourceConfigBO;
 import com.jb4dc.core.base.vo.JBuild4DCResponseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,7 +28,7 @@ public class DataSourceRest {
     @RequestMapping(value = "/GetConfig", method = RequestMethod.GET)
     public JBuild4DCResponseVo getConfig() throws FileNotFoundException, JAXBException {
         //List<TableGroupEntity> tableGroupEntityList=tableGroupService.getALLASC(JB4DSessionUtility.getSession());
-        DataSourceConfigVo config = dataSourceService.getSimpleConfig();
+        DataSourceConfigBO config = dataSourceService.getSimpleConfig();
         //config.getDataSourceSingleVoList().forEach(vo->{vo.setUrl("");vo.setUser("");vo.setPassword("");vo.setDriverName("");});
         //config.getDataSourceSingleVoList().forEach(vo->(vo.setUser(""));
         //config.

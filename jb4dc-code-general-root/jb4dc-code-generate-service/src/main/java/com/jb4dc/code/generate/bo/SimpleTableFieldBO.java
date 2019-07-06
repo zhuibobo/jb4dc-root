@@ -1,4 +1,4 @@
-package com.jb4dc.code.generate.vo;
+package com.jb4dc.code.generate.bo;
 
 /**
  * Created with IntelliJ IDEA.
@@ -6,7 +6,7 @@ package com.jb4dc.code.generate.vo;
  * Date: 2018/7/27
  * To change this template use File | Settings | File Templates.
  */
-public class SimpleTableFieldVo {
+public class SimpleTableFieldBO {
     private String tableName;
     private String fieldName;
     private boolean nullEnable;

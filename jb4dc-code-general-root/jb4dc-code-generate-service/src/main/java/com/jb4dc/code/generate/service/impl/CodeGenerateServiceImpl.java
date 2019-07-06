@@ -1,9 +1,7 @@
 package com.jb4dc.code.generate.service.impl;
 
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jb4dc.base.dbaccess.general.DBProp;
-import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.base.tools.PathUtility;
 import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
 import com.jb4dc.code.generate.service.ICodeGenerateService;
@@ -13,11 +11,10 @@ import com.jb4dc.code.generate.service.impl.codegenerate.CGCodeFragment;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGIService;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGMapperEX;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGServiceImpl;
-import com.jb4dc.code.generate.vo.CodeGenerateVo;
-import com.jb4dc.code.generate.vo.DataSourceSingleVo;
-import com.jb4dc.code.generate.vo.SimpleTableFieldVo;
+import com.jb4dc.code.generate.bo.CodeGenerateBO;
+import com.jb4dc.code.generate.bo.DataSourceSingleBO;
+import com.jb4dc.code.generate.bo.SimpleTableFieldBO;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
-import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.tools.DateUtility;
 import com.jb4dc.core.base.tools.StringUtility;
 import org.mybatis.generatorex.api.IntrospectedTable;
@@ -29,7 +26,6 @@ import org.mybatis.generatorex.exception.XMLParserException;
 import org.mybatis.generatorex.internal.DefaultShellCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
@@ -80,7 +76,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         if(searchTableName!=null&&!searchTableName.equals("")){
             _searchTableName="%"+searchTableName+"%";
         }
-        DataSourceSingleVo dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
+        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
         if(dataSourceSingleVo.getDbType().equals("sqlserver")){
             sql="Select Name as TableName FROM SysObjects Where XType='U' and Name like ? order BY Name";
         }
@@ -98,10 +94,10 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     }
 
     @Override
-    public List<SimpleTableFieldVo> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException {
+    public List<SimpleTableFieldBO> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException {
         String sql="";
-        List<SimpleTableFieldVo> result=new ArrayList<>();
-        DataSourceSingleVo dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
+        List<SimpleTableFieldBO> result=new ArrayList<>();
+        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
         if(dataSourceSingleVo.getDbType().equals("sqlserver")){
             sql="SELECT * FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME=?";
         }
@@ -113,7 +109,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         }
         List<Map<String, Object>> fieldList=dataSourceManager.selectList(dataSourceId,sql, tableName);
         for (Map<String, Object> map : fieldList) {
-            SimpleTableFieldVo simpleTableFieldVo=new SimpleTableFieldVo();
+            SimpleTableFieldBO simpleTableFieldVo=new SimpleTableFieldBO();
             simpleTableFieldVo.setTableName(map.get("TABLE_NAME").toString());
             simpleTableFieldVo.setFieldName(map.get("COLUMN_NAME").toString());
             simpleTableFieldVo.setFieldType(map.get("DATA_TYPE").toString());
@@ -125,7 +121,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     private String EntityRootFolderKey="EntityRootFolderKey";
     private String DaoRootFolderKey="DaoRootFolderKey";
     private String XmlRootFolderKey="XmlRootFolderKey";
-    private Map<CodeGenerateTypeEnum, CodeGenerateVo> createAboutFolder(Map<CodeGenerateTypeEnum,CodeGenerateVo> codeGenerateVoMap){
+    private Map<CodeGenerateTypeEnum, CodeGenerateBO> createAboutFolder(Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap){
         String GenerateCodeFilesPath=PathUtility.getWebInfPath()+"/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
         File tempRootFolder=new File(GenerateCodeFilesPath);
         tempRootFolder.mkdirs();
@@ -161,7 +157,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
         InputStream is = this.getClass().getClassLoader().getResourceAsStream("MybatisGenerator/generatorConfigToCode.xml");
 
-        Map<CodeGenerateTypeEnum,CodeGenerateVo> codeGenerateVoMap=CodeGenerateVo.generateTypeEnumCodeGenerateVoMap().get("JBuild4D-PlatForm");
+        Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap= CodeGenerateBO.generateTypeEnumCodeGenerateVoMap().get("JBuild4D-PlatForm");
 
         codeGenerateVoMap=createAboutFolder(codeGenerateVoMap);
 
@@ -264,7 +260,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
         InputStream is = this.getClass().getClassLoader().getResourceAsStream("MybatisGenerator/generatorConfigToCode.xml");
 
-        Map<CodeGenerateTypeEnum,CodeGenerateVo> codeGenerateVoMap=CodeGenerateVo.generateTypeEnumCodeGenerateVoMap().get(packageType);
+        Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap= CodeGenerateBO.generateTypeEnumCodeGenerateVoMap().get(packageType);
 
         codeGenerateVoMap=createAboutFolder(codeGenerateVoMap);
 

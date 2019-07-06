@@ -2,7 +2,7 @@ package com.jb4dc.code.generate.service.impl;
 
 import com.jb4dc.code.generate.service.IDataSourceManager;
 import com.jb4dc.code.generate.service.IDataSourceService;
-import com.jb4dc.code.generate.vo.DataSourceSingleVo;
+import com.jb4dc.code.generate.bo.DataSourceSingleBO;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
@@ -34,7 +34,7 @@ public class DataSourceManagerImpl implements IDataSourceManager {
     @Override
     public JdbcTemplate getJdbcTemplate(String dataSourceId) throws PropertyVetoException, FileNotFoundException, JAXBException {
         ComboPooledDataSource comboPooledDataSource=new ComboPooledDataSource();
-        DataSourceSingleVo dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
+        DataSourceSingleBO dataSourceSingleVo=dataSourceService.getSingleDataSourceConfig(dataSourceId);
         /*if(dbLinkEntity.getDbIsLocation().equals(TrueFalseEnum.True.getDisplayName())){
             dbLinkEntity.setDbDriverName(DBProp.getDriverName());
             dbLinkEntity.setDbDatabaseName(DBProp.getDatabaseName());

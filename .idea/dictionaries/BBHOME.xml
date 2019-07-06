@@ -3,6 +3,9 @@
     <words>
       <w>codegenerate</w>
       <w>cust</w>
+      <w>dbentities</w>
+      <w>devmock</w>
+      <w>mybatismappers</w>
       <w>sqlserver</w>
       <w>zhuangrb</w>
     </words>
