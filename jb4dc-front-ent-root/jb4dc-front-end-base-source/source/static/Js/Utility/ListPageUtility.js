@@ -187,11 +187,67 @@ var ListPageUtility={
                 else {
                     DialogUtility.Alert(window, DialogUtility.DialogAlertId, {}, result.message, function () {});
                 }
-            }, "json");
+            }, this,"json");
         });
     },
 
+    //列表查询加载
+    IViewTableBindDataBySearch:function(_config){
+        var config= {
+            url: "",
+            pageNum: 1,
+            pageSize: 12,
+            searchCondition: null,
+            pageAppObj: null,
+            tableList:null,
+            idField: "",
+            autoSelectedOldRows: false,
+            successFunc: null,
+            loadDict: false,
+            custParas: {}
+        };
+        config= $.extend(true,{},config,_config);
+        if(!config.tableList){
+            config.tableList=config.pageAppObj;
+        };
+        var sendData={
+            "pageNum": config.pageNum,
+            "pageSize": config.pageSize,
+            "searchCondition":SearchUtility.SerializationSearchCondition(config.searchCondition),
+            "loadDict":config.loadDict
+        };
+        for(var key in config.custParas){
+            sendData[key]=config.custParas[key];
+        }
+        AjaxUtility.Post(config.url,
+            sendData,
+            function (result) {
+                if (result.success) {
+                    if(typeof (config.successFunc)=="function") {
+                        config.successFunc.call(config.pageAppObj,result);
+                        //successFunc(result,pageAppObj);
+                    }
+                    config.tableList.tableData = new Array();
+                    config.tableList.tableData = result.data.list;
+                    config.tableList.pageTotal = result.data.total;
+                    if(config.autoSelectedOldRows){
+                        if(config.tableList.selectionRows!=null) {
+                            for (var i = 0; i < config.tableList.tableData.length; i++) {
+                                for (var j = 0; j < config.tableList.selectionRows.length;j++) {
+                                    if(config.tableList.selectionRows[j][config.idField]==config.tableList.tableData[i][config.idField]){
+                                        config.tableList.tableData[i]._checked=true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }, this,"json");
+    },
+
     IViewTableLoadDataSearch:function (url,pageNum,pageSize,searchCondition,pageAppObj,idField,autoSelectedOldRows,successFunc,loadDict,custParas) {
+        alert("ListPageUtility.IViewTableLoadDataSearch方法已经被废弃,请转调IViewTableBindDataBySearch");
+        return;
         //var loadDict=false;
         //if(pageNum===1) {
         //    loadDict = true;
@@ -238,7 +294,7 @@ var ListPageUtility={
                 {
                     //DialogUtility.AlertError(window, DialogUtility.DialogAlertId, {}, result.message, function () {});
                 }
-            }, "json");
+            }, this,"json");
     },
     IViewTableLoadDataNoSearch:function (url,pageNum,pageSize,pageAppObj,idField,autoSelectedOldRows,successFunc) {
         //debugger;

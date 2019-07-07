@@ -242,11 +242,22 @@
             this.selectionRows = selection;
         },
         reloadData: function () {
-            ListPageUtility.IViewTableLoadDataSearch(this.acInterface.getTableListUrl, this.pageNum, this.pageSize, null, this, this.idFieldName, true, null,null,{
+            /*ListPageUtility.IViewTableLoadDataSearch(this.acInterface.getTableListUrl, this.pageNum, this.pageSize, null, this, this.idFieldName, true, null,null,{
                 searchTableName:this.searchTableName,
                 dataSourceId:this.selectedDataSourceId
+            });*/
+            ListPageUtility.IViewTableBindDataBySearch({
+                url: this.acInterface.getTableListUrl,
+                pageNum: this.pageNum,
+                pageSize: this.pageSize,
+                pageAppObj: this,
+                idField: this.idField,
+                custParas: {
+                    searchTableName:this.searchTableName,
+                    dataSourceId:this.selectedDataSourceId
+                }
             });
-            //this.selectionRows=null;
+            //this.selectionRows=null;11
         },
         selectedTable: function (tableName) {
             this.formValidate.tableName = tableName;
