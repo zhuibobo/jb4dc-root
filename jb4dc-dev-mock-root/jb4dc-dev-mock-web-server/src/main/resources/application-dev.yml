@@ -1,0 +1,19 @@
+server:
+  servlet:
+    session:
+      timeout: 30
+    context-path: /DevMock
+  port: 9100
+spring:
+  thymeleaf:
+    prefix: classpath:/static/HTML/
+    suffix: .html
+    enabled: true
+
+logging:
+  level:
+    com:
+      jb4dc:
+        base:
+          dbaccess:
+            dao:TRACE

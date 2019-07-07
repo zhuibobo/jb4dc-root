@@ -1,0 +1,7 @@
+
+#prod dev
+spring:
+  profiles:
+    active: dev
+
+#spring.liquibase.change-log=classpath:/liquibase/jbuild4d-platform-db-changelog.xml
