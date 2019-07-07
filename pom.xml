@@ -13,7 +13,6 @@
         <module>jb4dc-code-general-root</module>
         <module>jb4dc-core-root</module>
         <module>jb4dc-front-ent-root</module>
-        <module>jb4dc-dev-mock-root</module>
         <module>jb4dc-cloud-root</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
@@ -93,12 +92,6 @@
             <dependency>
                 <groupId>jb4dc</groupId>
                 <artifactId>jb4dc-code-generate-service</artifactId>
-                <version>${platform.version}</version>
-            </dependency>
-            <!--开发模拟包-->
-            <dependency>
-                <groupId>jb4dc</groupId>
-                <artifactId>jb4dc-dev-mock-service</artifactId>
                 <version>${platform.version}</version>
             </dependency>
 
