@@ -7,9 +7,5 @@
         <PackageLevel2Name value="authority"></PackageLevel2Name>
     </Package>
     <Package name="DevMock" entity="com.jb4dc.devmock.dbentities" dao="com.jb4dc.devmock.dao" mapperAC="mybatismappers">
-        <PackageLevel2Name value="user"></PackageLevel2Name>
-        <PackageLevel2Name value="application"></PackageLevel2Name>
-        <PackageLevel2Name value="organ"></PackageLevel2Name>
-        <PackageLevel2Name value="authority"></PackageLevel2Name>
     </Package>
 </Config>

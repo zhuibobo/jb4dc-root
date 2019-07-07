@@ -15,6 +15,8 @@
       <module fileurl="file://$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/jb4dc-core-base.iml" filepath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/jb4dc-core-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-root.iml" filepath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-dev-mock-root/jb4dc-dev-mock-root.iml" filepath="$PROJECT_DIR$/jb4dc-dev-mock-root/jb4dc-dev-mock-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-dev-mock-root/jb4dc-dev-mock-service/jb4dc-dev-mock-service.iml" filepath="$PROJECT_DIR$/jb4dc-dev-mock-root/jb4dc-dev-mock-service/jb4dc-dev-mock-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-dev-mock-root/jb4dc-dev-mock-web-server/jb4dc-dev-mock-web-server.iml" filepath="$PROJECT_DIR$/jb4dc-dev-mock-root/jb4dc-dev-mock-web-server/jb4dc-dev-mock-web-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/jb4dc-front-end-base-dist.iml" filepath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/jb4dc-front-end-base-dist.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-source/jb4dc-front-end-base-source.iml" filepath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-source/jb4dc-front-end-base-source.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-ent-root.iml" filepath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-ent-root.iml" />

@@ -1,0 +1,98 @@
+
+@media screen and (min-width: 1441px) and (max-width: 1800px)  {
+	.calendarsty td,.calendarsty th { height:40px; }
+	/*span.mon { margin: 0 2px; padding:0 8px; }*/
+	
+}
+
+
+
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+    .quick_icon li { padding-left: 98px; overflow:hidden; word-break:keep-all; white-space: nowrap; text-overflow:ellipsis; }
+	.calendarsty td,.calendarsty th { height:40px; }
+	/*span.mon { padding: 0 5px; margin:0 2px; }*/
+	.selbox { margin-right:20px; }
+    ul.picu { margin:0 2%; }
+	ul.picu li.gral { margin:0 20px; }
+	.height5 { min-height:376px;height:376px; }
+	.height5 .contsty { height:240px; overflow:hidden; }
+	.height9 { height:800px; }
+	.checksty label { margin: 0 10px 0 2px; }
+	.cont_tit h3 span { margin-left:20px; }
+	.contsty { margin: 16px 20px; }
+	.labelbox li { height: 120px; }
+	.gifbox { width:240px; height:240px; background:url(../images/bg_animate3.gif) no-repeat; margin:20px; }
+	.main53d ul { display:none; }
+	.gifbox .numbox { margin:40px 0 0 40px;}
+}
+
+
+@media screen and (min-width: 1280px) and (max-width: 1365px) {
+    .quick_icon li { padding-left: 98px; overflow:hidden; word-break:keep-all; white-space: nowrap; text-overflow:ellipsis; }
+	.calendarsty td,.calendarsty th { height:40px; }
+	/*span.mon { padding: 0 5px; margin:0 2px; }*/
+	.selbox { margin-right:20px; }
+	.tabsbox { margin-right:2.5%; }
+	span.numsty { font-size: 32px; }
+	ul.tabu { margin-left:320px; }
+	ul.tabu li { padding: 0 15px 8px 15px; }
+    ul.picu { margin:0 1%; }
+	ul.picu li.gral { margin:0 10px; }
+	.onewrap .cont_sub { min-height: 220px; }
+	.labelbox  li { height: 120px; }
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+    .quick_icon li { padding-left: 98px; overflow:hidden; word-break:keep-all; white-space: nowrap; text-overflow:ellipsis; }
+	.calendarsty td,.calendarsty th { height:40px; padding:2px; }
+	span.mon { padding: 0; margin:0; }
+	.selbox { margin-right:20px; }
+	.tabsbox { margin-right:2%; }
+	span.numsty { font-size: 30px; }
+	.sidebox { width:212px;}
+	ul.tabu { margin-left:220px; }
+	ul.tabu li { padding: 0 10px 8px 10px; }
+    ul.picu { margin:0 1%; }
+	ul.picu li.gral { margin:0 10px; }
+	.contbox { margin-left:213px; }
+	.leftm1,.leftm2 { margin-left:0; }
+	.onewrap .cont_sub { min-height: 210px; }
+	.padb30 { padding-bottom: 10px; }
+	.labelbox li { height: 110px; }
+	.labelbox h4 { font-size: 12px; }
+	.contwrap .continv { min-height:336px; }
+	.contwrap .height5 { min-height:400px; height:400px; }
+	.height5 .contsty { height: 300px;  overflow: hidden; }
+	.height9 { height: 760px; }
+	.height9 .contsty { height: 640px;  overflow: hidden; }
+	.cont_sub { overflow-y:auto }
+}
+
+
+@media screen and (max-width: 1024px) {
+	.cont_sub { overflow-y:auto }
+	.quick_icon li { padding-left: 98px; overflow:hidden; word-break:keep-all; white-space: nowrap; text-overflow:ellipsis; }
+	.calendarsty td,.calendarsty th { height:40px; padding:2px; }
+	span.mon { padding: 0; margin: 0; }
+	.selbox { margin-right:20px; }
+	.tabsbox { margin-right:1%; }
+	.sidebox { width:212px;}
+	ul.tabu { margin-left:50px; }
+	ul.tabu li { padding: 0 15px 10px 15px; }
+    ul.picu { margin:0 1%; }
+	ul.picu li.gral { margin:0 10px; }
+	.contbox { margin-left:213px; }
+	.leftm1,.leftm2 { margin-left:0; }
+	.onewrap .cont_sub { min-height: 220px; }
+	span.numsty { font-size: 24px; }
+	.padb30 { padding-bottom: 0; }
+	.labelbox li { height: 110px; }
+	.labelbox h4 { font-size: 12px; }
+	.contwrap .continv { min-height:296px; }
+	.contwrap .height5 { min-height:400px; height:400px; }
+	.height5 .contsty { height: 300px;  overflow: hidden; }
+	.height9 { height: 760px; }
+	.height9 .contsty { height: 640px;  overflow: hidden; }
+
+}
