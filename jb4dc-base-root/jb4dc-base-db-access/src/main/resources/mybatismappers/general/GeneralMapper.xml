@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jb4dc.base.dbaccess.dynamic.GeneralMapper">
+    <select id="executeScalarSql" resultType="object">
+        ${_parameter}
+    </select>
+    <select id="executeSql" resultType="map">
+        ${_parameter}
+    </select>
+    <select id="executeSqlMap" resultType="map">
+        ${sql}
+    </select>
+    <select id="nextOrderNum" resultType="long">
+        select case when max(${OrderFieldName}) is null then 1 else max(${OrderFieldName})+1 end ORDERNUM from ${TableName}
+    </select>
+</mapper>

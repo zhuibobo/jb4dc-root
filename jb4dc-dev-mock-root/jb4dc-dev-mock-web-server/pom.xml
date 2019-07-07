@@ -11,5 +11,10 @@
 
     <artifactId>jb4dc-dev-mock-web-server</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>jb4dc</groupId>
+            <artifactId>jb4dc-dev-mock-service</artifactId>
+        </dependency>
+    </dependencies>
 </project>

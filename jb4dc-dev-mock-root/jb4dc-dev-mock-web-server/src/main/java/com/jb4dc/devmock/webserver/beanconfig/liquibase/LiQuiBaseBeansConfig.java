@@ -11,6 +11,7 @@ import liquibase.resource.ClassLoaderResourceAccessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
@@ -20,11 +21,13 @@ import javax.sql.DataSource;
  * Date: 2019/7/7
  * To change this template use File | Settings | File Templates.
  */
+
+@Configuration
 public class LiQuiBaseBeansConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(LiQuiBaseBeansConfig.class);
 
-    @Bean(name = "jbuild4d_liquibase")
+    @Bean(name = "jb4dc_liquibase")
     public Liquibase liquibase(DataSource dataSource) throws JBuild4DCGenerallyException {
         logger.info("Configuring Liquibase");
 
@@ -35,7 +38,7 @@ public class LiQuiBaseBeansConfig {
             database.setDatabaseChangeLogTableName(database.getDatabaseChangeLogTableName());
             database.setDatabaseChangeLogLockTableName(database.getDatabaseChangeLogLockTableName());
 
-            liquibase = new Liquibase("liquibase/jbuild4d-platform-db-changelog.xml", new ClassLoaderResourceAccessor(), database);
+            liquibase = new Liquibase("liquibase/jb4dc-dev-mock-db-changelog.xml", new ClassLoaderResourceAccessor(), database);
             liquibase.update("zhuangrb");
             return liquibase;
 

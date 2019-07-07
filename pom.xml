@@ -95,6 +95,12 @@
                 <artifactId>jb4dc-code-generate-service</artifactId>
                 <version>${platform.version}</version>
             </dependency>
+            <!--开发模拟包-->
+            <dependency>
+                <groupId>jb4dc</groupId>
+                <artifactId>jb4dc-dev-mock-service</artifactId>
+                <version>${platform.version}</version>
+            </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
             <dependency>

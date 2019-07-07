@@ -9,6 +9,8 @@ spring:
     prefix: classpath:/static/HTML/
     suffix: .html
     enabled: true
+  liquibase:
+    enabled: false
 
 logging:
   level:
@@ -16,4 +18,4 @@ logging:
       jb4dc:
         base:
           dbaccess:
-            dao:TRACE
+            dao: TRACE

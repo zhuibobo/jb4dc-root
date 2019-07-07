@@ -1,18 +1,27 @@
 package com.jb4dc.base.dbaccess.general;
 
-//import com.jb4dc.base.dbaccess.exenum.DBTypeEnum;
+import com.jb4dc.base.tools.FileUtility;
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+import com.jb4dc.core.base.exenum.DBTypeEnum;
 
-/*public class DBProp {
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+public class DBProp {
     private static Properties propertie;
-    private static final String filePath = "DB.properties";
+    private static final String filePath = "/config/DB.properties";
 
     static{
         propertie = new Properties();
         try {
-            ClassLoader loader = Thread.currentThread().getContextClassLoader();
+            /*ClassLoader loader = Thread.currentThread().getContextClassLoader();
             try(InputStream resourceStream = loader.getResourceAsStream(filePath)) {
                 propertie.load(resourceStream);
-            }
+            }*/
+            InputStream resourceStream =FileUtility.getStreamByLevel(filePath);
+            propertie.load(resourceStream);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
@@ -29,7 +38,7 @@ package com.jb4dc.base.dbaccess.general;
     }
 
     public static boolean isSqlServer(){
-        return getDBType()==DBTypeEnum.sqlserver;
+        return getDBType()== DBTypeEnum.sqlserver;
     }
 
     public static boolean isMySql(){
@@ -96,4 +105,4 @@ package com.jb4dc.base.dbaccess.general;
             throw new JBuild4DCGenerallyException("请检查DB.properties中的DatabaseName与Url中配置的是否相同!");
         }
     }
-}*/
+}
