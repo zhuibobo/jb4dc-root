@@ -115,10 +115,10 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         List<SimpleTableFieldBO> result=new ArrayList<>();
         DataSourceSingleBO dataSourceSingleVo=dataSourceService.getDataSourceSingleConfig(dataSourceId);
         if(dataSourceSingleVo.getDbType().equals("sqlserver")){
-            sql="SELECT * FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME=?";
+            sql="SELECT * FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME=#{searchTableName}";
         }
         if(dataSourceSingleVo.getDbType().equals("mysql")){
-            sql="select * from information_schema.columns where table_schema='"+dataSourceSingleVo.getDatabaseName()+"' and table_name=?";
+            sql="select * from information_schema.columns where table_schema='"+dataSourceSingleVo.getDatabaseName()+"' and table_name= #{searchTableName}";
         }
         if(dataSourceSingleVo.getDbType().equals("oracle")){
             throw JBuild4DCGenerallyException.getNotSupportOracleException();
