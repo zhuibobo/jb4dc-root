@@ -11,9 +11,11 @@
     <script src="Js/jquery.min.js"></script>
     <script src="Js/menu.js"></script>
     <script src="Js/bootstrap.min.js"></script>
+    <script src="../../Js/JBuild4DPlatformLib.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             //document.title="我是神经病";
+            document.title=JBuild4DCYaml.GetClientSystemTitle();
             $("#showbtn").click(function () {
                 $(".sidemenu").show();
                 $("#showbtn").hide();
