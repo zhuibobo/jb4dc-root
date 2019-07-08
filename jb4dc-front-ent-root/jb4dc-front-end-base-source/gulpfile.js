@@ -77,6 +77,12 @@ gulp.task('front-end-base-html',()=>{
     return gulp.src(jarFromResourcePath+"/HTML/**/*", {base:jarFromResourcePath+"/HTML"}).pipe(gulp.dest(jarToResourcePath+"/HTML"));
 });
 
+
+gulp.task('Dist-Watch', function() {
+    gulp.watch(jarFromResourcePath+"/HTML/**/*", gulp.series('front-end-base-html'));
+    gulp.watch(jarFromResourcePath+"/Js/Utility/*.js", gulp.series('front-end-base-js-utility'));
+});
+
 //endregion
 
 function copyAndResolveHtml(sourcePath,base,toPath) {

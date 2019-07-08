@@ -61,7 +61,7 @@ hr {
 .header {
     width: 100%;
     height: 106px;
-    background: url(../images/bg_top.png) repeat-x;
+    background: url(../Images/bg_top.png) repeat-x;
     position: absolute;
     top: 0;
     z-index: 100;
@@ -71,7 +71,7 @@ hr {
 .logosys {
     width: 365px;
     height: 90px;
-    background: url(../images/logo_1.png) no-repeat 50px 5px;
+    background: url(../Images/logo_1.png) no-repeat 50px 5px;
     float: left;
     line-height: 20em;
     overflow: hidden;
@@ -99,7 +99,7 @@ hr {
     outline: none;
     color: #999999;
     float: left;
-    background: url(../images/search.jpg) no-repeat;
+    background: url(../Images/search.jpg) no-repeat;
     box-sizing: border-box;
 }
 
@@ -113,7 +113,7 @@ hr {
     outline: none;
     line-height: 20em;
     overflow: hidden;
-    background: url(../images/btn_search.png) no-repeat center center;
+    background: url(../Images/btn_search.png) no-repeat center center;
     opacity: 0.6;
 }
 
@@ -155,7 +155,7 @@ hr {
 }
 
 .topms a#m1 {
-    background: url(../images/arr_down_top.png) no-repeat right;
+    background: url(../Images/arr_down_top.png) no-repeat right;
     background-image: none\9;
     padding-right: 15px;
     text-decoration: none;
@@ -164,7 +164,7 @@ hr {
 .topmenu span.usersty {
     width: 48px;
     height: 48px;
-    background: url(../images/bg_headport.png) no-repeat;
+    background: url(../Images/bg_headport.png) no-repeat;
     padding-left: 18px;
     color: #FFF;
     line-height: 48px;
@@ -215,7 +215,7 @@ hr {
 }
 
 b.set_1, b.set_2, b.set_3, b.set_4 {
-    background: url(../images/icons_16_blue.png) 0 0;
+    background: url(../Images/icons_16_blue.png) 0 0;
     width: 16px;
     height: 16px;
     float: left;
@@ -244,7 +244,7 @@ b.set_4 {
 	cursor:pointer;
 	line-height:20em;
 	overflow:hidden;
-	background: url(../images/ico_nav.png) no-repeat;
+	background: url(../Images/ico_nav.png) no-repeat;
 }
 
 .mainwraper {
@@ -271,32 +271,32 @@ b.set_4 {
 }
 
 .nav1 {
-    background: url(../images/leftmenu_desktop.png) no-repeat;
+    background: url(../Images/leftmenu_desktop.png) no-repeat;
     opacity: 0.75;
 }
 
 .nav2 {
-    background: url(../images/leftmenu_zhaoshang.png) no-repeat;
+    background: url(../Images/leftmenu_zhaoshang.png) no-repeat;
     opacity: 0.75;
 }
 
 .nav3 {
-    background: url(../images/leftmenu_xiangmu.png) no-repeat;
+    background: url(../Images/leftmenu_xiangmu.png) no-repeat;
     opacity: 0.75;
 }
 
 .nav4 {
-    background: url(../images/leftmenu_jingji.png) no-repeat;
+    background: url(../Images/leftmenu_jingji.png) no-repeat;
     opacity: 0.75;
 }
 
 .nav5 {
-    background: url(../images/leftmenu_fuzhu.png) no-repeat;
+    background: url(../Images/leftmenu_fuzhu.png) no-repeat;
     opacity: 0.75;
 }
 
 .nav6 {
-    background: url(../images/leftmenu_zhengqi.png) no-repeat;
+    background: url(../Images/leftmenu_zhengqi.png) no-repeat;
     opacity: 0.75;
 }
 
@@ -317,7 +317,7 @@ b.set_4 {
     margin: -38px 0 0;
     display: none;
     cursor: pointer;
-    background: url(../images/menu_open.png) no-repeat center center;
+    background: url(../Images/menu_open.png) no-repeat center center;
     opacity: 0.75;
     border-bottom: 1px solid #6db6fb;
 }
@@ -376,7 +376,7 @@ dl.subm {
     text-overflow: ellipsis;
     white-space: nowrap;
     line-height: 30px;
-    background: url(../images/bg_subm.png) no-repeat 0 center;
+    background: url(../Images/bg_subm.png) no-repeat 0 center;
     padding-left: 20px;
 }
 
@@ -402,11 +402,11 @@ dl.subm {
 }
 
 .accordion-collapse {
-    background: url(../images/icon_unfold.png) no-repeat 5px center;
+    background: url(../Images/icon_unfold.png) no-repeat 5px center;
 }
 
 .panel-tool-collapse {
-    background: url(../images/icon_fold.png) no-repeat 5px center;
+    background: url(../Images/icon_fold.png) no-repeat 5px center;
 }
 
 .panel-body {
@@ -500,7 +500,7 @@ dd > span.panel-tool {
     font-size: 16px;
     font-weight: 600;
     color: #333;
-    background: url(../images/tit_blue.png) left no-repeat;
+    background: url(../Images/tit_blue.png) left no-repeat;
     padding-left: 20px;
     margin-left: 36px;
 }
@@ -559,7 +559,7 @@ dd > span.panel-tool {
     display: block;
     cursor: pointer;
     font-size: 20px;
-    background: url(../images/close.png) no-repeat;
+    background: url(../Images/close.png) no-repeat;
     width: 18px;
     height: 18px;
 }
@@ -607,7 +607,7 @@ ul.quick_icon {
     line-height: 72px;
     font-size: 16px;
     padding-left: 108px;
-    background: url(../images/icon_quick.png) no-repeat 36px 0;
+    background: url(../Images/icon_quick.png) no-repeat 36px 0;
 }
 
 li#qc_2 {
@@ -817,7 +817,7 @@ td div.line-clamp {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    background: url("../images/sel_arrow.png") no-repeat right 3px center transparent;
+    background: url("../Images/sel_arrow.png") no-repeat right 3px center transparent;
     padding: 2px 25px 5px 8px;
     margin-left: 10px;
 }
@@ -900,7 +900,7 @@ select::-ms-expand {
     text-align: left;
     padding: 12px;
     margin-bottom: 10px;
-    background: url(../images/line_op15.png) repeat-x bottom;
+    background: url(../Images/line_op15.png) repeat-x bottom;
     box-sizing: border-box;
     font-weight: 500;
 }
@@ -1035,12 +1035,12 @@ td input[type="text"], td select {
 }
 
 .warnbox span.wsp1, .cont_tit h3 span.wsp1 {
-    background: url(../images/cue.png) no-repeat left;
+    background: url(../Images/cue.png) no-repeat left;
     padding: 0 25px;
 }
 
 .warnbox span.wsp2, .wsp2 {
-    background: url(../images/warn.png) no-repeat left;
+    background: url(../Images/warn.png) no-repeat left;
     padding-left: 25px;
 }
 
@@ -1052,7 +1052,7 @@ td input[type="text"], td select {
 }
 
 .cont_tit h3 span.addsp {
-    background: url(../images/add.png) no-repeat right;
+    background: url(../Images/add.png) no-repeat right;
     height: 19px;
     line-height: 19px;
     padding-right: 28px;
@@ -1060,13 +1060,13 @@ td input[type="text"], td select {
 }
 
 .cont_tit h3 span.addsp:hover {
-    background: url(../images/add01.png) no-repeat right;
+    background: url(../Images/add01.png) no-repeat right;
     color: #57a8f4;
     cursor: pointer;
 }
 
 .risesty {
-    background: url(../images/rise.png) no-repeat;
+    background: url(../Images/rise.png) no-repeat;
     width: 16px;
     height: 16px;
 }
@@ -1090,7 +1090,7 @@ td input[type="text"], td select {
 }
 
 .newsty {
-    background: url(../images/new.gif) no-repeat;
+    background: url(../Images/new.gif) no-repeat;
     width: 32px;
     height: 16px;
     display: inline-block;
@@ -1102,12 +1102,12 @@ td input[type="text"], td select {
     width: 24px;
     line-height: 20em;
     overflow: hidden;
-    background: url(../images/return.png) no-repeat;
+    background: url(../Images/return.png) no-repeat;
     margin-top: -4px;
 }
 
 .cont_tit h3 span.backsty:hover {
-    background: url(../images/return01.png) no-repeat;
+    background: url(../Images/return01.png) no-repeat;
     cursor: pointer;
 }
 
@@ -1139,7 +1139,7 @@ ul.tabu li.curtab {
 }
 
 ul.picu li.gral {
-    background: url(../images/graph.png) no-repeat;
+    background: url(../Images/graph.png) no-repeat;
     width: 26px;
     height: 33px;
     padding: 0;
@@ -1147,7 +1147,7 @@ ul.picu li.gral {
 }
 
 ul.picu li.txtl {
-    background: url(../images/text.png) no-repeat;
+    background: url(../Images/text.png) no-repeat;
     width: 26px;
     height: 33px;
     padding: 0;
@@ -1218,7 +1218,7 @@ a.asty {
 .selbox .searchbtn {
     width: 30px;
     height: 26px;
-    background: url(../images/search.png) no-repeat center center;
+    background: url(../Images/search.png) no-repeat center center;
     margin-left: -30px;
 }
 
@@ -1266,19 +1266,19 @@ h3.tith3 {
 
 .mehide, .upArrow {
     float: right;
-    background: url(../images/arr_more.gif) no-repeat;
+    background: url(../Images/arr_more.gif) no-repeat;
     width: 16px;
     height: 16px;
     cursor: pointer;
 }
 
 .upArrow {
-    background: url(../images/arrup.gif) no-repeat;
+    background: url(../Images/arrup.gif) no-repeat;
 }
 
 span.warnum, span.risnum {
     color: #8fc31f;
-    background: url(../images/drop.png) no-repeat 4px bottom;
+    background: url(../Images/drop.png) no-repeat 4px bottom;
     padding-left: 20px;
     white-space: nowrap;
     display: inline-block;
@@ -1287,7 +1287,7 @@ span.warnum, span.risnum {
 
 span.risnum {
     color: #d81e06;
-    background: url(../images/rise.png) no-repeat 5px bottom;
+    background: url(../Images/rise.png) no-repeat 5px bottom;
 }
 
 span.holdnum {
@@ -1324,7 +1324,7 @@ span.holdnum {
     width: 12px;
     height: 9px;
     margin-left: 20px;
-    background: url(../images/bg_lab.png) no-repeat;
+    background: url(../Images/bg_lab.png) no-repeat;
 }
 
 .tiptext {
@@ -1426,7 +1426,7 @@ ul.tabmap {
 ul.tabmap li {
     float: left;
     padding: 0 15px;
-    background: url(../images/changing-over.png) no-repeat right;
+    background: url(../Images/changing-over.png) no-repeat right;
 }
 
 ul.tabmap li.active, ul.tabmap li:hover {
@@ -1450,7 +1450,7 @@ span.moresty {
 span.areamore {
     float: none;
     padding-right: 20px;
-    background: url(../images/more_down.png) no-repeat right;
+    background: url(../Images/more_down.png) no-repeat right;
     display: inline-block;
 }
 
