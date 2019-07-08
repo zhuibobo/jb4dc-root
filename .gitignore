@@ -13,5 +13,6 @@ GenerateCodeFiles/
 ## Files                    ##
 ##############################
 DB.properties
+db.properties
 ~$列表数据逻辑.mmap.~$lock
 *.~vsdx

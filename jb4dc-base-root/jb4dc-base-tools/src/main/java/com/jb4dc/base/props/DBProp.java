@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class DBProp {
     private static Properties propertie;
-    private static final String filePath = "/config/DB.properties";
+    private static final String filePath = "/config/db.properties";
 
     static{
         propertie = new Properties();
