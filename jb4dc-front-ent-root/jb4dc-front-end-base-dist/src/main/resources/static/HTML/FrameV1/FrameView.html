@@ -7,14 +7,13 @@
     <link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="Css/main_v2.css" rel="stylesheet" type="text/css"/>
     <link href="Css/resize.css" rel="stylesheet" type="text/css">
-    <script src="Js/jquery-1.7.2.min.js"></script>
     <script src="Js/jquery.min.js"></script>
-    <script src="Js/menu.js"></script>
+    <script src="Js/drop-down-menu.js"></script>
     <script src="Js/bootstrap.min.js"></script>
     <script src="../../Js/JBuild4DPlatformLib.js"></script>
+    <script src="Js/SystemMenu.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            //document.title="我是神经病";
             document.title=JBuild4DCYaml.GetClientSystemTitle();
             $("#showbtn").click(function () {
                 $(".sidemenu").show();
@@ -42,13 +41,15 @@
                 });
                 $(".panel-body").slideUp().eq(tabs_i).slideDown();
             });
+
+            SystemMenu.Initialization({});
         })
     </script>
 </head>
 
 <body>
 <div class="header">
-    <div class="logosys">抚州国家高新区</div>
+    <div class="logosys"></div>
     <div class="toolbar-c">
         <div class="searchbar">
             <input class="searchbox" value="请输入关键词搜索" onfocus="if (value =='请输入关键词搜索'){value =''}"
@@ -72,8 +73,8 @@
     <div class="leftbar">
         <div class="leftnav">
             <div id="showbtn" data-toggle="tooltip" data-placement="right" title="显示子菜单"></div>
-            <ul>
-                <li class="nav1" data-toggle="tooltip" data-placement="right" title="个人空间"
+            <ul id="ul_l1_menu_wrap">
+                <!--<li class="nav1" data-toggle="tooltip" data-placement="right" title="个人空间"
                     onclick="location='desktop.html'">个人空间
                 </li>
                 <li class="nav2 curnav" data-toggle="tooltip" data-placement="right" title="招商管理">招商管理</li>
@@ -88,14 +89,14 @@
                 </li>
                 <li class="nav6" data-toggle="tooltip" data-placement="right" title="政企直通"
                     onclick="location='zhengqi.html'">政企直通
-                </li>
+                </li>-->
             </ul>
         </div>
-        <div class="sidemenu">
-            <h1>招商管理系统<span id="hidebtn"><img title="隐藏子菜单" src="images/menu_close.png" width="14" height="12"/></span>
-            </h1>
-            <dl class="subm">
-                <dt class="leftmenu">客商信息管理
+        <div class="sidemenu" id="div_l2_menu_wrap">
+            <h1><span id="span_l2_title">招商管理系统</span><span id="hidebtn"><img title="隐藏子菜单" src="images/menu_close.png" width="14" height="12"/></span></h1>
+            <dl class="subm" id="dl_l2_menu_inner_wrap">
+                <!--<dt class="leftmenu">
+                    客商信息管理
                     <span class="panel-tool"><a href="javascript:void(0)" class="accordion-collapse"></a></span>
                 </dt>
                 <dl class="panel-body accordion-body" style="display: block;">
@@ -134,12 +135,14 @@
                     <dd>抚州高新区外贸企业出口预警数据</dd>
                     <dd>抚州高新区企业进口汇总表</dd>
                     <dd>抚州高新区招商考核统计表</dd>
-                </dl>
+                </dl>-->
             </dl>
         </div>
     </div>
     <div class="contwrap selh">
-
+        <iframe id="fraRightFrame" name="fraRightFrame" src="http://127.0.0.1:9099/CodeGen/Controller/CodeGenerate/Manager" frameborder="0"
+                marginheight="0" marginwidth="0" class="wh100p" scrolling="auto"
+                style="height: 100%; width: 100%; padding: 0; margin: 0;"></iframe>
     </div>
 </div>
 
