@@ -4,13 +4,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>招商管理系统——抚州国家高新区“互联网+”智慧园区</title>
-    <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="styles/main_v2.css" rel="stylesheet" type="text/css"/>
-    <link href="styles/resize.css" rel="stylesheet" type="text/css">
-    <script src="scripts/jquery-1.7.2.min.js"></script>
-    <script src="scripts/jquery.min.js"></script>
-    <script src="scripts/menu.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
+    <link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="Css/main_v2.css" rel="stylesheet" type="text/css"/>
+    <link href="Css/resize.css" rel="stylesheet" type="text/css">
+    <script src="Js/jquery-1.7.2.min.js"></script>
+    <script src="Js/jquery.min.js"></script>
+    <script src="Js/menu.js"></script>
+    <script src="Js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#showbtn").click(function () {
@@ -44,105 +44,106 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="logosys">抚州国家高新区</div>
-        <div class="toolbar-c">
-            <div class="searchbar">
-                <input class="searchbox" value="请输入关键词搜索" onfocus="if (value =='请输入关键词搜索'){value =''}"
-                       onblur="if (value ==''){value='请输入关键词搜索'}" name="keyword" id=""/>
-                <input type="submit" value="搜索" class="searchbtn"/>
-            </div>
-            <div class="topmenu">
-    <span class="topms"><a id="m1" onmouseover="mopen('ms_1')" onmouseout="mclosetime()">欢迎您，何主任！</a><dl id="ms_1"
-                                                                                                         onmouseover="mcancelclosetime()"
-                                                                                                         onmouseout="mclosetime()">
-    <dd><b class="set_1"></b> <a href="#">个人信息</a></dd><dd><b class="set_2"></b> <a href="#">修改密码</a></dd><dd><b
-            class="set_3"></b> <a href="#">退出系统</a></dd></dl></span>
-                <span class="usersty">何</span></div>
+<div class="header">
+    <div class="logosys">抚州国家高新区</div>
+    <div class="toolbar-c">
+        <div class="searchbar">
+            <input class="searchbox" value="请输入关键词搜索" onfocus="if (value =='请输入关键词搜索'){value =''}"
+                   onblur="if (value ==''){value='请输入关键词搜索'}" name="keyword" id=""/>
+            <input type="submit" value="搜索" class="searchbtn"/>
+        </div>
+        <div class="topmenu">
+                <span class="topms">
+                    <a id="m1" onmouseover="mopen('ms_1')" onmouseout="mclosetime()">欢迎您，何主任！</a>
+                    <dl id="ms_1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                        <dd><b class="set_1"></b><a href="#">个人信息</a></dd>
+                        <dd><b class="set_2"></b><a href="#">修改密码</a></dd>
+                        <dd><b class="set_3"></b><a href="#">退出系统</a></dd>
+                    </dl>
+                </span>
+            <span class="usersty">何</span>
         </div>
     </div>
-
-    <div class="mainwraper">
-        <div class="leftbar">
-            <div class="leftnav">
-                <div id="showbtn" data-toggle="tooltip" data-placement="right" title="显示子菜单"></div>
-                <ul>
-                    <li class="nav1" data-toggle="tooltip" data-placement="right" title="个人空间"
-                        onclick="location='desktop.html'">个人空间
-                    </li>
-                    <li class="nav2 curnav" data-toggle="tooltip" data-placement="right" title="招商管理">招商管理</li>
-                    <li class="nav3" data-toggle="tooltip" data-placement="right" title="项目管理"
-                        onclick="location='xiangmu.html'">项目管理
-                    </li>
-                    <li class="nav4" data-toggle="tooltip" data-placement="right" title="经济运行"
-                        onclick="location='jingji.html'">经济运行
-                    </li>
-                    <li class="nav5" data-toggle="tooltip" data-placement="right" title="辅助决策"
-                        onclick="location='fuzhu.html'">辅助决策
-                    </li>
-                    <li class="nav6" data-toggle="tooltip" data-placement="right" title="政企直通"
-                        onclick="location='zhengqi.html'">政企直通
-                    </li>
-                </ul>
-
-            </div>
-            <div class="sidemenu">
-                <h1>招商管理系统<span id="hidebtn"><img title="隐藏子菜单" src="images/menu_close.png" width="14" height="12"/></span>
-                </h1>
-                <dl class="subm">
-                    <dt class="leftmenu">客商信息管理<span class="panel-tool"><a href="javascript:void(0)"
-                                                                           class="accordion-collapse"></a></span></dt>
-                    <dl class="panel-body accordion-body" style="display: block;">
+</div>
+<div class="mainwraper">
+    <div class="leftbar">
+        <div class="leftnav">
+            <div id="showbtn" data-toggle="tooltip" data-placement="right" title="显示子菜单"></div>
+            <ul>
+                <li class="nav1" data-toggle="tooltip" data-placement="right" title="个人空间"
+                    onclick="location='desktop.html'">个人空间
+                </li>
+                <li class="nav2 curnav" data-toggle="tooltip" data-placement="right" title="招商管理">招商管理</li>
+                <li class="nav3" data-toggle="tooltip" data-placement="right" title="项目管理"
+                    onclick="location='xiangmu.html'">项目管理
+                </li>
+                <li class="nav4" data-toggle="tooltip" data-placement="right" title="经济运行"
+                    onclick="location='jingji.html'">经济运行
+                </li>
+                <li class="nav5" data-toggle="tooltip" data-placement="right" title="辅助决策"
+                    onclick="location='fuzhu.html'">辅助决策
+                </li>
+                <li class="nav6" data-toggle="tooltip" data-placement="right" title="政企直通"
+                    onclick="location='zhengqi.html'">政企直通
+                </li>
+            </ul>
+        </div>
+        <div class="sidemenu">
+            <h1>招商管理系统<span id="hidebtn"><img title="隐藏子菜单" src="images/menu_close.png" width="14" height="12"/></span>
+            </h1>
+            <dl class="subm">
+                <dt class="leftmenu">客商信息管理
+                    <span class="panel-tool"><a href="javascript:void(0)" class="accordion-collapse"></a></span>
+                </dt>
+                <dl class="panel-body accordion-body" style="display: block;">
+                    <dd>客商信息</dd>
+                    <dl>
                         <dd>客商信息</dd>
-                        <dl>
-                            <dd>客商信息</dd>
-                            <dd>项目关联</dd>
-                            <dd>客商联系人信息管理</dd>
-                            <dd>签约合同管理</dd>
-                        </dl>
                         <dd>项目关联</dd>
                         <dd>客商联系人信息管理</dd>
                         <dd>签约合同管理</dd>
                     </dl>
-                    <dt>招商团队管理</dt>
-                    <dt>招商考核管理</dt>
-                    <dt>招商信息（在谈项目）管理</dt>
-                    <dt>招商项目推介（招商载体资源管理）</dt>
-                    <dt>外贸企业管理</dt>
-                    <dt>进口信息管理</dt>
-                    <dt class="leftmenu">招商统计分析<span class="panel-tool"><a href="javascript:void(0)"
-                                                                           class="panel-tool-collapse"></a></span></dt>
-                    <dl class="panel-body accordion-body" style="display: none;">
-                        <dd>抚州高新区企业投资项目签约情况汇总表</dd>
-                        <dd>抚州高新区在谈项目情况表</dd>
-                        <dd>抚州高新区招商引资情况表</dd>
-                        <dd>抚州高新区招商引资项目开工投产情况报表</dd>
-                        <dd>抚州高新区利用省外资金来源比重表</dd>
-                        <dd>抚州高新区利用省外资金产业比重表</dd>
-                        <dd>抚州高新区利用省外资金排位表</dd>
-                        <dd>抚州高新区主导产业比重表</dd>
-                        <dd>抚州高新区外资利用情况</dd>
-                        <dd>抚州高新区外贸出口汇总表</dd>
-                        <dd>抚州高新区外贸企业出口汇总表</dd>
-                        <dd>抚州高新区外资企业出口汇总表</dd>
-                        <dd>抚州高新区外贸企业信息汇总表</dd>
-                        <dd>抚州高新区外贸企业出口预警数据</dd>
-                        <dd>抚州高新区企业进口汇总表</dd>
-                        <dd>抚州高新区招商考核统计表</dd>
-                    </dl>
+                    <dd>项目关联</dd>
+                    <dd>客商联系人信息管理</dd>
+                    <dd>签约合同管理</dd>
                 </dl>
-            </div>
-        </div>
-
-        <div class="contwrap selh">
-
+                <dt>招商团队管理</dt>
+                <dt>招商考核管理</dt>
+                <dt>招商信息（在谈项目）管理</dt>
+                <dt>招商项目推介（招商载体资源管理）</dt>
+                <dt>外贸企业管理</dt>
+                <dt>进口信息管理</dt>
+                <dt class="leftmenu">招商统计分析<span class="panel-tool"><a href="javascript:void(0)" class="panel-tool-collapse"></a></span></dt>
+                <dl class="panel-body accordion-body" style="display: none;">
+                    <dd>抚州高新区企业投资项目签约情况汇总表</dd>
+                    <dd>抚州高新区在谈项目情况表</dd>
+                    <dd>抚州高新区招商引资情况表</dd>
+                    <dd>抚州高新区招商引资项目开工投产情况报表</dd>
+                    <dd>抚州高新区利用省外资金来源比重表</dd>
+                    <dd>抚州高新区利用省外资金产业比重表</dd>
+                    <dd>抚州高新区利用省外资金排位表</dd>
+                    <dd>抚州高新区主导产业比重表</dd>
+                    <dd>抚州高新区外资利用情况</dd>
+                    <dd>抚州高新区外贸出口汇总表</dd>
+                    <dd>抚州高新区外贸企业出口汇总表</dd>
+                    <dd>抚州高新区外资企业出口汇总表</dd>
+                    <dd>抚州高新区外贸企业信息汇总表</dd>
+                    <dd>抚州高新区外贸企业出口预警数据</dd>
+                    <dd>抚州高新区企业进口汇总表</dd>
+                    <dd>抚州高新区招商考核统计表</dd>
+                </dl>
+            </dl>
         </div>
     </div>
+    <div class="contwrap selh">
 
-    <script>
-        $(function () {
-            $("[data-toggle='tooltip']").tooltip();
-        });
-    </script>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("[data-toggle='tooltip']").tooltip();
+    });
+</script>
 </body>
 </html>
