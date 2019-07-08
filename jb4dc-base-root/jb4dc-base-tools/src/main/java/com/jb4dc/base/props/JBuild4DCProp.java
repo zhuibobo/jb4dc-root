@@ -1,4 +1,6 @@
-package com.jb4dc.base.service.general;
+package com.jb4dc.base.props;
+
+import com.jb4dc.base.tools.FileUtility;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,16 +13,18 @@ import java.util.Properties;
  * Date: 2018/11/21
  * To change this template use File | Settings | File Templates.
  */
-public class JBuild4DProp {
+public class JBuild4DCProp {
     private static Properties propertie;
-
+    private static final String filePath = "/config/jbuild4dc.properties";
     static{
         propertie = new Properties();
         try {
-            ClassLoader loader = Thread.currentThread().getContextClassLoader();
-            try(InputStream resourceStream = loader.getResourceAsStream("JBuild4D.properties")) {
+           /* ClassLoader loader = Thread.currentThread().getContextClassLoader();
+            try(InputStream resourceStream = loader.getResourceAsStream("JBuild4DC.properties")) {
                 propertie.load(resourceStream);
-            }
+            }*/
+            InputStream resourceStream = FileUtility.getStreamByLevel(filePath);
+            propertie.load(resourceStream);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {

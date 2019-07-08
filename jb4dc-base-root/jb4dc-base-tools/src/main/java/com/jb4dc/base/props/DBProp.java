@@ -1,4 +1,4 @@
-package com.jb4dc.base.dbaccess.general;
+package com.jb4dc.base.props;
 
 import com.jb4dc.base.tools.FileUtility;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
