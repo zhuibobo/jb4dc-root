@@ -26,22 +26,6 @@
                 $(".contwrap").css("margin-left", "96px");
             });
 
-            var tabs_i = 0
-            $(".leftmenu").click(function () {
-                var _self = $(this);
-                var j = $(".leftmenu").index(_self);
-                if (tabs_i == j) return false;
-                tabs_i = j;
-                $(".panel-tool a").each(function (e) {
-                    if (e == tabs_i) {
-                        $("a", _self).removeClass("panel-tool-collapse").addClass("accordion-collapse");
-                    } else {
-                        $(this).removeClass("accordion-collapse").addClass("panel-tool-collapse");
-                    }
-                });
-                $(".panel-body").slideUp().eq(tabs_i).slideDown();
-            });
-
             SystemMenu.Initialization({});
         })
     </script>
