@@ -1,0 +1,6 @@
+DBType: sqlserver
+DriverName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+DatabaseName: JB4DC_DEVMOCK_V01
+Url: jdbc:sqlserver://120.77.56.220:1433; DatabaseName=JB4DC_DEVMOCK_V01
+User: sa
+Password: zhenx#88DATA

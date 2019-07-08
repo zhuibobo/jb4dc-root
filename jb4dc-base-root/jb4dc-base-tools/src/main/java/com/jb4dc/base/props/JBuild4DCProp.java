@@ -5,6 +5,7 @@ import com.jb4dc.base.tools.FileUtility;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Properties;
 
 /**
@@ -13,18 +14,21 @@ import java.util.Properties;
  * Date: 2018/11/21
  * To change this template use File | Settings | File Templates.
  */
+/*
 public class JBuild4DCProp {
     private static Properties propertie;
     private static final String filePath = "/config/jbuild4dc.properties";
     static{
         propertie = new Properties();
         try {
-           /* ClassLoader loader = Thread.currentThread().getContextClassLoader();
+           */
+/* ClassLoader loader = Thread.currentThread().getContextClassLoader();
             try(InputStream resourceStream = loader.getResourceAsStream("JBuild4DC.properties")) {
                 propertie.load(resourceStream);
-            }*/
+            }*//*
+
             InputStream resourceStream = FileUtility.getStreamByLevel(filePath);
-            propertie.load(resourceStream);
+            propertie.load(new InputStreamReader(resourceStream, "utf-8"));
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
@@ -52,3 +56,4 @@ public class JBuild4DCProp {
         return getValue("WarningOperationCode");
     }
 }
+*/

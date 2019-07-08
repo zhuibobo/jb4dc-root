@@ -5,7 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.jb4dc.base.dbaccess.anno.DBAnnoUtility;
 import com.jb4dc.base.dbaccess.dao.BaseMapper;
 import com.jb4dc.base.service.*;
-import com.jb4dc.base.props.JBuild4DCProp;
+import com.jb4dc.base.ymls.JBuild4DCYaml;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.tools.UUIDUtility;
@@ -58,7 +58,7 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
 
     @Override
     public int deleteByKeyNotValidate(JB4DCSession jb4DSession, String id, String warningOperationCode ) throws JBuild4DCGenerallyException {
-        if(JBuild4DCProp.getWarningOperationCode().equals(warningOperationCode)) {
+        if(JBuild4DCYaml.getWarningOperationCode().equals(warningOperationCode)) {
             return defaultBaseMapper.deleteByPrimaryKey(id);
         }
         throw new JBuild4DCGenerallyException("删除失败WarningOperationCode错误");

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/*
 public class DBProp {
     private static Properties propertie;
     private static final String filePath = "/config/db.properties";
@@ -16,10 +17,12 @@ public class DBProp {
     static{
         propertie = new Properties();
         try {
-            /*ClassLoader loader = Thread.currentThread().getContextClassLoader();
+            */
+/*ClassLoader loader = Thread.currentThread().getContextClassLoader();
             try(InputStream resourceStream = loader.getResourceAsStream(filePath)) {
                 propertie.load(resourceStream);
-            }*/
+            }*//*
+
             InputStream resourceStream =FileUtility.getStreamByLevel(filePath);
             propertie.load(resourceStream);
         } catch (FileNotFoundException ex) {
@@ -106,3 +109,4 @@ public class DBProp {
         }
     }
 }
+*/
