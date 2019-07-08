@@ -4,7 +4,6 @@ import com.jb4dc.base.tools.FileUtility;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 
@@ -35,5 +34,9 @@ public class JBuild4DCYaml extends YamlUtility {
 
     public static String getWarningOperationCode(){
         return getValue("warning:operationCode");
+    }
+
+    public static String getClientSystemTitle(){
+        return getValue("client:systemTitle");
     }
 }
