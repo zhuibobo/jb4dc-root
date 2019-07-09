@@ -93,7 +93,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             sql = "select upper(table_name) TableName from information_schema.tables where table_schema='" + dataSourceSingleVo.getDatabaseName() + "' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
         }
         if (dataSourceSingleVo.getDbType().equals("oracle")) {
-            throw JBuild4DCGenerallyException.getNotSupportOracleException();
+            throw JBuild4DCGenerallyException.getNotSupportOracleException(JBuild4DCGenerallyException.EXCEPTION_CODE_GENERATE_CODE);
         }
         //PageHelper.startPage(pageNum, pageSize);
         //PageHelper.
@@ -121,7 +121,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             sql="select * from information_schema.columns where table_schema='"+dataSourceSingleVo.getDatabaseName()+"' and table_name= #{searchTableName}";
         }
         if(dataSourceSingleVo.getDbType().equals("oracle")){
-            throw JBuild4DCGenerallyException.getNotSupportOracleException();
+            throw JBuild4DCGenerallyException.getNotSupportOracleException(JBuild4DCGenerallyException.EXCEPTION_CODE_GENERATE_CODE);
         }
 
         SqlSessionFactory sqlSessionFactory = TemporarySqlSessionFactoryBuilder.build(dataSourceSingleVo.getDriverName(),dataSourceSingleVo.getUrl(),dataSourceSingleVo.getUser(),dataSourceSingleVo.getPassword());

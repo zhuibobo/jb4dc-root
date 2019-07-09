@@ -61,7 +61,7 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
         if(JBuild4DCYaml.getWarningOperationCode().equals(warningOperationCode)) {
             return defaultBaseMapper.deleteByPrimaryKey(id);
         }
-        throw new JBuild4DCGenerallyException("删除失败WarningOperationCode错误");
+        throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"删除失败WarningOperationCode错误");
     }
 
     @Override
@@ -114,7 +114,7 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
                 DBAnnoUtility.setIdValue(entity, UUIDUtility.getUUID());
             }
         } catch (Exception e) {
-            throw new JBuild4DCGenerallyException(e.getMessage(),e.getCause());
+            throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,e.getMessage(),e.getCause());
         }
     }
 
@@ -173,16 +173,16 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
 
     @Override
     public void statusChange(JB4DCSession jb4DSession, String ids, String status) throws JBuild4DCGenerallyException {
-        throw new JBuild4DCGenerallyException("请在"+this.getClass().getSimpleName()+"中实现statusChange方法!");
+        throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"请在"+this.getClass().getSimpleName()+"中实现statusChange方法!");
     }
 
     @Override
     public void moveUp(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException {
-        throw new JBuild4DCGenerallyException("请在"+this.getClass().getSimpleName()+"中重写moveUp方法！");
+        throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"请在"+this.getClass().getSimpleName()+"中重写moveUp方法！");
     }
 
     @Override
     public void moveDown(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException {
-        throw new JBuild4DCGenerallyException("请在"+this.getClass().getSimpleName()+"中重写moveDown方法！");
+        throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"请在"+this.getClass().getSimpleName()+"中重写moveDown方法！");
     }
 }

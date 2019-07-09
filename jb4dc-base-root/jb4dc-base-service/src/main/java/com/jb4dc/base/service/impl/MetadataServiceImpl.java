@@ -31,7 +31,7 @@ public class MetadataServiceImpl implements IMetadataService {
             sql="SELECT * FROM information_schema.tables WHERE table_schema = '"+dataBaseName+"' and table_name=#{tableName}";
         }
         else if(dbType==DBTypeEnum.oracle){
-            throw JBuild4DCGenerallyException.getNotSupportOracleException();
+            throw JBuild4DCGenerallyException.getNotSupportOracleException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE);
         }
         Map<String, Object> tableInfo=sqlBuilderService.selectOne(sql,tableName);
         if(tableInfo!=null) {
@@ -56,10 +56,10 @@ public class MetadataServiceImpl implements IMetadataService {
                     "WHERE A.name = #{tableName}";
         }
         else if(dbType==DBTypeEnum.mysql){
-            throw JBuild4DCGenerallyException.getNotSupportMySQLException();
+            throw JBuild4DCGenerallyException.getNotSupportMySQLException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE);
         }
         else if(dbType==DBTypeEnum.oracle){
-            throw JBuild4DCGenerallyException.getNotSupportOracleException();
+            throw JBuild4DCGenerallyException.getNotSupportOracleException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE);
         }
         List<Map<String, Object>> fieldsInfo=sqlBuilderService.selectList(sql,tableName);
         return fieldsInfo;

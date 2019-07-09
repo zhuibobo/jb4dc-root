@@ -8,6 +8,7 @@ package com.jb4dc.base.dbaccess.anno;
  */
 
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+import com.jb4dc.core.base.exception.JBuild4DCSessionTimeoutException;
 
 import java.lang.reflect.Field;
 
@@ -37,7 +38,7 @@ public class DBAnnoUtility {
                 }
             }
         }
-        throw new JBuild4DCGenerallyException("类型"+object.getClass().getName()+"中找不到标记了注解DBKeyField,设定为主键的字段！");
+        throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"类型"+object.getClass().getName()+"中找不到标记了注解DBKeyField,设定为主键的字段！");
     }
 
     public static void setIdValue(Object object, Object value) throws IllegalAccessException, JBuild4DCGenerallyException, InstantiationException {
@@ -65,6 +66,6 @@ public class DBAnnoUtility {
                 }
             }
         }
-        throw new JBuild4DCGenerallyException("类型"+object.getClass().getName()+"中找不到标记了注解DBKeyField,设定为主键的字段！");
+        throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"类型"+object.getClass().getName()+"中找不到标记了注解DBKeyField,设定为主键的字段！");
     }
 }

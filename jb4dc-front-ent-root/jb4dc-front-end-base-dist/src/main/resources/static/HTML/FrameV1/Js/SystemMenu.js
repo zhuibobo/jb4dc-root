@@ -1060,7 +1060,7 @@ var SystemMenu={
                 "menuJsExpression": null
             }
         ];
-        AjaxUtility.Get("",{},function (result) {
+        AjaxUtility.Get("/Rest/Frame/Menu/GetMyMenu",{},function (result) {
 
         },this);
         this._allMenusData=_menus;
