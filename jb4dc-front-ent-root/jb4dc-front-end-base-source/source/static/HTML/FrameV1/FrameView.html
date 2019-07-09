@@ -19,6 +19,10 @@
             document.title=JBuild4DCYaml.GetClientSystemTitle();
             var userData=SessionUtility.GetSessionUser();
             console.log(userData);
+            $("#link_user_info").html("欢迎您，"+userData.userName);
+            $("#span_user_sty").html(userData.userName.substring(0,1));
+
+            //console.log(userData);
             //DialogUtility.AlertText("11111");
             $("#showbtn").click(function () {
                 $(".sidemenu").show();
@@ -40,21 +44,21 @@
 <div class="header">
     <div class="logosys"></div>
     <div class="toolbar-c">
-        <div class="searchbar">
+        <div class="searchbar" style="display: none">
             <input class="searchbox" value="请输入关键词搜索" onfocus="if (value =='请输入关键词搜索'){value =''}"
                    onblur="if (value ==''){value='请输入关键词搜索'}" name="keyword" id=""/>
             <input type="submit" value="搜索" class="searchbtn"/>
         </div>
         <div class="topmenu">
                 <span class="topms">
-                    <a id="m1" onmouseover="mopen('ms_1')" onmouseout="mclosetime()">欢迎您，何主任！</a>
+                    <a id="link_user_info" onmouseover="mopen('ms_1')" onmouseout="mclosetime()">欢迎您，何主任！</a>
                     <dl id="ms_1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
                         <dd><b class="set_1"></b><a href="#">个人信息</a></dd>
                         <dd><b class="set_2"></b><a href="#">修改密码</a></dd>
                         <dd><b class="set_3"></b><a href="#">退出系统</a></dd>
                     </dl>
                 </span>
-            <span class="usersty">何</span>
+            <span id="span_user_sty" class="usersty">何</span>
         </div>
     </div>
 </div>

@@ -22,7 +22,7 @@ var SessionUtility={
             else if(!window.parent.SessionUtility._currentSessionUser){
                 AjaxUtility.GetSync("/Rest/Session/User/GetMySessionUser",{},function (result) {
                     if(result.success){
-                        console.log(result.data);
+                        //console.log(result.data);
                         this._currentSessionUser=result.data;
                         LocalStorageUtility.setItemInSessionStorage(storeKey,JsonUtility.JsonToString(this._currentSessionUser));
                     }

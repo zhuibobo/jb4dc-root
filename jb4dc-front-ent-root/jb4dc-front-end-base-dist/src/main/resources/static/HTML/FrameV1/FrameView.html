@@ -2,6 +2,10 @@
             document.title=JBuild4DCYaml.GetClientSystemTitle();
             var userData=SessionUtility.GetSessionUser();
             console.log(userData);
+            $("#link_user_info").html("欢迎您，"+userData.userName);
+            $("#span_user_sty").html(userData.userName.substring(0,1));
+
+            //console.log(userData);
             //DialogUtility.AlertText("11111");
             $("#showbtn").click(function () {
                 $(".sidemenu").show();
@@ -15,6 +19,6 @@
             });
 
             SystemMenu.Initialization({});
-        })</script></head><body><div class="header"><div class="logosys"></div><div class="toolbar-c"><div class="searchbar"><input class="searchbox" value="请输入关键词搜索" onfocus="if (value =='请输入关键词搜索'){value =''}" onblur="if (value ==''){value='请输入关键词搜索'}" name="keyword" id=""> <input type="submit" value="搜索" class="searchbtn"></div><div class="topmenu"><span class="topms"><a id="m1" onmouseover="mopen('ms_1')" onmouseout="mclosetime()">欢迎您，何主任！</a><dl id="ms_1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"><dd><b class="set_1"></b><a href="#">个人信息</a></dd><dd><b class="set_2"></b><a href="#">修改密码</a></dd><dd><b class="set_3"></b><a href="#">退出系统</a></dd></dl></span><span class="usersty">何</span></div></div></div><div class="mainwraper"><div class="leftbar"><div class="leftnav"><div id="showbtn" data-toggle="tooltip" data-placement="right" title="显示子菜单"></div><ul id="ul_l1_menu_wrap"></ul></div><div class="sidemenu" id="div_l2_menu_wrap"><h1><span id="span_l2_title">招商管理系统</span><span id="hidebtn"><img title="隐藏子菜单" src="images/menu_close.png" width="14" height="12"></span></h1><dl class="subm" id="dl_l2_menu_inner_wrap"></dl></div></div><div class="contwrap selh"><iframe id="fraRightFrame" name="fraRightFrame" src="" frameborder="0" marginheight="0" marginwidth="0" class="wh100p" scrolling="auto" style="height:100%;width:100%;padding:0;margin:0"></iframe></div></div><script>$(function () {
+        })</script></head><body><div class="header"><div class="logosys"></div><div class="toolbar-c"><div class="searchbar" style="display:none"><input class="searchbox" value="请输入关键词搜索" onfocus="if (value =='请输入关键词搜索'){value =''}" onblur="if (value ==''){value='请输入关键词搜索'}" name="keyword" id=""> <input type="submit" value="搜索" class="searchbtn"></div><div class="topmenu"><span class="topms"><a id="link_user_info" onmouseover="mopen('ms_1')" onmouseout="mclosetime()">欢迎您，何主任！</a><dl id="ms_1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"><dd><b class="set_1"></b><a href="#">个人信息</a></dd><dd><b class="set_2"></b><a href="#">修改密码</a></dd><dd><b class="set_3"></b><a href="#">退出系统</a></dd></dl></span><span id="span_user_sty" class="usersty">何</span></div></div></div><div class="mainwraper"><div class="leftbar"><div class="leftnav"><div id="showbtn" data-toggle="tooltip" data-placement="right" title="显示子菜单"></div><ul id="ul_l1_menu_wrap"></ul></div><div class="sidemenu" id="div_l2_menu_wrap"><h1><span id="span_l2_title">招商管理系统</span><span id="hidebtn"><img title="隐藏子菜单" src="images/menu_close.png" width="14" height="12"></span></h1><dl class="subm" id="dl_l2_menu_inner_wrap"></dl></div></div><div class="contwrap selh"><iframe id="fraRightFrame" name="fraRightFrame" src="" frameborder="0" marginheight="0" marginwidth="0" class="wh100p" scrolling="auto" style="height:100%;width:100%;padding:0;margin:0"></iframe></div></div><script>$(function () {
         $("[data-toggle='tooltip']").tooltip();
     });</script></body></html>

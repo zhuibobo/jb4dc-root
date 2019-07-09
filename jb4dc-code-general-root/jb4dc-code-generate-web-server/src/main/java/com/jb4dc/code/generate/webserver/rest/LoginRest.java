@@ -24,7 +24,7 @@ public class LoginRest {
             JB4DCSession jB4DCSession = new JB4DCSession();
             jB4DCSession.setOrganName("4D");
             jB4DCSession.setOrganId("OrganIdForAlex");
-            jB4DCSession.setUserName("Alex");
+            jB4DCSession.setUserName("十万个");
             jB4DCSession.setUserId("UserIdForAlex");
             JB4DCSessionUtility.addSessionAttr(JB4DCSessionUtility.UserLoginSessionKey, jB4DCSession);
             return JBuild4DCResponseVo.success("验证成功!");
