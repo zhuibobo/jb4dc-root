@@ -60,6 +60,8 @@ var BaseUtility = {
         return this.AppendTimeStampUrl(_url);
     },
     BuildFrameInnerView:function(action,para){
+        alert("BaseUtility.BuildFrameInnerView 已停用");
+        return false;
         //if(StringUtility.EndWith(action,"View")) {
             var urlPara = "";
             if (para) {

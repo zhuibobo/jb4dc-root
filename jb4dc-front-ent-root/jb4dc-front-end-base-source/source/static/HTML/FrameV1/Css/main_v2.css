@@ -840,11 +840,12 @@ select::-ms-expand {
 }
 
 .contwrap {
-    margin: 24px 24px 0 416px;
-}
-
-.selh {
-    margin-top: 50px;
+    /*margin: 24px 24px 0 416px;*/
+    position: absolute;
+    top: 0px;
+    left: 400px;
+    bottom: 90px;
+    right: 0px;
 }
 
 .onewrap .cont_sub {

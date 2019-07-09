@@ -24,11 +24,16 @@ public class FrameMenuImpl implements IFrameMenu {
         MenuPO rootMenu=getMenu("-1",rootMenuId,"Root","Root","Root", MenuTypeEnum.Root.getDisplayName(),"","","");
 
         MenuPO codeGenerate=getMenu(rootMenu.getMenuId(),"codeGenerate",
-                "开发示例","开发示例","开发示例",
+                "代码生成","代码生成","代码生成",
+                "","","/Controller/CodeGenerate/Manager","");
+
+        MenuPO templateDownLoad=getMenu(rootMenu.getMenuId(),"templateDownLoad",
+                "模版下载","模版下载","模版下载",
                 "","","","");
 
         result.add(rootMenu);
         result.add(codeGenerate);
+        result.add(templateDownLoad);
         return result;
     }
 

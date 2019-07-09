@@ -79,7 +79,10 @@ var SystemMenu={
         }
         else{
             $("#div_l2_menu_wrap").hide();
+            $(".contwrap").css("left","73px");
         }
+        //alert(singleTopMenuData.menuRightUrl);
+        $("#fraRightFrame").attr("src",BaseUtility.BuildAction(singleTopMenuData.menuRightUrl));
     },
     _ExistChildMenus:function(menuId){
         return this._GetChildMenus(menuId).length>0;
