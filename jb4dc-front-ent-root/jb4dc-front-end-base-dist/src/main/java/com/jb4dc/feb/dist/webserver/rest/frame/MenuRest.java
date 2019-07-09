@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/Rest/Frame/JBuild4DCYaml")
 public class MenuRest {
-    @Autowired
+    @Autowired(required = false)
     IFrameMenu frameMenu;
 
     public JBuild4DCResponseVo getClientSystemTitle() {
