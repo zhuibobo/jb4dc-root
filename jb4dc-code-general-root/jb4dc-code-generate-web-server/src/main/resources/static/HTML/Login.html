@@ -53,12 +53,12 @@
     },
     methods: {
         handleSubmit: function (name) {
-            var url = '/PlatFormRest/ValidateAccount';
+            var url = '/Rest/Login/ValidateAccount';
             var _self = this;
 
             //debugger;
             var senddata = {
-                account: _self.formItem.account,
+                accountName: _self.formItem.account,
                 password: _self.formItem.password
             };
             AjaxUtility.Post(url, senddata, function (result) {

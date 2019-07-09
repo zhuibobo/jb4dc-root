@@ -1,7 +1,7 @@
 package com.jb4dc.feb.dist.webserver.rest.frame;
 
 import com.jb4dc.base.service.extend.IFrameMenu;
-import com.jb4dc.base.service.general.JB4DSessionUtility;
+import com.jb4dc.base.service.general.JB4DCSessionUtility;
 import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.vo.JBuild4DCResponseVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class MenuRest {
     IFrameMenu frameMenu;
 
     public JBuild4DCResponseVo getClientSystemTitle() {
-        JB4DCSession jb4DCSession= JB4DSessionUtility.getSession();
+        JB4DCSession jb4DCSession= JB4DCSessionUtility.getSession();
         return frameMenu.getMyFrameMenu(jb4DCSession);
     }
 }

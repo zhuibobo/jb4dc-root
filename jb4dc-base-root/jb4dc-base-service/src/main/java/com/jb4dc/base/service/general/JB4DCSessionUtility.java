@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class JB4DSessionUtility {
+public class JB4DCSessionUtility {
 
     public static String UserLoginSessionKey="JB4DSession";
     public static String EXSessionKey1="EXSessionKey1";
