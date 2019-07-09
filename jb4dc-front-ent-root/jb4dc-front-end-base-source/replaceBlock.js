@@ -17,7 +17,7 @@ function calculateFilePath(file) {
     for (let i = 0; i < levelPathArray.length-1; i++) {
         levelPath += "../";
     }
-    return levelPath+"static/";
+    return levelPath+"";
 }
 
 function refJs(path) {
@@ -41,41 +41,41 @@ let replaceBlock = {
         replaceArray.push('<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />');
         //判断路径后进行引入js的路径
         let levelPath = calculateFilePath(file);
-        replaceArray.push(refJs(levelPath + "Js/T3P/JQuery/jquery-3.3.1.min.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/VUE-2.5.16/vue.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/IView-3.X/dist/iview.min.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/JQuery-UI-1.12.1/jquery-ui.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/ZTree-V3/js/jquery.ztree.all.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/perfect-scrollbar-14/perfect-scrollbar.js"));
-        replaceArray.push(refJs(levelPath + "Js/JBuild4DPlatformLib.js?refVersion=" + refVersion));
+        replaceArray.push(refJs(levelPath + "Js/External/JQuery-3.4.1/jquery-3.4.1.min.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/VUE-2.6.10/vue.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/IView-3.X/dist/iview.min.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/JQuery-UI-1.12.1/jquery-ui.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/ZTree-3.5.40/js/jquery.ztree.all.js"));
+        //replaceArray.push(refJs(levelPath + "Js/External/perfect-scrollbar-14/perfect-scrollbar.js"));
+        replaceArray.push(refJs(levelPath + "Js/JBuild4DCLib.js?refVersion=" + refVersion));
         replaceArray.push(refJs(levelPath + "Js/UIEXComponent.js?refVersion=" + refVersion));
-        replaceArray.push(refJs(levelPath + "Js/VueEXComponent.js?refVersion=" + refVersion));
+        //replaceArray.push(refJs(levelPath + "Js/VueEXComponent.js?refVersion=" + refVersion));
         return replaceArray.join("\n\t");
     },
     replaceCodeMirrorLib: function (search, file) {
         let replaceArray = new Array();
         let levelPath = calculateFilePath(file);
 
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/lib/codemirror.js"));
-        replaceArray.push(refCss(levelPath + 'Js/T3P/CodeMirror-5.39.2/lib/codemirror.css'));
-        replaceArray.push(refCss(levelPath + 'Js/T3P/CodeMirror-5.39.2/theme/monokai.css'));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/mode/xml/xml.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/mode/javascript/javascript.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/mode/css/css.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/mode/sql/sql.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/mode/htmlmixed/htmlmixed.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/fold/foldcode.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/fold/foldgutter.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/fold/brace-fold.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/fold/xml-fold.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/fold/markdown-fold.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/fold/comment-fold.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/fold/brace-fold.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/util/formatting.js"));
-        replaceArray.push(refCss(levelPath + 'Js/T3P/CodeMirror-5.39.2/addon/fold/foldgutter.css'));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/lib/codemirror.js"));
+        replaceArray.push(refCss(levelPath + 'Js/External/CodeMirror-5.39.2/lib/codemirror.css'));
+        replaceArray.push(refCss(levelPath + 'Js/External/CodeMirror-5.39.2/theme/monokai.css'));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/mode/xml/xml.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/mode/javascript/javascript.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/mode/css/css.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/mode/sql/sql.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/mode/htmlmixed/htmlmixed.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/fold/foldcode.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/fold/foldgutter.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/fold/brace-fold.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/fold/xml-fold.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/fold/markdown-fold.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/fold/comment-fold.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/fold/brace-fold.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/util/formatting.js"));
+        replaceArray.push(refCss(levelPath + 'Js/External/CodeMirror-5.39.2/addon/fold/foldgutter.css'));
 
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/search/search.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/CodeMirror-5.39.2/addon/search/searchcursor.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/search/search.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/CodeMirror-5.39.2/addon/search/searchcursor.js"));
 
         return replaceArray.join("\n\t");
     },
@@ -83,7 +83,7 @@ let replaceBlock = {
         let replaceArray = new Array();
         let levelPath = calculateFilePath(file);
 
-        replaceArray.push(refJs(levelPath + "Js/T3P/Ckeditor-4.11.1-4Design/ckeditor.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/Ckeditor-4.11.1-4Design/ckeditor.js"));
         replaceArray.push(refJs(levelPath + "Js/HTMLDesign/HTMLDesignUtility.js?refVersion=" + refVersion));
 
         return replaceArray.join("\n\t");
@@ -101,8 +101,8 @@ let replaceBlock = {
         let replaceArray = new Array();
         let levelPath = calculateFilePath(file);
 
-        replaceArray.push(refJs(levelPath + "Js/T3P/ZTree-V3/js/jquery.ztree.exhide.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/ZTree-V3/js/fuzzysearch.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/ZTree-V3/js/jquery.ztree.exhide.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/ZTree-V3/js/fuzzysearch.js"));
 
         return replaceArray.join("\n\t");
     },
@@ -111,20 +111,20 @@ let replaceBlock = {
         //判断路径后进行引入js的路径
         let levelPath = calculateFilePath(file);
 
-        replaceArray.push(refCss(levelPath + 'Themes/Default/Css/Jbuild4dPlatform.css?refVersion=' + refVersion));
+        replaceArray.push(refCss(levelPath + 'Themes/Default/Css/Jbuild4DC.css?refVersion=' + refVersion));
         replaceArray.push(refCss(levelPath + 'Themes/Default/IView-3.X/iview.css'));
         replaceArray.push(refCss(levelPath + 'Themes/Default/JQueryUI/jquery-ui.css'));
         replaceArray.push(refCss(levelPath + 'Themes/Default/ZTree/zTreeStyle/zTreeStyle.css'));
         return replaceArray.join("\n\t");
 
-        replaceArray.push("<script>");
+        /*replaceArray.push("<script>");
         replaceArray.push("<script>");
         replaceArray.push('\n\t\trefCssLink("' + levelPath + 'Themes/Default/Css/Jbuild4dPlatform.css?refVersion=' + refVersion + '");');
         replaceArray.push('\n\t\trefCssLink("' + levelPath + 'Themes/Default/IView-3.X/iview.css' + '");');
         replaceArray.push('\n\t\trefCssLink("' + levelPath + 'Themes/Default/JQueryUI/jquery-ui.css' + '");');
         replaceArray.push('\n\t\trefCssLink("' + levelPath + 'Themes/Default/ZTree/zTreeStyle/zTreeStyle.css' + '");');
         replaceArray.push("\n\t</script>");
-        return replaceArray.join("");
+        return replaceArray.join("");*/
     },
     replaceBootStrap4Lib: function (search, file) {
         let replaceArray = new Array();
@@ -135,7 +135,7 @@ let replaceBlock = {
         replaceArray.push("<meta charset=\"utf-8\" />");
         replaceArray.push("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />");
         replaceArray.push("<title>JBuild4D</title>");
-        replaceArray.push(refJs(levelPath + "Js/T3P/JQuery/jquery-3.3.1.min.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/JQuery/jquery-3.3.1.min.js"));
         replaceArray.push(refJs(levelPath + "HTML/FrameV1/bootstrap-4.2.1-dist/js/bootstrap.bundle.js"));
         replaceArray.push(refCss(levelPath + 'HTML/FrameV1/bootstrap-4.2.1-dist/css/bootstrap.css'));
 
@@ -161,8 +161,8 @@ let replaceBlock = {
     replaceGoJsLib:function (search, file) {
         let replaceArray = new Array();
         let levelPath = calculateFilePath(file);
-        replaceArray.push(refJs(levelPath + "Js/T3P/Go/go-debug.js"));
-        replaceArray.push(refJs(levelPath + "Js/T3P/Go/Figures.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/Go/go-debug.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/Go/Figures.js"));
         return replaceArray.join("\n\t");
     },
     replaceWebixLib:function (search, file) {
@@ -170,8 +170,8 @@ let replaceBlock = {
         //判断路径后进行引入js的路径
         let levelPath = calculateFilePath(file);
 
-        replaceArray.push(refJs(levelPath + "Js/T3P/Webix-UI-V.6.2.5/codebase/webix.js"));
-        replaceArray.push(refCss(levelPath + 'Js/T3P/Webix-UI-V.6.2.5/codebase/webix.css'));
+        replaceArray.push(refJs(levelPath + "Js/External/Webix-UI-V.6.2.5/codebase/webix.js"));
+        replaceArray.push(refCss(levelPath + 'Js/External/Webix-UI-V.6.2.5/codebase/webix.css'));
 
         return replaceArray.join("\n\t");
     },

@@ -1060,6 +1060,9 @@ var SystemMenu={
                 "menuJsExpression": null
             }
         ];
+        AjaxUtility.Get("",{},function (result) {
+
+        },this);
         this._allMenusData=_menus;
         this.RendererMenus(this._allMenusData);
     },
@@ -1115,7 +1118,7 @@ var SystemMenu={
         var topMenusData=this._GetChildMenus("0");
         for (var i = 0; i < topMenusData.length; i++) {
             var singleTopMenuData=topMenusData[i];
-            var topMenuElem=$('<li class="nav1" data-toggle="tooltip" data-placement="right" title="'+singleTopMenuData.menuText+'" >'+singleTopMenuData.menuText+'</li>');
+            var topMenuElem=$('<li class="nav6" data-toggle="tooltip" data-placement="right" title="'+singleTopMenuData.menuText+'" >'+singleTopMenuData.menuText+'</li>');
             topMenuElem.bind("click",{"singleTopMenuData":singleTopMenuData,"host":this},this._TopMenuClick);
             $("#ul_l1_menu_wrap").append(topMenuElem);
         }

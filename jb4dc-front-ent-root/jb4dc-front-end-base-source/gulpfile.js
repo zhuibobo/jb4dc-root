@@ -44,7 +44,7 @@ gulp.task('front-end-base-js-utility',()=>{
             presets: ['@babel/env'],
         }))
         .pipe(sourcemaps.init())
-        .pipe(concat('JBuild4DPlatformLib.js'))
+        .pipe(concat('JBuild4DCLib.js'))
         /*.pipe(uglify(
             {
                 compress: {drop_debugger: false}
@@ -73,12 +73,24 @@ gulp.task('front-end-base-js-external',()=>{
 });
 
 /*拷贝HTML下的所有文件*/
-gulp.task('front-end-base-html',()=>{
-    return gulp.src(jarFromResourcePath+"/HTML/**/*", {base:jarFromResourcePath+"/HTML"}).pipe(gulp.dest(jarToResourcePath+"/HTML"));
+gulp.task('front-end-base-html-resource',()=>{
+    return  gulp.src(jarFromResourcePath+"/HTML/**/*", {base:jarFromResourcePath+"/HTML"}).pipe(gulp.dest(jarToResourcePath+"/HTML"))
+});
+gulp.task('front-end-base-html-only',()=>{
+    //gulp.src(jarFromResourcePath+"/HTML/**/*", {base:jarFromResourcePath+"/HTML"}).pipe(gulp.dest(jarToResourcePath+"/HTML"))
+    return copyAndResolveHtml(jarFromResourcePath + "/HTML/**/*.html",jarFromResourcePath + "/HTML",jarToResourcePath + "/HTML");
+    /*return gulp.src(jarFromResourcePath+"/HTML/!**!/!*.html", {base:jarFromResourcePath+"/HTML"}).pipe(htmlmin({
+        collapseWhitespace: true,
+        minifyCSS:true,
+        minifyJS:false,
+        removeComments:true
+    })).pipe(gulp.dest(jarToResourcePath+"/HTML"));*/
 });
 
+gulp.task('front-end-base-html', gulp.series('front-end-base-html-resource','front-end-base-html-only'));
 
-gulp.task('Dist-Watch', function() {
+
+gulp.task('dist-watch', function() {
     gulp.watch(jarFromResourcePath+"/HTML/**/*", gulp.series('front-end-base-html'));
     gulp.watch(jarFromResourcePath+"/Js/Utility/*.js", gulp.series('front-end-base-js-utility'));
 });
