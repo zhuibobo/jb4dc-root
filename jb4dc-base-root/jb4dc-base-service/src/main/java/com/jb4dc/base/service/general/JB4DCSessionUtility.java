@@ -32,6 +32,19 @@ public class JB4DCSessionUtility {
         return b4DSession;
     }
 
+    public static JB4DCSession getSessionToClientStore(){
+        JB4DCSession b4DSession = new JB4DCSession();
+        JB4DCSession b4DSessionSource=getSession();
+        b4DSession.setAccountId(b4DSessionSource.getAccountId());
+        b4DSession.setOrganId(b4DSessionSource.getOrganId());
+        b4DSession.setOrganName(b4DSessionSource.getOrganName());
+        b4DSession.setUserId(b4DSessionSource.getUserId());
+        b4DSession.setUserName(b4DSessionSource.getUserName());
+        b4DSession.setMainDepartmentId(b4DSessionSource.getMainDepartmentId());
+        b4DSession.setMainDepartmentName(b4DSessionSource.getMainDepartmentName());
+        return b4DSession;
+    }
+
     public static JB4DCSession getSessionNotException() {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         if(request == null) {

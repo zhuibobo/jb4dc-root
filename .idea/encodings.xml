@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-cloud-root" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-web-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-eureka-web-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-code-general-root" charset="UTF-8" />

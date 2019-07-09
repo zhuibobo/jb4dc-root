@@ -17,6 +17,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             document.title=JBuild4DCYaml.GetClientSystemTitle();
+            var userData=SessionUtility.GetSessionUser();
+            console.log(userData);
             //DialogUtility.AlertText("11111");
             $("#showbtn").click(function () {
                 $(".sidemenu").show();
