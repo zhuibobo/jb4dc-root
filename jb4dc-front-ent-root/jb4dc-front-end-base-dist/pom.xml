@@ -20,6 +20,10 @@
             <groupId>jb4dc</groupId>
             <artifactId>jb4dc-base-tools</artifactId>
         </dependency>
+        <dependency>
+            <groupId>jb4dc</groupId>
+            <artifactId>jb4dc-base-service</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
