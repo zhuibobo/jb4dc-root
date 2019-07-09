@@ -33,6 +33,6 @@ public class MenuRest {
             //throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,)
             throw JBuild4DCGenerallyException.getInterfaceNotBeanException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"com.jb4dc.base.service.extend.IFrameMenu");
         }
-        return frameMenu.getMyFrameMenu(jb4DCSession);
+        return JBuild4DCResponseVo.success(JBuild4DCResponseVo.GETDATASUCCESSMSG,frameMenu.getMyFrameMenu(jb4DCSession));
     }
 }

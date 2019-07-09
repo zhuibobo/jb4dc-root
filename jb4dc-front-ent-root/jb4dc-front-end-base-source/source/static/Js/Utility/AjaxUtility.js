@@ -45,7 +45,7 @@ var AjaxUtility={
                 try{
                     if(result!=null&&result.success!=null&&!result.success){
                         if(result.message=="登录Session过期"){
-                            DialogUtility.Alert(window,DialogUtility.DialogAlertId,{},"Session超时，请重新登陆系统",function () {
+                            DialogUtility.AlertError(window,DialogUtility.DialogAlertErrorId,{},"Session超时，请重新登陆系统",function () {
                                 BaseUtility.RedirectToLogin();
                             });
                         }
@@ -80,7 +80,7 @@ var AjaxUtility={
                         BaseUtility.RedirectToLogin();
                     }
                     console.log(msg);
-                    DialogUtility.Alert(window,"AjaxUtility.Post.Error",{},"Ajax请求发生错误！"+"status:"+msg.status+",responseText:"+msg.responseText,null);
+                    DialogUtility.AlertError(window,"AjaxUtility.Post.Error",{},"Ajax请求发生错误！<br/>"+"status:"+msg.status+",<br/>responseText:"+msg.responseText,null);
                 }catch (e){
 
                 }

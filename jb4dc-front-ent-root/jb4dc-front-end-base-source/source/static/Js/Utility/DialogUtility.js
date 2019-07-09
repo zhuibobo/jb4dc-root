@@ -60,8 +60,9 @@ var DialogUtility={
     },
     AlertError:function (opererWindow,dialogId,config,htmlmsg,sFunc) {
         var defaultConfig={
-            height: 200,
-            width: 400
+            height: "auto",
+            width: "auto",
+            title:"错误提示"
         };
         defaultConfig = $.extend(true, {}, defaultConfig, config);
         this.Alert(opererWindow,dialogId,defaultConfig,htmlmsg,sFunc);

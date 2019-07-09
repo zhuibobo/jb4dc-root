@@ -8,6 +8,92 @@ var SystemMenu={
         this.GetMenuFromServerRendererTo();
     },
     GetMenuFromServerRendererTo:function () {
+        AjaxUtility.Get("/Rest/Frame/Menu/GetMyMenu",{},function (result) {
+            this._allMenusData=result.data;
+            this.RendererMenus(this._allMenusData);
+        },this);
+    },
+    RendererMenus:function () {
+        this._RendererTopMenu();
+        $($("#ul_l1_menu_wrap").find("li")[0]).trigger("click");
+    },
+    _RendererL2Menu:function(topMenuData){
+        //var l2MenuTitleElem='<h1>'+topMenuData.menuText+'<span id="hidebtn"><img title="隐藏子菜单" src="images/menu_close.png" width="14" height="12"/></span></h1>';
+        $("#span_l2_title").html(topMenuData.menuText);
+        var l2ChildMenusData=this._GetChildMenus(topMenuData.menuId);
+        $("#dl_l2_menu_inner_wrap").html("");
+        for (var i = 0; i < l2ChildMenusData.length; i++) {
+            var l2SingleMenuData=l2ChildMenusData[i];
+            var l2elem;
+            if(this._ExistChildMenus(l2SingleMenuData.menuId)){
+                l2elem=$('<dt class="leftmenu">'+l2SingleMenuData.menuText+'<span class="panel-tool"><a href="javascript:void(0)" class="accordion-collapse"></a></span></dt>');
+                $("#dl_l2_menu_inner_wrap").append(l2elem);
+
+                var l3ChildMenusData=this._GetChildMenus(l2SingleMenuData.menuId);
+                var l3elemWrap=$('<dl class="panel-body accordion-body" style="display: block;"></dl>');
+                l2elem.after(l3elemWrap);
+                for (var j = 0; j < l3ChildMenusData.length; j++) {
+                    var l3SingleMenuData=l3ChildMenusData[j];
+                    var l3elem;
+                    l3elem=$('<dd>'+l3SingleMenuData.menuText+'</dd>');
+                    l3elemWrap.append(l3elem);
+                }
+            }
+            else {
+                l2elem=$('<dt>'+l2SingleMenuData.menuText+'</dt>');
+                $("#dl_l2_menu_inner_wrap").append(l2elem);
+            }
+        }
+
+        var tabs_i = 0
+        $(".leftmenu").click(function () {
+            var _self = $(this);
+            var j = $(".leftmenu").index(_self);
+            if (tabs_i == j) return false;
+            tabs_i = j;
+            $(".panel-tool a").each(function (e) {
+                if (e == tabs_i) {
+                    $("a", _self).removeClass("panel-tool-collapse").addClass("accordion-collapse");
+                } else {
+                    $(this).removeClass("accordion-collapse").addClass("panel-tool-collapse");
+                }
+            });
+            $(".panel-body").slideUp().eq(tabs_i).slideDown();
+        });
+    },
+    _RendererTopMenu:function(){
+        var topMenusData=this._GetChildMenus("0");
+        for (var i = 0; i < topMenusData.length; i++) {
+            var singleTopMenuData=topMenusData[i];
+            var topMenuElem=$('<li class="nav6" data-toggle="tooltip" data-placement="right" title="'+singleTopMenuData.menuText+'" >'+singleTopMenuData.menuText+'</li>');
+            topMenuElem.bind("click",{"singleTopMenuData":singleTopMenuData,"host":this},this._TopMenuClick);
+            $("#ul_l1_menu_wrap").append(topMenuElem);
+        }
+    },
+    _TopMenuClick:function(sender){
+        var _self=sender.data.host;
+        var singleTopMenuData=sender.data.singleTopMenuData;
+        if(_self._ExistChildMenus(singleTopMenuData.menuId)){
+            $("#div_l2_menu_wrap").show();
+            _self._RendererL2Menu(singleTopMenuData);
+        }
+        else{
+            $("#div_l2_menu_wrap").hide();
+        }
+    },
+    _ExistChildMenus:function(menuId){
+        return this._GetChildMenus(menuId).length>0;
+    },
+    _GetChildMenus:function (menuId) {
+        var result=[];
+        for (var i=0;i<this._allMenusData.length;i++){
+            if(this._allMenusData[i].menuParentId==menuId){
+                result.push(this._allMenusData[i]);
+            }
+        }
+        return result;
+    },
+    _GetMockMenuData:function () {
         var _menus = [
             {
                 "menuId": "0",
@@ -1060,90 +1146,6 @@ var SystemMenu={
                 "menuJsExpression": null
             }
         ];
-        AjaxUtility.Get("/Rest/Frame/Menu/GetMyMenu",{},function (result) {
-
-        },this);
-        this._allMenusData=_menus;
-        this.RendererMenus(this._allMenusData);
-    },
-    RendererMenus:function () {
-        this._RendererTopMenu();
-        $($("#ul_l1_menu_wrap").find("li")[0]).trigger("click");
-    },
-    _RendererL2Menu:function(topMenuData){
-        //var l2MenuTitleElem='<h1>'+topMenuData.menuText+'<span id="hidebtn"><img title="隐藏子菜单" src="images/menu_close.png" width="14" height="12"/></span></h1>';
-        $("#span_l2_title").html(topMenuData.menuText);
-        var l2ChildMenusData=this._GetChildMenus(topMenuData.menuId);
-        $("#dl_l2_menu_inner_wrap").html("");
-        for (var i = 0; i < l2ChildMenusData.length; i++) {
-            var l2SingleMenuData=l2ChildMenusData[i];
-            var l2elem;
-            if(this._ExistChildMenus(l2SingleMenuData.menuId)){
-                l2elem=$('<dt class="leftmenu">'+l2SingleMenuData.menuText+'<span class="panel-tool"><a href="javascript:void(0)" class="accordion-collapse"></a></span></dt>');
-                $("#dl_l2_menu_inner_wrap").append(l2elem);
-
-                var l3ChildMenusData=this._GetChildMenus(l2SingleMenuData.menuId);
-                var l3elemWrap=$('<dl class="panel-body accordion-body" style="display: block;"></dl>');
-                l2elem.after(l3elemWrap);
-                for (var j = 0; j < l3ChildMenusData.length; j++) {
-                    var l3SingleMenuData=l3ChildMenusData[j];
-                    var l3elem;
-                    l3elem=$('<dd>'+l3SingleMenuData.menuText+'</dd>');
-                    l3elemWrap.append(l3elem);
-                }
-            }
-            else {
-                l2elem=$('<dt>'+l2SingleMenuData.menuText+'</dt>');
-                $("#dl_l2_menu_inner_wrap").append(l2elem);
-            }
-        }
-
-        var tabs_i = 0
-        $(".leftmenu").click(function () {
-            var _self = $(this);
-            var j = $(".leftmenu").index(_self);
-            if (tabs_i == j) return false;
-            tabs_i = j;
-            $(".panel-tool a").each(function (e) {
-                if (e == tabs_i) {
-                    $("a", _self).removeClass("panel-tool-collapse").addClass("accordion-collapse");
-                } else {
-                    $(this).removeClass("accordion-collapse").addClass("panel-tool-collapse");
-                }
-            });
-            $(".panel-body").slideUp().eq(tabs_i).slideDown();
-        });
-    },
-    _RendererTopMenu:function(){
-        var topMenusData=this._GetChildMenus("0");
-        for (var i = 0; i < topMenusData.length; i++) {
-            var singleTopMenuData=topMenusData[i];
-            var topMenuElem=$('<li class="nav6" data-toggle="tooltip" data-placement="right" title="'+singleTopMenuData.menuText+'" >'+singleTopMenuData.menuText+'</li>');
-            topMenuElem.bind("click",{"singleTopMenuData":singleTopMenuData,"host":this},this._TopMenuClick);
-            $("#ul_l1_menu_wrap").append(topMenuElem);
-        }
-    },
-    _TopMenuClick:function(sender){
-        var _self=sender.data.host;
-        var singleTopMenuData=sender.data.singleTopMenuData;
-        if(_self._ExistChildMenus(singleTopMenuData.menuId)){
-            $("#div_l2_menu_wrap").show();
-            _self._RendererL2Menu(singleTopMenuData);
-        }
-        else{
-            $("#div_l2_menu_wrap").hide();
-        }
-    },
-    _ExistChildMenus:function(menuId){
-        return this._GetChildMenus(menuId).length>0;
-    },
-    _GetChildMenus:function (menuId) {
-        var result=[];
-        for (var i=0;i<this._allMenusData.length;i++){
-            if(this._allMenusData[i].menuParentId==menuId){
-                result.push(this._allMenusData[i]);
-            }
-        }
-        return result;
+        return _menus;
     }
 }
