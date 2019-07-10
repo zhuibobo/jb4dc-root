@@ -57,7 +57,7 @@ public class RestTestBase {
     public JBuild4DCResponseVo simpleDelete(String url, String recordId, Map<String,String> paras) throws Exception {
         MockHttpServletRequestBuilder requestDeleteBuilder = delete(url);
         requestDeleteBuilder.contentType(MediaType.APPLICATION_JSON_UTF8);
-        requestDeleteBuilder.sessionAttr("JB4DSession", getSession());
+        requestDeleteBuilder.sessionAttr("JB4DCSession", getSession());
 
         requestDeleteBuilder.param("recordId",recordId);
         if(paras!=null&&paras.size()>0){
@@ -74,7 +74,7 @@ public class RestTestBase {
     public JBuild4DCResponseVo simpleSaveEdit(String url,Object entity) throws Exception {
         MockHttpServletRequestBuilder requestPostBuilder = post(url);
         requestPostBuilder.contentType(MediaType.APPLICATION_JSON_UTF8);
-        requestPostBuilder.sessionAttr("JB4DSession", getSession());
+        requestPostBuilder.sessionAttr("JB4DCSession", getSession());
         requestPostBuilder.content(JsonUtility.toObjectString(entity));
         MvcResult result = mockMvc.perform(requestPostBuilder).andReturn();
         String json = result.getResponse().getContentAsString();
@@ -85,7 +85,7 @@ public class RestTestBase {
     public JBuild4DCResponseVo simpleGetData(String url,Map<String,String> paras) throws Exception {
         MockHttpServletRequestBuilder requestDeleteBuilder = post(url);
         requestDeleteBuilder.contentType(MediaType.APPLICATION_JSON_UTF8);
-        requestDeleteBuilder.sessionAttr("JB4DSession", getSession());
+        requestDeleteBuilder.sessionAttr("JB4DCSession", getSession());
 
         if(paras!=null&&paras.size()>0){
             for (Map.Entry<String, String> stringStringEntry : paras.entrySet()) {

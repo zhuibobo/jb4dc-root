@@ -10,5 +10,5 @@ import com.jb4dc.core.base.session.JB4DCSession;
  * To change this template use File | Settings | File Templates.
  */
 public interface IUpdateBefore <T> {
-    T run(JB4DCSession jb4DSession, T sourceEntity) throws JBuild4DCGenerallyException;
+    T run(JB4DCSession jb4DCSession, T sourceEntity) throws JBuild4DCGenerallyException;
 }

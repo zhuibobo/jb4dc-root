@@ -49,13 +49,13 @@ public class CGServiceImpl {
         builder.append(CGTool.newLineChar());
         builder.append(CGTool.tabChar(1)+"@Override");
         builder.append(CGTool.newLineChar());
-        builder.append(CGTool.tabChar(1)+"public int saveSimple(JB4DSession jb4DSession, String id, "+domainObjectName+" record) throws JBuild4DGenerallyException {");
+        builder.append(CGTool.tabChar(1)+"public int saveSimple(JB4DCSession jb4DCSession, String id, "+domainObjectName+" record) throws JBuild4DCGenerallyException {");
         builder.append(CGTool.newLineChar());
-        builder.append(CGTool.tabChar(2)+"return super.save(jb4DSession,id, record, new IAddBefore<"+domainObjectName+">() {");
+        builder.append(CGTool.tabChar(2)+"return super.save(JB4DCSession,id, record, new IAddBefore<"+domainObjectName+">() {");
         builder.append(CGTool.newLineChar());
         builder.append(CGTool.tabChar(3)+"@Override");
         builder.append(CGTool.newLineChar());
-        builder.append(CGTool.tabChar(3)+"public "+domainObjectName+" run(JB4DSession jb4DSession,"+domainObjectName+" sourceEntity) throws JBuild4DGenerallyException {");
+        builder.append(CGTool.tabChar(3)+"public "+domainObjectName+" run(JB4DCSession jb4DCSession,"+domainObjectName+" sourceEntity) throws JBuild4DCGenerallyException {");
         builder.append(CGTool.newLineChar());
         builder.append(CGTool.tabChar(4)+"//设置排序,以及其他参数--nextOrderNum()");
         builder.append(CGTool.newLineChar());

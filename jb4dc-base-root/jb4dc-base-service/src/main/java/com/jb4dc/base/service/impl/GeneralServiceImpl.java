@@ -34,15 +34,15 @@ public class GeneralServiceImpl implements IGeneralService {
     }
 
     /*@Override
-    public Long nextOrderNum(String tableName, String orderFieldName) throws JBuild4DGenerallyException {
+    public Long nextOrderNum(String tableName, String orderFieldName) throws JBuild4DCGenerallyException {
         if (!SQLKeyWordUtility.validateSqlInjectForSelectOnly(tableName)) {
             if (!SQLKeyWordUtility.validateSqlInjectForSelectOnly(orderFieldName)) {
                 return generalMapper.nextOrderNum(tableName, orderFieldName);
             } else {
-                throw new JBuild4DGenerallyException("存在SQL关键字:" + orderFieldName);
+                throw new JBuild4DCGenerallyException("存在SQL关键字:" + orderFieldName);
             }
         } else {
-            throw new JBuild4DGenerallyException("存在SQL关键字:" + tableName);
+            throw new JBuild4DCGenerallyException("存在SQL关键字:" + tableName);
         }
     }*/
 

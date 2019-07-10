@@ -15,7 +15,7 @@ public interface IGeneralService {
 
     List<Map> executeSqlMap(Map map);
 
-    //Long nextOrderNum(String tableName,String orderFieldName) throws JBuild4DGenerallyException;
+    //Long nextOrderNum(String tableName,String orderFieldName) throws JBuild4DCGenerallyException;
 
     Object executeScalarSql(String sql);
 }

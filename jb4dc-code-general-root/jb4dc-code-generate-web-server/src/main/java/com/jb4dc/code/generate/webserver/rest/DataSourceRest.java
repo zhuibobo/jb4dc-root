@@ -27,7 +27,7 @@ public class DataSourceRest {
 
     @RequestMapping(value = "/GetConfig", method = RequestMethod.GET)
     public JBuild4DCResponseVo getConfig() throws FileNotFoundException, JAXBException {
-        //List<TableGroupEntity> tableGroupEntityList=tableGroupService.getALLASC(JB4DSessionUtility.getSession());
+        //List<TableGroupEntity> tableGroupEntityList=tableGroupService.getALLASC(JB4DCSessionUtility.getSession());
         DataSourceConfigBO config = dataSourceService.getSimpleConfig();
         //config.getDataSourceSingleVoList().forEach(vo->{vo.setUrl("");vo.setUser("");vo.setPassword("");vo.setDriverName("");});
         //config.getDataSourceSingleVoList().forEach(vo->(vo.setUser(""));

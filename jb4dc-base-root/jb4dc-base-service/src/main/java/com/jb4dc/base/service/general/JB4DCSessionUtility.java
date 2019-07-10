@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class JB4DCSessionUtility {
 
-    public static String UserLoginSessionKey="JB4DSession";
+    public static String UserLoginSessionKey="JB4DCSession";
     public static String EXSessionKey1="EXSessionKey1";
 
     /**
@@ -91,7 +91,7 @@ public class JB4DCSessionUtility {
     }
 
     public static void setUserInfoToMV(ModelAndView modelAndView) throws JsonProcessingException {
-        JB4DCSession jb4DSession=getSession();
-        modelAndView.addObject("currUserEntity", JsonUtility.toObjectString(jb4DSession));
+        JB4DCSession jb4DCSession=getSession();
+        modelAndView.addObject("currUserEntity", JsonUtility.toObjectString(jb4DCSession));
     }
 }

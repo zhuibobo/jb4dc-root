@@ -35,7 +35,7 @@ public class CodeGenerateRest {
 
     @RequestMapping(value = "/GetListData", method = RequestMethod.POST)
     public JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum,String dataSourceId, String searchTableName) throws IOException, ParseException, JBuild4DCGenerallyException, PropertyVetoException, JAXBException {
-        //JB4DCSession jb4DSession = JB4DSessionUtility.getSession();
+        //JB4DCSession JB4DCSession = JB4DCSessionUtility.getSession();
         //Map<String,Object> searchMap= GeneralSearchUtility.deserializationToMap(searchCondition);
         if(dataSourceId==null||dataSourceId.equals("")){
             return JBuild4DCResponseVo.error("请设置数据源!");
@@ -46,14 +46,14 @@ public class CodeGenerateRest {
 
     @RequestMapping(value = "/GetTableGenerateCode", method = RequestMethod.POST)
     public JBuild4DCResponseVo getTableGenerateCode(String dataSourceId,String tableName,String packageType,String packageLevel2Name,String orderFieldName,String statusFieldName) throws IOException, ParseException, XPathExpressionException, SAXException, ParserConfigurationException, JAXBException {
-        //JB4DCSession jb4DSession = JB4DSessionUtility.getSession();
+        //JB4DCSession JB4DCSession = JB4DCSessionUtility.getSession();
         Map<String,String> result=codeGenerateService.getTableGenerateCode(dataSourceId,tableName,orderFieldName,statusFieldName,packageType,packageLevel2Name);
         return JBuild4DCResponseVo.success("获取成功",result);
     }
 
     @RequestMapping(value = "/GetTableFields", method = RequestMethod.POST)
     public JBuild4DCResponseVo getTableFields(String dataSourceId,String tableName) throws IOException, ParseException, JBuild4DCGenerallyException, PropertyVetoException, JAXBException {
-        //JB4DCSession jb4DSession = JB4DSessionUtility.getSession();
+        //JB4DCSession JB4DCSession = JB4DCSessionUtility.getSession();
         List<SimpleTableFieldBO> result=codeGenerateService.getTableFields(dataSourceId,tableName);
         return JBuild4DCResponseVo.success("获取成功",result);
     }

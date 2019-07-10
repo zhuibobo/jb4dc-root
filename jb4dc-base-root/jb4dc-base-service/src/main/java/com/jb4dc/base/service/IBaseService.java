@@ -23,41 +23,41 @@ public interface IBaseService<T> {
 
     void setDefaultBaseMapper(BaseMapper<T> _defaultBaseMapper);
 
-    int deleteByKey(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException;
+    int deleteByKey(JB4DCSession jb4DCSession, String id) throws JBuild4DCGenerallyException;
 
-    int deleteByKeyNotValidate(JB4DCSession jb4DSession, String id, String warningOperationCode) throws JBuild4DCGenerallyException;
+    int deleteByKeyNotValidate(JB4DCSession jb4DCSession, String id, String warningOperationCode) throws JBuild4DCGenerallyException;
 
-    int deleteAll(JB4DCSession jb4DSession) throws JBuild4DCGenerallyException;
+    int deleteAll(JB4DCSession jb4DCSession) throws JBuild4DCGenerallyException;
 
-    int add(JB4DCSession jb4DSession, T entity);
+    int add(JB4DCSession jb4DCSession, T entity);
 
-    int addSelective(JB4DCSession jb4DSession, T entity);
+    int addSelective(JB4DCSession jb4DCSession, T entity);
 
-    T getByPrimaryKey(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException;
+    T getByPrimaryKey(JB4DCSession jb4DCSession, String id) throws JBuild4DCGenerallyException;
 
-    int updateByKeySelective(JB4DCSession jb4DSession, T entity);
+    int updateByKeySelective(JB4DCSession jb4DCSession, T entity);
 
-    int updateByKey(JB4DCSession jb4DSession, T entity);
+    int updateByKey(JB4DCSession jb4DCSession, T entity);
 
-    int saveSimple(JB4DCSession jb4DSession, String id, T entity) throws JBuild4DCGenerallyException;
+    int saveSimple(JB4DCSession jb4DCSession, String id, T entity) throws JBuild4DCGenerallyException;
 
-    int save(JB4DCSession jb4DSession, String id, T entity, IAddBefore<T> addBefore) throws JBuild4DCGenerallyException;
+    int save(JB4DCSession jb4DCSession, String id, T entity, IAddBefore<T> addBefore) throws JBuild4DCGenerallyException;
 
-    int save(JB4DCSession jb4DSession, String id, T entity, IAddBefore<T> addBefore, IUpdateBefore<T> updateBefore) throws JBuild4DCGenerallyException;
+    int save(JB4DCSession jb4DCSession, String id, T entity, IAddBefore<T> addBefore, IUpdateBefore<T> updateBefore) throws JBuild4DCGenerallyException;
 
-    PageInfo<T> getPage(JB4DCSession jb4DSession, int pageNum, int pageSize);
+    PageInfo<T> getPage(JB4DCSession jb4DCSession, int pageNum, int pageSize);
 
-    PageInfo<T> getPage(JB4DCSession jb4DSession, int pageNum, int pageSize, Map<String, Object> searchItemMap);
+    PageInfo<T> getPage(JB4DCSession jb4DCSession, int pageNum, int pageSize, Map<String, Object> searchItemMap);
 
-    List<T> getALL(JB4DCSession jb4DSession);
+    List<T> getALL(JB4DCSession jb4DCSession);
 
-    List<T> getALLASC(JB4DCSession jb4DSession);
+    List<T> getALLASC(JB4DCSession jb4DCSession);
 
-    int getNextOrderNum(JB4DCSession jb4DSession);
+    int getNextOrderNum(JB4DCSession jb4DCSession);
 
-    void statusChange(JB4DCSession jb4DSession, String ids, String status) throws JBuild4DCGenerallyException;
+    void statusChange(JB4DCSession jb4DCSession, String ids, String status) throws JBuild4DCGenerallyException;
 
-    void moveUp(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException;
+    void moveUp(JB4DCSession jb4DCSession, String id) throws JBuild4DCGenerallyException;
 
-    void moveDown(JB4DCSession jb4DSession, String id) throws JBuild4DCGenerallyException;
+    void moveDown(JB4DCSession jb4DCSession, String id) throws JBuild4DCGenerallyException;
 }

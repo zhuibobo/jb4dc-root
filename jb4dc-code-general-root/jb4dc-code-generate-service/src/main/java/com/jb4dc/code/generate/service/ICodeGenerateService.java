@@ -26,7 +26,7 @@ public interface ICodeGenerateService {
 
     List<SimpleTableFieldBO> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException;
 
-    //String getTableComment(JB4DSession jb4DSession, String tableName) throws JBuild4DGenerallyException;
+    //String getTableComment(JB4DCSession JB4DCSession, String tableName) throws JBuild4DCGenerallyException;
 
     //IntrospectedTable getTableInfo(String tableName);
 

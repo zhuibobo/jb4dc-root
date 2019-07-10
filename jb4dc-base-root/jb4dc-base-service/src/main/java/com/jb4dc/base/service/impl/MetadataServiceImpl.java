@@ -20,7 +20,7 @@ public class MetadataServiceImpl implements IMetadataService {
     public String getTableComment(DBTypeEnum dbType, String tableName, String dataBaseName) throws JBuild4DCGenerallyException {
         String sql="";
         if(dbType==DBTypeEnum.sqlserver){
-            //throw JBuild4DGenerallyException.getNotSupportMSSQLException();
+            //throw JBuild4DCGenerallyException.getNotSupportMSSQLException();
             sql="SELECT " +
                     "convert(nvarchar(100), A.name) TABLE_NAME,"+
                     "convert(nvarchar(200), C.value) TABLE_COMMENT "+
