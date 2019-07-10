@@ -16,8 +16,8 @@ const replacecust = require("./gulp-plugin/gulp-replace-cust/index.js");
 
 const replaceBlockObj=require("./replaceBlock.js");
 
-const jarFromResourcePath = "source/static";
-const jarToResourcePath = "../jb4dc-front-end-base-dist/src/main/resources/static";
+const jarFromResourcePath = "static";
+const jarToResourcePath = "../resources/static";
 
 //region 基础Jar包相关的编译
 

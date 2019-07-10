@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jb4dc-front-end-base-source" />
         <module name="jb4dc-cloud-eureka-web-server" />
         <module name="jb4dc-code-generate-web-server" />
         <module name="jb4dc-code-generate-service" />
