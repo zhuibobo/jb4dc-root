@@ -14,6 +14,7 @@
         <module>jb4dc-core-root</module>
         <module>jb4dc-front-ent-root</module>
         <module>jb4dc-cloud-root</module>
+        <module>jb4dc-web-app-starter</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
     <groupId>jb4dc</groupId>
@@ -93,6 +94,13 @@
                 <groupId>jb4dc</groupId>
                 <artifactId>jb4dc-code-generate-service</artifactId>
                 <version>${platform.version}</version>
+            </dependency>
+            <!--代码生成包-->
+            <dependency>
+                <groupId>jb4dc</groupId>
+                <artifactId>jb4dc-web-app-starter</artifactId>
+                <version>${platform.version}</version>
+                <type>pom</type>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->

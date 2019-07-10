@@ -20,6 +20,7 @@
       <module fileurl="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-source/jb4dc-front-end-base-source.iml" filepath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-source/jb4dc-front-end-base-source.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-ent-root.iml" filepath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-ent-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/jb4dc-root.iml" filepath="$PROJECT_DIR$/.idea/jb4dc-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-web-app-starter/jb4dc-web-app-starter.iml" filepath="$PROJECT_DIR$/jb4dc-web-app-starter/jb4dc-web-app-starter.iml" />
     </modules>
   </component>
 </project>
