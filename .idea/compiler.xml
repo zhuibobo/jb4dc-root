@@ -12,6 +12,7 @@
         <module name="jb4dc-code-generate-service" />
         <module name="jb4dc-base-service" />
         <module name="jb4dc-cloud-config-client" />
+        <module name="jb4dc-web-app-starter" />
         <module name="jb4dc-cloud-config-service" />
         <module name="jb4dc-front-end-base-dist" />
         <module name="jb4dc-base-db-access" />
