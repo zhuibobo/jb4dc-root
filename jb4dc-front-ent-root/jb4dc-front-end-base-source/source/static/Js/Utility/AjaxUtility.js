@@ -4,13 +4,13 @@ var AjaxUtility={
         this.Post(_url,sendData,func,caller,dataType,"application/json; charset=utf-8");
     },
     PostSync:function (_url,sendData,func,caller,dataType,contentType) {
-        return  this.Post(_url,sendData,func,dataType,caller,contentType,false);
+        return this._InnerAjax(_url,sendData,func,caller,dataType,null,false,"POST")
     },
     Post:function (_url,sendData,func,caller,dataType) {
         return this._InnerAjax(_url,sendData,func,caller,dataType,null,true,"POST")
     },
     GetSync:function (_url,sendData,func,caller,dataType) {
-        return this.Get(_url,sendData,func,caller,dataType,false);
+        return this._InnerAjax(_url,sendData,func,caller,dataType,null,false,"GET");
     },
     Get:function (_url,sendData,func,caller,dataType) {
         return this._InnerAjax(_url,sendData,func,caller,dataType,null,true,"GET")
@@ -29,8 +29,8 @@ var AjaxUtility={
         if (isAsync == undefined || isAsync == null) {
             isAsync = true;
         }
-        if(contentType==undefined||contentType==null){
-            contentType="application/x-www-form-urlencoded; charset=UTF-8";
+        if(contentType==undefined || contentType==null) {
+            contentType = "application/x-www-form-urlencoded; charset=UTF-8";
         }
         var innerResult=null;
         $.ajax({
