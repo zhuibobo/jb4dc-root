@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../Js/External/VUE-2.6.10/vue.js"></script>
     <script type="text/javascript" src="../Js/External/IView-3.X/dist/iview.min.js"></script>
     <script type="text/javascript" src="../Js/External/JQuery-UI-1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="../Js/External/ZTree-3.5.40/js/jquery.ztree.all.js"></script>
     <script type="text/javascript" src="../Js/JBuild4DCLib.js?refVersion=1"></script>
     <script type="text/javascript" src="../Js/UIEXComponent.js?refVersion=1"></script>
     <link rel="stylesheet" type="text/css" href="../Themes/Default/Css/Jbuild4DC.css?refVersion=1">
@@ -50,23 +51,23 @@
     },
     methods: {
         handleSubmit: function (name) {
-            var url = '/Rest/Login/ValidateAccount';
+            var url = '/PlatFormRest/ValidateAccount';
             var _self = this;
 
             //debugger;
             var senddata = {
-                accountName: _self.formItem.account,
+                account: _self.formItem.account,
                 password: _self.formItem.password
             };
             AjaxUtility.Post(url, senddata, function (result) {
                 if (result.success) {
                     //alert(11);
-                    window.location.href = BaseUtility.BuildAction("/HTML/FrameV1/FrameView.html");
+                    window.location.href = BaseUtility.BuildAction("/PlatForm/Base/FrameView.do");
                     //window.location.href=BaseUtility.BuildView("/PlatForm/Builder/Form/DetailView",{op:"add","moduleId":"448fa575-45ef-4101-97e7-1635e0f2c768"});
                 } else {
                     DialogUtility.Alert(window, "LoginAlert", {}, "帐号密码错误")
                 }
-            }, this);
+            }, "json");
 
         },
         handleReset: function (name) {

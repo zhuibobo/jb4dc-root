@@ -25,6 +25,10 @@
             <artifactId>jb4dc-web-app-starter</artifactId>
             <version>${platform.version}</version>
         </dependency>
+        <dependency>
+            <groupId>jb4dc</groupId>
+            <artifactId>jb4dc-cloud-config-service</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

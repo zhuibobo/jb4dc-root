@@ -1,83 +1,118 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
-    <!--开发示例模版-->
-    <changeSet author="zhuangrb" id="changeSet-Dev-Demo-0001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
-        <createTable tableName="TDEV_DEMO_GEN_LIST" remarks="开发示例表:通用列表">
-            <column name="DDGL_ID" type="NVARCHAR(128)" remarks="主键">
+    <!--系统设置-->
+    <changeSet author="zhuangrb" id="changeSet-System-0001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="TSYS_DICTIONARY_GROUP" remarks="数据字典的分组表:本身存在层级结构">
+            <column name="DICT_GROUP_ID" type="NVARCHAR(100)" remarks="字典分组ID:随机的UUID,主键">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="DDGL_KEY" type="NVARCHAR(128)" remarks="键值" />
-            <column name="DDGL_NAME" type="NVARCHAR(128)" remarks="名称" />
-            <column name="DDGL_VALUE" type="NVARCHAR(500)" remarks="值" />
-            <column name="DDGL_STATUS" type="NVARCHAR(10)" remarks="状态" />
-            <column name="DDGL_DESC" type="NVARCHAR(2000)" remarks="描述" />
-            <column name="DDGL_CREATETIME" type="datetime(6)" remarks="创建时间" />
-            <column name="DDGL_USER_ID" type="NVARCHAR(100)" remarks="创建用户ID" />
-            <column name="DDGL_USER_NAME" type="NVARCHAR(100)" remarks="创建用户名称" />
-            <column name="DDGL_ORGAN_ID" type="NVARCHAR(100)" remarks="创建组织ID" />
-            <column name="DDGL_ORGAN_NAME" type="NVARCHAR(100)" remarks="创建组织名称" />
-            <column name="DDGL_API" type="NVARCHAR(100)" remarks="API" />
-            <column name="DDGL_ORDER_NUM" type="INT" remarks="排序号"/>
-            <column name="DDGL_INPUTNUMBER" type="DECIMAL(18, 2)" remarks="数字" />
-            <column name="DDGL_BIND_DIC_SELECTED" type="NVARCHAR(100)" remarks="选定字典项" />
-            <column name="DDGL_BIND_DIC_RADIO" type="NVARCHAR(100)" remarks="单选字典项"/>
-            <column name="DDGL_BIND_DIC_CHECKBOX1" type="NVARCHAR(100)" remarks="复现字典项1" />
-            <column name="DDGL_BIND_DIC_CHECKBOX2" type="NVARCHAR(100)" remarks="复现字典项2" />
-            <column name="DDGL_BIND_DIC_CHECKBOX3" type="NVARCHAR(100)" remarks="复现字典项3" />
-            <column name="DDGL_BIND_DIC_MUCHECKBOX" type="NVARCHAR(1000)" remarks="多选字典项" />
+            <column name="DICT_GROUP_VALUE" type="NVARCHAR(200)" remarks="字典项分组的键值:必须唯一">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICT_GROUP_TEXT" type="NVARCHAR(200)" remarks="字典项分组的名称">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICT_GROUP_ORDER_NUM" type="INT" remarks="排序号" />
+            <column name="DICT_GROUP_CREATE_TIME" type="datetime(6)" remarks="创建时间" />
+            <column name="DICT_GROUP_DESC" type="NVARCHAR(500)" remarks="备注" />
+            <column name="DICT_GROUP_STATUS" type="NVARCHAR(10)" remarks="状态:启用,禁用" />
+            <column name="DICT_GROUP_PARENT_ID" type="NVARCHAR(100)" remarks="父节点的ID" />
+            <column name="DICT_GROUP_ISSYSTEM" type="NVARCHAR(10)" remarks="是否是分组" />
+            <column name="DICT_GROUP_DEL_ENABLE" type="NVARCHAR(10)" remarks="能否删除" />
+            <column name="DICT_GROUP_ENP_ITEM" type="NVARCHAR(10)" remarks="是否显示空选项:为是时,将默认显示[请选择]为空选项" />
         </createTable>
 
-        <createTable tableName="TDEV_DEMO_TL_TREE">
-            <column name="DDTT_ID" type="NVARCHAR(128)">
+        <createTable tableName="TSYS_DICTIONARY" remarks="数据字典表:用于存储通用的数据字典项,本身存在层次结果[分组->一级字典->二级字典->三级字典">
+            <column name="DICT_ID" type="NVARCHAR(100)" remarks="字典项的ID:随机的UUID,主键">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="DDTT_KEY" type="NVARCHAR(128)"/>
-            <column name="DDTT_NAME" type="NVARCHAR(128)"/>
-            <column name="DDTT_VALUE" type="NVARCHAR(500)"/>
-            <column name="DDTT_STATUS" type="NVARCHAR(10)"/>
-            <column name="DDTT_DESC" type="NVARCHAR(2000)"/>
-            <column name="DDTT_CREATETIME" type="datetime(6)"/>
-            <column name="DDTT_ORDER_NUM" type="INT"/>
-            <column name="DDTT_PARENT_ID" type="NVARCHAR(100)"/>
-            <column name="DDTT_PARENT_IDLIST" type="NVARCHAR(1200)"/>
-            <column name="DDTT_CHILD_COUNT" type="INT"/>
+            <column name="DICT_KEY" type="NVARCHAR(200)" remarks="字典项的键值:在同一组内必须唯一,用于进行二次开发">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICT_VALUE" type="NVARCHAR(200)" remarks="字典项的Value:在同一组内必须唯一,绑定到控件时,将使用该值作为Value">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICT_TEXT" type="NVARCHAR(200)" remarks="字典项的显示文本">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICT_GROUP_ID" type="NVARCHAR(100)" remarks="分组ID:字典项所述的分组的ID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICT_ORDER_NUM" type="INT" remarks="排序号"/>
+            <column name="DICT_CREATE_TIME" type="datetime(6)" remarks="创建时间"/>
+            <column name="DICT_PARENT_ID" type="NVARCHAR(100)" remarks="父节点的ID"/>
+            <column name="DICT_PARENT_IDLIST" type="NVARCHAR(1200)" remarks="父节点的ID列表"/>
+            <column name="DICT_ISSYSTEM" type="NVARCHAR(10)" remarks="是否是系统字典项"/>
+            <column name="DICT_DEL_ENABLE" type="NVARCHAR(10)" remarks="能否删除"/>
+            <column name="DICT_STATUS" type="NVARCHAR(10)" remarks="状态:启用,禁用"/>
+            <column name="DICT_IS_SELECTED" type="NVARCHAR(10)" remarks="是否默认选中:需要程序自行实现"/>
+            <column name="DICT_DESC" type="NVARCHAR(500)" remarks="备注"/>
+            <column name="DICT_CHILD_COUNT" type="INT" remarks="子节点的数量:不包含孙节点"/>
+            <column name="DICT_EX_ATTR1" type="NVARCHAR(500)" remarks="扩展属性1:用于开发"/>
+            <column name="DICT_EX_ATTR2" type="NVARCHAR(500)" remarks="扩展属性2:用于开发"/>
+            <column name="DICT_EX_ATTR3" type="NVARCHAR(500)" remarks="扩展属性3:用于开发"/>
+            <column name="DICT_EX_ATTR4" type="NVARCHAR(500)" remarks="扩展属性4:用于开发"/>
+            <column name="DICT_USER_ID" type="NVARCHAR(100)" remarks="创建用户ID"/>
+            <column name="DICT_USER_NAME" type="NVARCHAR(100)" remarks="创建用户名称"/>
+            <column name="DICT_ORGAN_ID" type="NVARCHAR(100)" remarks="创建组织ID"/>
+            <column name="DICT_ORGAN_NAME" type="NVARCHAR(100)" remarks="创建组织名称"/>
         </createTable>
 
-        <createTable tableName="TDEV_DEMO_TL_TREE_LIST">
-            <column name="DDTL_ID" type="NVARCHAR(128)">
+        <createTable tableName="TSYS_OPERATION_LOG">
+            <column name="LOG_ID" type="NVARCHAR(100)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="DDTL_GROUP_ID" type="NVARCHAR(128)"/>
-            <column name="DDTL_KEY" type="NVARCHAR(128)"/>
-            <column name="DDTL_NAME" type="NVARCHAR(128)"/>
-            <column name="DDTL_VALUE" type="NVARCHAR(500)"/>
-            <column name="DDTL_STATUS" type="NVARCHAR(10)"/>
-            <column name="DDTL_DESC" type="NVARCHAR(2000)"/>
-            <column name="DDTL_CREATETIME" type="datetime(6)"/>
-            <column name="DDTL_ORDER_NUM" type="INT"/>
-            <column name="DDTL_BIND_DIC_SELECTED" type="NVARCHAR(100)"/>
-            <column name="DDTL_BIND_DIC_RADIO" type="NVARCHAR(100)"/>
-            <column name="DDTL_DDTT_BIND_DIC_MUCHECKBOX" type="NVARCHAR(1000)"/>
+            <column name="LOG_TEXT" type="NVARCHAR(2000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LOG_ORDER_NUM" type="INT"/>
+            <column name="LOG_CREATE_TIME" type="datetime(6)"/>
+            <column name="LOG_SYSTEM_NAME" type="NVARCHAR(200)"/>
+            <column name="LOG_MODULE_NAME" type="NVARCHAR(200)"/>
+            <column name="LOG_ACTION_NAME" type="NVARCHAR(200)"/>
+            <column name="LOG_DATA" type="clob"/>
+            <column name="LOG_USER_ID" type="NVARCHAR(100)"/>
+            <column name="LOG_USER_NAME" type="NVARCHAR(100)"/>
+            <column name="LOG_ORGAN_ID" type="NVARCHAR(100)"/>
+            <column name="LOG_ORGAN_NAME" type="NVARCHAR(100)"/>
+            <column name="LOG_IP" type="NVARCHAR(100)"/>
+            <column name="LOG_TYPE" type="NVARCHAR(100)"/>
+            <column name="LOG_CLASS_NAME" type="NVARCHAR(200)"/>
+            <column name="LOG_STATUS" type="NVARCHAR(50)"/>
         </createTable>
 
-        <createTable tableName="TDEV_DEMO_TREE_TABLE">
-            <column name="DDTT_ID" type="NVARCHAR(128)">
+        <createTable tableName="TSYS_SETTING">
+            <column name="SETTING_ID" type="NVARCHAR(128)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="DDTT_KEY" type="NVARCHAR(128)"/>
-            <column name="DDTT_NAME" type="NVARCHAR(128)"/>
-            <column name="DDTT_VALUE" type="NVARCHAR(500)"/>
-            <column name="DDTT_STATUS" type="NVARCHAR(10)"/>
-            <column name="DDTT_DESC" type="NVARCHAR(2000)"/>
-            <column name="DDTT_CREATETIME" type="datetime(6)"/>
-            <column name="DDTT_ORDER_NUM" type="INT"/>
-            <column name="DDTT_BIND_DIC_SELECTED" type="NVARCHAR(100)"/>
-            <column name="DDTT_BIND_DIC_RADIO" type="NVARCHAR(100)"/>
-            <column name="DDTT_DDTT_BIND_DIC_MUCHECKBOX" type="NVARCHAR(1000)"/>
-            <column name="DDTT_PARENT_ID" type="NVARCHAR(100)"/>
-            <column name="DDTT_PARENT_IDLIST" type="NVARCHAR(1200)"/>
-            <column name="DDTT_CHILD_COUNT" type="INT"/>
+            <column name="SETTING_KEY" type="NVARCHAR(128)"/>
+            <column name="SETTING_NAME" type="NVARCHAR(128)"/>
+            <column name="SETTING_VALUE" type="NVARCHAR(500)"/>
+            <column name="SETTING_STATUS" type="NVARCHAR(10)"/>
+            <column name="SETTING_DESC" type="NVARCHAR(2000)"/>
+            <column name="SETTING_CREATETIME" type="datetime(6)"/>
+            <column name="SETTING_USER_ID" type="NVARCHAR(100)"/>
+            <column name="SETTING_USER_NAME" type="NVARCHAR(100)"/>
+            <column name="SETTING_ORGAN_ID" type="NVARCHAR(100)"/>
+            <column name="SETTING_ORGAN_NAME" type="NVARCHAR(100)"/>
+            <column name="SETTING_API" type="NVARCHAR(100)"/>
+            <column name="SETTING_IS_SYSTEM" type="NVARCHAR(10)"/>
+            <column name="SETTING_ORDER_NUM" type="INT" remarks="排序号" />
+        </createTable>
+
+        <createTable tableName="TSYS_HISTORY_DATA" remarks="历史数据表:存储各个表被删除数据的历史记录">
+            <column name="HISTORY_ID" type="NVARCHAR(128)" remarks="随机生成:UUID">
+                <constraints primaryKey="true" nullable="false"></constraints>
+            </column>
+            <column name="HISTORY_RECORD" type="CLOB" remarks="被删除数据的json格式数据"/>
+            <column name="HISTORY_ORGAN_ID" type="NVARCHAR(100)" remarks="删除用户所在的组织id" />
+            <column name="HISTORY_ORGAN_NAME" type="NVARCHAR(100)" remarks="删除用户所在的组织名称"/>
+            <column name="HISTORY_USER_ID" type="NVARCHAR(100)" remarks="删除用户的ID"/>
+            <column name="HISTORY_USER_NAME" type="NVARCHAR(100)" remarks="删除用户的用户名"/>
+            <column name="HISTORY_CREATETIME" type="datetime(6)" remarks="记录的创建时间"/>
+            <column name="HISTORY_TABLE_NAME" type="NVARCHAR(100)" remarks="删除记录的表名"/>
+            <column name="HISTORY_RECORD_ID" type="NVARCHAR(100)" remarks="删除记录的主键值"/>
         </createTable>
     </changeSet>
 
