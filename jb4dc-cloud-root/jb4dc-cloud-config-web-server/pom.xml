@@ -23,7 +23,7 @@
         <dependency>
             <groupId>jb4dc</groupId>
             <artifactId>jb4dc-web-app-starter</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${platform.version}</version>
         </dependency>
     </dependencies>
 </project>
