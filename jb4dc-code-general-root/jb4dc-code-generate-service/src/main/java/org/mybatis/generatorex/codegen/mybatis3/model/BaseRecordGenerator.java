@@ -63,7 +63,7 @@ public class BaseRecordGenerator extends AbstractJavaGenerator {
         }
 
         //Edit By zhuangrb
-        topLevelClass.addImportedType("com.jbuild4d.base.dbaccess.anno.DBKeyField");
+        topLevelClass.addImportedType("com.jb4dc.base.dbaccess.anno.DBKeyField");
         topLevelClass.addImportedType("com.fasterxml.jackson.annotation.JsonFormat");
         commentGenerator.addModelClassComment(topLevelClass, introspectedTable);
 
@@ -100,6 +100,10 @@ public class BaseRecordGenerator extends AbstractJavaGenerator {
             if (plugins.modelGetterMethodGenerated(method, topLevelClass,
                     introspectedColumn, introspectedTable,
                     Plugin.ModelClassType.BASE_RECORD)) {
+                method.addJavaDocLine("/**");
+                method.addJavaDocLine(" * "+introspectedColumn.getRemarks());
+                method.addJavaDocLine(" * @return "+introspectedColumn.getFullyQualifiedJavaType());
+                method.addJavaDocLine("**/");
                 topLevelClass.addMethod(method);
             }
 
@@ -108,6 +112,15 @@ public class BaseRecordGenerator extends AbstractJavaGenerator {
                 if (plugins.modelSetterMethodGenerated(method, topLevelClass,
                         introspectedColumn, introspectedTable,
                         Plugin.ModelClassType.BASE_RECORD)) {
+
+                    method.addJavaDocLine("/**");
+                    method.addJavaDocLine(" * "+introspectedColumn.getRemarks());
+                    String paraRemark="";
+                    if(introspectedColumn.getRemarks()!=null&&!introspectedColumn.getRemarks().equals("")){
+                        paraRemark=introspectedColumn.getRemarks().split(":")[0];
+                    }
+                    method.addJavaDocLine(" * @param "+introspectedColumn.getJavaProperty() +" "+paraRemark);
+                    method.addJavaDocLine("**/");
                     topLevelClass.addMethod(method);
                 }
             }
@@ -179,6 +192,8 @@ public class BaseRecordGenerator extends AbstractJavaGenerator {
             method.addBodyLine(sb.toString());
         }
 
+        method.addJavaDocLine("/**");
+        method.addJavaDocLine(" * 构造函数");
         for (IntrospectedColumn introspectedColumn : constructorColumns) {
             if (!superColumns.contains(introspectedColumn.getActualColumnName())) {
                 sb.setLength(0);
@@ -188,8 +203,16 @@ public class BaseRecordGenerator extends AbstractJavaGenerator {
                 sb.append(introspectedColumn.getJavaProperty());
                 sb.append(';');
                 method.addBodyLine(sb.toString());
+
+                String paraRemark="";
+                if(introspectedColumn.getRemarks()!=null&&!introspectedColumn.getRemarks().equals("")){
+                    paraRemark=introspectedColumn.getRemarks().split(":")[0];
+                }
+                method.addJavaDocLine(" * @param "+introspectedColumn.getJavaProperty() +" "+paraRemark);
             }
+
         }
+        method.addJavaDocLine("**/");
 
         topLevelClass.addMethod(method);
     }

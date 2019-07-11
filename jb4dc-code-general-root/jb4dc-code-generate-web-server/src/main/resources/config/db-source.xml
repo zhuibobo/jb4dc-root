@@ -22,12 +22,12 @@
     </DataSource>
     <DataSource>
         <Id>DataSource0003</Id>
-        <Caption>开发示例系统</Caption>
-        <DBType>3</DBType>
-        <DriverName>4</DriverName>
-        <DatabaseName>5</DatabaseName>
-        <Url>6</Url>
-        <User>7</User>
-        <Password>8</Password>
+        <Caption>系统设置</Caption>
+        <DBType>sqlserver</DBType>
+        <DriverName>com.microsoft.sqlserver.jdbc.SQLServerDriver</DriverName>
+        <DatabaseName>JB4DC_SYSTEM_CONFIG_V01</DatabaseName>
+        <Url>jdbc:sqlserver://120.77.56.220:1433; DatabaseName=JB4DC_SYSTEM_CONFIG_V01</Url>
+        <User>sa</User>
+        <Password>zhenx#88DATA</Password>
     </DataSource>
 </Config>

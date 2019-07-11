@@ -8,4 +8,6 @@
     </Package>
     <Package name="DevMock" entity="com.jb4dc.devmock.dbentities" dao="com.jb4dc.devmock.dao" mapperAC="mybatismappers">
     </Package>
+    <Package name="SystemSetting" entity="com.jb4dc.system.setting.dbentities" dao="com.jb4dc.system.setting.dao" mapperAC="mybatismappers">
+    </Package>
 </Config>

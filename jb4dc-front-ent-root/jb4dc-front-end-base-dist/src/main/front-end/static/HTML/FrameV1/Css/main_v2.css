@@ -11,7 +11,7 @@ html, body, form, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, fiel
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #ececec;
+    /*background-color: #ececec;*/
 }
 
 a {
@@ -264,10 +264,14 @@ b.set_4 {
 }
 
 .leftnav li {
-    height: 72px;
-    line-height: 20em;
+    height: 80px;
+    line-height: 30px;
     white-space: nowrap;
     overflow: hidden;
+    padding-top: 50px;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
 }
 
 .nav1 {
@@ -842,10 +846,10 @@ select::-ms-expand {
 .contwrap {
     /*margin: 24px 24px 0 416px;*/
     position: absolute;
-    top: 0px;
-    left: 400px;
-    bottom: 90px;
-    right: 0px;
+    top: 20px;
+    left: 420px;
+    bottom: 110px;
+    right: 20px;
 }
 
 .onewrap .cont_sub {

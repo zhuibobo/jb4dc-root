@@ -79,7 +79,7 @@ var SystemMenu={
         }
         else{
             $("#div_l2_menu_wrap").hide();
-            $(".contwrap").css("left","73px");
+            $(".contwrap").css("left","93px");
         }
         //alert(singleTopMenuData.menuRightUrl);
         $("#fraRightFrame").attr("src",BaseUtility.BuildAction(singleTopMenuData.menuRightUrl));

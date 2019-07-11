@@ -13,13 +13,17 @@ spring:
       preferred-networks: 192.168.3.153
   liquibase:
     enabled: false
+  thymeleaf:
+    prefix: classpath:/static/HTML/
+    suffix: .html
+    enabled: true
 
 server:
   port: 9093
   servlet:
     session:
       timeout: 7200
-    context-path: /Config
+    context-path: /JB4DCConfig
 
 eureka:
   client:
