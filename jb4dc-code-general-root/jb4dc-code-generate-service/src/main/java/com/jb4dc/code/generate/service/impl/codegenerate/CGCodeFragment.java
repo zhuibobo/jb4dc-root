@@ -35,6 +35,8 @@ public class CGCodeFragment {
         builder.append(domainObjectName+":{");
         builder.append(CGTool.newLineChar());
         for (IntrospectedColumn introspectedColumn : introspectedTable.getAllColumns()) {
+            builder.append("//"+introspectedColumn.getRemarks());
+            builder.append(CGTool.newLineChar());
             builder.append(introspectedColumn.getJavaProperty()+":");
             //System.out.println(introspectedColumn.getFullyQualifiedJavaType().getFullyQualifiedName());
             if(introspectedColumn.getFullyQualifiedJavaType().getFullyQualifiedName().equals("java.util.Date")){

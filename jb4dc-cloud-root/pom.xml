@@ -14,8 +14,6 @@
     <modules>
         <module>jb4dc-cloud-config-web-server</module>
         <module>jb4dc-cloud-eureka-web-server</module>
-        <module>jb4dc-cloud-config-service</module>
-        <module>jb4dc-cloud-config-client</module>
     </modules>
 
 </project>

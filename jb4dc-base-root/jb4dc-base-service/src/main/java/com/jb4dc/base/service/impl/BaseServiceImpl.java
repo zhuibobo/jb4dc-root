@@ -26,10 +26,14 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     protected ISQLBuilderService sqlBuilderService = null;
     protected IGeneralService generalService;
 
-    public BaseServiceImpl(BaseMapper<T> _defaultBaseMapper, SqlSessionTemplate _sqlSessionTemplate, ISQLBuilderService _sqlBuilderService){
+    /*public BaseServiceImpl(BaseMapper<T> _defaultBaseMapper, SqlSessionTemplate _sqlSessionTemplate, ISQLBuilderService _sqlBuilderService){
         defaultBaseMapper= _defaultBaseMapper;
         sqlSessionTemplate=_sqlSessionTemplate;
         sqlBuilderService=_sqlBuilderService;
+    }*/
+
+    public BaseServiceImpl(BaseMapper<T> _defaultBaseMapper){
+        defaultBaseMapper= _defaultBaseMapper;
     }
 
     @Override

@@ -6,17 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jb4dc-cloud-eureka-web-server" />
-        <module name="jb4dc-code-generate-web-server" />
-        <module name="jb4dc-code-generate-service" />
-        <module name="jb4dc-base-service" />
-        <module name="jb4dc-cloud-config-client" />
-        <module name="jb4dc-web-app-starter" />
-        <module name="jb4dc-cloud-config-service" />
-        <module name="jb4dc-front-end-base-dist" />
         <module name="jb4dc-base-db-access" />
-        <module name="jb4dc-core-base" />
         <module name="jb4dc-base-tools" />
+        <module name="jb4dc-code-generate-service" />
+        <module name="jb4dc-web-app-starter" />
+        <module name="jb4dc-base-service" />
+        <module name="jb4dc-front-end-base-dist" />
+        <module name="jb4dc-cloud-eureka-web-server" />
+        <module name="jb4dc-core-base" />
+        <module name="jb4dc-code-generate-web-server" />
         <module name="jb4dc-cloud-config-web-server" />
       </profile>
     </annotationProcessing>

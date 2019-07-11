@@ -95,12 +95,6 @@
                 <artifactId>jb4dc-code-generate-service</artifactId>
                 <version>${platform.version}</version>
             </dependency>
-            <!--Config-->
-            <dependency>
-                <groupId>jb4dc</groupId>
-                <artifactId>jb4dc-cloud-config-service</artifactId>
-                <version>${platform.version}</version>
-            </dependency>
             <!--代码生成包-->
             <dependency>
                 <groupId>jb4dc</groupId>
