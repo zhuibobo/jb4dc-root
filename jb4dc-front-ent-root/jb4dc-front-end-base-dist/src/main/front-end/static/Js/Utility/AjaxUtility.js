@@ -1,7 +1,7 @@
 //Ajax处理工具类
 var AjaxUtility={
     PostRequestBody:function (_url,sendData,func,caller,dataType) {
-        this.Post(_url,sendData,func,caller,dataType,"application/json; charset=utf-8");
+        return this._InnerAjax(_url,sendData,func,caller,dataType,"application/json; charset=utf-8",true,"POST");
     },
     PostSync:function (_url,sendData,func,caller,dataType,contentType) {
         return this._InnerAjax(_url,sendData,func,caller,dataType,null,false,"POST")
@@ -22,6 +22,11 @@ var AjaxUtility={
         return this._InnerAjax(_url,sendData,func,caller,dataType,null,false,"DELETE")
     },
     _InnerAjax:function (_url,sendData,func,caller,dataType,contentType,isAsync,ajaxType) {
+        if(caller){
+            if(caller=="json"){
+                DialogUtility.AlertError(window,DialogUtility.DialogAlertErrorId,{},"由于方法更新,caller参数请传递this",null);
+            }
+        }
         var url = BaseUtility.BuildAction(_url);
         if (dataType == undefined || dataType == null) {
             dataType = "json";

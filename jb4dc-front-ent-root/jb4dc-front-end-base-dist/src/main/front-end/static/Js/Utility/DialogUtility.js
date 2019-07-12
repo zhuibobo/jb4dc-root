@@ -11,41 +11,41 @@ var DialogUtility={
     _GetElem:function(dialogId){
         return $("#"+dialogId);
     },
-    _CreateDialogElem:function(docobj,dialogId){
+    _CreateDialogElem:function(docObj,dialogId){
         if(this._GetElem(dialogId).length==0) {
             var dialogEle = $("<div id=" + dialogId + " title='系统提示' style='display:none'>\
                     </div>");
-            $(docobj.body).append(dialogEle);
+            $(docObj.body).append(dialogEle);
             return dialogEle;
         }
         else {
             return this._GetElem(dialogId);
         }
     },
-    _CreateAlertLoadingMsgElement: function (docobj,dialogId) {
+    _CreateAlertLoadingMsgElement: function (docObj,dialogId) {
         if(this._GetElem(dialogId).length==0) {
             var dialogEle = $("<div id=" + dialogId + " title='系统提示' style='display:none'>\
-                               <div class='alertloading-img'></div>\
-                               <div class='alertloading-txt'></div>\
+                               <div class='alert-loading-img'></div>\
+                               <div class='alert-loading-txt'></div>\
                            </div>");
-            $(docobj.body).append(dialogEle);
+            $(docObj.body).append(dialogEle);
             return dialogEle;
         }
         else {
             return this._GetElem(dialogId);
         }
     },
-    _CreateIfrmaeDialogElement: function (docobj, dialogid, url) {
-        /*var dialogEle = $("<div id=" + dialogid + " title='Basic dialog'>\
+    _CreateIfrmaeDialogElement: function (docObj, dialogId, url) {
+        /*var dialogEle = $("<div id=" + dialogId + " title='Basic dialog'>\
                         <iframe name='dialogIframe' width='100%' height='98%' frameborder='0' src='" + url + "'>\
                         </iframe>\
                     </div>");*/
         //直接设置iframe的src会造成一次请求http的canceled.
-        var dialogEle = $("<div id=" + dialogid + " title='Basic dialog'>\
+        var dialogEle = $("<div id=" + dialogId + " title='Basic dialog'>\
                         <iframe name='dialogIframe' width='100%' height='98%' frameborder='0'>\
                         </iframe>\
                     </div>");
-        $(docobj.body).append(dialogEle);
+        $(docObj.body).append(dialogEle);
         //alert(url);
         return dialogEle;
     },
@@ -58,21 +58,21 @@ var DialogUtility={
     _TestRunEnable:function(){
         return true;
     },
-    AlertError:function (opererWindow,dialogId,config,htmlmsg,sFunc) {
+    AlertError:function (openerWindow,dialogId,config,htmlMsg,sFunc) {
         var defaultConfig={
             height: "auto",
             width: "auto",
             title:"错误提示"
         };
         defaultConfig = $.extend(true, {}, defaultConfig, config);
-        this.Alert(opererWindow,dialogId,defaultConfig,htmlmsg,sFunc);
+        this.Alert(openerWindow,dialogId,defaultConfig,htmlMsg,sFunc);
     },
     AlertText:function(text){
         DialogUtility.Alert(window, DialogUtility.DialogAlertId, {},text, null);
     },
-    Alert:function(opererWindow,dialogId,config,htmlmsg,sFunc) {
+    Alert:function(openerWindow,dialogId,config,htmlMsg,sFunc,caller) {
         //debugger;
-        var htmlElem = this._CreateDialogElem(opererWindow.document.body,dialogId);
+        var htmlElem = this._CreateDialogElem(openerWindow.document.body,dialogId);
         var defaultConfig = {
             height: 200,
             width: 300,
@@ -88,12 +88,17 @@ var DialogUtility={
             },
             close:function () {
                 if(sFunc){
-                    sFunc();
+                    if(caller){
+                        sFunc.call(caller);
+                    }
+                    else {
+                        sFunc();
+                    }
                 }
             }
         };
-        var defaultConfig = $.extend(true, {}, defaultConfig, config);
-        $(htmlElem).html(htmlmsg);
+        defaultConfig = $.extend(true, {}, defaultConfig, config);
+        $(htmlElem).html(htmlMsg);
         $(htmlElem).dialog(defaultConfig);
     },
     AlertJsonCode:function(json){
@@ -152,8 +157,8 @@ var DialogUtility={
         //var $qs = document.querySelector.bind(document);
         var ps = new PerfectScrollbar('#pscontainer');
     },
-    ShowHTML:function (opererWindow,dialogId,config,htmlmsg,close_after_event,params) {
-        var htmlElem = this._CreateDialogElem(opererWindow.document.body,dialogId);
+    ShowHTML:function (openerWindow,dialogId,config,htmlMsg,close_after_event,params) {
+        var htmlElem = this._CreateDialogElem(openerWindow.document.body,dialogId);
         var defaultConfig = {
             height: 200,
             width: 300,
@@ -172,11 +177,11 @@ var DialogUtility={
             }
         };
         var defaultConfig = $.extend(true, {}, defaultConfig, config);
-        $(htmlElem).html(htmlmsg);
+        $(htmlElem).html(htmlMsg);
         return $(htmlElem).dialog(defaultConfig);
     },
-    AlertLoading:function(opererWindow,dialogId,config,htmlmsg){
-        var htmlElem = this._CreateAlertLoadingMsgElement(opererWindow.document.body,dialogId);
+    AlertLoading:function(openerWindow,dialogId,config,htmlMsg){
+        var htmlElem = this._CreateAlertLoadingMsgElement(openerWindow.document.body,dialogId);
         var defaultConfig = {
             height: 200,
             width: 300,
@@ -185,21 +190,21 @@ var DialogUtility={
             modal:true
         };
         var defaultConfig = $.extend(true, {}, defaultConfig, config);
-        $(htmlElem).find(".alertloading-txt").html(htmlmsg);
+        $(htmlElem).find(".alertloading-txt").html(htmlMsg);
         $(htmlElem).dialog(defaultConfig);
     },
-    Confirm : function(opererWindow, htmlmsg, okFn) {
-        this.ConfirmConfig(opererWindow, htmlmsg, null, okFn);
+    Confirm : function(openerWindow, htmlMsg, okFn) {
+        this.ConfirmConfig(openerWindow, htmlMsg, null, okFn);
     },
-    ConfirmConfig : function(opererWindow, htmlmsg, config,okFn) {
-        var htmlElem = this._CreateDialogElem(opererWindow.document.body, "AlertConfirmMsg");
+    ConfirmConfig : function(openerWindow, htmlMsg, config,okFn) {
+        var htmlElem = this._CreateDialogElem(openerWindow.document.body, "AlertConfirmMsg");
         var paras= null;
         var defaultConfig = {
             okfunc:function(paras){
                 if(okFn != undefined){
                     return okFn();
                 } else {
-                    opererWindow.close();
+                    openerWindow.close();
                 }
             },
             cancelfunc:function(paras){
@@ -233,14 +238,14 @@ var DialogUtility={
             }
         };
         var defaultConfig = $.extend(true, {}, defaultConfig, config);
-        $(htmlElem).html(htmlmsg);
+        $(htmlElem).html(htmlMsg);
         $(htmlElem).dialog(defaultConfig);
         paras={
             "ElementObj":htmlElem
         };
     },
-    Prompt:function(opererWindow,config,dialogId,labelMsg,okFunc) {
-        var htmlElem = this._CreateDialogElem(opererWindow.document.body, dialogId);
+    Prompt:function(openerWindow,config,dialogId,labelMsg,okFunc) {
+        var htmlElem = this._CreateDialogElem(openerWindow.document.body, dialogId);
         var paras = null;
         var textArea=$("<textarea />");
         var defaultConfig = {
@@ -282,11 +287,11 @@ var DialogUtility={
             height: 410,
             width: 600,
             close: function (event, ui) {
-                var autodialogid = $(this).attr("id");
+                var autodialogId = $(this).attr("id");
                 $(this).find("iframe").remove();
                 $(this).dialog('close')
                 $(this).dialog("destroy");
-                $("#" + autodialogid).remove();
+                $("#" + autodialogId).remove();
                 if (BrowserInfoUtility.IsIE8DocumentMode()) {
                     CollectGarbage();
                 }
@@ -326,8 +331,8 @@ var DialogUtility={
         }
 
         defaultoptions = $.extend(true, {}, defaultoptions, options);
-        var autodialogid = dialogId;
-        var dialogEle = this._CreateIfrmaeDialogElement(openerwindow.document, autodialogid, url);
+        var autodialogId = dialogId;
+        var dialogEle = this._CreateIfrmaeDialogElement(openerwindow.document, autodialogId, url);
 
         var dialogObj=$(dialogEle).dialog(defaultoptions);
         var $iframeobj = $(dialogEle).find("iframe");
@@ -335,7 +340,7 @@ var DialogUtility={
         $iframeobj.on("load",function () {
             //alert("load");
             if(StringUtility.IsSameOrgin(window.location.href,url)) {
-                this.contentWindow.FrameWindowId = autodialogid;
+                this.contentWindow.FrameWindowId = autodialogId;
                 this.contentWindow.OpenerWindowObj = openerwindow;
                 this.contentWindow.IsOpenForFrame = true;
             }
@@ -345,7 +350,7 @@ var DialogUtility={
         });
 
         $iframeobj.attr("src",url);
-        //$iframeobj[0].contentWindow.FrameWindowId = autodialogid;
+        //$iframeobj[0].contentWindow.FrameWindowId = autodialogId;
         //$iframeobj[0].contentWindow.OpenerWindowObj = openerwindow;
         return dialogObj;
         /*$iframeobj.load(function () {
@@ -455,21 +460,21 @@ var DialogUtility={
         }
         //debugger;
         url = BaseUtility.AppendTimeStampUrl(url);
-        var autodialogid = "FrameDialogEle" + dialogId;
+        var autodialogId = "FrameDialogEle" + dialogId;
 
-        if ($(this.FramePageRef.document).find("#" + autodialogid).length == 0) {
-            var dialogEle = this._CreateIfrmaeDialogElement(this.FramePageRef.document, autodialogid, url);
+        if ($(this.FramePageRef.document).find("#" + autodialogId).length == 0) {
+            var dialogEle = this._CreateIfrmaeDialogElement(this.FramePageRef.document, autodialogId, url);
             var defaultoptions = {
                 height: 400,
                 width: 600,
                 modal:true,
                 title:"系统",
                 close: function (event, ui) {
-                    var autodialogid = $(this).attr("id");
+                    var autodialogId = $(this).attr("id");
                     $(this).find("iframe").remove();
                     $(this).dialog('close');
                     $(this).dialog("destroy");
-                    $("#" + autodialogid).remove();
+                    $("#" + autodialogId).remove();
                     if (BrowserInfoUtility.IsIE8DocumentMode()) {
                         CollectGarbage();
                     }
@@ -511,7 +516,7 @@ var DialogUtility={
             $iframeobj.on("load",function () {
                 //alert("load");
                 if(StringUtility.IsSameOrgin(window.location.href,url)) {
-                    this.contentWindow.FrameWindowId = autodialogid;
+                    this.contentWindow.FrameWindowId = autodialogId;
                     this.contentWindow.OpenerWindowObj = openerwindow;
                     this.contentWindow.IsOpenForFrame = true;
                 }
@@ -520,7 +525,7 @@ var DialogUtility={
                 }
             });
             $iframeobj.attr("src",url);
-            //$iframeobj[0].contentWindow.FrameWindowId = autodialogid;
+            //$iframeobj[0].contentWindow.FrameWindowId = autodialogId;
             //$iframeobj[0].contentWindow.OpenerWindowObj = openerwindow;
             //alert(1);
             //$iframeobj[0].contentWindow.IsOpenForFrame=true;
@@ -550,11 +555,11 @@ var DialogUtility={
             });*/
         }
         else {
-            $("#" + autodialogid).dialog("moveToTop");
+            $("#" + autodialogId).dialog("moveToTop");
         }
     },
-    _Frame_FramePageCloseDialog: function (dialogid) {
-        $("#" + dialogid).dialog("close");
+    _Frame_FramePageCloseDialog: function (dialogId) {
+        $("#" + dialogId).dialog("close");
     },
     Frame_TryGetFrameWindowObj: function () {
         var tryfindtime = 5;
@@ -584,13 +589,13 @@ var DialogUtility={
             alert("找不到FramePage!!");
         }
     },
-    Frame_CloseDialog:function (opererWindow) {
+    Frame_CloseDialog:function (openerWindow) {
         //debugger;
         //console.log("close Frame_CloseDialog");
         //window.setInterval()
         var wrwin = this.Frame_TryGetFrameWindowObj();
-        var openerwin = opererWindow.OpenerWindowObj;
-        var autodialogid = opererWindow.FrameWindowId;
-        wrwin.DialogUtility._Frame_FramePageCloseDialog(autodialogid);
+        var openerwin = openerWindow.OpenerWindowObj;
+        var autodialogId = openerWindow.FrameWindowId;
+        wrwin.DialogUtility._Frame_FramePageCloseDialog(autodialogId);
     }
 }

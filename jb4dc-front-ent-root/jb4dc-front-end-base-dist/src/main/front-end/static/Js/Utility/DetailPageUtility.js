@@ -36,7 +36,7 @@ var DetailPageUtility={
             sourceObject[key] = dataObject[key];
         }
     },
-    BindFormData:function(interfaceUrl,vueFormData,recordId,op,befFunc,afFunc){
+    BindFormData:function(interfaceUrl,vueFormData,recordId,op,befFunc,afFunc,caller){
         //获取数据并赋值
         AjaxUtility.Post(interfaceUrl,{recordId:recordId,op:op},function (result) {
             if(result.success) {
@@ -54,6 +54,6 @@ var DetailPageUtility={
             else {
                 DialogUtility.Alert(window, DialogUtility.DialogAlertId, {}, result.message, null);
             }
-        },"json");
+        },caller);
     },
 }
