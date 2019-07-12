@@ -1,6 +1,6 @@
 package com.jb4dc.feb.dist.webserver.rest.frame;
 
-import com.jb4dc.base.service.extend.IFrameMenu;
+import com.jb4dc.base.service.provide.IFrameMenuProvide;
 import com.jb4dc.base.service.general.JB4DCSessionUtility;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
@@ -23,7 +23,7 @@ public class MenuRest {
     Logger logger= LoggerFactory.getLogger(MenuRest.class);
 
     @Autowired(required = false)
-    IFrameMenu frameMenu;
+    IFrameMenuProvide frameMenu;
 
     @RequestMapping(value = "GetMyMenu")
     public JBuild4DCResponseVo getMyMenu() throws JBuild4DCGenerallyException {

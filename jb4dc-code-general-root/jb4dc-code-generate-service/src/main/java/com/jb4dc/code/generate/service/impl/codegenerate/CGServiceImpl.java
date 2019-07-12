@@ -36,9 +36,9 @@ public class CGServiceImpl {
         builder.append(CGTool.newLineChar());
         builder.append(CGTool.tabChar(1)+daoMapperName+" "+ daoMapperInstanceName+";");
         builder.append(CGTool.newLineChar());
-        builder.append(CGTool.tabChar(1)+"public "+ serviceImplName+"("+daoMapperName+" _defaultBaseMapper,SqlSessionTemplate _sqlSessionTemplate, ISQLBuilderService _sqlBuilderService){");
+        builder.append(CGTool.tabChar(1)+"public "+ serviceImplName+"("+daoMapperName+" _defaultBaseMapper){");
         builder.append(CGTool.newLineChar());
-        builder.append(CGTool.tabChar(2)+"super(_defaultBaseMapper, _sqlSessionTemplate, _sqlBuilderService);");
+        builder.append(CGTool.tabChar(2)+"super(_defaultBaseMapper);");
         builder.append(CGTool.newLineChar());
         builder.append(CGTool.tabChar(2)+daoMapperInstanceName+"=_defaultBaseMapper;");
         builder.append(CGTool.newLineChar());

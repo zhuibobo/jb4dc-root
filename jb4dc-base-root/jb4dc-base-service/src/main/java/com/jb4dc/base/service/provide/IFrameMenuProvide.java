@@ -1,4 +1,4 @@
-package com.jb4dc.base.service.extend;
+package com.jb4dc.base.service.provide;
 
 import com.jb4dc.base.service.po.MenuPO;
 import com.jb4dc.core.base.session.JB4DCSession;
@@ -11,6 +11,6 @@ import java.util.List;
  * Date: 2019/7/9
  * To change this template use File | Settings | File Templates.
  */
-public interface IFrameMenu {
+public interface IFrameMenuProvide {
     public List<MenuPO> getMyFrameMenu(JB4DCSession jb4DCSession);
 }

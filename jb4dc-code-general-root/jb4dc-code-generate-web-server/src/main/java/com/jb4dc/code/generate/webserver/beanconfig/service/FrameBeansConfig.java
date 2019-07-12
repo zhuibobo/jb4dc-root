@@ -1,6 +1,6 @@
 package com.jb4dc.code.generate.webserver.beanconfig.service;
 
-import com.jb4dc.base.service.extend.IFrameMenu;
+import com.jb4dc.base.service.provide.IFrameMenuProvide;
 import com.jb4dc.code.generate.service.impl.FrameMenuImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,8 +16,8 @@ import org.springframework.context.annotation.Configuration;
 public class FrameBeansConfig {
 
     @Bean
-    public IFrameMenu frameMenu(){
-        IFrameMenu frameMenu=new FrameMenuImpl();
+    public IFrameMenuProvide frameMenu(){
+        IFrameMenuProvide frameMenu=new FrameMenuImpl();
         return frameMenu;
     }
 

@@ -2,7 +2,7 @@ package com.jb4dc.code.generate.service.impl;
 
 import com.jb4dc.base.dbaccess.exenum.MenuTypeEnum;
 import com.jb4dc.base.dbaccess.exenum.TrueFalseEnum;
-import com.jb4dc.base.service.extend.IFrameMenu;
+import com.jb4dc.base.service.provide.IFrameMenuProvide;
 import com.jb4dc.base.service.po.MenuPO;
 import com.jb4dc.core.base.session.JB4DCSession;
 
@@ -15,7 +15,7 @@ import java.util.List;
  * Date: 2019/7/9
  * To change this template use File | Settings | File Templates.
  */
-public class FrameMenuImpl implements IFrameMenu {
+public class FrameMenuImpl implements IFrameMenuProvide {
     @Override
     public List<MenuPO> getMyFrameMenu(JB4DCSession jb4DCSession) {
         //return null;

@@ -101,8 +101,8 @@ let replaceBlock = {
         let replaceArray = new Array();
         let levelPath = calculateFilePath(file);
 
-        replaceArray.push(refJs(levelPath + "Js/External/ZTree-V3/js/jquery.ztree.exhide.js"));
-        replaceArray.push(refJs(levelPath + "Js/External/ZTree-V3/js/fuzzysearch.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/ZTree-3.5.40/js/jquery.ztree.exhide.js"));
+        replaceArray.push(refJs(levelPath + "Js/External/ZTree-3.5.40/js/fuzzysearch.js"));
 
         return replaceArray.join("\n\t");
     },
@@ -111,7 +111,7 @@ let replaceBlock = {
         //判断路径后进行引入js的路径
         let levelPath = calculateFilePath(file);
 
-        replaceArray.push(refCss(levelPath + 'Themes/Default/Css/Jbuild4DC.css?refVersion=' + refVersion));
+        replaceArray.push(refCss(levelPath + 'Themes/Default/Css/JBuild4DC.css?refVersion=' + refVersion));
         replaceArray.push(refCss(levelPath + 'Themes/Default/IView-3.X/iview.css'));
         replaceArray.push(refCss(levelPath + 'Themes/Default/JQueryUI/jquery-ui.css'));
         replaceArray.push(refCss(levelPath + 'Themes/Default/ZTree/zTreeStyle/zTreeStyle.css'));
