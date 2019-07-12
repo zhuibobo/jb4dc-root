@@ -25,6 +25,9 @@ public class InetAddressUtility {
      * @return
      */
     public static String getClientIpAdrress(HttpServletRequest request) {
+        if(request==null){
+            return "";
+        }
         String Xip = request.getHeader("X-Real-IP");
         String XFor = request.getHeader("X-Forwarded-For");
         if(StringUtils.isNotEmpty(XFor) && !"unKnown".equalsIgnoreCase(XFor)){

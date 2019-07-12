@@ -14,5 +14,6 @@ GenerateCodeFiles/
 ##############################
 DB.properties
 db.properties
+db.yml
 ~$列表数据逻辑.mmap.~$lock
 *.~vsdx

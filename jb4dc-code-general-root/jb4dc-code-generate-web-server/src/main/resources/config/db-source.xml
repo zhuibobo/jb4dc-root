@@ -25,8 +25,8 @@
         <Caption>系统设置</Caption>
         <DBType>sqlserver</DBType>
         <DriverName>com.microsoft.sqlserver.jdbc.SQLServerDriver</DriverName>
-        <DatabaseName>JB4DC_SYSTEM_CONFIG_V01</DatabaseName>
-        <Url>jdbc:sqlserver://120.77.56.220:1433; DatabaseName=JB4DC_SYSTEM_CONFIG_V01</Url>
+        <DatabaseName>JB4DC_SYSTEM_SETTING_V01</DatabaseName>
+        <Url>jdbc:sqlserver://120.77.56.220:1433; DatabaseName=JB4DC_SYSTEM_SETTING_V01</Url>
         <User>sa</User>
         <Password>zhenx#88DATA</Password>
     </DataSource>

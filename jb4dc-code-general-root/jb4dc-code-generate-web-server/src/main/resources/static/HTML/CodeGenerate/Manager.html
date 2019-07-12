@@ -261,26 +261,26 @@
         },
         selectedTable: function (tableName) {
             this.formValidate.tableName = tableName;
-            var _self = this;
-            _self.formValidate.orderFieldName = "";
-            _self.formValidate.statusFieldName = "";
-            _self.formValidate.dataSourceId = this.selectedDataSourceId;
+            //var _self = this;
+            this.formValidate.orderFieldName = "";
+            this.formValidate.statusFieldName = "";
+            this.formValidate.dataSourceId = this.selectedDataSourceId;
             AjaxUtility.Post(this.acInterface.getTableFieldsUrl, this.formValidate, function (result) {
                 if (result.success) {
                     for (var i = 0; i < result.data.length; i++) {
                         var field = result.data[i];
                         if (field.fieldName.toUpperCase().indexOf("ORDER") >= 0) {
-                            _self.formValidate.orderFieldName = field.fieldName;
+                            this.formValidate.orderFieldName = field.fieldName;
                         }
                         if (field.fieldName.toUpperCase().indexOf("STATUS") >= 0) {
-                            _self.formValidate.statusFieldName = field.fieldName;
+                            this.formValidate.statusFieldName = field.fieldName;
                         }
                     }
                 } else {
                     DialogUtility.AlertError(window, DialogUtility.DialogAlertId, {}, result.message, function () {
                     });
                 }
-            }, "json");
+            }, this);
         },
         changePage: function (pageNum) {
             this.pageNum = pageNum;

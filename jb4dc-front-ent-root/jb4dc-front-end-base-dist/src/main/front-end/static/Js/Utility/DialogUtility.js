@@ -193,16 +193,21 @@ var DialogUtility={
         $(htmlElem).find(".alertloading-txt").html(htmlMsg);
         $(htmlElem).dialog(defaultConfig);
     },
-    Confirm : function(openerWindow, htmlMsg, okFn) {
-        this.ConfirmConfig(openerWindow, htmlMsg, null, okFn);
+    Confirm : function(openerWindow, htmlMsg, okFn,caller) {
+        this.ConfirmConfig(openerWindow, htmlMsg, null, okFn,caller);
     },
-    ConfirmConfig : function(openerWindow, htmlMsg, config,okFn) {
+    ConfirmConfig : function(openerWindow, htmlMsg, config,okFn,caller) {
         var htmlElem = this._CreateDialogElem(openerWindow.document.body, "AlertConfirmMsg");
         var paras= null;
         var defaultConfig = {
             okfunc:function(paras){
                 if(okFn != undefined){
-                    return okFn();
+                    if(caller){
+                        okFn.call(caller);
+                    }
+                    else{
+                        return okFn();
+                    }
                 } else {
                     openerWindow.close();
                 }
