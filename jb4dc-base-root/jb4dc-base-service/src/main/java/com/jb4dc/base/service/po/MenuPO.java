@@ -1,5 +1,6 @@
 package com.jb4dc.base.service.po;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jb4dc.base.dbaccess.anno.DBKeyField;
 
 import java.util.Date;
@@ -11,114 +12,152 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class MenuPO {
-    //MENU_ID
+    //MENU_ID:主键:UUID
     @DBKeyField
     private String menuId;
 
-    //MENU_NAME
+    //MENU_NAME:菜单名称
     private String menuName;
 
-    //MENU_TEXT
+    //MENU_SYSTEM_ID:所属系统ID
+    private String menuSystemId;
+
+    //MENU_TEXT:菜单文本:用于UI显示
     private String menuText;
 
-    //MENU_VALUE
+    //MENU_VALUE:菜单值
     private String menuValue;
 
-    //MENU_TYPE
+    //MENU_TYPE:菜单类型
     private String menuType;
 
-    //MENU_USER_ID
-    private String menuUserId;
+    //MENU_CREATOR_ID:创建者ID
+    private String menuCreatorId;
 
-    //MENU_USER_NAME
-    private String menuUserName;
-
-    //MENU_ORGAN_ID
+    //MENU_ORGAN_ID:创建组织ID
     private String menuOrganId;
 
-    //MENU_ORGAN_NAME
+    //MENU_ORGAN_NAME:创造组织名称
     private String menuOrganName;
 
-    //MENU_IS_EXPAND
+    //MENU_IS_EXPAND:是否展开
     private String menuIsExpand;
 
-    //MENU_IS_SYSTEM
+    //MENU_IS_SYSTEM:是否系统所有
     private String menuIsSystem;
 
-    //MENU_LEFT_URL
+    //MENU_LEFT_URL:左侧链接地址
     private String menuLeftUrl;
 
-    //MENU_LEFT_URL_PARA
+    //MENU_LEFT_URL_PARA:左侧链接参数
     private String menuLeftUrlPara;
 
-    //MENU_RIGHT_URL
+    //MENU_RIGHT_URL:链接地址
     private String menuRightUrl;
 
-    //MENU_RIGHT_URL_PARA
+    //MENU_RIGHT_URL_PARA:链接参数
     private String menuRightUrlPara;
 
-    //MENU_ORDER_NUM
+    //MENU_ORDER_NUM:排序号
     private Integer menuOrderNum;
 
-    //MENU_PARENT_ID
+    //MENU_PARENT_ID:父节点ID
     private String menuParentId;
 
-    //MENU_PARENT_ID_LIST
+    //MENU_PARENT_ID_LIST:父节点ID列表
     private String menuParentIdList;
 
-    //MENU_TARGET
+    //MENU_TARGET:点击打开对象
     private String menuTarget;
 
-    //MENU_CREATOR
-    private String menuCreator;
-
-    //MENU_CREATE_TIME
+    //MENU_CREATE_TIME:创建时间
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date menuCreateTime;
 
-    //MENU_UPDATER
+    //MENU_UPDATER:更新人
     private String menuUpdater;
 
-    //MENU_UPDATE_TIME
+    //MENU_UPDATE_TIME:更新时间
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date menuUpdateTime;
 
-    //MENU_USE_ORGAN_NAME
+    //MENU_USE_ORGAN_NAME:使用组织名称
     private String menuUseOrganName;
 
-    //MENU_USE_ORGAN_ID
+    //MENU_USE_ORGAN_ID:使用组织ID
     private String menuUseOrganId;
 
-    //MENU_USE_ORGAN_TYPE_NAME
+    //MENU_USE_ORGAN_TYPE_NAME:使用组织类型名称
     private String menuUseOrganTypeName;
 
-    //MENU_USE_ORGAN_TYPE_ID
+    //MENU_USE_ORGAN_TYPE_ID:使用组织类型ID
     private String menuUseOrganTypeId;
 
-    //MENU_CLASS_NAME
+    //MENU_CLASS_NAME:样式类名
     private String menuClassName;
 
-    //MENU_CLASS_NAME_HOVER
+    //MENU_CLASS_NAME_HOVER:Hover时的样式类名
     private String menuClassNameHover;
 
-    //MENU_CLASS_NAME_SELECTED
+    //MENU_CLASS_NAME_SELECTED:样式选中的样式类名
     private String menuClassNameSelected;
 
-    //MENU_MENU_CHILD_COUNT
-    private Integer menuMenuChildCount;
+    //MENU_CHILD_COUNT:子节点数量
+    private Integer menuChildCount;
 
-    //MENU_MENU_DESCRIPTION
-    private String menuMenuDescription;
+    //MENU_DESCRIPTION:备注
+    private String menuDescription;
 
-    //MENU_JS_EXPRESSION
+    //MENU_STATUS:状态:启用,禁用
+    private String menuStatus;
+
+    //MENU_JS_EXPRESSION:扩展的JS表达式
     private String menuJsExpression;
 
-    public MenuPO(String menuId, String menuName, String menuText, String menuValue, String menuType, String menuUserId, String menuUserName, String menuOrganId, String menuOrganName, String menuIsExpand, String menuIsSystem, String menuLeftUrl, String menuLeftUrlPara, String menuRightUrl, String menuRightUrlPara, Integer menuOrderNum, String menuParentId, String menuParentIdList, String menuTarget, String menuCreator, Date menuCreateTime, String menuUpdater, Date menuUpdateTime, String menuUseOrganName, String menuUseOrganId, String menuUseOrganTypeName, String menuUseOrganTypeId, String menuClassName, String menuClassNameHover, String menuClassNameSelected, Integer menuMenuChildCount, String menuMenuDescription, String menuJsExpression) {
+    /**
+     * 构造函数
+     * @param menuId 主键
+     * @param menuName 菜单名称
+     * @param menuSystemId 所属系统ID
+     * @param menuText 菜单文本
+     * @param menuValue 菜单值
+     * @param menuType 菜单类型
+     * @param menuCreatorId 创建者ID
+     * @param menuOrganId 创建组织ID
+     * @param menuOrganName 创造组织名称
+     * @param menuIsExpand 是否展开
+     * @param menuIsSystem 是否系统所有
+     * @param menuLeftUrl 左侧链接地址
+     * @param menuLeftUrlPara 左侧链接参数
+     * @param menuRightUrl 链接地址
+     * @param menuRightUrlPara 链接参数
+     * @param menuOrderNum 排序号
+     * @param menuParentId 父节点ID
+     * @param menuParentIdList 父节点ID列表
+     * @param menuTarget 点击打开对象
+     * @param menuCreateTime 创建时间
+     * @param menuUpdater 更新人
+     * @param menuUpdateTime 更新时间
+     * @param menuUseOrganName 使用组织名称
+     * @param menuUseOrganId 使用组织ID
+     * @param menuUseOrganTypeName 使用组织类型名称
+     * @param menuUseOrganTypeId 使用组织类型ID
+     * @param menuClassName 样式类名
+     * @param menuClassNameHover Hover时的样式类名
+     * @param menuClassNameSelected 样式选中的样式类名
+     * @param menuChildCount 子节点数量
+     * @param menuDescription 备注
+     * @param menuStatus 状态
+     * @param menuJsExpression 扩展的JS表达式
+     **/
+    public MenuPO(String menuId, String menuName, String menuSystemId, String menuText, String menuValue, String menuType, String menuCreatorId, String menuOrganId, String menuOrganName, String menuIsExpand, String menuIsSystem, String menuLeftUrl, String menuLeftUrlPara, String menuRightUrl, String menuRightUrlPara, Integer menuOrderNum, String menuParentId, String menuParentIdList, String menuTarget, Date menuCreateTime, String menuUpdater, Date menuUpdateTime, String menuUseOrganName, String menuUseOrganId, String menuUseOrganTypeName, String menuUseOrganTypeId, String menuClassName, String menuClassNameHover, String menuClassNameSelected, Integer menuChildCount, String menuDescription, String menuStatus, String menuJsExpression) {
         this.menuId = menuId;
         this.menuName = menuName;
+        this.menuSystemId = menuSystemId;
         this.menuText = menuText;
         this.menuValue = menuValue;
         this.menuType = menuType;
-        this.menuUserId = menuUserId;
-        this.menuUserName = menuUserName;
+        this.menuCreatorId = menuCreatorId;
         this.menuOrganId = menuOrganId;
         this.menuOrganName = menuOrganName;
         this.menuIsExpand = menuIsExpand;
@@ -131,7 +170,6 @@ public class MenuPO {
         this.menuParentId = menuParentId;
         this.menuParentIdList = menuParentIdList;
         this.menuTarget = menuTarget;
-        this.menuCreator = menuCreator;
         this.menuCreateTime = menuCreateTime;
         this.menuUpdater = menuUpdater;
         this.menuUpdateTime = menuUpdateTime;
@@ -142,8 +180,9 @@ public class MenuPO {
         this.menuClassName = menuClassName;
         this.menuClassNameHover = menuClassNameHover;
         this.menuClassNameSelected = menuClassNameSelected;
-        this.menuMenuChildCount = menuMenuChildCount;
-        this.menuMenuDescription = menuMenuDescription;
+        this.menuChildCount = menuChildCount;
+        this.menuDescription = menuDescription;
+        this.menuStatus = menuStatus;
         this.menuJsExpression = menuJsExpression;
     }
 
@@ -151,266 +190,530 @@ public class MenuPO {
         super();
     }
 
+    /**
+     * 主键:UUID
+     * @return java.lang.String
+     **/
     public String getMenuId() {
         return menuId;
     }
 
+    /**
+     * 主键:UUID
+     * @param menuId 主键
+     **/
     public void setMenuId(String menuId) {
         this.menuId = menuId == null ? null : menuId.trim();
     }
 
+    /**
+     * 菜单名称
+     * @return java.lang.String
+     **/
     public String getMenuName() {
         return menuName;
     }
 
+    /**
+     * 菜单名称
+     * @param menuName 菜单名称
+     **/
     public void setMenuName(String menuName) {
         this.menuName = menuName == null ? null : menuName.trim();
     }
 
+    /**
+     * 所属系统ID
+     * @return java.lang.String
+     **/
+    public String getMenuSystemId() {
+        return menuSystemId;
+    }
+
+    /**
+     * 所属系统ID
+     * @param menuSystemId 所属系统ID
+     **/
+    public void setMenuSystemId(String menuSystemId) {
+        this.menuSystemId = menuSystemId == null ? null : menuSystemId.trim();
+    }
+
+    /**
+     * 菜单文本:用于UI显示
+     * @return java.lang.String
+     **/
     public String getMenuText() {
         return menuText;
     }
 
+    /**
+     * 菜单文本:用于UI显示
+     * @param menuText 菜单文本
+     **/
     public void setMenuText(String menuText) {
         this.menuText = menuText == null ? null : menuText.trim();
     }
 
+    /**
+     * 菜单值
+     * @return java.lang.String
+     **/
     public String getMenuValue() {
         return menuValue;
     }
 
+    /**
+     * 菜单值
+     * @param menuValue 菜单值
+     **/
     public void setMenuValue(String menuValue) {
         this.menuValue = menuValue == null ? null : menuValue.trim();
     }
 
+    /**
+     * 菜单类型
+     * @return java.lang.String
+     **/
     public String getMenuType() {
         return menuType;
     }
 
+    /**
+     * 菜单类型
+     * @param menuType 菜单类型
+     **/
     public void setMenuType(String menuType) {
         this.menuType = menuType == null ? null : menuType.trim();
     }
 
-    public String getMenuUserId() {
-        return menuUserId;
+    /**
+     * 创建者ID
+     * @return java.lang.String
+     **/
+    public String getMenuCreatorId() {
+        return menuCreatorId;
     }
 
-    public void setMenuUserId(String menuUserId) {
-        this.menuUserId = menuUserId == null ? null : menuUserId.trim();
+    /**
+     * 创建者ID
+     * @param menuCreatorId 创建者ID
+     **/
+    public void setMenuCreatorId(String menuCreatorId) {
+        this.menuCreatorId = menuCreatorId == null ? null : menuCreatorId.trim();
     }
 
-    public String getMenuUserName() {
-        return menuUserName;
-    }
-
-    public void setMenuUserName(String menuUserName) {
-        this.menuUserName = menuUserName == null ? null : menuUserName.trim();
-    }
-
+    /**
+     * 创建组织ID
+     * @return java.lang.String
+     **/
     public String getMenuOrganId() {
         return menuOrganId;
     }
 
+    /**
+     * 创建组织ID
+     * @param menuOrganId 创建组织ID
+     **/
     public void setMenuOrganId(String menuOrganId) {
         this.menuOrganId = menuOrganId == null ? null : menuOrganId.trim();
     }
 
+    /**
+     * 创造组织名称
+     * @return java.lang.String
+     **/
     public String getMenuOrganName() {
         return menuOrganName;
     }
 
+    /**
+     * 创造组织名称
+     * @param menuOrganName 创造组织名称
+     **/
     public void setMenuOrganName(String menuOrganName) {
         this.menuOrganName = menuOrganName == null ? null : menuOrganName.trim();
     }
 
+    /**
+     * 是否展开
+     * @return java.lang.String
+     **/
     public String getMenuIsExpand() {
         return menuIsExpand;
     }
 
+    /**
+     * 是否展开
+     * @param menuIsExpand 是否展开
+     **/
     public void setMenuIsExpand(String menuIsExpand) {
         this.menuIsExpand = menuIsExpand == null ? null : menuIsExpand.trim();
     }
 
+    /**
+     * 是否系统所有
+     * @return java.lang.String
+     **/
     public String getMenuIsSystem() {
         return menuIsSystem;
     }
 
+    /**
+     * 是否系统所有
+     * @param menuIsSystem 是否系统所有
+     **/
     public void setMenuIsSystem(String menuIsSystem) {
         this.menuIsSystem = menuIsSystem == null ? null : menuIsSystem.trim();
     }
 
+    /**
+     * 左侧链接地址
+     * @return java.lang.String
+     **/
     public String getMenuLeftUrl() {
         return menuLeftUrl;
     }
 
+    /**
+     * 左侧链接地址
+     * @param menuLeftUrl 左侧链接地址
+     **/
     public void setMenuLeftUrl(String menuLeftUrl) {
         this.menuLeftUrl = menuLeftUrl == null ? null : menuLeftUrl.trim();
     }
 
+    /**
+     * 左侧链接参数
+     * @return java.lang.String
+     **/
     public String getMenuLeftUrlPara() {
         return menuLeftUrlPara;
     }
 
+    /**
+     * 左侧链接参数
+     * @param menuLeftUrlPara 左侧链接参数
+     **/
     public void setMenuLeftUrlPara(String menuLeftUrlPara) {
         this.menuLeftUrlPara = menuLeftUrlPara == null ? null : menuLeftUrlPara.trim();
     }
 
+    /**
+     * 链接地址
+     * @return java.lang.String
+     **/
     public String getMenuRightUrl() {
         return menuRightUrl;
     }
 
+    /**
+     * 链接地址
+     * @param menuRightUrl 链接地址
+     **/
     public void setMenuRightUrl(String menuRightUrl) {
         this.menuRightUrl = menuRightUrl == null ? null : menuRightUrl.trim();
     }
 
+    /**
+     * 链接参数
+     * @return java.lang.String
+     **/
     public String getMenuRightUrlPara() {
         return menuRightUrlPara;
     }
 
+    /**
+     * 链接参数
+     * @param menuRightUrlPara 链接参数
+     **/
     public void setMenuRightUrlPara(String menuRightUrlPara) {
         this.menuRightUrlPara = menuRightUrlPara == null ? null : menuRightUrlPara.trim();
     }
 
+    /**
+     * 排序号
+     * @return java.lang.Integer
+     **/
     public Integer getMenuOrderNum() {
         return menuOrderNum;
     }
 
+    /**
+     * 排序号
+     * @param menuOrderNum 排序号
+     **/
     public void setMenuOrderNum(Integer menuOrderNum) {
         this.menuOrderNum = menuOrderNum;
     }
 
+    /**
+     * 父节点ID
+     * @return java.lang.String
+     **/
     public String getMenuParentId() {
         return menuParentId;
     }
 
+    /**
+     * 父节点ID
+     * @param menuParentId 父节点ID
+     **/
     public void setMenuParentId(String menuParentId) {
         this.menuParentId = menuParentId == null ? null : menuParentId.trim();
     }
 
+    /**
+     * 父节点ID列表
+     * @return java.lang.String
+     **/
     public String getMenuParentIdList() {
         return menuParentIdList;
     }
 
+    /**
+     * 父节点ID列表
+     * @param menuParentIdList 父节点ID列表
+     **/
     public void setMenuParentIdList(String menuParentIdList) {
         this.menuParentIdList = menuParentIdList == null ? null : menuParentIdList.trim();
     }
 
+    /**
+     * 点击打开对象
+     * @return java.lang.String
+     **/
     public String getMenuTarget() {
         return menuTarget;
     }
 
+    /**
+     * 点击打开对象
+     * @param menuTarget 点击打开对象
+     **/
     public void setMenuTarget(String menuTarget) {
         this.menuTarget = menuTarget == null ? null : menuTarget.trim();
     }
 
-    public String getMenuCreator() {
-        return menuCreator;
-    }
-
-    public void setMenuCreator(String menuCreator) {
-        this.menuCreator = menuCreator == null ? null : menuCreator.trim();
-    }
-
+    /**
+     * 创建时间
+     * @return java.util.Date
+     **/
     public Date getMenuCreateTime() {
         return menuCreateTime;
     }
 
+    /**
+     * 创建时间
+     * @param menuCreateTime 创建时间
+     **/
     public void setMenuCreateTime(Date menuCreateTime) {
         this.menuCreateTime = menuCreateTime;
     }
 
+    /**
+     * 更新人
+     * @return java.lang.String
+     **/
     public String getMenuUpdater() {
         return menuUpdater;
     }
 
+    /**
+     * 更新人
+     * @param menuUpdater 更新人
+     **/
     public void setMenuUpdater(String menuUpdater) {
         this.menuUpdater = menuUpdater == null ? null : menuUpdater.trim();
     }
 
+    /**
+     * 更新时间
+     * @return java.util.Date
+     **/
     public Date getMenuUpdateTime() {
         return menuUpdateTime;
     }
 
+    /**
+     * 更新时间
+     * @param menuUpdateTime 更新时间
+     **/
     public void setMenuUpdateTime(Date menuUpdateTime) {
         this.menuUpdateTime = menuUpdateTime;
     }
 
+    /**
+     * 使用组织名称
+     * @return java.lang.String
+     **/
     public String getMenuUseOrganName() {
         return menuUseOrganName;
     }
 
+    /**
+     * 使用组织名称
+     * @param menuUseOrganName 使用组织名称
+     **/
     public void setMenuUseOrganName(String menuUseOrganName) {
         this.menuUseOrganName = menuUseOrganName == null ? null : menuUseOrganName.trim();
     }
 
+    /**
+     * 使用组织ID
+     * @return java.lang.String
+     **/
     public String getMenuUseOrganId() {
         return menuUseOrganId;
     }
 
+    /**
+     * 使用组织ID
+     * @param menuUseOrganId 使用组织ID
+     **/
     public void setMenuUseOrganId(String menuUseOrganId) {
         this.menuUseOrganId = menuUseOrganId == null ? null : menuUseOrganId.trim();
     }
 
+    /**
+     * 使用组织类型名称
+     * @return java.lang.String
+     **/
     public String getMenuUseOrganTypeName() {
         return menuUseOrganTypeName;
     }
 
+    /**
+     * 使用组织类型名称
+     * @param menuUseOrganTypeName 使用组织类型名称
+     **/
     public void setMenuUseOrganTypeName(String menuUseOrganTypeName) {
         this.menuUseOrganTypeName = menuUseOrganTypeName == null ? null : menuUseOrganTypeName.trim();
     }
 
+    /**
+     * 使用组织类型ID
+     * @return java.lang.String
+     **/
     public String getMenuUseOrganTypeId() {
         return menuUseOrganTypeId;
     }
 
+    /**
+     * 使用组织类型ID
+     * @param menuUseOrganTypeId 使用组织类型ID
+     **/
     public void setMenuUseOrganTypeId(String menuUseOrganTypeId) {
         this.menuUseOrganTypeId = menuUseOrganTypeId == null ? null : menuUseOrganTypeId.trim();
     }
 
+    /**
+     * 样式类名
+     * @return java.lang.String
+     **/
     public String getMenuClassName() {
         return menuClassName;
     }
 
+    /**
+     * 样式类名
+     * @param menuClassName 样式类名
+     **/
     public void setMenuClassName(String menuClassName) {
         this.menuClassName = menuClassName == null ? null : menuClassName.trim();
     }
 
+    /**
+     * Hover时的样式类名
+     * @return java.lang.String
+     **/
     public String getMenuClassNameHover() {
         return menuClassNameHover;
     }
 
+    /**
+     * Hover时的样式类名
+     * @param menuClassNameHover Hover时的样式类名
+     **/
     public void setMenuClassNameHover(String menuClassNameHover) {
         this.menuClassNameHover = menuClassNameHover == null ? null : menuClassNameHover.trim();
     }
 
+    /**
+     * 样式选中的样式类名
+     * @return java.lang.String
+     **/
     public String getMenuClassNameSelected() {
         return menuClassNameSelected;
     }
 
+    /**
+     * 样式选中的样式类名
+     * @param menuClassNameSelected 样式选中的样式类名
+     **/
     public void setMenuClassNameSelected(String menuClassNameSelected) {
         this.menuClassNameSelected = menuClassNameSelected == null ? null : menuClassNameSelected.trim();
     }
 
-    public Integer getMenuMenuChildCount() {
-        return menuMenuChildCount;
+    /**
+     * 子节点数量
+     * @return java.lang.Integer
+     **/
+    public Integer getMenuChildCount() {
+        return menuChildCount;
     }
 
-    public void setMenuMenuChildCount(Integer menuMenuChildCount) {
-        this.menuMenuChildCount = menuMenuChildCount;
+    /**
+     * 子节点数量
+     * @param menuChildCount 子节点数量
+     **/
+    public void setMenuChildCount(Integer menuChildCount) {
+        this.menuChildCount = menuChildCount;
     }
 
-    public String getMenuMenuDescription() {
-        return menuMenuDescription;
+    /**
+     * 备注
+     * @return java.lang.String
+     **/
+    public String getMenuDescription() {
+        return menuDescription;
     }
 
-    public void setMenuMenuDescription(String menuMenuDescription) {
-        this.menuMenuDescription = menuMenuDescription == null ? null : menuMenuDescription.trim();
+    /**
+     * 备注
+     * @param menuDescription 备注
+     **/
+    public void setMenuDescription(String menuDescription) {
+        this.menuDescription = menuDescription == null ? null : menuDescription.trim();
     }
 
+    /**
+     * 状态:启用,禁用
+     * @return java.lang.String
+     **/
+    public String getMenuStatus() {
+        return menuStatus;
+    }
+
+    /**
+     * 状态:启用,禁用
+     * @param menuStatus 状态
+     **/
+    public void setMenuStatus(String menuStatus) {
+        this.menuStatus = menuStatus == null ? null : menuStatus.trim();
+    }
+
+    /**
+     * 扩展的JS表达式
+     * @return java.lang.String
+     **/
     public String getMenuJsExpression() {
         return menuJsExpression;
     }
 
+    /**
+     * 扩展的JS表达式
+     * @param menuJsExpression 扩展的JS表达式
+     **/
     public void setMenuJsExpression(String menuJsExpression) {
         this.menuJsExpression = menuJsExpression == null ? null : menuJsExpression.trim();
     }

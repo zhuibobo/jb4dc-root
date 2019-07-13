@@ -51,7 +51,7 @@ public class CGServiceImpl {
         builder.append(CGTool.newLineChar());
         builder.append(CGTool.tabChar(1)+"public int saveSimple(JB4DCSession jb4DCSession, String id, "+domainObjectName+" record) throws JBuild4DCGenerallyException {");
         builder.append(CGTool.newLineChar());
-        builder.append(CGTool.tabChar(2)+"return super.save(JB4DCSession,id, record, new IAddBefore<"+domainObjectName+">() {");
+        builder.append(CGTool.tabChar(2)+"return super.save(jb4DCSession,id, record, new IAddBefore<"+domainObjectName+">() {");
         builder.append(CGTool.newLineChar());
         builder.append(CGTool.tabChar(3)+"@Override");
         builder.append(CGTool.newLineChar());

@@ -87,7 +87,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         }
         DataSourceSingleBO dataSourceSingleVo = dataSourceService.getDataSourceSingleConfig(dataSourceId);
         if (dataSourceSingleVo.getDbType().equals("sqlserver")) {
-            sql = "Select Name as TableName FROM SysObjects Where XType='U' and Name like #{searchTableName} order BY Name";
+            sql = "Select Name as TableName FROM SysObjects Where XType='U' and Name like #{searchTableName} and Name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK','TestConn') order BY Name";
         }
         if (dataSourceSingleVo.getDbType().equals("mysql")) {
             sql = "select upper(table_name) TableName from information_schema.tables where table_schema='" + dataSourceSingleVo.getDatabaseName() + "' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";

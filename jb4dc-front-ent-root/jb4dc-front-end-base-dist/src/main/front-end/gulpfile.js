@@ -3,7 +3,6 @@
 require("@babel/polyfill");
 const babel = require('gulp-babel');
 const gulp = require('gulp');
-const gulpCopy = require('gulp-copy');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const htmlclean = require('gulp-htmlclean');
