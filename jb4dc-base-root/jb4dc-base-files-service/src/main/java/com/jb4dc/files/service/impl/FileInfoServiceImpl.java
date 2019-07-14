@@ -2,7 +2,6 @@ package com.jb4dc.files.service.impl;
 
 import com.jb4dc.base.dbaccess.exenum.EnableTypeEnum;
 import com.jb4dc.base.service.IAddBefore;
-import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.base.service.impl.BaseServiceImpl;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
@@ -13,16 +12,20 @@ import com.jb4dc.files.dbentities.FileContentEntity;
 import com.jb4dc.files.dbentities.FileInfoEntity;
 import com.jb4dc.files.service.IFileInfoService;
 import org.apache.commons.io.FilenameUtils;
-import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Date;
 
+@Service
 public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> implements IFileInfoService
 {
     FileInfoMapper fileInfoMapper;
     FileContentMapper contentMapper;
+
+    @Autowired
     public FileInfoServiceImpl(FileInfoMapper _defaultBaseMapper, FileContentMapper _contentMapper){
         super(_defaultBaseMapper);
         fileInfoMapper=_defaultBaseMapper;

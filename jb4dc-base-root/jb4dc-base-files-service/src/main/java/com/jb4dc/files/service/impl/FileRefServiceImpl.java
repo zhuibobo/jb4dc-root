@@ -7,10 +7,15 @@ import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.files.dao.FileRefMapper;
 import com.jb4dc.files.dbentities.FileRefEntity;
 import com.jb4dc.files.service.IFileRefService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class FileRefServiceImpl extends BaseServiceImpl<FileRefEntity> implements IFileRefService
 {
     FileRefMapper fileRefMapper;
+
+    @Autowired
     public FileRefServiceImpl(FileRefMapper _defaultBaseMapper){
         super(_defaultBaseMapper);
         fileRefMapper=_defaultBaseMapper;
