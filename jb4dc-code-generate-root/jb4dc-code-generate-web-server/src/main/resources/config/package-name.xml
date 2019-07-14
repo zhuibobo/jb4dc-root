@@ -13,4 +13,6 @@
     </Package>
     <Package name="SystemSetting" entity="com.jb4dc.system.setting.dbentities" dao="com.jb4dc.system.setting.dao" mapperAC="mybatismappers">
     </Package>
+    <Package name="Files" entity="com.jb4dc.files.dbentities" dao="com.jb4dc.files.dao" mapperAC="mybatismappers">
+    </Package>
 </Config>

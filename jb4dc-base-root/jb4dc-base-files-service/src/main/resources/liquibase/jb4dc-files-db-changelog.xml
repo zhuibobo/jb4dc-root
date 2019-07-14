@@ -1,0 +1,49 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <!--文件存储-->
+    <changeSet author="zhuangrb" id="changeSet-File-0001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="TFS_FILE_CONTENT" remarks="文件内容存储表:用于存储小容量的系统文件">
+            <column name="FILE_ID" type="NVARCHAR(100)" remarks="文件ID:关联于TFS_FILE_INFO">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="FILE_CONTENT" type="LONGBLOB" remarks="文件的二进制内容">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="TFS_FILE_INFO" remarks="文件信息表">
+            <column name="FILE_ID" type="NVARCHAR(100)" remarks="文件ID:UUID,主键">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="FILE_CREATE_TIME" type="datetime(6)" remarks="创建时间"/>
+            <column name="FILE_CREATOR_ID" type="NVARCHAR(100)" remarks="创建人"/>
+            <column name="FILE_CREATOR_NAME" type="NVARCHAR(100)" remarks="创建人姓名"/>
+            <column name="FILE_NAME" type="NVARCHAR(200)" remarks="文件名称"/>
+            <column name="FILE_SIZE" type="BIGINT" remarks="文件大小"/>
+            <column name="FILE_STORE_TYPE" type="NVARCHAR(100)" remarks="文件的存储位置:小文件可以存储于数据库中"/>
+            <column name="FILE_STORE_PATH" type="NVARCHAR(400)" remarks="文件的存储路径"/>
+            <column name="FILE_STORE_NAME" type="NVARCHAR(100)" remarks="文件的物理存储名称"/>
+            <column name="FILE_ORGAN_ID" type="NVARCHAR(100)" remarks="文件创建组织的ID"/>
+            <column name="FILE_ORGAN_NAME" type="NVARCHAR(100)" remarks="文件创建的组织名称"/>
+            <column name="FILE_EXTENSION" type="NVARCHAR(100)" remarks="文件的扩展名称"/>
+            <column name="FILE_DESCRIPTION" type="NVARCHAR(500)" remarks="文件的描述"/>
+            <column name="FILE_READ_TIME" type="INT" remarks="文件的读取次数"/>
+            <column name="FILE_STATUS" type="NVARCHAR(10)" remarks="文件的状态值"/>
+            <column name="FILE_ORDER_NUM" type="INT" remarks="文件的排序号"/>
+            <column name="FILE_VERSION" type="INT" remarks="文件的版本号"/>
+        </createTable>
+
+        <createTable tableName="TFS_FILE_REF">
+            <column name="REF_ID" type="NVARCHAR(100)" remarks="文件引用的ID:UUID,主键">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="REF_FILE_ID" type="NVARCHAR(100)" remarks="文件的ID:关联到表TFS_FILE_INFO"/>
+            <column name="REF_OBJ_ID" type="NVARCHAR(100)" remarks="关联记录的ID"/>
+            <column name="REF_OBJ_NAME" type="NVARCHAR(100)" remarks="关联记录的对象名称"/>
+            <column name="REF_ORDER_NUM" type="INT" remarks="排序号"/>
+            <column name="REF_STATUS" type="NVARCHAR(10)" remarks="文件引用的状态值"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

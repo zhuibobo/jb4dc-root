@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files/jb4dc-base-files.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files/jb4dc-base-files.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" />

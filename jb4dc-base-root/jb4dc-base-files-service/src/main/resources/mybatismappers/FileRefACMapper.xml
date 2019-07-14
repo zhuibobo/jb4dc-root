@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jb4dc.files.dao.FileRefMapper">
+    <resultMap id="BaseResultMap" type="com.jb4dc.files.dbentities.FileRefEntity">
+        <constructor>
+            <idArg column="REF_ID" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="REF_FILE_ID" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="REF_OBJ_ID" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="REF_OBJ_NAME" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="REF_ORDER_NUM" javaType="java.lang.Integer" jdbcType="INTEGER" />
+            <arg column="REF_STATUS" javaType="java.lang.String" jdbcType="NVARCHAR" />
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+    REF_ID, REF_FILE_ID, REF_OBJ_ID, REF_OBJ_NAME, REF_ORDER_NUM, REF_STATUS
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from TFS_FILE_REF
+        where REF_ID = #{refId,jdbcType=NVARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from TFS_FILE_REF
+    where REF_ID = #{refId,jdbcType=NVARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.jb4dc.files.dbentities.FileRefEntity">
+    insert into TFS_FILE_REF (REF_ID, REF_FILE_ID, REF_OBJ_ID,
+      REF_OBJ_NAME, REF_ORDER_NUM, REF_STATUS
+      )
+    values (#{refId,jdbcType=NVARCHAR}, #{refFileId,jdbcType=NVARCHAR}, #{refObjId,jdbcType=NVARCHAR},
+      #{refObjName,jdbcType=NVARCHAR}, #{refOrderNum,jdbcType=INTEGER}, #{refStatus,jdbcType=NVARCHAR}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.jb4dc.files.dbentities.FileRefEntity">
+        insert into TFS_FILE_REF
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="refId != null">
+                REF_ID,
+            </if>
+            <if test="refFileId != null">
+                REF_FILE_ID,
+            </if>
+            <if test="refObjId != null">
+                REF_OBJ_ID,
+            </if>
+            <if test="refObjName != null">
+                REF_OBJ_NAME,
+            </if>
+            <if test="refOrderNum != null">
+                REF_ORDER_NUM,
+            </if>
+            <if test="refStatus != null">
+                REF_STATUS,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="refId != null">
+                #{refId,jdbcType=NVARCHAR},
+            </if>
+            <if test="refFileId != null">
+                #{refFileId,jdbcType=NVARCHAR},
+            </if>
+            <if test="refObjId != null">
+                #{refObjId,jdbcType=NVARCHAR},
+            </if>
+            <if test="refObjName != null">
+                #{refObjName,jdbcType=NVARCHAR},
+            </if>
+            <if test="refOrderNum != null">
+                #{refOrderNum,jdbcType=INTEGER},
+            </if>
+            <if test="refStatus != null">
+                #{refStatus,jdbcType=NVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.jb4dc.files.dbentities.FileRefEntity">
+        update TFS_FILE_REF
+        <set>
+            <if test="refFileId != null">
+                REF_FILE_ID = #{refFileId,jdbcType=NVARCHAR},
+            </if>
+            <if test="refObjId != null">
+                REF_OBJ_ID = #{refObjId,jdbcType=NVARCHAR},
+            </if>
+            <if test="refObjName != null">
+                REF_OBJ_NAME = #{refObjName,jdbcType=NVARCHAR},
+            </if>
+            <if test="refOrderNum != null">
+                REF_ORDER_NUM = #{refOrderNum,jdbcType=INTEGER},
+            </if>
+            <if test="refStatus != null">
+                REF_STATUS = #{refStatus,jdbcType=NVARCHAR},
+            </if>
+        </set>
+        where REF_ID = #{refId,jdbcType=NVARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.jb4dc.files.dbentities.FileRefEntity">
+    update TFS_FILE_REF
+    set REF_FILE_ID = #{refFileId,jdbcType=NVARCHAR},
+      REF_OBJ_ID = #{refObjId,jdbcType=NVARCHAR},
+      REF_OBJ_NAME = #{refObjName,jdbcType=NVARCHAR},
+      REF_ORDER_NUM = #{refOrderNum,jdbcType=INTEGER},
+      REF_STATUS = #{refStatus,jdbcType=NVARCHAR}
+    where REF_ID = #{refId,jdbcType=NVARCHAR}
+  </update>
+</mapper>
