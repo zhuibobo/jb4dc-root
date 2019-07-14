@@ -6,20 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jb4dc-base-db-access" />
+        <module name="jb4dc-code-generate-web-server" />
         <module name="jb4dc-base-tools" />
         <module name="jb4dc-code-generate-service" />
-        <module name="jb4dc-web-app-starter" />
+        <module name="jb4dc-base-files" />
+        <module name="jb4dc-base-db-access" />
         <module name="jb4dc-base-service" />
         <module name="jb4dc-front-end-base-dist" />
         <module name="jb4dc-cloud-eureka-web-server" />
         <module name="jb4dc-core-base" />
-        <module name="jb4dc-code-generate-web-server" />
+        <module name="jb4dc-web-app-starter" />
         <module name="jb4dc-cloud-config-web-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="jb4dc-base-db-access" target="1.8" />
+      <module name="jb4dc-base-files" target="1.8" />
       <module name="jb4dc-base-root" target="1.8" />
       <module name="jb4dc-base-service" target="1.8" />
       <module name="jb4dc-base-tools" target="1.8" />
@@ -28,7 +30,7 @@
       <module name="jb4dc-cloud-config-web-server" target="1.8" />
       <module name="jb4dc-cloud-eureka-web-server" target="1.8" />
       <module name="jb4dc-cloud-root" target="1.8" />
-      <module name="jb4dc-code-general-root" target="1.8" />
+      <module name="jb4dc-code-generate-root" target="1.8" />
       <module name="jb4dc-code-generate-service" target="1.8" />
       <module name="jb4dc-code-generate-web" target="1.8" />
       <module name="jb4dc-code-generate-web-jar" target="1.8" />

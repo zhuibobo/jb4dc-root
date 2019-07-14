@@ -15,6 +15,7 @@
         <module>jb4dc-base-tools</module>
         <module>jb4dc-base-service</module>
         <module>jb4dc-base-db-access</module>
+        <module>jb4dc-base-files</module>
     </modules>
     <dependencies>
         <dependency>

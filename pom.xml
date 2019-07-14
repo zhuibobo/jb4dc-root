@@ -10,7 +10,7 @@
     <modules>
 
         <module>jb4dc-base-root</module>
-        <module>jb4dc-code-general-root</module>
+        <module>jb4dc-code-generate-root</module>
         <module>jb4dc-core-root</module>
         <module>jb4dc-front-ent-root</module>
         <module>jb4dc-cloud-root</module>

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jb4dc-code-general-root</artifactId>
+    <artifactId>jb4dc-code-generate-root</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>jb4dc-code-generate-service</module>
