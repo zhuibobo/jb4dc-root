@@ -1,5 +1,7 @@
 package com.jb4dc.base.tools;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
@@ -8,11 +10,18 @@ import org.springframework.web.context.WebApplicationContext;
  * Date: 2018/11/21
  * To change this template use File | Settings | File Templates.
  */
+
+@Service
 public class BeanUtility {
     private static WebApplicationContext context;
 
     public static WebApplicationContext getContext() {
         return context;
+    }
+
+    @Autowired
+    public BeanUtility(WebApplicationContext _context){
+        this.context=_context;
     }
 
     public static void setContext(WebApplicationContext _context) {
