@@ -1,6 +1,6 @@
-package com.jb4dc.base.tools;
+package com.jb4dc.core.base.tools;
 
-public class PathUtility {
+public class PathBaseUtility {
 
     /*public static String getAppPath(){
         ApplicationHome home = new ApplicationHome(PathUtility.class);

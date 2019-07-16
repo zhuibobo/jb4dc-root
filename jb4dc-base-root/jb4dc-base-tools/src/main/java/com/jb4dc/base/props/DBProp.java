@@ -1,14 +1,5 @@
 package com.jb4dc.base.props;
 
-import com.jb4dc.base.tools.FileUtility;
-import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
-import com.jb4dc.core.base.exenum.DBTypeEnum;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-
 /*
 public class DBProp {
     private static Properties propertie;

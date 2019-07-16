@@ -1,4 +1,4 @@
-package com.jb4dc.base.ymls;
+package com.jb4dc.core.base.ymls;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

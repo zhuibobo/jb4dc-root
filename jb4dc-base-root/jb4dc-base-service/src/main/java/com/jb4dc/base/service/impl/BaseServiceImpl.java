@@ -5,7 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.jb4dc.base.dbaccess.anno.DBAnnoUtility;
 import com.jb4dc.base.dbaccess.dao.BaseMapper;
 import com.jb4dc.base.service.*;
-import com.jb4dc.base.ymls.JBuild4DCYaml;
+import com.jb4dc.core.base.ymls.JBuild4DCYaml;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.tools.UUIDUtility;

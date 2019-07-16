@@ -1,6 +1,6 @@
 package com.jb4dc.code.generate.service.impl;
 
-import com.jb4dc.base.tools.FileUtility;
+import com.jb4dc.core.base.tools.FileUtility;
 import com.jb4dc.base.tools.XMLUtility;
 import com.jb4dc.code.generate.service.IDataSourceService;
 import com.jb4dc.code.generate.bo.DataSourceConfigBO;

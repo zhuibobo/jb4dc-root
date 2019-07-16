@@ -9,20 +9,20 @@
       <configuration>
         <webroots />
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/../jb4dc-base-files-service/src/main/java" />
-          <root url="file://$MODULE_DIR$/../jb4dc-base-files-service/src/main/resources" />
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../jb4dc-base-files-service/target/classes" />
-    <output-test url="file://$MODULE_DIR$/../jb4dc-base-files-service/target/test-classes" />
-    <content url="file://$MODULE_DIR$/../jb4dc-base-files-service">
-      <sourceFolder url="file://$MODULE_DIR$/../jb4dc-base-files-service/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../jb4dc-base-files-service/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../jb4dc-base-files-service/src/test/java" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/../jb4dc-base-files-service/target" />
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -31,6 +31,7 @@
     <orderEntry type="module" module-name="jb4dc-base-service" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
     <orderEntry type="module" module-name="jb4dc-core-base" scope="PROVIDED" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.23" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework.boot:spring-boot-starter-web:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework.boot:spring-boot-starter:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework.boot:spring-boot:2.1.6.RELEASE" level="project" />
@@ -44,7 +45,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.annotation:javax.annotation-api:1.3.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-core:5.1.8.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-jcl:5.1.8.RELEASE" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.23" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework.boot:spring-boot-starter-json:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.9" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />

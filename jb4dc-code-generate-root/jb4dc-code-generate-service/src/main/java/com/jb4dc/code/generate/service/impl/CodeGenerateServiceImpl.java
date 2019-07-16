@@ -7,12 +7,11 @@ import com.jb4dc.base.dbaccess.dynamic.impl.TemporarySqlSessionFactoryBuilder;
 import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.base.service.impl.SQLBuilderServiceImpl;
 import com.jb4dc.base.service.impl.TemporarySQLBuilderService;
-import com.jb4dc.base.tools.PathUtility;
+import com.jb4dc.core.base.tools.PathBaseUtility;
 import com.jb4dc.code.generate.bo.DataSourceSingleBO;
 import com.jb4dc.code.generate.bo.PackageSingleBO;
 import com.jb4dc.code.generate.bo.SimpleTableFieldBO;
 import com.jb4dc.code.generate.service.ICodeGenerateService;
-import com.jb4dc.code.generate.service.IDataSourceManager;
 import com.jb4dc.code.generate.service.IDataSourceService;
 import com.jb4dc.code.generate.service.IPackageService;
 import com.jb4dc.code.generate.service.impl.codegenerate.CGCodeFragment;
@@ -147,7 +146,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     private String DaoRootFolderKey="DaoRootFolderKey";
     private String XmlRootFolderKey="XmlRootFolderKey";
     private PackageSingleBO createAboutFolder(PackageSingleBO packageSingleBO){
-        String GenerateCodeFilesPath=PathUtility.getThreadRunRootPath()+"/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
+        String GenerateCodeFilesPath= PathBaseUtility.getThreadRunRootPath()+"/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
         File tempRootFolder=new File(GenerateCodeFilesPath);
         tempRootFolder.mkdirs();
 

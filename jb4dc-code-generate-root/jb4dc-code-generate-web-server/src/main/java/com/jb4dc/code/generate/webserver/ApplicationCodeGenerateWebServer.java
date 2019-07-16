@@ -1,6 +1,5 @@
 package com.jb4dc.code.generate.webserver;
 
-import com.jb4dc.base.tools.PathUtility;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;

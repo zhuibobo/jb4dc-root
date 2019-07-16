@@ -1,6 +1,4 @@
-package com.jb4dc.base.tools;
-
-import org.springframework.boot.system.ApplicationHome;
+package com.jb4dc.core.base.tools;
 
 import java.io.*;
 
@@ -18,7 +16,7 @@ public class FileUtility {
         //ApplicationHome home=new ApplicationHome();
         //System.out.println("getDir:"+home.getDir().getPath());
         //File jarFile = home.getSource();
-        String fullPath=PathUtility.getThreadRunRootPath()+filePath;
+        String fullPath= PathBaseUtility.getThreadRunRootPath()+filePath;
         //System.out.println(fullPath);
         File file=new File(fullPath);
         if(file.exists()){

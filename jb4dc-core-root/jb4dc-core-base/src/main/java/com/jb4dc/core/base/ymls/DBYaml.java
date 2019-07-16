@@ -1,6 +1,6 @@
-package com.jb4dc.base.ymls;
+package com.jb4dc.core.base.ymls;
 
-import com.jb4dc.base.tools.FileUtility;
+import com.jb4dc.core.base.tools.FileUtility;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.exenum.DBTypeEnum;
 import org.yaml.snakeyaml.Yaml;
@@ -31,7 +31,7 @@ public class DBYaml extends YamlUtility  {
     }
 
     public static String getValue(String key) {
-        return getValue(yamlMap,key);
+        return YamlUtility.getValue(yamlMap,key);
     }
 
     public static boolean isSqlServer(){

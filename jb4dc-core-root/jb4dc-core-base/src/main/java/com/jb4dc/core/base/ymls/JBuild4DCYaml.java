@@ -1,6 +1,6 @@
-package com.jb4dc.base.ymls;
+package com.jb4dc.core.base.ymls;
 
-import com.jb4dc.base.tools.FileUtility;
+import com.jb4dc.core.base.tools.FileUtility;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileNotFoundException;
@@ -29,7 +29,7 @@ public class JBuild4DCYaml extends YamlUtility {
     }
 
     public static String getValue(String key) {
-        return getValue(yamlMap,key);
+        return YamlUtility.getValue(yamlMap,key);
     }
 
     public static String getWarningOperationCode(){

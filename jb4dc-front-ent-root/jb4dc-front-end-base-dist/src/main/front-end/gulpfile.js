@@ -53,6 +53,20 @@ gulp.task('front-end-base-js-utility',()=>{
         .pipe(gulp.dest(jarToResourcePath + "/Js"));
 });
 
+/*编译Vue的扩展插件*/
+gulp.task('front-end-js-vue-ex-component',()=>{
+    return gulp.src([jarFromResourcePath + '/Js/VueComponent/**/*.js'])
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.identityMap())
+        .pipe(concat('VueEXComponent.js'))
+        //.pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(jarToResourcePath + "/Js"));
+});
+
 /*编译Js下旧的UI的组件*/
 gulp.task('front-end-base-js-ui-component',()=>{
     return gulp.src([jarFromResourcePath + '/Js/EditTable/**/*.js',jarFromResourcePath + '/Js/TreeTable/**/*.js'])
@@ -87,7 +101,6 @@ gulp.task('front-end-base-html-only',()=>{
 });
 
 gulp.task('front-end-base-html', gulp.series('front-end-base-html-resource','front-end-base-html-only'));
-
 
 gulp.task('dist-watch', function() {
     gulp.watch(jarFromResourcePath+"/HTML/**/*", gulp.series('front-end-base-html'));

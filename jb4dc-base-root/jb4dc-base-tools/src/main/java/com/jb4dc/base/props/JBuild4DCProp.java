@@ -1,13 +1,5 @@
 package com.jb4dc.base.props;
 
-import com.jb4dc.base.tools.FileUtility;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.Properties;
-
 /**
  * Created with IntelliJ IDEA.
  * User: zhuangrb

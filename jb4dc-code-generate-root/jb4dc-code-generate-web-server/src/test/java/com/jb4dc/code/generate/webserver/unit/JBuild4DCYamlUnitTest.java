@@ -5,7 +5,7 @@ import com.itextpdf.text.pdf.parser.ImageRenderInfo;
 import com.itextpdf.text.pdf.parser.PdfReaderContentParser;
 import com.itextpdf.text.pdf.parser.RenderListener;
 import com.itextpdf.text.pdf.parser.TextRenderInfo;
-import com.jb4dc.base.ymls.JBuild4DCYaml;
+import com.jb4dc.core.base.ymls.JBuild4DCYaml;
 import org.junit.Test;
 
 /**
