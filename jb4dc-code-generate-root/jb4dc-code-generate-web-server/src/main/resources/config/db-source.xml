@@ -6,9 +6,9 @@
         <DBType>sqlserver</DBType>
         <DriverName>com.microsoft.sqlserver.jdbc.SQLServerDriver</DriverName>
         <DatabaseName>JBuild4D_V08</DatabaseName>
-        <Url>jdbc:sqlserver://120.77.56.220:1433; DatabaseName=JBuild4D_V08</Url>
+        <Url>jdbc:sqlserver://127.0.0.1:1433; DatabaseName=JBuild4D_V08</Url>
         <User>sa</User>
-        <Password>zhenx#88DATA</Password>
+        <Password>sql</Password>
     </DataSource>
     <DataSource>
         <Id>DataSource0002</Id>
@@ -16,18 +16,18 @@
         <DBType>sqlserver</DBType>
         <DriverName>com.microsoft.sqlserver.jdbc.SQLServerDriver</DriverName>
         <DatabaseName>JB4DC_SSO_V01</DatabaseName>
-        <Url>jdbc:sqlserver://120.77.56.220:1433; DatabaseName=JB4DC_SSO_V01</Url>
+        <Url>jdbc:sqlserver://127.0.0.1:1433; DatabaseName=JB4DC_SSO_V01</Url>
         <User>sa</User>
-        <Password>zhenx#88DATA</Password>
+        <Password>sql</Password>
     </DataSource>
     <DataSource>
         <Id>DataSource0003</Id>
-        <Caption>系统设置</Caption>
+        <Caption>开发示例</Caption>
         <DBType>sqlserver</DBType>
         <DriverName>com.microsoft.sqlserver.jdbc.SQLServerDriver</DriverName>
-        <DatabaseName>JB4DC_SYSTEM_SETTING_V01</DatabaseName>
-        <Url>jdbc:sqlserver://120.77.56.220:1433; DatabaseName=JB4DC_SYSTEM_SETTING_V01</Url>
+        <DatabaseName>JB4DC_DEV_MOCK_V01</DatabaseName>
+        <Url>jdbc:sqlserver://127.0.0.1:1433; DatabaseName=JB4DC_DEV_MOCK_V01</Url>
         <User>sa</User>
-        <Password>zhenx#88DATA</Password>
+        <Password>sql</Password>
     </DataSource>
 </Config>
