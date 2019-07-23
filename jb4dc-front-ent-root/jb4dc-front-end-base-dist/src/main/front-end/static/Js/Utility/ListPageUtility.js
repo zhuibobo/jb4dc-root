@@ -315,71 +315,106 @@ var ListPageUtility = {
     },
     IViewTableInnerButton: {
         ViewButton: function (h, params, idField, pageAppObj) {
-            return h('div', {
-                class: "list-row-button view",
-                on: {
-                    click: function () {
-                        //debugger;
-                        pageAppObj.view(params.row[idField], params);
-                    }
+            return h('Tooltip', {
+                props:{
+                    content:"查看"
                 }
-            });
+            },[
+                h('div',{
+                    class: "list-row-button view",
+                    on: {
+                        click: function () {
+                            //debugger;
+                            pageAppObj.view(params.row[idField], params);
+                        }
+                    }
+                })
+            ]);
         },
         EditButton: function (h, params, idField, pageAppObj) {
-            return h('div', {
-                class: "list-row-button edit",
-                on: {
-                    click: function () {
-                        //this;
-                        //debugger;
-                        pageAppObj.edit(params.row[idField], params);
-                    }
+            return h('Tooltip', {
+                props:{
+                    content:"修改"
                 }
-            });
+            },[
+                h('div',{
+                    class: "list-row-button edit",
+                    on: {
+                        click: function () {
+                            //debugger;
+                            pageAppObj.edit(params.row[idField], params);
+                        }
+                    }
+                })
+            ]);
         },
         DeleteButton: function (h, params, idField, pageAppObj) {
-            return h('div', {
-                class: "list-row-button del",
-                on: {
-                    click: function () {
-                        //debugger;
-                        pageAppObj.del(params.row[idField], params);
-                    }
+            return h('Tooltip', {
+                props:{
+                    content:"删除"
                 }
-            });
+            },[
+                h('div',{
+                    class: "list-row-button del",
+                    on: {
+                        click: function () {
+                            //debugger;
+                            pageAppObj.del(params.row[idField], params);
+                        }
+                    }
+                })
+            ]);
         },
         MoveUpButton: function (h, params, idField, pageAppObj) {
-            return h('div', {
-                class: "list-row-button move-up",
-                on: {
-                    click: function () {
-                        //debugger;
-                        pageAppObj.moveUp(params.row[idField], params);
-                    }
+            return h('Tooltip', {
+                props:{
+                    content:"上移"
                 }
-            });
+            },[
+                h('div',{
+                    class: "list-row-button move-up",
+                    on: {
+                        click: function () {
+                            //debugger;
+                            pageAppObj.moveUp(params.row[idField], params);
+                        }
+                    }
+                })
+            ]);
         },
         MoveDownButton: function (h, params, idField, pageAppObj) {
-            return h('div', {
-                class: "list-row-button move-down",
-                on: {
-                    click: function () {
-                        //debugger;
-                        pageAppObj.moveDown(params.row[idField], params);
-                    }
+            return h('Tooltip', {
+                props:{
+                    content:"下移"
                 }
-            });
+            },[
+                h('div',{
+                    class: "list-row-button move-down",
+                    on: {
+                        click: function () {
+                            //debugger;
+                            pageAppObj.moveDown(params.row[idField], params);
+                        }
+                    }
+                })
+            ]);
         },
         SelectedButton: function (h, params, idField, pageAppObj) {
-            return h('div', {
-                class: "list-row-button selected",
-                on: {
-                    click: function () {
-                        //debugger;
-                        pageAppObj.selected(params.row[idField], params);
-                    }
+            return h('Tooltip', {
+                props:{
+                    content:"选择"
                 }
-            });
+            },[
+                h('div',{
+                    class: "list-row-button selected",
+                    on: {
+                        click: function () {
+                            //debugger;
+                            pageAppObj.selected(params.row[idField], params);
+                        }
+                    }
+                })
+            ]);
         }
     }
 }

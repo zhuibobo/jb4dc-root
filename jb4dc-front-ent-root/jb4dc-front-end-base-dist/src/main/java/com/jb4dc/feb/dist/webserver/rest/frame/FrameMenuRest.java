@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/Rest/Frame/Menu")
-public class MenuRest {
-    Logger logger= LoggerFactory.getLogger(MenuRest.class);
+public class FrameMenuRest {
+    Logger logger= LoggerFactory.getLogger(FrameMenuRest.class);
 
     @Autowired(required = false)
     IFrameMenuProvide frameMenu;
