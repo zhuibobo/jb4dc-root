@@ -329,10 +329,10 @@ var DialogUtility={
 
         //如果宽度，高度设置为0，则自动设置为全屏
         if(options.width==0) {
-            options.width = PageStyleUtil.GetPageWidth()-20;
+            options.width = PageStyleUtility.GetPageWidth()-20;
         }
         if(options.height==0) {
-            options.height = PageStyleUtil.GetPageHeight()-10;
+            options.height = PageStyleUtility.GetPageHeight()-10;
         }
 
         defaultoptions = $.extend(true, {}, defaultoptions, options);

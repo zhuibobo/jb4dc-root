@@ -151,6 +151,11 @@ var TreeTable={
                 var dateStr=DateUtility.Format(date,'yyyy-MM-dd');
                 $td.text(dateStr);
             }
+            else{
+                if(!_cd){
+                    $td.text("");
+                }
+            }
             if(_cc.TextAlign){
                 $td.css("textAlign",_cc.TextAlign);
             }

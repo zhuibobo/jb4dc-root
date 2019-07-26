@@ -3,7 +3,7 @@ package com.jb4dc.core.base.vo;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JBuild4DCResponseVo {
+public class JBuild4DCResponseVo<T> {
     public static final String SUCCESSMSG = "操作成功!";
     public static final String GETDATASUCCESSMSG = "获取数据成功!";
     /**
@@ -26,21 +26,21 @@ public class JBuild4DCResponseVo {
     /**
      * 数据
      */
-    private Object data;
+    private T data;
 
     private Map<String,Object> exKVData=new HashMap<>();
 
     public JBuild4DCResponseVo() {
     }
 
-    public JBuild4DCResponseVo(boolean success, String message, Object data, Integer errorCode) {
+    public JBuild4DCResponseVo(boolean success, String message, T data, Integer errorCode) {
         this.success = success;
         this.message = message;
         this.data = data;
         this.errorCode = errorCode;
     }
 
-    public JBuild4DCResponseVo(boolean success, String message, Object data, Integer errorCode, String traceMsg) {
+    public JBuild4DCResponseVo(boolean success, String message, T data, Integer errorCode, String traceMsg) {
         this.success = success;
         this.message = message;
         this.traceMsg = traceMsg;
@@ -64,11 +64,11 @@ public class JBuild4DCResponseVo {
         this.message = message;
     }
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 
@@ -106,11 +106,11 @@ public class JBuild4DCResponseVo {
      * @param data    数据
      * @return
      */
-    public static JBuild4DCResponseVo success(String message, Object data) {
+    public static <T> JBuild4DCResponseVo success(String message, T data) {
         return new JBuild4DCResponseVo(true, message, data, null);
     }
 
-    public static JBuild4DCResponseVo getDataSuccess(Object data){
+    public static <T> JBuild4DCResponseVo getDataSuccess(T data){
         return success("获取数据成功!",data);
     }
 
@@ -122,7 +122,7 @@ public class JBuild4DCResponseVo {
         return success("保存成功！");
     }
 
-    public static JBuild4DCResponseVo saveSuccess(Object data){
+    public static <T> JBuild4DCResponseVo saveSuccess(T data){
         return success("保存成功！",data);
     }
 
@@ -130,7 +130,7 @@ public class JBuild4DCResponseVo {
         return success("操作成功！");
     }
 
-    public static JBuild4DCResponseVo opSuccess(Object data){
+    public static <T> JBuild4DCResponseVo opSuccess(T data){
         return success("操作成功！",data);
     }
 
@@ -157,7 +157,7 @@ public class JBuild4DCResponseVo {
      * @param data    数据
      * @return
      */
-    public static JBuild4DCResponseVo successMap(String message, Object data) {
+    public static <T> JBuild4DCResponseVo successMap(String message, T data) {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("results", data);
         return new JBuild4DCResponseVo(true, message, map, null);

@@ -65,6 +65,10 @@ public class JB4DCSessionUtility {
         request.getSession().setAttribute(key,value);
     }
 
+    public static void addLocationLoginedJB4DCSession(JB4DCSession jb4DCSession) {
+        addSessionAttr(UserLoginSessionKey, jb4DCSession);
+    }
+
     public static Object getSessionAttr(String key){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         if(request == null) {

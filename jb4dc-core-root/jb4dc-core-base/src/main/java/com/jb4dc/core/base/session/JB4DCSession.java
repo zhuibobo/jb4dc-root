@@ -63,9 +63,9 @@ public class JB4DCSession implements Serializable {
 
     private Map<String,String> exMap;
 
-    private boolean fullPriv;
+    private boolean fullAuthority;
 
-    private String ssoCode;
+    private String ssoSessionToken;
 
     /**
      * @return 拷贝Session对象
@@ -179,19 +179,19 @@ public class JB4DCSession implements Serializable {
         this.exMap = exMap;
     }
 
-    public boolean isFullPriv() {
-        return fullPriv;
+    public boolean isFullAuthority() {
+        return fullAuthority;
     }
 
-    public void setFullPriv(boolean fullPriv) {
-        this.fullPriv = fullPriv;
+    public void setFullAuthority(boolean fullAuthority) {
+        this.fullAuthority = fullAuthority;
     }
 
-    public String getSsoCode() {
-        return ssoCode;
+    public String getSsoSessionToken() {
+        return ssoSessionToken;
     }
 
-    public void setSsoCode(String ssoCode) {
-        this.ssoCode = ssoCode;
+    public void setSsoSessionToken(String ssoSessionToken) {
+        this.ssoSessionToken = ssoSessionToken;
     }
 }
