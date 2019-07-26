@@ -89,7 +89,7 @@ public class JB4DCSessionUtility {
         return true;
     }
 
-    public static void clearMySession() {
+    public static void clearMyLocationLoginedJB4DCSession() {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         request.getSession().removeAttribute(UserLoginSessionKey);
     }

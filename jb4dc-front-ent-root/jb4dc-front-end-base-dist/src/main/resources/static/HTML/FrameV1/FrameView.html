@@ -1,10 +1,11 @@
 <!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title></title><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="Css/main_v2.css" rel="stylesheet" type="text/css"><link href="Css/resize.css" rel="stylesheet" type="text/css"><script src="Js/jquery.min.js"></script><script src="Js/drop-down-menu.js"></script><script src="Js/bootstrap.min.js"></script><script src="../../Js/JBuild4DCLib.js"></script><script type="text/javascript" src="../../Js/External/JQuery-UI-1.12.1/jquery-ui.js"></script><link rel="stylesheet" type="text/css" href="../../Themes/Default/JQueryUI/jquery-ui.css"><link rel="stylesheet" type="text/css" href="../../Themes/Default/JQueryUI/jquery-ui-important.css"><script src="Js/SystemMenu.js"></script><script type="text/javascript">var IsTopFramePage = true;
         $(document).ready(function () {
             document.title=JBuild4DCYaml.GetClientSystemTitle();
-            var userData=SessionUtility.GetSessionUser();
-            console.log(userData);
-            $("#link_user_info").html("欢迎您，"+userData.userName);
-            $("#span_user_sty").html(userData.userName.substring(0,1));
+            SessionUtility.GetSessionUser(function (userData) {
+                console.log(userData);
+                $("#link_user_info").html("欢迎您，"+userData.userName);
+                $("#span_user_sty").html(userData.userName.substring(0,1));
+            });
 
             //console.log(userData);
             //DialogUtility.AlertText("11111");

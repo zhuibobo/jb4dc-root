@@ -19,10 +19,11 @@
         var IsTopFramePage = true;
         $(document).ready(function () {
             document.title=JBuild4DCYaml.GetClientSystemTitle();
-            var userData=SessionUtility.GetSessionUser();
-            console.log(userData);
-            $("#link_user_info").html("欢迎您，"+userData.userName);
-            $("#span_user_sty").html(userData.userName.substring(0,1));
+            SessionUtility.GetSessionUser(function (userData) {
+                console.log(userData);
+                $("#link_user_info").html("欢迎您，"+userData.userName);
+                $("#span_user_sty").html(userData.userName.substring(0,1));
+            });
 
             //console.log(userData);
             //DialogUtility.AlertText("11111");
