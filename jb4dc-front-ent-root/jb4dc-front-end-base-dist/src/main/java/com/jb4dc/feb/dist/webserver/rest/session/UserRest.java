@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserRest {
     @RequestMapping(value = "GetMySessionUser")
     public JBuild4DCResponseVo getMyMenu() throws JBuild4DCGenerallyException {
-        JB4DCSession jb4DCSession= JB4DCSessionUtility.getSessionToClientStore();
+        JB4DCSession jb4DCSession= JB4DCSessionUtility.getSessionForClientPageStore();
         return JBuild4DCResponseVo.success(JBuild4DCResponseVo.GETDATASUCCESSMSG,jb4DCSession);
     }
 }

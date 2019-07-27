@@ -212,7 +212,7 @@ var ListPageUtility = {
             function (result) {
                 if (result.success) {
                     if (typeof (config.successFunc) == "function") {
-                        config.successFunc.call(config.pageAppObj, result);
+                        config.successFunc.call(config.pageAppObj, result,config.pageAppObj);
                         //successFunc(result,pageAppObj);
                     }
                     config.tableList.tableData = new Array();

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LogoutRest {
     @RequestMapping(value = "Logout")
     public JBuild4DCResponseVo logout() throws JBuild4DCGenerallyException {
-        JB4DCSession jb4DCSession= JB4DCSessionUtility.getSessionToClientStore();
+        JB4DCSession jb4DCSession= JB4DCSessionUtility.getSessionForClientPageStore();
         return JBuild4DCResponseVo.success(JBuild4DCResponseVo.GETDATASUCCESSMSG,jb4DCSession);
     }
 }

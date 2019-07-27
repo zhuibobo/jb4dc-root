@@ -83,7 +83,7 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
     protected abstract IBaseService<T> getBaseService();
 
     @RequestMapping(value = "/GetListData", method = RequestMethod.POST)
-    public JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum, String searchCondition, boolean loadDict) throws IOException, ParseException {
+    public JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum, String searchCondition, boolean loadDict) throws IOException, ParseException, JBuild4DCGenerallyException {
         JB4DCSession jb4DSession= JB4DCSessionUtility.getSession();
         Map<String,Object> searchMap= GeneralSearchUtility.deserializationToMap(searchCondition);
         PageInfo<T> proPageInfo=getBaseService().getPage(jb4DSession,pageNum,pageSize,searchMap);
@@ -221,11 +221,14 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
         return null;
     }
 
-    protected Map<String,List<DictionaryPO>> getDictionaryJson(List<String> groupValueList) throws JsonProcessingException {
+    protected Map<String,List<DictionaryPO>> getDictionaryJson(List<String> groupValueList) throws JsonProcessingException, JBuild4DCGenerallyException {
         Map<String,List<DictionaryPO>> dictionarysMap=new HashMap<>();
 
         if(groupValueList!=null&&groupValueList.size()>0){
             for (String groupValue : groupValueList) {
+                if (dictionaryProvide==null){
+                    throw JBuild4DCGenerallyException.getInterfaceNotBeanException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"com.jb4dc.base.service.provide.IDictionaryProvide");
+                }
                 List<DictionaryPO> dictionaryEntityList=dictionaryProvide.getListDataByGroupValue(JB4DCSessionUtility.getSession(),groupValue);
                 if(dictionaryEntityList==null){
                     dictionaryEntityList=new ArrayList<>();

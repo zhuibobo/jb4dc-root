@@ -29,6 +29,8 @@ var SystemMenu={
                 l2elem=$('<dt class="leftmenu">'+l2SingleMenuData.menuText+'<span class="panel-tool"><a href="javascript:void(0)" class="accordion-collapse"></a></span></dt>');
                 $("#dl_l2_menu_inner_wrap").append(l2elem);
 
+                l2elem.bind("click",{"singleMenuData":l2SingleMenuData,"host":this},this._MenuClick);
+
                 var l3ChildMenusData=this._GetChildMenus(l2SingleMenuData.menuId);
                 var l3elemWrap=$('<dl class="panel-body accordion-body" style="display: block;"></dl>');
                 l2elem.after(l3elemWrap);
@@ -37,10 +39,13 @@ var SystemMenu={
                     var l3elem;
                     l3elem=$('<dd>'+l3SingleMenuData.menuText+'</dd>');
                     l3elemWrap.append(l3elem);
+
+                    l3elem.bind("click",{"singleMenuData":l3SingleMenuData,"host":this},this._MenuClick);
                 }
             }
             else {
                 l2elem=$('<dt>'+l2SingleMenuData.menuText+'</dt>');
+                l2elem.bind("click",{"singleMenuData":l2SingleMenuData,"host":this},this._MenuClick);
                 $("#dl_l2_menu_inner_wrap").append(l2elem);
             }
         }
@@ -82,7 +87,14 @@ var SystemMenu={
             $(".contwrap").css("left","93px");
         }
         //alert(singleTopMenuData.menuRightUrl);
-        $("#fraRightFrame").attr("src",BaseUtility.BuildAction(singleTopMenuData.menuRightUrl));
+        if(singleTopMenuData.menuRightUrl) {
+            $("#fraRightFrame").attr("src", BaseUtility.BuildAction(singleTopMenuData.menuRightUrl));
+        }
+    },
+    _MenuClick:function(sender){
+        var _self=sender.data.host;
+        var singleMenuData=sender.data.singleMenuData;
+        $("#fraRightFrame").attr("src",BaseUtility.BuildAction(singleMenuData.menuRightUrl));
     },
     _ExistChildMenus:function(menuId){
         return this._GetChildMenus(menuId).length>0;

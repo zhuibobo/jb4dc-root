@@ -11,7 +11,7 @@ import java.text.ParseException;
 
 public interface IGeneralRest<T> {
 
-    JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum, String search_condition, boolean loadDict) throws IOException, ParseException;
+    JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum, String search_condition, boolean loadDict) throws IOException, ParseException, JBuild4DCGenerallyException;
 
     JBuild4DCResponseVo saveEdit(@RequestBody T entity, HttpServletRequest request) throws Exception;
 
