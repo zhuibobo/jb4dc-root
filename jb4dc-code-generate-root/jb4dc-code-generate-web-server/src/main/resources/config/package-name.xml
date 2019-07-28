@@ -9,6 +9,14 @@
         <PackageLevel2Name value="user"></PackageLevel2Name>
         <PackageLevel2Name value="menu"></PackageLevel2Name>
     </Package>
+    <Package name="Builder" entity="com.jb4dc.builder.dbentities" dao="com.jb4dc.builder.dao" mapperAC="mybatismappers">
+        <PackageLevel2Name value="datastorage"></PackageLevel2Name>
+        <PackageLevel2Name value="dataset"></PackageLevel2Name>
+        <PackageLevel2Name value="module"></PackageLevel2Name>
+        <PackageLevel2Name value="webform"></PackageLevel2Name>
+        <PackageLevel2Name value="weblist"></PackageLevel2Name>
+        <PackageLevel2Name value="flow"></PackageLevel2Name>
+    </Package>
     <Package name="DevMock" entity="com.jb4dc.devmock.dbentities" dao="com.jb4dc.devmock.dao" mapperAC="mybatismappers">
     </Package>
     <Package name="SystemSetting" entity="com.jb4dc.system.setting.dbentities" dao="com.jb4dc.system.setting.dao" mapperAC="mybatismappers">

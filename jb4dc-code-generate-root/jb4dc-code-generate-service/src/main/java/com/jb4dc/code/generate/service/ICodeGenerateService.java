@@ -30,5 +30,7 @@ public interface ICodeGenerateService {
 
     //IntrospectedTable getTableInfo(String tableName);
 
+    IntrospectedTable getTableInfo(String tableName, String driverName, String url, String user, String password);
+
     Map<String,String> getTableGenerateCode(String dataSourceId, String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException, JAXBException;
 }

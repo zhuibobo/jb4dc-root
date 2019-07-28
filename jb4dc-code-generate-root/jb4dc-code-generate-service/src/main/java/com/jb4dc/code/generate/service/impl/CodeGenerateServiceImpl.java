@@ -7,6 +7,8 @@ import com.jb4dc.base.dbaccess.dynamic.impl.TemporarySqlSessionFactoryBuilder;
 import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.base.service.impl.SQLBuilderServiceImpl;
 import com.jb4dc.base.service.impl.TemporarySQLBuilderService;
+import com.jb4dc.code.generate.bo.CodeGenerateBO;
+import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
 import com.jb4dc.core.base.tools.PathBaseUtility;
 import com.jb4dc.code.generate.bo.DataSourceSingleBO;
 import com.jb4dc.code.generate.bo.PackageSingleBO;
@@ -173,17 +175,18 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         return packageSingleBO;
     }
 
-    /*@Override
-    public IntrospectedTable getTableInfo(String tableName){
+    @Override
+    public IntrospectedTable getTableInfo(String tableName,String driverName,String url,String user,String password){
         Map<String, String> generateCodeMap = new HashMap<>();
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
 
         InputStream is = this.getClass().getClassLoader().getResourceAsStream("MybatisGenerator/generatorConfigToCode.xml");
 
-        Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap= CodeGenerateBO.generateTypeEnumCodeGenerateVoMap().get("JBuild4D-PlatForm");
+        //Map<CodeGenerateTypeEnum, CodeGenerateBO> codeGenerateVoMap= CodeGenerateBO.generateTypeEnumCodeGenerateVoMap().get("JBuild4D-PlatForm");
 
-        codeGenerateVoMap=createAboutFolder(codeGenerateVoMap);
+        PackageSingleBO packageSingleBO=new PackageSingleBO();
+        packageSingleBO=createAboutFolder(packageSingleBO);
 
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = null;
@@ -200,38 +203,42 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         Context context = config.getContexts().get(0);
         //设置数据库连接
         JDBCConnectionConfiguration jdbcConnectionConfiguration=new JDBCConnectionConfiguration();
-        jdbcConnectionConfiguration.setDriverClass(DBProp.getDriverName());
+        /*jdbcConnectionConfiguration.setDriverClass(DBProp.getDriverName());
         jdbcConnectionConfiguration.setConnectionURL(DBProp.getUrl());
         jdbcConnectionConfiguration.setUserId(DBProp.getUser());
-        jdbcConnectionConfiguration.setPassword(DBProp.getPassword());
+        jdbcConnectionConfiguration.setPassword(DBProp.getPassword());*/
+        jdbcConnectionConfiguration.setDriverClass(driverName);
+        jdbcConnectionConfiguration.setConnectionURL(url);
+        jdbcConnectionConfiguration.setUserId(user);
+        jdbcConnectionConfiguration.setPassword(password);
         context.setJdbcConnectionConfiguration(jdbcConnectionConfiguration);
 
         //设置model的相关信息
         JavaModelGeneratorConfiguration javaModelGeneratorConfiguration=context.getJavaModelGeneratorConfiguration();
-        String modelPackageName=codeGenerateVoMap.get(CodeGenerateTypeEnum.Entity).packageName+".temp";
+        String modelPackageName=packageSingleBO.getEntity()+".temp";
         javaModelGeneratorConfiguration.setTargetPackage(modelPackageName);
-        javaModelGeneratorConfiguration.setTargetProject(codeGenerateVoMap.get(CodeGenerateTypeEnum.Entity).getFullSavePath());
+        javaModelGeneratorConfiguration.setTargetProject(packageSingleBO.getEntitySavePath());
         context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 
         //设置dao的相关的信息
         JavaClientGeneratorConfiguration javaClientGeneratorConfiguration=context.getJavaClientGeneratorConfiguration();
-        String daoPackageName=codeGenerateVoMap.get(CodeGenerateTypeEnum.Dao).packageName+".temp";
+        String daoPackageName=packageSingleBO.getDao()+".temp";
         javaClientGeneratorConfiguration.setTargetPackage(daoPackageName);
-        javaClientGeneratorConfiguration.setTargetProject(codeGenerateVoMap.get(CodeGenerateTypeEnum.Dao).getFullSavePath());
+        javaClientGeneratorConfiguration.setTargetProject(packageSingleBO.getDaoSavePath());
         context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 
         //设置mapper的相关信息
         SqlMapGeneratorConfiguration sqlMapGeneratorConfiguration=context.getSqlMapGeneratorConfiguration();
-        String mapperPackageName=codeGenerateVoMap.get(CodeGenerateTypeEnum.MapperAC).packageName+".temp";
+        String mapperPackageName=packageSingleBO.getMapperAC()+".temp";
         sqlMapGeneratorConfiguration.setTargetPackage(mapperPackageName);
-        sqlMapGeneratorConfiguration.setTargetProject(codeGenerateVoMap.get(CodeGenerateTypeEnum.MapperAC).getFullSavePath());
+        sqlMapGeneratorConfiguration.setTargetProject(packageSingleBO.getMapperACSavePath());
         context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
 
         String domainObjectName= StringUtility.fisrtCharUpperThenLower(tableName)+"Entity";
         String mapperName=StringUtility.fisrtCharUpperThenLower(tableName)+"ACMapper";
         String daoMapperName=StringUtility.fisrtCharUpperThenLower(tableName)+"Mapper";
 
-        *//*if(tableName.indexOf("_")>0){
+        if(tableName.indexOf("_")>0){
             //String shortName=tableName.substring(tableName.indexOf("_")+1);
             String name="";
             String[] names=tableName.split("_");
@@ -241,7 +248,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             domainObjectName=name+"Entity";
             mapperName=name+"ACMapper";
             daoMapperName=name+"Mapper";
-        }*//*
+        }
         //设置表名称
         TableConfiguration tc = new TableConfiguration(context);
         tc.setTableName(tableName);
@@ -273,7 +280,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         List<IntrospectedTable> introspectedTableList=context.getIntrospectedTables();
         IntrospectedTable introspectedTable=introspectedTableList.get(0);
         return introspectedTable;
-    }*/
+    }
 
     @Override
     public Map<String, String> getTableGenerateCode(String dataSourceId,String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException, JAXBException {
