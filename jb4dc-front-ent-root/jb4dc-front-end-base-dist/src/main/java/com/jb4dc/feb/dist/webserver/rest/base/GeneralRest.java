@@ -4,10 +4,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.pagehelper.PageInfo;
 import com.jb4dc.base.dbaccess.anno.DBAnnoUtility;
 import com.jb4dc.base.service.IBaseService;
+import com.jb4dc.base.service.IHistoryDataService;
+import com.jb4dc.base.service.IOperationLogService;
 import com.jb4dc.base.service.general.JB4DCSessionUtility;
 import com.jb4dc.base.service.po.DictionaryPO;
 import com.jb4dc.base.service.provide.IDictionaryProvide;
 import com.jb4dc.base.service.search.GeneralSearchUtility;
+import com.jb4dc.base.ymls.JBuild4DCYaml;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.tools.ClassUtility;
@@ -35,6 +38,15 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
 
     @Autowired(required = false)
     IDictionaryProvide dictionaryProvide;
+
+    @Autowired(required = false)
+    IOperationLogService operationLogService;
+
+    @Autowired(required = false)
+    IHistoryDataService historyDataService;
+
+    //@Autowired
+    //JBuild4DCYaml jBuild4DCYaml;
 
     //@Autowired(required = false)
     //IOperationLogProvide operationLogProvide;

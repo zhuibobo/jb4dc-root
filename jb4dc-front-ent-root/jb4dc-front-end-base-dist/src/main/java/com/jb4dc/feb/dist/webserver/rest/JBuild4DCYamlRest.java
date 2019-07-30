@@ -1,6 +1,6 @@
 package com.jb4dc.feb.dist.webserver.rest;
 
-import com.jb4dc.core.base.ymls.JBuild4DCYaml;
+import com.jb4dc.base.ymls.JBuild4DCYaml;
 import com.jb4dc.core.base.vo.JBuild4DCResponseVo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

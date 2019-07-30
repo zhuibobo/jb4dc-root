@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: JB4DC-CODE-GENERATE-WEB-SERVER
+    inetutils:
+      #客户端的IP
+      preferred-networks: 192.168.3.153
+  liquibase:
+    enabled: false
+  thymeleaf:
+    prefix: classpath:/static/HTML/
+    suffix: .html
+    enabled: true
+
+server:
+  port: 9099
+  servlet:
+    session:
+      timeout: 7200
+    context-path: /CodeGen
+
+eureka:
+  client:
+    serviceUrl:
+      #服务端的地址
+      defaultZone: http://127.0.0.1:9092/eureka/
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.cloud.inetutils.preferred-networks}:${server.port}
+
+
+logging:
+  level:
+    com:
+      jb4dc:
+        devmock:
+          dao: TRACE
+        sso:
+          client: debug
+
+jb4dc:
+  system-title: JBuild4DC-Code-Generate
+  warning-operation-code: jb4d82
+  host:
+    operation-system: Window
+  sso:
+    server:
+      name: JB4DC-SSO-WEB-SERVER
+      address: http://localhost:9101
+      context-path: /SSOSystem
+      view:
+        login: /Controller/LoginSSOView
+        logout: /logout
+      excluded:
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 12000
+        retryer: feign.Retryer.Default
