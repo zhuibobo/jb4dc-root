@@ -38,6 +38,7 @@ logging:
           client: debug
 
 jb4dc:
+  system-caption: 代码生成器
   system-title: JBuild4DC-Code-Generate
   warning-operation-code: jb4d82
   host:

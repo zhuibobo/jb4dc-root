@@ -1,5 +1,5 @@
 var CacheDataUtility={
-    IninClientCache:function () {
+    /*IninClientCache:function () {
         this.GetCurrentUserInfo();
     },
     //用户相关信息
@@ -24,5 +24,5 @@ var CacheDataUtility={
         else{
             return this._CurrentUserInfo;
         }
-    }
+    }*/
 }

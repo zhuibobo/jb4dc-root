@@ -13,6 +13,27 @@ var SessionUtility={
     ClearClientSessionStoreSessionUser:function(){
 
     },
+    GetSessionUserSync:function(){
+        if(this._currentSessionUser==null){
+            if(window.parent.SessionUtility._currentSessionUser!=null){
+                return window.parent.SessionUtility._currentSessionUser;
+            }
+            else{
+                AjaxUtility.PostSync("/Rest/Session/User/GetMySessionUser",{},function (result) {
+                    if(result.success){
+                        SessionUtility._currentSessionUser=result.data;
+                    }
+                    else{
+
+                    }
+                },this);
+                return this._currentSessionUser;
+            }
+        }
+        else{
+            return this._currentSessionUser;
+        }
+    },
     GetSessionUser:function (func) {
         if(!this._currentSessionUser){
             AjaxUtility.Get("/Rest/Session/User/GetMySessionUser",{},function (result) {

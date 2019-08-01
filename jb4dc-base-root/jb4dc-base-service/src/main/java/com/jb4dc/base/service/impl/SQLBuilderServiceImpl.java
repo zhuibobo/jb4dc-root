@@ -1,12 +1,7 @@
 package com.jb4dc.base.service.impl;
 
 import com.jb4dc.base.dbaccess.dynamic.ISQLBuilderMapper;
-import com.jb4dc.base.dbaccess.dynamic.impl.SQLBuilderMapper;
-import com.jb4dc.base.dbaccess.dynamic.impl.TemporarySqlSessionFactoryBuilder;
 import com.jb4dc.base.service.ISQLBuilderService;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;

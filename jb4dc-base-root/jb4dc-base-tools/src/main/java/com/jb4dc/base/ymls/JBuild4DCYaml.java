@@ -32,6 +32,8 @@ public class JBuild4DCYaml extends YamlUtility {
         return YamlUtility.getValue(yamlMap,key);
     }*/
 
+
+
     @Value("${jb4dc.system-title}")
     public void setSystemTitle(String systemTitle) {
         JBuild4DCYaml.systemTitle = systemTitle;
@@ -42,7 +44,14 @@ public class JBuild4DCYaml extends YamlUtility {
         JBuild4DCYaml.operationCode = operationCode;
     }
 
+    @Value("${jb4dc.system-caption}")
+    public void setSystemCaption(String systemCaption) {
+        JBuild4DCYaml.systemCaption = systemCaption;
+    }
+
     private static String systemTitle;
+
+    private static String systemCaption;
 
     private static String operationCode;
 
@@ -55,5 +64,9 @@ public class JBuild4DCYaml extends YamlUtility {
     public static String getClientSystemTitle(){
         return systemTitle;
         //return getValue("client:systemTitle");
+    }
+
+    public static String getSystemCaption() {
+        return systemCaption;
     }
 }

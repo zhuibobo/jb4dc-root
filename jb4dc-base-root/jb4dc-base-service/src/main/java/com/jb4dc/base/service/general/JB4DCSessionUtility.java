@@ -47,12 +47,14 @@ public class JB4DCSessionUtility {
         return session;
     }
 
+    public static String InitSystemSsoSessionToken="GoingMerry-DDDD-DDDD-DDDD-DDDD";
     public static JB4DCSession getInitSystemSession(){
         JB4DCSession session=new JB4DCSession();
         session.setOrganName("黄金梅丽号");
         session.setOrganId("GoingMerry");
         session.setUserName("ONE-PIECE");
         session.setUserId("DDDD-DDDD-DDDD-DDDD");
+        session.setSsoSessionToken(InitSystemSsoSessionToken);
         return session;
     }
 

@@ -15,12 +15,14 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface IOperationLogService {
 
-    void writeUserLoginLog(JB4DCSession JB4DCSession, Class targetClass, HttpServletRequest request) throws JsonProcessingException, JBuild4DCGenerallyException;
+    void writeUserLoginLog(JB4DCSession jb4DCSession, Class targetClass, HttpServletRequest request) throws JsonProcessingException, JBuild4DCGenerallyException;
 
-    void writeUserExitLog(JB4DCSession JB4DCSession, Class targetClass, HttpServletRequest request) throws JsonProcessingException, JBuild4DCGenerallyException;
+    void writeUserExitLog(JB4DCSession jb4DCSession, Class targetClass, HttpServletRequest request) throws JsonProcessingException, JBuild4DCGenerallyException;
 
-    void writeOperationLog(JB4DCSession JB4DCSession, String subSystemName, String moduleName, String actionName, String type, String text, String data, Class targetClass, HttpServletRequest request)  throws JsonProcessingException, JBuild4DCGenerallyException;
+    void writeOperationLog(JB4DCSession jb4DCSession, String subSystemName, String moduleName, String actionName, String type, String text, String data, Class targetClass, HttpServletRequest request)  throws JsonProcessingException, JBuild4DCGenerallyException;
 
-    void initSystemData(JB4DCSession jb4DSession) throws JsonProcessingException, JBuild4DCGenerallyException;
+    void writeOperationLog(JB4DCSession jb4DCSession, String subSystemName, String moduleName, String actionName, String type, String text, String data, String targetClass, HttpServletRequest request)  throws JsonProcessingException, JBuild4DCGenerallyException;
+
+    void initSystemData(JB4DCSession jb4DCSession) throws JsonProcessingException, JBuild4DCGenerallyException;
 
 }

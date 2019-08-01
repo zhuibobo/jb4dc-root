@@ -10,6 +10,7 @@ import com.jb4dc.base.service.general.JB4DCSessionUtility;
 import com.jb4dc.base.service.po.DictionaryPO;
 import com.jb4dc.base.service.provide.IDictionaryProvide;
 import com.jb4dc.base.service.search.GeneralSearchUtility;
+import com.jb4dc.base.tools.JsonUtility;
 import com.jb4dc.base.ymls.JBuild4DCYaml;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
@@ -17,6 +18,8 @@ import com.jb4dc.core.base.tools.ClassUtility;
 import com.jb4dc.core.base.tools.StringUtility;
 import com.jb4dc.core.base.tools.UUIDUtility;
 import com.jb4dc.core.base.vo.JBuild4DCResponseVo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +39,8 @@ import java.util.Map;
 @RestController
 public abstract class GeneralRest<T> implements IGeneralRest<T> {
 
+    private static Logger logger = LoggerFactory.getLogger(GeneralRest.class);
+
     @Autowired(required = false)
     IDictionaryProvide dictionaryProvide;
 
@@ -53,23 +58,37 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
 
     //protected String jBuild4DSystemName ="应用管理系统";
     //protected String moduleName="";
-    //protected String logTypeName="操作日志";
+    //;
 
-    /*public abstract String getJBuild4DSystemName();
+    /*
 
     public abstract String getModuleName();*/
 
-    /*protected String getLogTypeName(){
-        return logTypeName;
-    }*/
+    /**/
 
-    /*protected void writeOperationLog(String actionName, String text, String data, HttpServletRequest request) throws JsonProcessingException, JBuild4DCGenerallyException {
-        String systemName=this.getJBuild4DSystemName();
-        if(systemName==null){
+    public String getJB4DCSystemCaption(){
+        return JBuild4DCYaml.getSystemCaption();
+    }
+
+    public abstract String getModuleName();
+
+    //protected String logTypeName="";
+    protected String getLogTypeName(){
+        return "操作日志";
+    }
+
+    protected void writeOperationLog(String actionName, String text, String data, HttpServletRequest request) throws JsonProcessingException, JBuild4DCGenerallyException {
+        String systemCaption=this.getJB4DCSystemCaption();
+        /*if(systemName==null){
             systemName=jBuild4DSystemName;
+        }*/
+        if(operationLogService!=null) {
+            operationLogService.writeOperationLog(JB4DCSessionUtility.getSession(), systemCaption, getModuleName(), actionName, getLogTypeName(), text, data, this.getClass(), request);
         }
-        operationLogProvide.writeOperationLog(JB4DCSessionUtility.getSession(), systemName,getModuleName(),actionName,getLogTypeName(),text,data,this.getClass(),request);
-    }*/
+        else{
+            logger.info("找不到IOperationLogService实现类的Bean!");
+        }
+    }
 
     //得到泛型类T
     public Class getMyClass(){
@@ -164,11 +183,11 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
                 if (getBaseService() == null) {
                     throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,this.getClass().getSimpleName() + ".getBaseService()返回的对象为Null");
                 }
-                /*if (getBaseService().getByPrimaryKey(jb4DSession, recordID) == null) {
+                if (getBaseService().getByPrimaryKey(jb4DSession, recordID) == null) {
                     this.writeOperationLog("新增数据", "用户[" + jb4DSession.getUserName() + "]新增了ID为" + recordID + "的数据[" + getMyClass().getSimpleName() + "]", JsonUtility.toObjectString(entity), request);
                 } else {
                     this.writeOperationLog("修改数据", "用户[" + jb4DSession.getUserName() + "]修改了ID为" + recordID + "的数据[" + getMyClass().getSimpleName() + "]", JsonUtility.toObjectString(entity), request);
-                }*/
+                }
                 getBaseService().saveSimple(jb4DSession, recordID, entity);
                 return JBuild4DCResponseVo.saveSuccess(entity);
             }
@@ -194,7 +213,7 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
                 throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"参数status不能为空或空串!");
             }
             JB4DCSession jb4DSession=JB4DCSessionUtility.getSession();
-            //this.writeOperationLog("修改数据","用户["+jb4DSession.getUserName()+"]修改了ID为"+ids+"的数据状态["+getMyClass().getSimpleName()+"]",status,request);
+            this.writeOperationLog("修改数据","用户["+jb4DSession.getUserName()+"]修改了ID为"+ids+"的数据状态["+getMyClass().getSimpleName()+"]",status,request);
             getBaseService().statusChange(jb4DSession,ids,status);
             return JBuild4DCResponseVo.opSuccess();
         } catch (JBuild4DCGenerallyException e) {
@@ -207,7 +226,7 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
     public JBuild4DCResponseVo delete(String recordId, HttpServletRequest request) throws JBuild4DCGenerallyException, JsonProcessingException {
         JB4DCSession jb4DSession=JB4DCSessionUtility.getSession();
         T entity=getBaseService().getByPrimaryKey(jb4DSession,recordId);
-        //this.writeOperationLog("删除数据","用户["+jb4DSession.getUserName()+"]删除了ID为"+recordId+"的数据["+getMyClass().getSimpleName()+"]",JsonUtility.toObjectString(entity),request);
+        this.writeOperationLog("删除数据","用户["+jb4DSession.getUserName()+"]删除了ID为"+recordId+"的数据["+getMyClass().getSimpleName()+"]",JsonUtility.toObjectString(entity),request);
         getBaseService().deleteByKey(jb4DSession,recordId);
         return JBuild4DCResponseVo.opSuccess();
     }
@@ -215,7 +234,7 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
     @RequestMapping(value = "/Move", method = RequestMethod.POST)
     public JBuild4DCResponseVo move(String recordId, String type, HttpServletRequest request) throws JBuild4DCGenerallyException, JsonProcessingException {
         JB4DCSession jb4DSession=JB4DCSessionUtility.getSession();
-        //this.writeOperationLog("修改数据","用户["+jb4DSession.getUserName()+"]移动了ID为"+recordId+"的数据["+getMyClass().getSimpleName()+"]",recordId,request);
+        this.writeOperationLog("修改数据","用户["+jb4DSession.getUserName()+"]移动了ID为"+recordId+"的数据["+getMyClass().getSimpleName()+"]",recordId,request);
         if(type.equals("up")) {
             getBaseService().moveUp(jb4DSession, recordId);
         }
