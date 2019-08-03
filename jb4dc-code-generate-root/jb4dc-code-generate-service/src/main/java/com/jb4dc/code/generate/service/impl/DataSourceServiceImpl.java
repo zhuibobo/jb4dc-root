@@ -5,6 +5,7 @@ import com.jb4dc.base.tools.XMLUtility;
 import com.jb4dc.code.generate.service.IDataSourceService;
 import com.jb4dc.code.generate.bo.DataSourceConfigBO;
 import com.jb4dc.code.generate.bo.DataSourceSingleBO;
+import org.springframework.stereotype.Service;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
@@ -17,6 +18,7 @@ import java.io.InputStream;
  * To change this template use File | Settings | File Templates.
  */
 
+@Service
 public class DataSourceServiceImpl implements IDataSourceService {
 
     @Override

@@ -1,5 +1,7 @@
 package com.jb4dc.core.base.exenum;
 
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,5 +47,21 @@ public enum DBTypeEnum implements BaseEnum<DBTypeEnum, Integer> {
 
     public static DBTypeEnum getEnum(Integer value) {
         return enumMap.get(value);
+    }
+
+    public static DBTypeEnum getEnum(String name) throws JBuild4DCGenerallyException {
+        if(name.equals("mysql")){
+            return DBTypeEnum.mysql;
+        }
+        else if(name.equals("sqlserver")){
+            return DBTypeEnum.sqlserver;
+        }
+        else if(name.equals("oracle")){
+            return DBTypeEnum.oracle;
+        }
+        else
+        {
+            throw  JBuild4DCGenerallyException.getNotSupportDBException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE);
+        }
     }
 }

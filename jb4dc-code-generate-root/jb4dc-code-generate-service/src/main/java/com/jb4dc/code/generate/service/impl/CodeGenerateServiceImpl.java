@@ -34,6 +34,8 @@ import org.mybatis.generatorex.exception.XMLParserException;
 import org.mybatis.generatorex.internal.DefaultShellCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
@@ -53,7 +55,7 @@ import java.util.Map;
  * Date: 2018/7/25
  * To change this template use File | Settings | File Templates.
  */
-
+@Service
 public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
     Logger logger= LoggerFactory.getLogger(CodeGenerateServiceImpl.class);
@@ -62,8 +64,10 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
     IDataSourceService dataSourceService;
     //IDataSourceManager dataSourceManager;
+
     IPackageService packageService;
 
+    @Autowired
     public CodeGenerateServiceImpl(IDataSourceService dataSourceService,IPackageService packageService) {
         //sqlBuilderService=_sqlBuilderService;
         //Select Name FROM SysObjects Where XType='U' orDER BY Name

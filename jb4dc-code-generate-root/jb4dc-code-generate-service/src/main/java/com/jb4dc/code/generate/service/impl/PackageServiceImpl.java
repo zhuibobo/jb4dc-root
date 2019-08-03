@@ -5,6 +5,7 @@ import com.jb4dc.base.tools.XMLUtility;
 import com.jb4dc.code.generate.bo.PackageConfigBO;
 import com.jb4dc.code.generate.bo.PackageSingleBO;
 import com.jb4dc.code.generate.service.IPackageService;
+import org.springframework.stereotype.Service;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
@@ -16,6 +17,7 @@ import java.io.InputStream;
  * Date: 2019/7/6
  * To change this template use File | Settings | File Templates.
  */
+@Service
 public class PackageServiceImpl implements IPackageService {
 
     @Override

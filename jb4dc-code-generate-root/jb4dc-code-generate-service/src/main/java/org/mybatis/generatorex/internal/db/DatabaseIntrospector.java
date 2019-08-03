@@ -208,12 +208,15 @@ public class DatabaseIntrospector {
                             //configuration.setEnvironment(Env);
                             configuration.setEnvironment(environment);
                             SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(configuration);*/
-                            SqlSessionFactory sqlSessionFactory= TemporarySqlSessionFactoryBuilder.build(context.getJdbcConnectionConfiguration().getDriverClass(),context.getJdbcConnectionConfiguration().getConnectionURL(),context.getJdbcConnectionConfiguration().getUserId(),context.getJdbcConnectionConfiguration().getPassword());
-                            SqlSession sqlSession=sqlSessionFactory.openSession();
 
-                            ISQLBuilderMapper sqlBuilderMapper=new SQLBuilderMapper(sqlSession);
-                            ISQLBuilderService sqlBuilderService=new SQLBuilderServiceImpl(sqlBuilderMapper);
-                            IMetadataService metadataService=new MetadataServiceImpl(sqlBuilderService);
+                            //SqlSessionFactory sqlSessionFactory= TemporarySqlSessionFactoryBuilder.build(context.getJdbcConnectionConfiguration().getDriverClass(),context.getJdbcConnectionConfiguration().getConnectionURL(),context.getJdbcConnectionConfiguration().getUserId(),context.getJdbcConnectionConfiguration().getPassword());
+                            //SqlSession sqlSession=sqlSessionFactory.openSession();
+
+                            //ISQLBuilderMapper sqlBuilderMapper=new SQLBuilderMapper(sqlSession);
+                            //ISQLBuilderService sqlBuilderService=new SQLBuilderServiceImpl(sqlBuilderMapper);
+                            //IMetadataService metadataService=new MetadataServiceImpl(sqlBuilderService);
+
+                            IMetadataService metadataService=MetadataServiceImpl.getInstance(context.getJdbcConnectionConfiguration().getDriverClass(),context.getJdbcConnectionConfiguration().getConnectionURL(),context.getJdbcConnectionConfiguration().getUserId(),context.getJdbcConnectionConfiguration().getPassword());
 
                             try {
 
@@ -235,7 +238,7 @@ public class DatabaseIntrospector {
                                 e.printStackTrace();
                             }
                             finally {
-                                sqlSession.close();
+                                //sqlSession.close();
                             }
                         }
                     }

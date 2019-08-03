@@ -55,7 +55,12 @@ public class JBuild4DCGenerallyException extends JBuild4DCBaseException {
         return new JBuild4DCGenerallyException(errorCode, "暂不支持MS SqlServer！");
     }
 
+    public static JBuild4DCGenerallyException getNotSupportDBException(int errorCode) {
+        return new JBuild4DCGenerallyException(errorCode, "暂不支持该类数据库！");
+    }
+
     public static JBuild4DCGenerallyException getInterfaceNotBeanException(int errorCode,String interfaceFullName) {
         return new JBuild4DCGenerallyException(errorCode, "请在项目中提供"+interfaceFullName+"的实现类,并声明为bean!");
     }
+
 }

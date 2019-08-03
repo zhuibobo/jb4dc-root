@@ -19,13 +19,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CodeGenerateBeansConfig {
 
-    @Bean
+    //@Bean
     public IDataSourceService dataSourceService(){
         IDataSourceService dataSourceService=new DataSourceServiceImpl();
         return dataSourceService;
     }
 
-    @Bean
+    //@Bean
     public IPackageService packageService(){
         IPackageService packageService=new PackageServiceImpl();
         return packageService;
@@ -42,7 +42,7 @@ public class CodeGenerateBeansConfig {
         IMetadataService metadataService=new MetadataServiceImpl();
     }*/
 
-    @Bean
+    //@Bean
     public ICodeGenerateService codeGenerateService(){
         ICodeGenerateService codeGenerateService=new CodeGenerateServiceImpl(dataSourceService(),packageService());
         return codeGenerateService;
