@@ -41,6 +41,7 @@ jb4dc:
   system-caption: 代码生成器
   system-title: JBuild4DC-Code-Generate
   warning-operation-code: jb4d82
+  is-debug: true
   host:
     operation-system: Window
   sso:

@@ -1,6 +1,7 @@
 package com.jb4dc.code.generate.webserver.rest;
 
 import com.github.pagehelper.PageInfo;
+import com.jb4dc.base.ymls.JBuild4DCYaml;
 import com.jb4dc.code.generate.service.ICodeGenerateService;
 import com.jb4dc.code.generate.bo.SimpleTableFieldBO;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
@@ -37,6 +38,7 @@ public class CodeGenerateRest {
     public JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum,String dataSourceId, String searchTableName) throws IOException, ParseException, JBuild4DCGenerallyException, PropertyVetoException, JAXBException {
         //JB4DCSession JB4DCSession = JB4DCSessionUtility.getSession();
         //Map<String,Object> searchMap= GeneralSearchUtility.deserializationToMap(searchCondition);
+        System.out.println(JBuild4DCYaml.isDebug());
         if(dataSourceId==null||dataSourceId.equals("")){
             return JBuild4DCResponseVo.error("请设置数据源!");
         }

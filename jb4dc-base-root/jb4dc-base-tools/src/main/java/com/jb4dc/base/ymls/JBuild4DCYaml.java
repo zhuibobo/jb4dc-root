@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class JBuild4DCYaml extends YamlUtility {
+
     /*private static Yaml yaml;
     private static Map yamlMap;
     private static final String filePath = "/config/jbuild4dc.yml";
@@ -49,11 +50,22 @@ public class JBuild4DCYaml extends YamlUtility {
         JBuild4DCYaml.systemCaption = systemCaption;
     }
 
+    @Value("${jb4dc.is-debug}")
+    public void setIsDebug(boolean isDebug) {
+        JBuild4DCYaml.debug = isDebug;
+    }
+    /*@Value("${jb4dc.is-debug}")
+    public void setSystemCaption(String systemCaption) {
+        JBuild4DCYaml.systemCaption = systemCaption;
+    }*/
+
     private static String systemTitle;
 
     private static String systemCaption;
 
     private static String operationCode;
+
+    private static boolean debug;
 
     public static String getWarningOperationCode(){
 
@@ -68,5 +80,9 @@ public class JBuild4DCYaml extends YamlUtility {
 
     public static String getSystemCaption() {
         return systemCaption;
+    }
+
+    public static boolean isDebug() {
+        return debug;
     }
 }
