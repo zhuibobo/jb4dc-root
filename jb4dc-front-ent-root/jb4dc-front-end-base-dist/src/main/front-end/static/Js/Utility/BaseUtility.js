@@ -133,5 +133,15 @@ var BaseUtility = {
         transfer.focus();
         transfer.select();
         document.execCommand('copy');
+    },
+    SetSystemFavicon:function () {
+        var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+        link.type = 'image/x-icon';
+        link.rel = 'shortcut icon';
+        link.href = BaseUtility.GetRootPath()+'/favicon.ico';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    },
+    SetSystemTitle:function () {
+        document.title=JBuild4DCYaml.GetClientSystemTitle();
     }
 };
