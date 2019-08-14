@@ -1,4 +1,4 @@
-package com.jb4dc.base.dbaccess.exenum;
+package com.jb4dc.base.service.exenum;
 
 import com.jb4dc.core.base.exenum.BaseEnum;
 

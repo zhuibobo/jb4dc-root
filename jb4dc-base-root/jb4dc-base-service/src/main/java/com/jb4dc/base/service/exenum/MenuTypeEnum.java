@@ -1,4 +1,4 @@
-package com.jb4dc.base.dbaccess.exenum;
+package com.jb4dc.base.service.exenum;
 
 import com.jb4dc.core.base.exenum.BaseEnum;
 
@@ -13,9 +13,9 @@ import java.util.Map;
  */
 public enum MenuTypeEnum implements BaseEnum<EnableTypeEnum, Integer> {
     Root(0,"根菜单"),
-    GroupTopMenu(1,"顶部分组"),
-    LeftGroup(2,"左侧分组"),
-    LeftMenu(3,"左侧菜单");
+    LinkMenu(1,"超链接菜单"),
+    ModuleWebListMenu(2,"Web模块列表菜单"),
+    ModuleWebFormMenu(3,"Web模块窗体菜单");
 
     private Integer value;
     private String displayName;

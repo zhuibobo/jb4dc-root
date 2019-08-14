@@ -1,27 +1,32 @@
-package com.jb4dc.base.dbaccess.exenum;
+package com.jb4dc.base.service.exenum;
 
 import com.jb4dc.core.base.exenum.BaseEnum;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public enum EnableTypeEnum implements BaseEnum<EnableTypeEnum, Integer> {
-    enable(1,"启用"),
-    disable(0,"禁用"),
-    delete(2,"删除"),
-    deprecation(3,"弃用");
+/**
+ * Created with IntelliJ IDEA.
+ * User: zhuangrb
+ * Date: 2019/8/7
+ * To change this template use File | Settings | File Templates.
+ */
+public enum UserTypeEnum  implements BaseEnum<EnableTypeEnum, Integer> {
+    manager(1,"平台管理员"),
+    organAdmin(2,"组织机构管理员"),
+    normalUser(3,"一般用户");
 
     private Integer value;
     private String displayName;
 
-    static Map<Integer,EnableTypeEnum> enumMap=new HashMap<Integer, EnableTypeEnum>();
+    static Map<Integer,UserTypeEnum> enumMap=new HashMap<Integer, UserTypeEnum>();
     static{
-        for(EnableTypeEnum type: EnableTypeEnum.values()){
+        for(UserTypeEnum type: UserTypeEnum.values()){
             enumMap.put(type.getValue(), type);
         }
     }
 
-    private EnableTypeEnum(int value,String displayName) {
+    private UserTypeEnum(int value,String displayName) {
         this.value=value;
         this.displayName=displayName;
     }
@@ -39,7 +44,7 @@ public enum EnableTypeEnum implements BaseEnum<EnableTypeEnum, Integer> {
         this.displayName = displayName;
     }
 
-    public static EnableTypeEnum getEnum(Integer value) {
+    public static UserTypeEnum getEnum(Integer value) {
         return enumMap.get(value);
     }
 }

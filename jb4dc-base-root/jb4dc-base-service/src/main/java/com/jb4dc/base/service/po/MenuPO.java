@@ -28,8 +28,14 @@ public class MenuPO {
     //MENU_VALUE:菜单值
     private String menuValue;
 
-    //MENU_TYPE:菜单类型
+    //MENU_TYPE:菜单类型:超链接菜单,模块列表,模块窗体
     private String menuType;
+
+    //MENU_OUTER_ID:外部关联ID
+    private String menuOuterId;
+
+    //MENU_OUTER_NAME:外部关联对象名称
+    private String menuOuterName;
 
     //MENU_CREATOR_ID:创建者ID
     private String menuCreatorId;
@@ -122,6 +128,8 @@ public class MenuPO {
      * @param menuText 菜单文本
      * @param menuValue 菜单值
      * @param menuType 菜单类型
+     * @param menuOuterId 外部关联ID
+     * @param menuOuterName 外部关联对象名称
      * @param menuCreatorId 创建者ID
      * @param menuOrganId 创建组织ID
      * @param menuOrganName 创造组织名称
@@ -150,13 +158,15 @@ public class MenuPO {
      * @param menuStatus 状态
      * @param menuJsExpression 扩展的JS表达式
      **/
-    public MenuPO(String menuId, String menuName, String menuSystemId, String menuText, String menuValue, String menuType, String menuCreatorId, String menuOrganId, String menuOrganName, String menuIsExpand, String menuIsSystem, String menuLeftUrl, String menuLeftUrlPara, String menuRightUrl, String menuRightUrlPara, Integer menuOrderNum, String menuParentId, String menuParentIdList, String menuTarget, Date menuCreateTime, String menuUpdater, Date menuUpdateTime, String menuUseOrganName, String menuUseOrganId, String menuUseOrganTypeName, String menuUseOrganTypeId, String menuClassName, String menuClassNameHover, String menuClassNameSelected, Integer menuChildCount, String menuDescription, String menuStatus, String menuJsExpression) {
+    public MenuPO(String menuId, String menuName, String menuSystemId, String menuText, String menuValue, String menuType, String menuOuterId, String menuOuterName, String menuCreatorId, String menuOrganId, String menuOrganName, String menuIsExpand, String menuIsSystem, String menuLeftUrl, String menuLeftUrlPara, String menuRightUrl, String menuRightUrlPara, Integer menuOrderNum, String menuParentId, String menuParentIdList, String menuTarget, Date menuCreateTime, String menuUpdater, Date menuUpdateTime, String menuUseOrganName, String menuUseOrganId, String menuUseOrganTypeName, String menuUseOrganTypeId, String menuClassName, String menuClassNameHover, String menuClassNameSelected, Integer menuChildCount, String menuDescription, String menuStatus, String menuJsExpression) {
         this.menuId = menuId;
         this.menuName = menuName;
         this.menuSystemId = menuSystemId;
         this.menuText = menuText;
         this.menuValue = menuValue;
         this.menuType = menuType;
+        this.menuOuterId = menuOuterId;
+        this.menuOuterName = menuOuterName;
         this.menuCreatorId = menuCreatorId;
         this.menuOrganId = menuOrganId;
         this.menuOrganName = menuOrganName;
@@ -271,7 +281,7 @@ public class MenuPO {
     }
 
     /**
-     * 菜单类型
+     * 菜单类型:超链接菜单,模块列表,模块窗体
      * @return java.lang.String
      **/
     public String getMenuType() {
@@ -279,11 +289,43 @@ public class MenuPO {
     }
 
     /**
-     * 菜单类型
+     * 菜单类型:超链接菜单,模块列表,模块窗体
      * @param menuType 菜单类型
      **/
     public void setMenuType(String menuType) {
         this.menuType = menuType == null ? null : menuType.trim();
+    }
+
+    /**
+     * 外部关联ID
+     * @return java.lang.String
+     **/
+    public String getMenuOuterId() {
+        return menuOuterId;
+    }
+
+    /**
+     * 外部关联ID
+     * @param menuOuterId 外部关联ID
+     **/
+    public void setMenuOuterId(String menuOuterId) {
+        this.menuOuterId = menuOuterId == null ? null : menuOuterId.trim();
+    }
+
+    /**
+     * 外部关联对象名称
+     * @return java.lang.String
+     **/
+    public String getMenuOuterName() {
+        return menuOuterName;
+    }
+
+    /**
+     * 外部关联对象名称
+     * @param menuOuterName 外部关联对象名称
+     **/
+    public void setMenuOuterName(String menuOuterName) {
+        this.menuOuterName = menuOuterName == null ? null : menuOuterName.trim();
     }
 
     /**

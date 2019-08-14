@@ -141,6 +141,7 @@
                 link.href = BaseUtility.GetRootPath()+'/favicon.ico';
                 document.getElementsByTagName('head')[0].appendChild(link);*/
                 BaseUtility.SetSystemFavicon();
+                BaseUtility.SetSystemTitle();
             })();
 
             function getChildMenuData(parentId) {
@@ -198,7 +199,20 @@
                     //alert(sender.data.menuData.menuText);
                     //console.log(sender.data.menuData.menuRightUrl);
                     if (sender.data.menuData.menuRightUrl) {
-                        var url = BaseUtility.BuildAction(sender.data.menuData.menuRightUrl, sender.data.menuData);
+                        //console.log(sender.data.menuData);
+                        var paras={
+                            menuId:sender.data.menuData.menuId,
+                            menuLeftUrlPara:sender.data.menuData.menuLeftUrlPara,
+                            menuName:sender.data.menuData.menuName,
+                            menuOuterId:sender.data.menuData.menuOuterId,
+                            menuOuterName:sender.data.menuData.menuOuterName,
+                            menuRightUrlPara:sender.data.menuData.menuRightUrlPara,
+                            menuSystemId:sender.data.menuData.menuSystemId,
+                            menuText:sender.data.menuData.menuText,
+                            menuTarget:sender.data.menuData.menuTarget,
+                            menuValue:sender.data.menuData.menuValue
+                        };
+                        var url = BaseUtility.BuildAction(sender.data.menuData.menuRightUrl, paras);
                         $("#fv_iframe").attr("src", url);
                         //设置点击的路径breadcrumb
                         var menuPath = getParentListMenuData(sender.data.menuData.menuId);

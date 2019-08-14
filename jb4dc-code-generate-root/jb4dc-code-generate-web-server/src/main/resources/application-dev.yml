@@ -39,7 +39,7 @@ logging:
 
 jb4dc:
   system-caption: 代码生成器
-  system-title: JBuild4DC-Code-Generate
+  system-title: JBuild4DC-代码生成器
   warning-operation-code: jb4d82
   is-debug: true
   host:

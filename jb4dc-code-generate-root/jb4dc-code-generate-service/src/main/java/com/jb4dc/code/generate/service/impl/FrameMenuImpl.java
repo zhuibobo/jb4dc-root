@@ -1,7 +1,7 @@
 package com.jb4dc.code.generate.service.impl;
 
-import com.jb4dc.base.dbaccess.exenum.MenuTypeEnum;
-import com.jb4dc.base.dbaccess.exenum.TrueFalseEnum;
+import com.jb4dc.base.service.exenum.MenuTypeEnum;
+import com.jb4dc.base.service.exenum.TrueFalseEnum;
 import com.jb4dc.base.service.provide.IFrameMenuProvide;
 import com.jb4dc.base.service.po.MenuPO;
 import com.jb4dc.core.base.session.JB4DCSession;
