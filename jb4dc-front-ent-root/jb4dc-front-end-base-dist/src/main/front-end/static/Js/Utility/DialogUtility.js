@@ -3,6 +3,7 @@ var DialogUtility={
     DialogAlertId:"DefaultDialogAlertUtility01",
     DialogAlertErrorId:"DefaultDialogAlertErrorUtility01",
     DialogPromptId:"DefaultDialogPromptUtility01",
+    DialogLoadingId:"DefaultDialogLoading01",
     DialogId:"DefaultDialogUtility01",
     DialogId02:"DefaultDialogUtility02",
     DialogId03:"DefaultDialogUtility03",
@@ -35,7 +36,7 @@ var DialogUtility={
             return this._GetElem(dialogId);
         }
     },
-    _CreateIfrmaeDialogElement: function (docObj, dialogId, url) {
+    _CreateIframeDialogElement: function (docObj, dialogId, url) {
         /*var dialogEle = $("<div id=" + dialogId + " title='Basic dialog'>\
                         <iframe name='dialogIframe' width='100%' height='98%' frameborder='0' src='" + url + "'>\
                         </iframe>\
@@ -183,14 +184,14 @@ var DialogUtility={
     AlertLoading:function(openerWindow,dialogId,config,htmlMsg){
         var htmlElem = this._CreateAlertLoadingMsgElement(openerWindow.document.body,dialogId);
         var defaultConfig = {
-            height: 200,
+            height: 140,
             width: 300,
             title:"",
             show:true,
             modal:true
         };
         var defaultConfig = $.extend(true, {}, defaultConfig, config);
-        $(htmlElem).find(".alertloading-txt").html(htmlMsg);
+        $(htmlElem).find(".alert-loading-txt").html(htmlMsg);
         $(htmlElem).dialog(defaultConfig);
     },
     Confirm : function(openerWindow, htmlMsg, okFn,caller) {
@@ -337,7 +338,7 @@ var DialogUtility={
 
         defaultoptions = $.extend(true, {}, defaultoptions, options);
         var autodialogId = dialogId;
-        var dialogEle = this._CreateIfrmaeDialogElement(openerwindow.document, autodialogId, url);
+        var dialogEle = this._CreateIframeDialogElement(openerwindow.document, autodialogId, url);
 
         var dialogObj=$(dialogEle).dialog(defaultoptions);
         var $iframeobj = $(dialogEle).find("iframe");
@@ -468,7 +469,7 @@ var DialogUtility={
         var autodialogId = "FrameDialogEle" + dialogId;
 
         if ($(this.FramePageRef.document).find("#" + autodialogId).length == 0) {
-            var dialogEle = this._CreateIfrmaeDialogElement(this.FramePageRef.document, autodialogId, url);
+            var dialogEle = this._CreateIframeDialogElement(this.FramePageRef.document, autodialogId, url);
             var defaultoptions = {
                 height: 400,
                 width: 600,
@@ -574,7 +575,7 @@ var DialogUtility={
     Frame_Alert:function () {
 
     },
-    Frame_Comfirm:function () {
+    Frame_Confirm:function () {
 
     },
     Frame_OpenIframeWindow:function (openerwindow, dialogId, url, options, whtype) {
