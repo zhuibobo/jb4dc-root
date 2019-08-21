@@ -578,11 +578,14 @@ var DialogUtility={
     Frame_Confirm:function () {
 
     },
-    Frame_OpenIframeWindow:function (openerwindow, dialogId, url, options, whtype) {
+    Frame_OpenIframeWindow:function (openerwindow, dialogId, url, options, whtype,notFrameOpenInCurr) {
         //debugger;
         if(url==""){
             alert("url不能为空字符串!");
             return;
+        }
+        if(!notFrameOpenInCurr){
+            notFrameOpenInCurr=false;
         }
         var wrwin = this.Frame_TryGetFrameWindowObj();
         this.FramePageRef = wrwin;
@@ -592,7 +595,12 @@ var DialogUtility={
             this.FramePageRef.DialogUtility._OpenWindowInFramePage(openerwindow, dialogId, url, options, whtype);
         }
         else {
-            alert("找不到FramePage!!");
+            if(notFrameOpenInCurr){
+                this.OpenIframeWindow(openerwindow, dialogId, url, options, whtype);
+            }
+            else {
+                alert("找不到FramePage!!");
+            }
         }
     },
     Frame_CloseDialog:function (openerWindow) {
