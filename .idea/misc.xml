@@ -23,5 +23,10 @@
       </set>
     </option>
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/HTMLDesignMain.less" />
+    <file url="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/HTMLDesignRuntime.less" />
+    <file url="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/HTMLDesignWysiwyg.less" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>
