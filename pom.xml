@@ -95,6 +95,11 @@
                 <artifactId>jb4dc-base-db-access</artifactId>
                 <version>${platform.version}</version>
             </dependency>
+            <dependency>
+                <groupId>jb4dc</groupId>
+                <artifactId>jb4dc-base-client</artifactId>
+                <version>${platform.version}</version>
+            </dependency>
             <!--前端资源包-->
             <dependency>
                 <groupId>jb4dc</groupId>

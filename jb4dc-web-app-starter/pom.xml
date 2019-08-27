@@ -84,5 +84,13 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jb4dc</groupId>
+            <artifactId>jb4dc-base-client</artifactId>
+        </dependency>
     </dependencies>
 </project>

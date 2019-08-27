@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/jb4dc-base-client.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/jb4dc-base-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" filepath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" />
