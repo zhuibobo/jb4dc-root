@@ -292,6 +292,8 @@ var DialogUtility={
         var defaultoptions = {
             height: 410,
             width: 600,
+            modal:true,
+            title:"系统",
             close: function (event, ui) {
                 var autodialogId = $(this).attr("id");
                 $(this).find("iframe").remove();
