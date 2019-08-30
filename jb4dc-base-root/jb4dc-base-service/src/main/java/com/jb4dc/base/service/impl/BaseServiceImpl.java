@@ -98,7 +98,6 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
         return defaultBaseMapper.updateByPrimaryKey(entity);
     }
 
-
     @Override
     public int save(JB4DCSession jb4DCSession, String id, T entity, IAddBefore<T> addBefore) throws JBuild4DCGenerallyException {
         if(getByPrimaryKey(jb4DCSession,id)==null){
@@ -108,17 +107,6 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
         }
         else{
             return updateByKeySelective(jb4DCSession,entity);
-        }
-    }
-
-    private void autoSetEntityId(T entity) throws JBuild4DCGenerallyException {
-        try {
-            String entId= DBAnnoUtility.getIdValue(entity);
-            if(entId==null||entId.equals("")){
-                DBAnnoUtility.setIdValue(entity, UUIDUtility.getUUID());
-            }
-        } catch (Exception e) {
-            throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,e.getMessage(),e.getCause());
         }
     }
 
@@ -132,6 +120,17 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
         else{
             entity=updateBefore.run(jb4DCSession,entity);
             return updateByKeySelective(jb4DCSession,entity);
+        }
+    }
+
+    private void autoSetEntityId(T entity) throws JBuild4DCGenerallyException {
+        try {
+            String entId= DBAnnoUtility.getIdValue(entity);
+            if(entId==null||entId.equals("")){
+                DBAnnoUtility.setIdValue(entity, UUIDUtility.getUUID());
+            }
+        } catch (Exception e) {
+            throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,e.getMessage(),e.getCause());
         }
     }
 
