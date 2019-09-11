@@ -399,7 +399,7 @@ var ListPageUtility = {
                 })
             ]);
         },
-        SelectedButton: function (h, params, idField, pageAppObj) {
+        SelectedButton: function (h, params, idField, pageAppObj,clickEvent) {
             return h('Tooltip', {
                 props:{
                     content:"选择"
@@ -409,8 +409,12 @@ var ListPageUtility = {
                     class: "list-row-button selected",
                     on: {
                         click: function () {
-                            //debugger;
-                            pageAppObj.selected(params.row[idField], params);
+                            if(typeof(clickEvent)=="function"){
+                                clickEvent(params.row[idField], params);
+                            }
+                            else{
+                                pageAppObj.selected(params.row[idField], params);
+                            }
                         }
                     }
                 })

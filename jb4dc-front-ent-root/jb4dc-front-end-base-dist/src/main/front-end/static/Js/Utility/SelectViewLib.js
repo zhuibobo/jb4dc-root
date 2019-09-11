@@ -17,6 +17,8 @@ var JBuild4DSelectView={
             $(window.parent.document).find(".ui-dialog").css("zIndex",10101);
         },*/
         formatText:function (type,text) {
+            alert("JBuild4DSelectView.formatText方法已经废弃,请使用select-default-value-dialog组件内部的formatText方法!");
+            return;
             //debugger;
             if(type=="Const"){
                 return "静态值:【"+text+"】";

@@ -35,4 +35,8 @@ public class BeanUtility {
     public static <T> T getBean(Class<T> classT){
         return context.getBean(classT);
     }
+
+    public static boolean containsBean(String name){
+        return context.containsBean(name);
+    }
 }
