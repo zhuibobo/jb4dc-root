@@ -17,6 +17,7 @@
         <PackageLevel2Name value="weblist"></PackageLevel2Name>
         <PackageLevel2Name value="flow"></PackageLevel2Name>
         <PackageLevel2Name value="envvar"></PackageLevel2Name>
+        <PackageLevel2Name value="api"></PackageLevel2Name>
     </Package>
     <Package name="DevMock" entity="com.jb4dc.devmock.dbentities" dao="com.jb4dc.devmock.dao" mapperAC="mybatismappers">
     </Package>
