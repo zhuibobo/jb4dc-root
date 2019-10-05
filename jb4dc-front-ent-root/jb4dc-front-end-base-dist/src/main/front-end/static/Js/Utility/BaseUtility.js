@@ -143,5 +143,11 @@ var BaseUtility = {
     },
     SetSystemTitle:function () {
         document.title=JBuild4DCYaml.GetClientSystemTitle();
+    },
+    IsFunction:function (func) {
+        if(typeof(func)=="function"){
+            return true;
+        }
+        return false;
     }
 };
