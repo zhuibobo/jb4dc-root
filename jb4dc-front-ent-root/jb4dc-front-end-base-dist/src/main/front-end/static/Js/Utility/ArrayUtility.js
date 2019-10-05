@@ -42,5 +42,21 @@ var ArrayUtility = {
             arr.push(item);
         }
         return arr;
+    },
+    Where:function (arr, condition) {
+        var result=[];
+        for (var i = 0; i < arr.length; i++) {
+            if(condition(arr[i])){
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    },
+    WhereSingle:function (arr,condition) {
+        var temp = this.Where(arr, condition);
+        if(temp.length==0){
+            return null;
+        }
+        return temp[0];
     }
 }
