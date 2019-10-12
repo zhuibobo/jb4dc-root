@@ -9,6 +9,7 @@ var DialogUtility={
     DialogId03:"DefaultDialogUtility03",
     DialogId04:"DefaultDialogUtility04",
     DialogId05:"DefaultDialogUtility05",
+    DialogNewWindowId:"DialogNewWindowId01",
     _GetElem:function(dialogId){
         return $("#"+dialogId);
     },

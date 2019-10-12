@@ -8,10 +8,6 @@ var BaseUtility = {
         var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
         return (localhostPath + projectName);
     },
-    ReplaceUrlVariable:function (sourceUrl) {
-        alert("ReplaceUrlVariable迁移到BuildAction");
-        //return sourceUrl.replace("${ctxpath}", this.GetRootPath());
-    },
     GetTopWindow: function () {
         alert("BaseUtility.GetTopWindow 已停用");
         /*var windowTop = window;
@@ -41,14 +37,9 @@ var BaseUtility = {
             }
         }*/
     },
-    BuildUrl:function (url) {
-        alert("BaseUtility.BuildUrl 已停用");
-
-        /*var _url=this.GetRootPath()+url;
-        return StringUtility.GetTimeStampUrl(_url);*/
-    },
     BuildView:function (action,para) {
-        var urlPara = "";
+        return this.BuildAction(action,para);
+        /*var urlPara = "";
         if (para) {
             urlPara = $.param(para);
         }
@@ -56,28 +47,7 @@ var BaseUtility = {
         if (urlPara != "") {
             _url += "?" + urlPara;
         }
-        //alert(_url);
-        return this.AppendTimeStampUrl(_url);
-    },
-    BuildFrameInnerView:function(action,para){
-        alert("BaseUtility.BuildFrameInnerView 已停用");
-        return false;
-        //if(StringUtility.EndWith(action,"View")) {
-            var urlPara = "";
-            if (para) {
-                urlPara = $.param(para);
-            }
-            var _url = this.GetRootPath()+"/HTML/" + action;
-            if (urlPara != "") {
-                _url += "?" + urlPara;
-            }
-            //alert(_url);
-            return this.AppendTimeStampUrl(_url);
-        /*}
-        else {
-            DialogUtility.AlertText(action+"视图Url请用View作为结尾.");
-            return "";
-        }*/
+        return this.AppendTimeStampUrl(_url);*/
     },
     BuildAction:function (action,para) {
         var urlPara = "";

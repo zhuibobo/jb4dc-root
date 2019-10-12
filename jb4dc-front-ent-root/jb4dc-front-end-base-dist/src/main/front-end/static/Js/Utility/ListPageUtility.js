@@ -102,11 +102,16 @@ var ListPageUtility = {
             }
         }
     },
-    IViewTableMareSureSelectedOne: function (selectionRows) {
+    IViewTableMareSureSelectedOne: function (selectionRows,caller) {
         if (selectionRows != null && selectionRows.length > 0 && selectionRows.length == 1) {
             return {
                 then: function (func) {
-                    func(selectionRows);
+                    if(caller){
+                        func.call(caller,selectionRows);
+                    }
+                    else {
+                        func(selectionRows);
+                    }
                 }
             }
         } else {
