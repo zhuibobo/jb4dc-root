@@ -436,6 +436,11 @@ var DialogUtility={
             alert("请解除浏览器对本系统弹出窗口的阻止设置！");
         }
     },
+    OpenNewTabWindow:function(url){
+        var link=$("<a href='"+url+"' style='position:absolute;top: -100px;width: 0px;height: 0px' target='_blank'></a>");
+        $(window.document.body).append(link);
+        link[0].click();
+    },
     _TryGetParentWindow: function (win) {
         if (win.parent != null) {
             return win.parent;
