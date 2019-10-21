@@ -60,19 +60,19 @@ var DialogUtility={
     _TestRunEnable:function(){
         return true;
     },
-    AlertError:function (openerWindow,dialogId,config,htmlMsg,sFunc) {
+    AlertError:function (openerWindow,dialogId,config,htmlMsg,sFunc,timeClosure) {
         var defaultConfig={
             height: "auto",
             width: "auto",
             title:"错误提示"
         };
         defaultConfig = $.extend(true, {}, defaultConfig, config);
-        this.Alert(openerWindow,dialogId,defaultConfig,htmlMsg,sFunc);
+        this.Alert(openerWindow,dialogId,defaultConfig,htmlMsg,sFunc,timeClosure);
     },
-    AlertText:function(text){
-        DialogUtility.Alert(window, DialogUtility.DialogAlertId, {},text, null);
+    AlertText:function(text,caller,timeClosure){
+        DialogUtility.Alert(window, DialogUtility.DialogAlertId, {},text, null,caller,timeClosure);
     },
-    Alert:function(openerWindow,dialogId,config,htmlMsg,sFunc,caller) {
+    Alert:function(openerWindow,dialogId,config,htmlMsg,sFunc,caller,timeClosure) {
         //debugger;
         var htmlElem = this._CreateDialogElem(openerWindow.document.body,dialogId);
         var defaultConfig = {
@@ -97,13 +97,22 @@ var DialogUtility={
                         sFunc();
                     }
                 }
+            },
+            hide: {
+                effect: "fade",
+                duration: 500
             }
         };
         defaultConfig = $.extend(true, {}, defaultConfig, config);
         $(htmlElem).html(htmlMsg);
         $(htmlElem).dialog(defaultConfig);
+        if(timeClosure) {
+            window.setTimeout(function () {
+                DialogUtility.CloseDialog(dialogId);
+            }, 1000 * timeClosure);
+        }
     },
-    AlertJsonCode:function(json){
+    AlertJsonCode:function(json,timeClosure){
         if(typeof(json)=="object") {
             json = JsonUtility.JsonToStringFormat(json);
         }
@@ -124,11 +133,15 @@ var DialogUtility={
             return '<span class="' + cls + '">' + match + '</span>';
         });
         //this.Alert(window, DialogUtility.DialogAlertId, {width:900,height:600},"<pre class='json-pre'>"+json+"</pre>", null);
-        var htmlElem = this._CreateDialogElem(window.document.body,DialogUtility.DialogAlertId);
+        var htmlElem = this._CreateDialogElem(window.document.body,this.DialogAlertId);
+        var title="系统提示";
+        if(timeClosure){
+            title+=" [ "+timeClosure+"秒后自动关闭 ]"
+        }
         var defaultConfig = {
             height: 600,
             width: 900,
-            title:"系统提示",
+            title:title,
             show:true,
             modal:true,
             buttons:{
@@ -149,12 +162,22 @@ var DialogUtility={
                 /*if(sFunc){
                     sFunc();
                 }*/
+            },
+            hide: {
+                effect: "fade",
+                duration: 500
             }
         };
 
         //var defaultConfig = $.extend(true, {}, defaultConfig, config);
         $(htmlElem).html("<div id='pscontainer' style='width: 100%;height: 100%;overflow: auto;position: relative;'><pre class='json-pre'>"+json+"</pre></div>");
         $(htmlElem).dialog(defaultConfig);
+
+        if(timeClosure) {
+            window.setTimeout(function () {
+                DialogUtility.CloseDialog(DialogUtility.DialogAlertId);
+            }, 1000 * timeClosure);
+        }
 
         //var $qs = document.querySelector.bind(document);
         var ps = new PerfectScrollbar('#pscontainer');
