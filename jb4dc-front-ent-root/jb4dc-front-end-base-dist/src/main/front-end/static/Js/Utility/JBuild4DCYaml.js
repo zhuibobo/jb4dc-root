@@ -1,5 +1,6 @@
 var JBuild4DCYaml={
     _clientClientSystemTitle:null,
+    _clientClientSystemCaption:null,
     GetClientSystemTitle:function () {
         //debugger;
         var storeKey="JBuild4DCYaml._clientClientSystemTitle";
@@ -21,5 +22,15 @@ var JBuild4DCYaml={
             }
         }
         return this._clientClientSystemTitle;
+    },
+    GetClientSystemCaption:function () {
+        //debugger;
+        AjaxUtility.GetSync("/Rest/JBuild4DCYaml/GetClientSystemCaption", {}, function (result) {
+            if (result.success) {
+                this._clientClientSystemCaption = result.data;
+            }
+        }, this);
+
+        return this._clientClientSystemCaption;
     }
 }

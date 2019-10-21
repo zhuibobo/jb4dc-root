@@ -57,6 +57,13 @@ var JsonUtility = {
         }
         return toObj;
     },
+    CloneArraySimple:function(array){
+        var result=[];
+        for (var i = 0; i < array.length; i++) {
+            result.push(this.CloneSimple(array[i]));
+        }
+        return result;
+    },
     CloneSimple:function (source) {
         var newJson = jQuery.extend(true,{}, source);
         return newJson;

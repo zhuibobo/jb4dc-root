@@ -114,6 +114,9 @@ var BaseUtility = {
     SetSystemTitle:function () {
         document.title=JBuild4DCYaml.GetClientSystemTitle();
     },
+    SetSystemCaption:function(){
+        $("#systemCaption").text(JBuild4DCYaml.GetClientSystemCaption());
+    },
     IsFunction:function (func) {
         if(typeof(func)=="function"){
             return true;

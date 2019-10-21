@@ -21,4 +21,10 @@ public class JBuild4DCYamlRest {
         String title= JBuild4DCYaml.getClientSystemTitle();
         return JBuild4DCResponseVo.getDataSuccess(title);
     }
+
+    @RequestMapping(value = "/GetClientSystemCaption", method = RequestMethod.GET)
+    public JBuild4DCResponseVo getClientSystemCaption() {
+        String caption= JBuild4DCYaml.getSystemCaption();
+        return JBuild4DCResponseVo.getDataSuccess(caption);
+    }
 }
