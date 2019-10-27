@@ -58,5 +58,25 @@ var ArrayUtility = {
             return null;
         }
         return temp[0];
+    },
+    Push:function (source, append) {
+        //debugger;
+        if(Array.isArray(append) ){
+            for (let i = 0; i < append.length; i++) {
+                source.push(append[i]);
+            }
+        }
+        else
+        {
+            source.push(append);
+        }
+    },
+    True:function (source,condition) {
+        for (var i = 0; i < source.length; i++) {
+            if(condition(source[i])){
+                return true;
+            }
+        }
+        return false;
     }
 }
