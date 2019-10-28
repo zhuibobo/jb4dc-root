@@ -136,5 +136,29 @@ var BaseUtility = {
             });
         });
         return attrs;
+    },
+    GetViewOperationName:function(){
+        return "view";
+    },
+    IsViewOperation:function (operationType) {
+        return operationType && operationType == this.GetViewOperationName();
+    },
+    GetAddOperationName:function(){
+        return "add";
+    },
+    IsAddOperation:function (operationType) {
+        return operationType && operationType == this.GetAddOperationName();
+    },
+    GetUpdateOperationName:function(){
+        return "add";
+    },
+    IsUpdateOperation:function (operationType) {
+        return operationType && operationType == this.GetUpdateOperationName();
+    },
+    GetDeleteOperationName:function(){
+        return "delete";
+    },
+    IsDeleteOperation:function (operationType) {
+        return operationType && operationType == this.GetDeleteOperationName();
     }
 };
