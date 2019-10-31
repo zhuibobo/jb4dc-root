@@ -465,7 +465,7 @@ var EditTable= {
         return rowDatas;
     },
 
-    GetSerializeJson:function(){
+    GetSerializeJson:function(fieldNameFirstCharLetter){
         var result=new Array();
         var table=this._$Prop_TableElem;
         table.find("tr[isHeader!='true']").each(function(){
@@ -481,6 +481,9 @@ var EditTable= {
                 }
                 if(bindText=="undefined"){
                     bindText="";
+                }
+                if(fieldNameFirstCharLetter==true){
+                    bindName=StringUtility.FirstCharLetter(bindName);
                 }
                 rowdata[bindName]=bindValue;
                 rowdata[bindName+"___Text"]=bindText;

@@ -78,5 +78,13 @@ var ArrayUtility = {
             }
         }
         return false;
+    },
+    IsArray:function (source) {
+        if (!Array.isArray) {
+            return Array.isArray(source);
+        }
+        else{
+            return Object.prototype.toString.call(source) === '[object Array]';
+        }
     }
 }

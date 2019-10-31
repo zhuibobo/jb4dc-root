@@ -25,7 +25,7 @@ var StringUtility = {
     IsNullOrEmpty: function (obj) {
         return obj == undefined || obj == "" || obj == null || obj == "undefined" || obj == "null"
     },
-    GetFuntionName: function (func) {
+    GetFunctionName: function (func) {
         if (typeof func == "function" || typeof func == "object")
             var fName = ("" + func).match(
                 /function\s*([\w\$]*)\s*\(/
@@ -47,7 +47,7 @@ var StringUtility = {
         var origin = /\/\/[\w-.]+(:\d+)?/i.exec(url)[0];
         return origin;
     },*/
-    IsSameOrgin:function (url1, url2) {
+    IsSameDomain:function (url1, url2) {
         var origin1 = /\/\/[\w-.]+(:\d+)?/i.exec(url1)[0];
 
         var open=/\/\/[\w-.]+(:\d+)?/i.exec(url2);
@@ -61,5 +61,13 @@ var StringUtility = {
             }
             return false;
         }
+    },
+    FirstCharLetter:function (str) {
+        var str1 = str.replace(str[0],str[0].toLowerCase());
+        return str1;
+    },
+    FirstCharUpper:function (str) {
+        var str1 =  str.replace(str[0],str[0].toUpperCase());
+        return str1;
     }
 };
