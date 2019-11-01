@@ -10,6 +10,10 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public interface ISQLBuilderService {
+    Object selectOneScalar(String sql);
+
+    Object selectOneScalar(String sql, Object value);
+
     Map<String,Object> selectOne(String sql, Object value);
 
     List<Map<String,Object>> selectList(String sql, Map paras);
