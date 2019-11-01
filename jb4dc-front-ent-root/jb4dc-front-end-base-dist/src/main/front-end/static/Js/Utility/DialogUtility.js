@@ -371,7 +371,7 @@ var DialogUtility={
 
         $iframeobj.on("load",function () {
             //alert("load");
-            if(StringUtility.IsSameOrgin(window.location.href,url)) {
+            if(StringUtility.IsSameDomain(window.location.href,url)) {
                 this.contentWindow.FrameWindowId = autodialogId;
                 this.contentWindow.OpenerWindowObj = openerwindow;
                 this.contentWindow.IsOpenForFrame = true;
@@ -552,7 +552,7 @@ var DialogUtility={
             var $iframeobj = $(dialogEle).find("iframe");
             $iframeobj.on("load",function () {
                 //alert("load");
-                if(StringUtility.IsSameOrgin(window.location.href,url)) {
+                if(StringUtility.IsSameDomain(window.location.href,url)) {
                     this.contentWindow.FrameWindowId = autodialogId;
                     this.contentWindow.OpenerWindowObj = openerwindow;
                     this.contentWindow.IsOpenForFrame = true;
