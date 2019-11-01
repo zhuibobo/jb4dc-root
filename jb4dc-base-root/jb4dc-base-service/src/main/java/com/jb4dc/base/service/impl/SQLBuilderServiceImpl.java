@@ -46,4 +46,24 @@ public class SQLBuilderServiceImpl implements ISQLBuilderService {
         return sqlBuilderMapper.insert(sql);
     }
 
+    @Override
+    public int insert(String sql){
+        return sqlBuilderMapper.insert(sql);
+    }
+
+    @Override
+    public int insert(String sql, Map paras){
+        return sqlBuilderMapper.insert(sql,paras);
+    }
+
+    @Override
+    public int update(String sql){
+        return sqlBuilderMapper.update(sql);
+    }
+
+    @Override
+    public int update(String sql,Map paras){
+        return sqlBuilderMapper.update(sql,paras);
+    }
+
 }

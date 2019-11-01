@@ -19,4 +19,12 @@ public interface ISQLBuilderService {
     List<Map<String,Object>> selectList(String sql);
 
     int execute(String sql);
+
+    int insert(String sql);
+
+    int insert(String sql, Map paras);
+
+    int update(String sql);
+
+    int update(String sql, Map paras);
 }
