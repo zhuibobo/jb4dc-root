@@ -80,6 +80,13 @@ public class JBuild4DCResponseVo<T> {
         this.errorCode = errorCode;
     }
 
+    public String getTraceMsg() {
+        return traceMsg;
+    }
+
+    public void setTraceMsg(String traceMsg) {
+        this.traceMsg = traceMsg;
+    }
     /**
      * 返回SSSResponse实例
      *

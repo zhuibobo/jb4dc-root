@@ -18,7 +18,7 @@ public class JBuild4DCSQLKeyWordException extends JBuild4DCBaseException {
         super(errorCode, message);
     }
 
-    public JBuild4DCSQLKeyWordException(int errorCode, String message, Throwable cause) {
-        super(errorCode, message, cause);
+    public JBuild4DCSQLKeyWordException(int errorCode, String message, Throwable cause,StackTraceElement[] stackTraceElements) {
+        super(errorCode, message, cause,stackTraceElements);
     }
 }

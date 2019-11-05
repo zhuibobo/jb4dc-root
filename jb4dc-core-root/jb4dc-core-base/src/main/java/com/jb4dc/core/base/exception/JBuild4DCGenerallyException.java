@@ -16,15 +16,15 @@ public class JBuild4DCGenerallyException extends JBuild4DCBaseException {
 
     public JBuild4DCGenerallyException(int errorCode, Exception ex) {
         //super(ex.getCause());
-        super(errorCode, ex.getMessage(), ex.getCause());
+        super(errorCode, ex.getMessage(), ex.getCause(),ex.getStackTrace());
     }
 
     public JBuild4DCGenerallyException(int errorCode, String message) {
         super(errorCode, message);
     }
 
-    public JBuild4DCGenerallyException(int errorCode, String message, Throwable cause) {
-        super(errorCode, message, cause);
+    public JBuild4DCGenerallyException(int errorCode, String message, Throwable cause,StackTraceElement[] stackTraceElements) {
+        super(errorCode, message, cause,stackTraceElements);
     }
 
     /*public JBuild4DCGenerallyException(int errorCode,String message, Throwable cause) {

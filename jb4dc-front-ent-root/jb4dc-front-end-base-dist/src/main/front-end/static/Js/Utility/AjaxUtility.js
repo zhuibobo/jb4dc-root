@@ -61,7 +61,11 @@ var AjaxUtility={
                 }
                 try{
                     if(result.success==false){
-                        DialogUtility.AlertError(window, DialogUtility.DialogAlertErrorId, {}, result.message, function () {})
+                        var message=result.message;
+                        if(StringUtility.IsNullOrEmpty(message)){
+                            message=result.traceMsg;
+                        }
+                        DialogUtility.AlertError(window, DialogUtility.DialogAlertErrorId, {}, message, function () {})
                         if(caller){
                             if(caller.isSubmitting){
                                 caller.isSubmitting=false;

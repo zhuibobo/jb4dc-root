@@ -11,8 +11,9 @@ public class JBuild4DCBaseException extends Exception {
         this.errorCode = errorCode;
     }
 
-    public JBuild4DCBaseException(int errorCode, String message, Throwable cause) {
+    public JBuild4DCBaseException(int errorCode, String message, Throwable cause,StackTraceElement[] stackTraceElements) {
         super(message, cause);
+        this.setStackTrace(stackTraceElements);
         this.errorCode = errorCode;
     }
 

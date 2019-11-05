@@ -130,7 +130,7 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
                 DBAnnoUtility.setIdValue(entity, UUIDUtility.getUUID());
             }
         } catch (Exception e) {
-            throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,e.getMessage(),e.getCause());
+            throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,e.getMessage(),e.getCause(),e.getStackTrace());
         }
     }
 
