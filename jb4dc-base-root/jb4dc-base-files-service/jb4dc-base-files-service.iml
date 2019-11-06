@@ -29,6 +29,7 @@
     <orderEntry type="module" module-name="jb4dc-base-db-access" />
     <orderEntry type="module" module-name="jb4dc-base-tools" />
     <orderEntry type="module" module-name="jb4dc-base-service" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.4" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
     <orderEntry type="module" module-name="jb4dc-core-base" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.23" level="project" />

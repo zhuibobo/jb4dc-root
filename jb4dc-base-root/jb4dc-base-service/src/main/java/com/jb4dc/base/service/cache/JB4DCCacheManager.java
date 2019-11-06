@@ -2,6 +2,7 @@ package com.jb4dc.base.service.cache;
 
 import com.jb4dc.base.tools.BeanUtility;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+import org.ehcache.Cache;
 import org.ehcache.CacheManager;
 
 /**
@@ -43,8 +44,12 @@ public class JB4DCCacheManager {
         return (T) cacheManager.getCache(cacheName,String.class,Object.class).get(key);
     }
 
-    public static boolean exist(String cacheName, String key) {
-        return cacheManager.getCache(cacheName, String.class, Object.class).get(key) != null ? true : false;
+    public static boolean exist(String cacheName, String key) throws JBuild4DCGenerallyException {
+        Cache<String, Object> cache = cacheManager.getCache(cacheName, String.class, Object.class);
+        if(cache==null){
+            throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"不存在名称为:"+cacheName+"的缓存配置!");
+        }
+        return cache.get(key) != null ? true : false;
     }
 
     public static <T> T autoGetFromCache(String cacheName,boolean cancelCache,String key,IBuildGeneralObj<T> builder) throws JBuild4DCGenerallyException {

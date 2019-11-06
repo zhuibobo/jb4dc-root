@@ -28,6 +28,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="jb4dc-base-db-access" />
     <orderEntry type="module" module-name="jb4dc-base-tools" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.4" level="project" />
     <orderEntry type="module" module-name="jb4dc-core-base" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.23" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework.boot:spring-boot-starter-web:2.1.6.RELEASE" level="project" />
