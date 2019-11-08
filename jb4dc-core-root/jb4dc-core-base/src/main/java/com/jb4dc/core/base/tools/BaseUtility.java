@@ -38,4 +38,8 @@ public class BaseUtility {
     public static boolean isDeleteOperation(String name){
         return name.equals(getDeleteOperationName());
     }
+
+    public static String wrapDevLog(String logContent){
+        return "[ JB4DC-DEV-DEBUG ]"+logContent;
+    }
 }
