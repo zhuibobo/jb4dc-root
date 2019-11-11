@@ -69,5 +69,8 @@ var StringUtility = {
     FirstCharUpper:function (str) {
         var str1 =  str.replace(str[0],str[0].toUpperCase());
         return str1;
+    },
+    RemoveScript:function (str) {
+        return str.replace(/<script.*?>.*?<\/script>/ig, '');
     }
 };
