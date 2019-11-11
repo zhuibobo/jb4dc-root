@@ -29,6 +29,10 @@ var DateUtility={
         }
         return year + split + month + split + day;*/
     },
+    ConvertFromString:function(dateString){
+        var date = new Date(dateString);
+        return date;
+    },
     Format:function (myDate,formatString) {
         var o = {
             "M+" : myDate.getMonth()+1, //month

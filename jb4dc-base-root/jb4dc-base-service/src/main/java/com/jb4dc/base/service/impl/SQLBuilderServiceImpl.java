@@ -24,12 +24,16 @@ public class SQLBuilderServiceImpl implements ISQLBuilderService {
     @Override
     public Object selectOneScalar(String sql){
         Map<String, Object> oneMap=sqlBuilderMapper.selectOne(sql);
+        if(oneMap==null)
+            return null;
         return oneMap.entrySet().iterator().next().getValue();
     }
 
     @Override
     public Object selectOneScalar(String sql, Object value){
         Map<String, Object> oneMap=this.selectOne(sql,value);
+        if(oneMap==null)
+            return null;
         return oneMap.entrySet().iterator().next().getValue();
     }
 

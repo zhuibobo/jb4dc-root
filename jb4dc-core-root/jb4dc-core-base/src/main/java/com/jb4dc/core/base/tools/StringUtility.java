@@ -950,6 +950,14 @@ public class StringUtility {
         return value.replace(" ", "");
     }
 
+    public static String removeLastChar(String value){
+        return value.substring(0,value.length()-1);
+    }
+
+    public static StringBuilder removeLastChar(StringBuilder builder){
+        return builder.deleteCharAt(builder.length() - 1);
+    }
+
     /**
      * 字符串转码为UTF-8
      *

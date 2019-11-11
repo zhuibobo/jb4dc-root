@@ -150,7 +150,7 @@ var BaseUtility = {
         return operationType && operationType == this.GetAddOperationName();
     },
     GetUpdateOperationName:function(){
-        return "add";
+        return "update";
     },
     IsUpdateOperation:function (operationType) {
         return operationType && operationType == this.GetUpdateOperationName();
