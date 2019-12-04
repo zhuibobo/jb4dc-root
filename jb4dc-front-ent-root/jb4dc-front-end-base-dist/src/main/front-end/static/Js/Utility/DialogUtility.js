@@ -205,6 +205,31 @@ var DialogUtility={
         $(htmlElem).html(htmlMsg);
         return $(htmlElem).dialog(defaultConfig);
     },
+    ShowByElemId:function(elemId,config,close_after_event,params,caller){
+        var defaultConfig = {
+            height: 200,
+            width: 300,
+            title:"系统提示",
+            show:true,
+            modal:true,
+            close: function (event, ui) {
+                try {
+                    if(typeof(close_after_event)=="function"){
+                        close_after_event(params);
+                    }
+                }
+                catch(e){
+
+                }
+            }
+        };
+        var defaultConfig = $.extend(true, {}, defaultConfig, config);
+        //$("#"+elemId).html(htmlMsg);
+        return $("#"+elemId).dialog(defaultConfig);
+    },
+    CloseByElemId:function(elemId){
+        return $("#"+elemId).dialog("close");
+    },
     AlertLoading:function(openerWindow,dialogId,config,htmlMsg){
         var htmlElem = this._CreateAlertLoadingMsgElement(openerWindow.document.body,dialogId);
         var defaultConfig = {
