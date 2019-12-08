@@ -160,5 +160,9 @@ var BaseUtility = {
     },
     IsDeleteOperation:function (operationType) {
         return operationType && operationType == this.GetDeleteOperationName();
+    },
+    ThrowMessage:function (message) {
+        DialogUtility.AlertText(message);
+        throw message;
     }
 };
