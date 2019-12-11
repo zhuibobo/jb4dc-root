@@ -9,6 +9,7 @@ import sun.util.resources.cldr.chr.TimeZoneNames_chr;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -73,6 +74,19 @@ public class JsonUtility {
         objList = mapper.readValue(str, t);
 
         return objList;
+    }
+
+    public static <T,K> T parseEntityToPO(K source,Class<T> _class) throws IOException {
+        String jsonStr= JsonUtility.toObjectString(source);
+        return JsonUtility.toObjectIgnoreProp(jsonStr, _class);
+    }
+
+    public static  <T,K> List<T> parseEntityListToPOList(List<K> entityList,Class<T> _class) throws IOException {
+        if(entityList==null){
+            return new ArrayList<>();
+        }
+        String jsonStr= JsonUtility.toObjectString(entityList);
+        return JsonUtility.toObjectListIgnoreProp(jsonStr, _class);
     }
     /*public static <T> Map<String,T> toMapT(String jsonString,T obj) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
