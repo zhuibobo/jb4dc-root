@@ -230,6 +230,9 @@ var DialogUtility={
     CloseByElemId:function(elemId){
         return $("#"+elemId).dialog("close");
     },
+    DestroyByElemId:function(elemId){
+        return $("#"+elemId).dialog("destroy");
+    },
     AlertLoading:function(openerWindow,dialogId,config,htmlMsg){
         var htmlElem = this._CreateAlertLoadingMsgElement(openerWindow.document.body,dialogId);
         var defaultConfig = {
