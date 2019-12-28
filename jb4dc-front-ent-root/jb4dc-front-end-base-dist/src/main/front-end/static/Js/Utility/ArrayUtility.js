@@ -86,5 +86,22 @@ var ArrayUtility = {
         else{
             return Object.prototype.toString.call(source) === '[object Array]';
         }
+    },
+    ReplaceItem:function (source, newItem, condition) {
+        for(var i=0;i<source.length;i++){
+            if(condition(source[i])){
+                source.splice(i, 1,newItem);
+            }
+        }
+    },
+    ExistReplaceItem:function (source, newItem, condition) {
+        var result=false;
+        for(var i=0;i<source.length;i++){
+            if(condition(source[i])){
+                source.splice(i, 1,newItem);
+                result=true;
+            }
+        }
+        return result;
     }
 }

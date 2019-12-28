@@ -464,7 +464,24 @@ var EditTable= {
 
         return rowDatas;
     },
-
+    GetAllRowDataExUndefinedTextProp:function(){
+        this.CompletedEditingRow();
+        var allRowData=this.GetAllRowData();
+        allRowData=this.Delete___UndefinedTextProp(allRowData);
+        return allRowData;
+    },
+    Delete___UndefinedTextProp:function(allRowJson){
+        for (var i = 0; i < allRowJson.length; i++) {
+            for (var key in allRowJson[i]) {
+                if(key.indexOf("___Text")>0){
+                    if(allRowJson[i][key]==undefined||allRowJson[i][key]=="undefined") {
+                        delete allRowJson[i][key];
+                    }
+                }
+            }
+        }
+        return allRowJson;
+    },
     GetSerializeJson:function(fieldNameFirstCharLetter){
         var result=new Array();
         var table=this._$Prop_TableElem;

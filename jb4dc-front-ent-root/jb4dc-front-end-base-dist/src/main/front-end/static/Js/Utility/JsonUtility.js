@@ -72,6 +72,22 @@ var JsonUtility = {
         var newJson=this.JsonToString(source);
         return this.StringToJson(newJson);
     },
+    CloneObjectProp:function(source,propCallBack) {
+        var result={};
+        var cloneSource=this.CloneStringify(source);
+        for(var key in cloneSource){
+            var sourcePropValue=cloneSource[key];
+            var newPropValue;
+            if(typeof (propCallBack)=="function"){
+                newPropValue = propCallBack(key,sourcePropValue);
+                if(!newPropValue){
+                    newPropValue=sourcePropValue;
+                }
+            }
+            result[key]=newPropValue;
+        }
+        return result;
+    },
     JsonToString:function (obj) {
         return JSON.stringify(obj);
     },
