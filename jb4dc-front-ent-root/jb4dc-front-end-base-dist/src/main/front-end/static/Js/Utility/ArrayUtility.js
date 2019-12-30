@@ -95,6 +95,9 @@ var ArrayUtility = {
         }
     },
     ExistReplaceItem:function (source, newItem, condition) {
+        if(!source){
+            return false;
+        }
         var result=false;
         for(var i=0;i<source.length;i++){
             if(condition(source[i])){
