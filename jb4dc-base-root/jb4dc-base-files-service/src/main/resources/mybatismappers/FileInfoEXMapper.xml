@@ -17,5 +17,8 @@
         <if test="fileExtension !=null and fileExtension !=''"> and FILE_EXTENSION like #{fileExtension} </if>
         <if test="fileDescription !=null and fileDescription !=''"> and FILE_DESCRIPTION like #{fileDescription} </if>
         <if test="fileStatus !=null and fileStatus !=''"> and FILE_STATUS like #{fileStatus} </if>
+        <if test="fileCategory !=null and fileCategory !=''"> and FILE_CATEGORY like #{fileCategory} </if>
+        <if test="fileHashCode !=null and fileHashCode !=''"> and FILE_HASH_CODE like #{fileHashCode} </if>
+        <if test="fileGroupId !=null and fileGroupId !=''"> and FILE_GROUP_ID like #{fileGroupId} </if>
     </where>ORDER by FILE_ORDER_NUM DESC</select>
 </mapper>

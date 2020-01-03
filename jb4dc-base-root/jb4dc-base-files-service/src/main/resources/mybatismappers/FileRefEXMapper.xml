@@ -9,6 +9,7 @@
         <if test="refFileId !=null and refFileId !=''"> and REF_FILE_ID like #{refFileId} </if>
         <if test="refObjId !=null and refObjId !=''"> and REF_OBJ_ID like #{refObjId} </if>
         <if test="refObjName !=null and refObjName !=''"> and REF_OBJ_NAME like #{refObjName} </if>
+        <if test="refObjType !=null and refObjType !=''"> and REF_OBJ_TYPE like #{refObjType} </if>
         <if test="refStatus !=null and refStatus !=''"> and REF_STATUS like #{refStatus} </if>
     </where>ORDER by REF_ORDER_NUM DESC</select>
 </mapper>

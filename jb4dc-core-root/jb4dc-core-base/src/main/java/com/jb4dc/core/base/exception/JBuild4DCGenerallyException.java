@@ -63,4 +63,8 @@ public class JBuild4DCGenerallyException extends JBuild4DCBaseException {
         return new JBuild4DCGenerallyException(errorCode, "请在项目中提供"+interfaceFullName+"的实现类,并声明为bean!");
     }
 
+    public static JBuild4DCGenerallyException getEmptyException(int errorCode,String name){
+        return new JBuild4DCGenerallyException(errorCode, name+"不能为空!");
+    }
+
 }

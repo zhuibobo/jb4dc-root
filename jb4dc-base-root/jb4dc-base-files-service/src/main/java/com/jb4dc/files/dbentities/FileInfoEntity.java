@@ -65,6 +65,15 @@ public class FileInfoEntity {
     //FILE_VERSION:文件的版本号
     private Integer fileVersion;
 
+    //FILE_CATEGORY:文件分类名称
+    private String fileCategory;
+
+    //FILE_HASH_CODE:文件Hash值
+    private String fileHashCode;
+
+    //FILE_GROUP_ID:文件分组ID
+    private String fileGroupId;
+
     /**
      * 构造函数
      * @param fileId 文件ID
@@ -84,8 +93,11 @@ public class FileInfoEntity {
      * @param fileStatus 文件的状态值
      * @param fileOrderNum 文件的排序号
      * @param fileVersion 文件的版本号
+     * @param fileCategory 文件分类名称
+     * @param fileHashCode 文件Hash值
+     * @param fileGroupId 文件分组ID
      **/
-    public FileInfoEntity(String fileId, Date fileCreateTime, String fileCreatorId, String fileCreatorName, String fileName, Long fileSize, String fileStoreType, String fileStorePath, String fileStoreName, String fileOrganId, String fileOrganName, String fileExtension, String fileDescription, Integer fileReadTime, String fileStatus, Integer fileOrderNum, Integer fileVersion) {
+    public FileInfoEntity(String fileId, Date fileCreateTime, String fileCreatorId, String fileCreatorName, String fileName, Long fileSize, String fileStoreType, String fileStorePath, String fileStoreName, String fileOrganId, String fileOrganName, String fileExtension, String fileDescription, Integer fileReadTime, String fileStatus, Integer fileOrderNum, Integer fileVersion, String fileCategory, String fileHashCode, String fileGroupId) {
         this.fileId = fileId;
         this.fileCreateTime = fileCreateTime;
         this.fileCreatorId = fileCreatorId;
@@ -103,6 +115,9 @@ public class FileInfoEntity {
         this.fileStatus = fileStatus;
         this.fileOrderNum = fileOrderNum;
         this.fileVersion = fileVersion;
+        this.fileCategory = fileCategory;
+        this.fileHashCode = fileHashCode;
+        this.fileGroupId = fileGroupId;
     }
 
     public FileInfoEntity() {
@@ -379,5 +394,53 @@ public class FileInfoEntity {
      **/
     public void setFileVersion(Integer fileVersion) {
         this.fileVersion = fileVersion;
+    }
+
+    /**
+     * 文件分类名称
+     * @return java.lang.String
+     **/
+    public String getFileCategory() {
+        return fileCategory;
+    }
+
+    /**
+     * 文件分类名称
+     * @param fileCategory 文件分类名称
+     **/
+    public void setFileCategory(String fileCategory) {
+        this.fileCategory = fileCategory == null ? null : fileCategory.trim();
+    }
+
+    /**
+     * 文件Hash值
+     * @return java.lang.String
+     **/
+    public String getFileHashCode() {
+        return fileHashCode;
+    }
+
+    /**
+     * 文件Hash值
+     * @param fileHashCode 文件Hash值
+     **/
+    public void setFileHashCode(String fileHashCode) {
+        this.fileHashCode = fileHashCode == null ? null : fileHashCode.trim();
+    }
+
+    /**
+     * 文件分组ID
+     * @return java.lang.String
+     **/
+    public String getFileGroupId() {
+        return fileGroupId;
+    }
+
+    /**
+     * 文件分组ID
+     * @param fileGroupId 文件分组ID
+     **/
+    public void setFileGroupId(String fileGroupId) {
+        this.fileGroupId = fileGroupId == null ? null : fileGroupId.trim();
     }
 }

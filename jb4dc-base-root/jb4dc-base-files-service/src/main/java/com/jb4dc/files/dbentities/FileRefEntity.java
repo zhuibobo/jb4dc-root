@@ -24,6 +24,9 @@ public class FileRefEntity {
     //REF_OBJ_NAME:关联记录的对象名称
     private String refObjName;
 
+    //REF_OBJ_TYPE:关联记录的对象类型
+    private String refObjType;
+
     //REF_ORDER_NUM:排序号
     private Integer refOrderNum;
 
@@ -36,14 +39,16 @@ public class FileRefEntity {
      * @param refFileId 文件的ID
      * @param refObjId 关联记录的ID
      * @param refObjName 关联记录的对象名称
+     * @param refObjType 关联记录的对象类型
      * @param refOrderNum 排序号
      * @param refStatus 文件引用的状态值
      **/
-    public FileRefEntity(String refId, String refFileId, String refObjId, String refObjName, Integer refOrderNum, String refStatus) {
+    public FileRefEntity(String refId, String refFileId, String refObjId, String refObjName, String refObjType, Integer refOrderNum, String refStatus) {
         this.refId = refId;
         this.refFileId = refFileId;
         this.refObjId = refObjId;
         this.refObjName = refObjName;
+        this.refObjType = refObjType;
         this.refOrderNum = refOrderNum;
         this.refStatus = refStatus;
     }
@@ -114,6 +119,22 @@ public class FileRefEntity {
      **/
     public void setRefObjName(String refObjName) {
         this.refObjName = refObjName == null ? null : refObjName.trim();
+    }
+
+    /**
+     * 关联记录的对象类型
+     * @return java.lang.String
+     **/
+    public String getRefObjType() {
+        return refObjType;
+    }
+
+    /**
+     * 关联记录的对象类型
+     * @param refObjType 关联记录的对象类型
+     **/
+    public void setRefObjType(String refObjType) {
+        this.refObjType = refObjType == null ? null : refObjType.trim();
     }
 
     /**

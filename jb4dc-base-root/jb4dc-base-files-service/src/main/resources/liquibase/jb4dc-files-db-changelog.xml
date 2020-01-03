@@ -32,6 +32,9 @@
             <column name="FILE_STATUS" type="NVARCHAR(10)" remarks="文件的状态值"/>
             <column name="FILE_ORDER_NUM" type="INT" remarks="文件的排序号"/>
             <column name="FILE_VERSION" type="INT" remarks="文件的版本号"/>
+            <column name="FILE_CATEGORY" type="NVARCHAR(30)" remarks="文件分类名称"/>
+            <column name="FILE_HASH_CODE" type="NVARCHAR(100)" remarks="文件Hash值"/>
+            <column name="FILE_GROUP_ID" type="NVARCHAR(100)" remarks="文件分组ID"/>
         </createTable>
 
         <createTable tableName="TFS_FILE_REF">
@@ -41,6 +44,7 @@
             <column name="REF_FILE_ID" type="NVARCHAR(100)" remarks="文件的ID:关联到表TFS_FILE_INFO"/>
             <column name="REF_OBJ_ID" type="NVARCHAR(100)" remarks="关联记录的ID"/>
             <column name="REF_OBJ_NAME" type="NVARCHAR(100)" remarks="关联记录的对象名称"/>
+            <column name="REF_OBJ_TYPE" type="NVARCHAR(100)" remarks="关联记录的对象类型"/>
             <column name="REF_ORDER_NUM" type="INT" remarks="排序号"/>
             <column name="REF_STATUS" type="NVARCHAR(10)" remarks="文件引用的状态值"/>
         </createTable>

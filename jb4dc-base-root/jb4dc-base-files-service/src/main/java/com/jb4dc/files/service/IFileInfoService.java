@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public interface IFileInfoService extends IBaseService<FileInfoEntity> {
 
-    FileInfoEntity addSmallFileToDB(JB4DCSession jb4DCSession, MultipartFile file) throws IOException;
+    FileInfoEntity addSmallFileToDB(JB4DCSession jb4DCSession, MultipartFile file,String objId,String objName,String objType) throws IOException;
 
     byte[] getContent(String fileId);
 }

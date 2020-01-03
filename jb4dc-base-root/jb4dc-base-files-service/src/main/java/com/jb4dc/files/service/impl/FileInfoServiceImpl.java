@@ -8,8 +8,10 @@ import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.tools.UUIDUtility;
 import com.jb4dc.files.dao.FileContentMapper;
 import com.jb4dc.files.dao.FileInfoMapper;
+import com.jb4dc.files.dao.FileRefMapper;
 import com.jb4dc.files.dbentities.FileContentEntity;
 import com.jb4dc.files.dbentities.FileInfoEntity;
+import com.jb4dc.files.dbentities.FileRefEntity;
 import com.jb4dc.files.service.IFileInfoService;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +26,14 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
 {
     FileInfoMapper fileInfoMapper;
     FileContentMapper contentMapper;
+    FileRefMapper fileRefMapper;
 
     @Autowired
-    public FileInfoServiceImpl(FileInfoMapper _defaultBaseMapper, FileContentMapper _contentMapper){
+    public FileInfoServiceImpl(FileInfoMapper _defaultBaseMapper, FileContentMapper _contentMapper, FileRefMapper _fileRefMapper){
         super(_defaultBaseMapper);
         fileInfoMapper=_defaultBaseMapper;
         contentMapper=_contentMapper;
+        fileRefMapper=_fileRefMapper;
     }
 
     @Override
@@ -44,7 +48,7 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
-    public FileInfoEntity addSmallFileToDB(JB4DCSession session, MultipartFile file) throws IOException {
+    public FileInfoEntity addSmallFileToDB(JB4DCSession session, MultipartFile file,String objId,String objName,String objType) throws IOException {
         String fileId= UUIDUtility.getUUID();
 
         FileInfoEntity fileInfoEntity=new FileInfoEntity();
@@ -67,6 +71,16 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         FileContentEntity fileContentEntity=new FileContentEntity();
         fileContentEntity.setFileId(fileId);
         fileContentEntity.setFileContent(file.getBytes());
+
+        FileRefEntity refEntity=new FileRefEntity();
+        refEntity.setRefId(fileId);
+        refEntity.setRefFileId(fileId);
+        refEntity.setRefObjId(objId);
+        refEntity.setRefObjName(objName);
+        refEntity.setRefObjType(objType);
+        refEntity.setRefOrderNum(0);
+        refEntity.setRefStatus(EnableTypeEnum.enable.getDisplayName());
+        fileRefMapper.insertSelective(refEntity);
 
         fileInfoMapper.insertSelective(fileInfoEntity);
         contentMapper.insertSelective(fileContentEntity);

@@ -20,12 +20,16 @@
             <arg column="FILE_STATUS" javaType="java.lang.String" jdbcType="NVARCHAR" />
             <arg column="FILE_ORDER_NUM" javaType="java.lang.Integer" jdbcType="INTEGER" />
             <arg column="FILE_VERSION" javaType="java.lang.Integer" jdbcType="INTEGER" />
+            <arg column="FILE_CATEGORY" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="FILE_HASH_CODE" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="FILE_GROUP_ID" javaType="java.lang.String" jdbcType="NVARCHAR" />
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
     FILE_ID, FILE_CREATE_TIME, FILE_CREATOR_ID, FILE_CREATOR_NAME, FILE_NAME, FILE_SIZE,
     FILE_STORE_TYPE, FILE_STORE_PATH, FILE_STORE_NAME, FILE_ORGAN_ID, FILE_ORGAN_NAME,
-    FILE_EXTENSION, FILE_DESCRIPTION, FILE_READ_TIME, FILE_STATUS, FILE_ORDER_NUM, FILE_VERSION
+    FILE_EXTENSION, FILE_DESCRIPTION, FILE_READ_TIME, FILE_STATUS, FILE_ORDER_NUM, FILE_VERSION,
+    FILE_CATEGORY, FILE_HASH_CODE, FILE_GROUP_ID
   </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
@@ -43,13 +47,15 @@
       FILE_STORE_TYPE, FILE_STORE_PATH, FILE_STORE_NAME,
       FILE_ORGAN_ID, FILE_ORGAN_NAME, FILE_EXTENSION,
       FILE_DESCRIPTION, FILE_READ_TIME, FILE_STATUS,
-      FILE_ORDER_NUM, FILE_VERSION)
+      FILE_ORDER_NUM, FILE_VERSION, FILE_CATEGORY,
+      FILE_HASH_CODE, FILE_GROUP_ID)
     values (#{fileId,jdbcType=NVARCHAR}, #{fileCreateTime,jdbcType=TIMESTAMP}, #{fileCreatorId,jdbcType=NVARCHAR},
       #{fileCreatorName,jdbcType=NVARCHAR}, #{fileName,jdbcType=NVARCHAR}, #{fileSize,jdbcType=BIGINT},
       #{fileStoreType,jdbcType=NVARCHAR}, #{fileStorePath,jdbcType=NVARCHAR}, #{fileStoreName,jdbcType=NVARCHAR},
       #{fileOrganId,jdbcType=NVARCHAR}, #{fileOrganName,jdbcType=NVARCHAR}, #{fileExtension,jdbcType=NVARCHAR},
       #{fileDescription,jdbcType=NVARCHAR}, #{fileReadTime,jdbcType=INTEGER}, #{fileStatus,jdbcType=NVARCHAR},
-      #{fileOrderNum,jdbcType=INTEGER}, #{fileVersion,jdbcType=INTEGER})
+      #{fileOrderNum,jdbcType=INTEGER}, #{fileVersion,jdbcType=INTEGER}, #{fileCategory,jdbcType=NVARCHAR},
+      #{fileHashCode,jdbcType=NVARCHAR}, #{fileGroupId,jdbcType=NVARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="com.jb4dc.files.dbentities.FileInfoEntity">
         insert into TFS_FILE_INFO
@@ -105,6 +111,15 @@
             <if test="fileVersion != null">
                 FILE_VERSION,
             </if>
+            <if test="fileCategory != null">
+                FILE_CATEGORY,
+            </if>
+            <if test="fileHashCode != null">
+                FILE_HASH_CODE,
+            </if>
+            <if test="fileGroupId != null">
+                FILE_GROUP_ID,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="fileId != null">
@@ -157,6 +172,15 @@
             </if>
             <if test="fileVersion != null">
                 #{fileVersion,jdbcType=INTEGER},
+            </if>
+            <if test="fileCategory != null">
+                #{fileCategory,jdbcType=NVARCHAR},
+            </if>
+            <if test="fileHashCode != null">
+                #{fileHashCode,jdbcType=NVARCHAR},
+            </if>
+            <if test="fileGroupId != null">
+                #{fileGroupId,jdbcType=NVARCHAR},
             </if>
         </trim>
     </insert>
@@ -211,6 +235,15 @@
             <if test="fileVersion != null">
                 FILE_VERSION = #{fileVersion,jdbcType=INTEGER},
             </if>
+            <if test="fileCategory != null">
+                FILE_CATEGORY = #{fileCategory,jdbcType=NVARCHAR},
+            </if>
+            <if test="fileHashCode != null">
+                FILE_HASH_CODE = #{fileHashCode,jdbcType=NVARCHAR},
+            </if>
+            <if test="fileGroupId != null">
+                FILE_GROUP_ID = #{fileGroupId,jdbcType=NVARCHAR},
+            </if>
         </set>
         where FILE_ID = #{fileId,jdbcType=NVARCHAR}
     </update>
@@ -231,7 +264,10 @@
       FILE_READ_TIME = #{fileReadTime,jdbcType=INTEGER},
       FILE_STATUS = #{fileStatus,jdbcType=NVARCHAR},
       FILE_ORDER_NUM = #{fileOrderNum,jdbcType=INTEGER},
-      FILE_VERSION = #{fileVersion,jdbcType=INTEGER}
+      FILE_VERSION = #{fileVersion,jdbcType=INTEGER},
+      FILE_CATEGORY = #{fileCategory,jdbcType=NVARCHAR},
+      FILE_HASH_CODE = #{fileHashCode,jdbcType=NVARCHAR},
+      FILE_GROUP_ID = #{fileGroupId,jdbcType=NVARCHAR}
     where FILE_ID = #{fileId,jdbcType=NVARCHAR}
   </update>
 </mapper>
