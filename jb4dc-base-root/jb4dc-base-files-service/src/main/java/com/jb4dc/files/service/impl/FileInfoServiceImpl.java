@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> implements IFileInfoService
@@ -48,8 +49,21 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
-    public FileInfoEntity addSmallFileToDB(JB4DCSession session, MultipartFile file,String objId,String objName,String objType) throws IOException {
+    public FileInfoEntity getLastVersionFileInfo(JB4DCSession session, String objId, String objName){
+        int maxVersion=fileInfoMapper.selectMaxVersion(objId,objName);
+        return fileInfoMapper.selectVersionFileInfo(objId,objName,maxVersion);
+    }
+
+    @Override
+    public List<FileInfoEntity> getFileInfoList(JB4DCSession session, String objId, String objName){
+        return fileInfoMapper.selectFileInfoList(objId,objName);
+    }
+
+    @Override
+    public FileInfoEntity addSmallFileToDB(JB4DCSession session, MultipartFile file,String objId,String objName,String objType,String fileCategory) throws IOException {
         String fileId= UUIDUtility.getUUID();
+
+        int nextVersion=fileInfoMapper.selectMaxVersion(objId,objName)+1;
 
         FileInfoEntity fileInfoEntity=new FileInfoEntity();
         fileInfoEntity.setFileId(fileId);
@@ -66,7 +80,9 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         fileInfoEntity.setFileExtension(FilenameUtils.getExtension(file.getOriginalFilename()));
         fileInfoEntity.setFileDescription("");
         fileInfoEntity.setFileReadTime(0);
+        fileInfoEntity.setFileCategory(fileCategory);
         fileInfoEntity.setFileStatus(EnableTypeEnum.enable.getDisplayName());
+        fileInfoEntity.setFileVersion(nextVersion);
 
         FileContentEntity fileContentEntity=new FileContentEntity();
         fileContentEntity.setFileId(fileId);

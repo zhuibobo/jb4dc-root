@@ -21,4 +21,13 @@
         <if test="fileHashCode !=null and fileHashCode !=''"> and FILE_HASH_CODE like #{fileHashCode} </if>
         <if test="fileGroupId !=null and fileGroupId !=''"> and FILE_GROUP_ID like #{fileGroupId} </if>
     </where>ORDER by FILE_ORDER_NUM DESC</select>
+    <select id="selectMaxVersion" resultType="int">
+        select case when max(FILE_VERSION) is null then 0 else  max(FILE_VERSION) end from TFS_FILE_INFO where FILE_ID in (select REF_FILE_ID from TFS_FILE_REF where REF_OBJ_ID=#{objId} and REF_OBJ_TYPE=#{objName})
+    </select>
+    <select id="selectVersionFileInfo" resultMap="BaseResultMap">
+        select<include refid="Base_Column_List"/> from TFS_FILE_INFO where FILE_ID in (select REF_FILE_ID from TFS_FILE_REF where REF_OBJ_ID=#{objId} and REF_OBJ_TYPE=#{objName}) and FILE_VERSION=#{version}
+    </select>
+    <select id="selectFileInfoList" resultMap="BaseResultMap">
+        select<include refid="Base_Column_List"/> from TFS_FILE_INFO where FILE_ID in (select REF_FILE_ID from TFS_FILE_REF where REF_OBJ_ID=#{objId} and REF_OBJ_TYPE=#{objName}) and FILE_VERSION=#{version}
+    </select>
 </mapper>
