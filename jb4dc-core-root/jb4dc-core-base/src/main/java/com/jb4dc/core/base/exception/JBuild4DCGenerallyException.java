@@ -1,5 +1,7 @@
 package com.jb4dc.core.base.exception;
 
+import com.jb4dc.core.base.tools.StringUtility;
+
 public class JBuild4DCGenerallyException extends JBuild4DCBaseException {
 
     //static int defaultCode=0;
@@ -66,5 +68,6 @@ public class JBuild4DCGenerallyException extends JBuild4DCBaseException {
     public static JBuild4DCGenerallyException getEmptyException(int errorCode,String name){
         return new JBuild4DCGenerallyException(errorCode, name+"不能为空!");
     }
+
 
 }

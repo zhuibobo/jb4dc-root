@@ -80,6 +80,9 @@ var BaseUtility = {
     GetUrlParaValue: function (paraName) {
         return this.GetUrlParaValueByString(paraName,window.location.search);
     },
+    GetUrlOPParaValue:function(){
+        return this.GetUrlParaValue("op");
+    },
     GetUrlParaValueByString:function (paraName,urlString) {
         var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)");
         var r = urlString.substr(1).match(reg);
@@ -160,6 +163,30 @@ var BaseUtility = {
     },
     IsDeleteOperation:function (operationType) {
         return operationType && operationType == this.GetDeleteOperationName();
+    },
+    IsAddOperationByUrl(){
+        if (this.GetUrlParaValue("op")){
+            if(this.GetUrlParaValue("op")==this.GetAddOperationName()){
+                return true;
+            }
+        }
+        return false;
+    },
+    IsUpdateOperationByUrl(){
+        if (this.GetUrlParaValue("op")){
+            if(this.GetUrlParaValue("op")==this.GetUpdateOperationName()){
+                return true;
+            }
+        }
+        return false;
+    },
+    IsViewOperationByUrl(){
+        if (this.GetUrlParaValue("op")){
+            if(this.GetUrlParaValue("op")==this.GetViewOperationName()){
+                return true;
+            }
+        }
+        return false;
     },
     ThrowMessage:function (message) {
         DialogUtility.AlertText(message);

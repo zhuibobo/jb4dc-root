@@ -5,6 +5,7 @@ import com.jb4dc.base.service.IAddBefore;
 import com.jb4dc.base.service.impl.BaseServiceImpl;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
+import com.jb4dc.core.base.tools.StringUtility;
 import com.jb4dc.core.base.tools.UUIDUtility;
 import com.jb4dc.files.dao.FileContentMapper;
 import com.jb4dc.files.dao.FileInfoMapper;
@@ -60,8 +61,60 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
-    public FileInfoEntity addSmallFileToDB(JB4DCSession session, MultipartFile file,String objId,String objName,String objType,String fileCategory) throws IOException {
+    public FileInfoEntity addSmallFileToDB(JB4DCSession session,String fileName, byte[] fileByte,String objId,String objName,String objType,String fileCategory) throws IOException, JBuild4DCGenerallyException {
         String fileId= UUIDUtility.getUUID();
+
+        int nextVersion=fileInfoMapper.selectMaxVersion(objId,objName)+1;
+
+        String extensionName=FilenameUtils.getExtension(fileName);
+        if(StringUtility.isEmpty(extensionName)){
+            throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"扩展名不能为空!");
+        }
+
+        FileInfoEntity fileInfoEntity=new FileInfoEntity();
+        fileInfoEntity.setFileId(fileId);
+        fileInfoEntity.setFileCreateTime(new Date());
+        fileInfoEntity.setFileCreatorName(session.getUserName());
+        fileInfoEntity.setFileCreatorId(session.getUserId());
+        fileInfoEntity.setFileName(fileName);
+        fileInfoEntity.setFileSize((long) fileByte.length);
+        fileInfoEntity.setFileStoreType("DB");
+        fileInfoEntity.setFileStorePath("");
+        fileInfoEntity.setFileStoreName("");
+        fileInfoEntity.setFileOrganId(session.getOrganId());
+        fileInfoEntity.setFileOrganName(session.getOrganName());
+        fileInfoEntity.setFileExtension(extensionName);
+        fileInfoEntity.setFileDescription("");
+        fileInfoEntity.setFileReadTime(0);
+        fileInfoEntity.setFileCategory(fileCategory);
+        fileInfoEntity.setFileStatus(EnableTypeEnum.enable.getDisplayName());
+        fileInfoEntity.setFileVersion(nextVersion);
+
+        FileContentEntity fileContentEntity=new FileContentEntity();
+        fileContentEntity.setFileId(fileId);
+        fileContentEntity.setFileContent(fileByte);
+
+        FileRefEntity refEntity=new FileRefEntity();
+        refEntity.setRefId(fileId);
+        refEntity.setRefFileId(fileId);
+        refEntity.setRefObjId(objId);
+        refEntity.setRefObjName(objName);
+        refEntity.setRefObjType(objType);
+        refEntity.setRefOrderNum(0);
+        refEntity.setRefStatus(EnableTypeEnum.enable.getDisplayName());
+        fileRefMapper.insertSelective(refEntity);
+
+        fileInfoMapper.insertSelective(fileInfoEntity);
+        contentMapper.insertSelective(fileContentEntity);
+        return fileInfoEntity;
+    }
+
+    @Override
+    public FileInfoEntity addSmallFileToDB(JB4DCSession session, MultipartFile file,String objId,String objName,String objType,String fileCategory) throws IOException, JBuild4DCGenerallyException {
+
+        return this.addSmallFileToDB(session,file.getOriginalFilename(),file.getBytes(),objId,objName,objType,fileCategory);
+
+       /* String fileId= UUIDUtility.getUUID();
 
         int nextVersion=fileInfoMapper.selectMaxVersion(objId,objName)+1;
 
@@ -100,11 +153,11 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
 
         fileInfoMapper.insertSelective(fileInfoEntity);
         contentMapper.insertSelective(fileContentEntity);
-        return fileInfoEntity;
+        return fileInfoEntity;*/
     }
 
     @Override
-    public byte[] getContent(String fileId) {
+    public byte[] getContentInDB(String fileId) {
         return contentMapper.selectByPrimaryKey(fileId).getFileContent();
     }
 }

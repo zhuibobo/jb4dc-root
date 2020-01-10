@@ -1,5 +1,7 @@
 package com.jb4dc.core.base.tools;
 
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: zhuangrb
@@ -42,4 +44,6 @@ public class BaseUtility {
     public static String wrapDevLog(String logContent){
         return "[ JB4DC-DEV-DEBUG ]"+logContent;
     }
+
+
 }
