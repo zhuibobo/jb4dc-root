@@ -95,7 +95,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
             sql = "Select Name as TableName FROM SysObjects Where XType='U' and Name like #{searchTableName} and Name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK','TestConn') order BY Name";
         }
         if (dataSourceSingleVo.getDbType().equals("mysql")) {
-            sql = "select upper(table_name) TableName from information_schema.tables where table_schema='" + dataSourceSingleVo.getDatabaseName() + "' and table_name like #{searchTableName} and table_type='base table' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
+            sql = "select upper(table_name) TableName from information_schema.tables where table_schema='" + dataSourceSingleVo.getDatabaseName() + "' and table_name like #{searchTableName} and upper(table_type)='BASE TABLE' and table_name not in ('DATABASECHANGELOG','DATABASECHANGELOGLOCK')";
         }
         if (dataSourceSingleVo.getDbType().equals("oracle")) {
             throw JBuild4DCGenerallyException.getNotSupportOracleException(JBuild4DCGenerallyException.EXCEPTION_CODE_GENERATE_CODE);
@@ -152,7 +152,8 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     private String DaoRootFolderKey="DaoRootFolderKey";
     private String XmlRootFolderKey="XmlRootFolderKey";
     private PackageSingleBO createAboutFolder(PackageSingleBO packageSingleBO){
-        String GenerateCodeFilesPath= PathBaseUtility.getThreadRunRootPath()+"/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
+        //String GenerateCodeFilesPath= PathBaseUtility.getThreadRunRootPath()+"/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
+        String GenerateCodeFilesPath= "D:/JavaProject/jb4dc/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
         File tempRootFolder=new File(GenerateCodeFilesPath);
         tempRootFolder.mkdirs();
 

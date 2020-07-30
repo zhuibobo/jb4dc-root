@@ -4,21 +4,47 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-base-root" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-cloud-root" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-web-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-web-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-web-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-web-server/src/main/resources/config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-eureka-web-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-eureka-web-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-eureka-web-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-code-generate-root" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/src/main/resources/config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-core-root" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-front-ent-root" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jb4dc-web-app-starter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-web-app-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jb4dc-web-app-starter/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

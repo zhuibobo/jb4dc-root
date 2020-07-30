@@ -15,6 +15,7 @@
         <PackageLevel2Name value="module"></PackageLevel2Name>
         <PackageLevel2Name value="webform"></PackageLevel2Name>
         <PackageLevel2Name value="weblist"></PackageLevel2Name>
+        <PackageLevel2Name value="site"></PackageLevel2Name>
         <PackageLevel2Name value="flow"></PackageLevel2Name>
         <PackageLevel2Name value="envvar"></PackageLevel2Name>
         <PackageLevel2Name value="api"></PackageLevel2Name>
