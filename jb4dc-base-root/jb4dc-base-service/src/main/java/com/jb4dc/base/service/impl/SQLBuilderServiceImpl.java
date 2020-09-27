@@ -63,6 +63,16 @@ public class SQLBuilderServiceImpl implements ISQLBuilderService {
     }
 
     @Override
+    public int delete(String sql){
+        return sqlBuilderMapper.delete(sql);
+    }
+
+    @Override
+    public int delete(String sql,Map paras){
+        return sqlBuilderMapper.delete(sql,paras);
+    }
+
+    @Override
     public int insert(String sql){
         return sqlBuilderMapper.insert(sql);
     }

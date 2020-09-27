@@ -60,4 +60,14 @@
         <User>root</User>
         <Password>root</Password>
     </DataSource>
+    <DataSource>
+        <Id>DataSource0004</Id>
+        <Caption>QC系统</Caption>
+        <DBType>mysql</DBType>
+        <DriverName>com.mysql.cj.jdbc.Driver</DriverName>
+        <DatabaseName>JB4DC_QC_V01</DatabaseName>
+        <Url>jdbc:mysql://127.0.0.1:3306/JB4DC_QC_V01?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
+        <User>root</User>
+        <Password>root</Password>
+    </DataSource>
 </Config>

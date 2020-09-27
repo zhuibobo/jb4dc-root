@@ -24,6 +24,10 @@ public interface ISQLBuilderService {
 
     int execute(String sql);
 
+    int delete(String sql);
+
+    int delete(String sql, Map paras);
+
     int insert(String sql);
 
     int insert(String sql, Map paras);
