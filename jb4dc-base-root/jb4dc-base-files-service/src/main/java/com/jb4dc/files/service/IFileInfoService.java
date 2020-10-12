@@ -28,5 +28,11 @@ public interface IFileInfoService extends IBaseService<FileInfoEntity> {
 
     FileInfoEntity addSmallFileToDB(JB4DCSession jb4DCSession, MultipartFile file, String objId, String objName, String objType, String fileCategory) throws IOException, JBuild4DCGenerallyException;
 
+    FileInfoEntity addFileToFileSystem(JB4DCSession session, String fileName, byte[] fileByte, String objId, String objName, String objType, String fileCategory) throws JBuild4DCGenerallyException, IOException;
+
+    FileInfoEntity addFileToFileSystem(JB4DCSession session, MultipartFile file, String objId, String objName, String objType, String fileCategory) throws IOException, JBuild4DCGenerallyException;
+
+    String buildFilePath(FileInfoEntity fileInfoEntity);
+
     byte[] getContentInDB(String fileId);
 }

@@ -125,4 +125,14 @@ public class JB4DCSessionUtility {
         JB4DCSession jb4DCSession=getSession();
         modelAndView.addObject("currUserEntity", JsonUtility.toObjectString(jb4DCSession));
     }
+
+    public static JB4DCSession getTempSession(String organId,String organName,String userId,String userName){
+        JB4DCSession jb4DCSession=new JB4DCSession();
+        jb4DCSession.setOrganId(organId);
+        jb4DCSession.setOrganName(organName);
+        jb4DCSession.setUserId(userId);
+        jb4DCSession.setUserName(userName);
+        jb4DCSession.setFullAuthority(false);
+        return jb4DCSession;
+    }
 }

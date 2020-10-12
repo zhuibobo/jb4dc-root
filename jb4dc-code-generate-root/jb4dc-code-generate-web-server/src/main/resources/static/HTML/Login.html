@@ -19,7 +19,7 @@
 <div id="app" class="general-edit-page-wrap" v-cloak>
     <row>
         <i-col span="6" offset="9">
-            <card style="margin-top:200px"><p slot="title">登陆系统</p>
+            <card style="margin-top:200px"><p slot="title">登陆系统1</p>
                 <i-form :model="formItem" :label-width="80">
                     <form-item label="账    号">
                         <i-input v-model="formItem.account" placeholder="Enter something..."></i-input>
@@ -48,6 +48,7 @@
     mounted: function () {
         //alert(1);
         document.title = JBuild4DCYaml.GetClientSystemTitle();
+        console.log(StringUtility.DecodeHtml(StringUtility.EncodeHtml("\"'><")));
     },
     methods: {
         handleSubmit: function (name) {
