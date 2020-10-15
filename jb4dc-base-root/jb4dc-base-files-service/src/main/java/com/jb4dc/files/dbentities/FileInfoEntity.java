@@ -7,12 +7,12 @@ import java.util.Date;
 /**
  *
  * This class was generated JBuild4DC.
- * This class corresponds to the database table :TFS_FILE_INFO
+ * This class corresponds to the database table :tfs_file_info
  *
  * JBuild4DC do_not_delete_during_merge
  */
 public class FileInfoEntity {
-    //FILE_ID:文件ID:UUID,主键
+    //FILE_ID:
     @DBKeyField
     private String fileId;
 
@@ -65,7 +65,7 @@ public class FileInfoEntity {
     //FILE_VERSION:文件的版本号
     private Integer fileVersion;
 
-    //FILE_CATEGORY:文件分类名称
+    //FILE_CATEGORY:文件分类名称:eg同一条记录下存在不用种类的文件
     private String fileCategory;
 
     //FILE_HASH_CODE:文件Hash值
@@ -74,9 +74,15 @@ public class FileInfoEntity {
     //FILE_GROUP_ID:文件分组ID
     private String fileGroupId;
 
+    //FILE_CODE:文件编号
+    private String fileCode;
+
+    //FILE_CAPTION:文件标题
+    private String fileCaption;
+
     /**
      * 构造函数
-     * @param fileId 文件ID
+     * @param fileId
      * @param fileCreateTime 创建时间
      * @param fileCreatorId 创建人
      * @param fileCreatorName 创建人姓名
@@ -96,8 +102,10 @@ public class FileInfoEntity {
      * @param fileCategory 文件分类名称
      * @param fileHashCode 文件Hash值
      * @param fileGroupId 文件分组ID
+     * @param fileCode 文件编号
+     * @param fileCaption 文件标题
      **/
-    public FileInfoEntity(String fileId, Date fileCreateTime, String fileCreatorId, String fileCreatorName, String fileName, Long fileSize, String fileStoreType, String fileStorePath, String fileStoreName, String fileOrganId, String fileOrganName, String fileExtension, String fileDescription, Integer fileReadTime, String fileStatus, Integer fileOrderNum, Integer fileVersion, String fileCategory, String fileHashCode, String fileGroupId) {
+    public FileInfoEntity(String fileId, Date fileCreateTime, String fileCreatorId, String fileCreatorName, String fileName, Long fileSize, String fileStoreType, String fileStorePath, String fileStoreName, String fileOrganId, String fileOrganName, String fileExtension, String fileDescription, Integer fileReadTime, String fileStatus, Integer fileOrderNum, Integer fileVersion, String fileCategory, String fileHashCode, String fileGroupId, String fileCode, String fileCaption) {
         this.fileId = fileId;
         this.fileCreateTime = fileCreateTime;
         this.fileCreatorId = fileCreatorId;
@@ -118,6 +126,8 @@ public class FileInfoEntity {
         this.fileCategory = fileCategory;
         this.fileHashCode = fileHashCode;
         this.fileGroupId = fileGroupId;
+        this.fileCode = fileCode;
+        this.fileCaption = fileCaption;
     }
 
     public FileInfoEntity() {
@@ -125,7 +135,7 @@ public class FileInfoEntity {
     }
 
     /**
-     * 文件ID:UUID,主键
+     *
      * @return java.lang.String
      **/
     public String getFileId() {
@@ -133,8 +143,8 @@ public class FileInfoEntity {
     }
 
     /**
-     * 文件ID:UUID,主键
-     * @param fileId 文件ID
+     *
+     * @param fileId
      **/
     public void setFileId(String fileId) {
         this.fileId = fileId == null ? null : fileId.trim();
@@ -397,7 +407,7 @@ public class FileInfoEntity {
     }
 
     /**
-     * 文件分类名称
+     * 文件分类名称:eg同一条记录下存在不用种类的文件
      * @return java.lang.String
      **/
     public String getFileCategory() {
@@ -405,7 +415,7 @@ public class FileInfoEntity {
     }
 
     /**
-     * 文件分类名称
+     * 文件分类名称:eg同一条记录下存在不用种类的文件
      * @param fileCategory 文件分类名称
      **/
     public void setFileCategory(String fileCategory) {
@@ -442,5 +452,37 @@ public class FileInfoEntity {
      **/
     public void setFileGroupId(String fileGroupId) {
         this.fileGroupId = fileGroupId == null ? null : fileGroupId.trim();
+    }
+
+    /**
+     * 文件编号
+     * @return java.lang.String
+     **/
+    public String getFileCode() {
+        return fileCode;
+    }
+
+    /**
+     * 文件编号
+     * @param fileCode 文件编号
+     **/
+    public void setFileCode(String fileCode) {
+        this.fileCode = fileCode == null ? null : fileCode.trim();
+    }
+
+    /**
+     * 文件标题
+     * @return java.lang.String
+     **/
+    public String getFileCaption() {
+        return fileCaption;
+    }
+
+    /**
+     * 文件标题
+     * @param fileCaption 文件标题
+     **/
+    public void setFileCaption(String fileCaption) {
+        this.fileCaption = fileCaption == null ? null : fileCaption.trim();
     }
 }

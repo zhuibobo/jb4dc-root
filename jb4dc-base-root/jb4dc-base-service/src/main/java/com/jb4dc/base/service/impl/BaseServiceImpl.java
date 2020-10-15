@@ -69,8 +69,11 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     }
 
     @Override
-    public int deleteAll(JB4DCSession jb4DCSession) throws JBuild4DCGenerallyException {
-        return defaultBaseMapper.deleteAll();
+    public int deleteAll(JB4DCSession jb4DCSession, String warningOperationCode) throws JBuild4DCGenerallyException {
+        if(JBuild4DCYaml.getWarningOperationCode().equals(warningOperationCode)) {
+            return defaultBaseMapper.deleteAll();
+        }
+        throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"删除失败WarningOperationCode错误");
     }
 
     @Override

@@ -18,7 +18,6 @@ import com.jb4dc.files.dbentities.FileRefEntity;
 import com.jb4dc.files.service.IFileInfoService;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.apache.tomcat.jni.FileInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -80,20 +79,21 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
+    public List<FileInfoEntity> getFileInfoListByObjectId(JB4DCSession session, String objId, String category){
+        if(category.equals("*")){
+            category="%%";
+        }
+        return fileInfoMapper.selectFileInfoListByObjectId(objId,category);
+    }
+
+    @Override
     public FileInfoEntity addSmallFileToDB(JB4DCSession session,String fileName, byte[] fileByte,String objId,String objName,String objType,String fileCategory) throws IOException, JBuild4DCGenerallyException {
+
         String fileId= UUIDUtility.getUUID();
 
-        int nextVersion=1;
-        if(StringUtility.isNotEmpty(objId)&&StringUtility.isNotEmpty(objName)) {
-            nextVersion=fileInfoMapper.selectMaxVersion(objId, objName) + 1;
-        }
 
-        String extensionName=FilenameUtils.getExtension(fileName);
-        if(StringUtility.isEmpty(extensionName)){
-            throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"扩展名不能为空!");
-        }
 
-        FileInfoEntity fileInfoEntity=new FileInfoEntity();
+        /*FileInfoEntity fileInfoEntity=new FileInfoEntity();
         fileInfoEntity.setFileId(fileId);
         fileInfoEntity.setFileCreateTime(new Date());
         fileInfoEntity.setFileCreatorName(session.getUserName());
@@ -111,21 +111,16 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         fileInfoEntity.setFileCategory(fileCategory);
         fileInfoEntity.setFileStatus(EnableTypeEnum.enable.getDisplayName());
         fileInfoEntity.setFileVersion(nextVersion);
+        fileInfoEntity.setFileOrderNum(fileInfoMapper.nextOrderNum());*/
+
+        FileInfoEntity fileInfoEntity = newFileInfoEntity(session,"DB", fileName, (long) fileByte.length, fileCategory, fileId, "*","*",objId,objName);
+        FileRefEntity refEntity = newFileRefEntity(objId, objName, objType, fileId);
 
         FileContentEntity fileContentEntity=new FileContentEntity();
         fileContentEntity.setFileId(fileId);
         fileContentEntity.setFileContent(fileByte);
 
-        FileRefEntity refEntity=new FileRefEntity();
-        refEntity.setRefId(fileId);
-        refEntity.setRefFileId(fileId);
-        refEntity.setRefObjId(objId);
-        refEntity.setRefObjName(objName);
-        refEntity.setRefObjType(objType);
-        refEntity.setRefOrderNum(0);
-        refEntity.setRefStatus(EnableTypeEnum.enable.getDisplayName());
         fileRefMapper.insertSelective(refEntity);
-
         fileInfoMapper.insertSelective(fileInfoEntity);
         contentMapper.insertSelective(fileContentEntity);
         return fileInfoEntity;
@@ -139,8 +134,45 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     @Override
     public FileInfoEntity addFileToFileSystem(JB4DCSession session, String fileName, byte[] fileByte, String objId, String objName, String objType, String fileCategory) throws JBuild4DCGenerallyException, IOException {
 
-        String fileId= UUIDUtility.getUUID();
+        String fileId = UUIDUtility.getUUID();
 
+        /*int nextVersion = 1;
+        if (StringUtility.isNotEmpty(objId) && StringUtility.isNotEmpty(objName)) {
+            nextVersion = fileInfoMapper.selectMaxVersion(objId, objName) + 1;
+        }*/
+
+        String extensionName = FilenameUtils.getExtension(fileName);
+        if (StringUtility.isEmpty(extensionName)) {
+            throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE, "扩展名不能为空!");
+        }
+
+        Map<String, String> fileSaveInfo = buildRelativeFileSavePath(fileId, extensionName);
+        File file = new File(fileSaveInfo.get(FULL_FILE_STORE_PATH));
+        FileUtils.writeByteArrayToFile(file, fileByte);
+
+        FileInfoEntity fileInfoEntity = newFileInfoEntity(session, "FileSystem", fileName, (long) fileByte.length, fileCategory, fileId, fileSaveInfo.get(RELATIVE_FILE_STORE_PATH), fileSaveInfo.get(FILE_STORE_NAME), objId, objName);
+        FileRefEntity refEntity = newFileRefEntity(objId, objName, objType, fileId);
+
+        fileRefMapper.insertSelective(refEntity);
+        fileInfoMapper.insertSelective(fileInfoEntity);
+
+        return fileInfoEntity;
+    }
+
+    private FileRefEntity newFileRefEntity(String objId, String objName, String objType, String fileId) {
+        FileRefEntity refEntity = new FileRefEntity();
+        refEntity.setRefId(fileId);
+        refEntity.setRefFileId(fileId);
+        refEntity.setRefObjId(objId);
+        refEntity.setRefObjName(objName);
+        refEntity.setRefObjType(objType);
+        refEntity.setRefOrderNum(0);
+        refEntity.setRefStatus(EnableTypeEnum.enable.getDisplayName());
+        return refEntity;
+    }
+
+    private FileInfoEntity newFileInfoEntity(JB4DCSession session, String FileStoreType, String fileName, long fileByteSize, String fileCategory, String fileId,
+                                             String relative_file_store_path, String file_store_name,String objId,String objName) throws JBuild4DCGenerallyException {
         int nextVersion=1;
         if(StringUtility.isNotEmpty(objId)&&StringUtility.isNotEmpty(objName)) {
             nextVersion=fileInfoMapper.selectMaxVersion(objId, objName) + 1;
@@ -151,9 +183,15 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
             throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"扩展名不能为空!");
         }
 
-        Map<String,String> fileSaveInfo=buildRelativeFileSavePath(fileId,extensionName);
-        File file=new File(fileSaveInfo.get(FULL_FILE_STORE_PATH));
-        FileUtils.writeByteArrayToFile(file,fileByte);
+        String nextFileCode="10001";
+        if(StringUtility.isNotEmpty(objId)) {
+            nextFileCode = fileInfoMapper.selectMaxCodeByObjectId(objId);
+            if (nextFileCode.equals("0")) {
+                nextFileCode = "10001";
+            } else {
+                nextFileCode = String.valueOf(Integer.parseInt(nextFileCode) + 1);
+            }
+        }
 
         FileInfoEntity fileInfoEntity=new FileInfoEntity();
         fileInfoEntity.setFileId(fileId);
@@ -161,10 +199,10 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         fileInfoEntity.setFileCreatorName(session.getUserName());
         fileInfoEntity.setFileCreatorId(session.getUserId());
         fileInfoEntity.setFileName(fileName);
-        fileInfoEntity.setFileSize((long) fileByte.length);
-        fileInfoEntity.setFileStoreType("FileSystem");
-        fileInfoEntity.setFileStorePath(fileSaveInfo.get(RELATIVE_FILE_STORE_PATH));
-        fileInfoEntity.setFileStoreName(fileSaveInfo.get(FILE_STORE_NAME));
+        fileInfoEntity.setFileSize(fileByteSize);
+        fileInfoEntity.setFileStoreType(FileStoreType);
+        fileInfoEntity.setFileStorePath(relative_file_store_path);
+        fileInfoEntity.setFileStoreName(file_store_name);
         fileInfoEntity.setFileOrganId(session.getOrganId());
         fileInfoEntity.setFileOrganName(session.getOrganName());
         fileInfoEntity.setFileExtension(extensionName);
@@ -173,18 +211,9 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         fileInfoEntity.setFileCategory(fileCategory);
         fileInfoEntity.setFileStatus(EnableTypeEnum.enable.getDisplayName());
         fileInfoEntity.setFileVersion(nextVersion);
-
-        FileRefEntity refEntity=new FileRefEntity();
-        refEntity.setRefId(fileId);
-        refEntity.setRefFileId(fileId);
-        refEntity.setRefObjId(objId);
-        refEntity.setRefObjName(objName);
-        refEntity.setRefObjType(objType);
-        refEntity.setRefOrderNum(0);
-        refEntity.setRefStatus(EnableTypeEnum.enable.getDisplayName());
-        fileRefMapper.insertSelective(refEntity);
-
-        fileInfoMapper.insertSelective(fileInfoEntity);
+        fileInfoEntity.setFileOrderNum(fileInfoMapper.nextOrderNum());
+        fileInfoEntity.setFileCode(nextFileCode);
+        fileInfoEntity.setFileCaption("*");
         return fileInfoEntity;
     }
 

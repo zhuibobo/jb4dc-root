@@ -3,43 +3,45 @@
 <mapper namespace="com.jb4dc.files.dao.FileInfoMapper">
     <resultMap id="BaseResultMap" type="com.jb4dc.files.dbentities.FileInfoEntity">
         <constructor>
-            <idArg column="FILE_ID" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <idArg column="FILE_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
             <arg column="FILE_CREATE_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-            <arg column="FILE_CREATOR_ID" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_CREATOR_NAME" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_NAME" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="FILE_CREATOR_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_CREATOR_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
             <arg column="FILE_SIZE" javaType="java.lang.Long" jdbcType="BIGINT" />
-            <arg column="FILE_STORE_TYPE" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_STORE_PATH" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_STORE_NAME" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_ORGAN_ID" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_ORGAN_NAME" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_EXTENSION" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_DESCRIPTION" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="FILE_STORE_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_STORE_PATH" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_STORE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_ORGAN_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_ORGAN_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_EXTENSION" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_DESCRIPTION" javaType="java.lang.String" jdbcType="VARCHAR" />
             <arg column="FILE_READ_TIME" javaType="java.lang.Integer" jdbcType="INTEGER" />
-            <arg column="FILE_STATUS" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="FILE_STATUS" javaType="java.lang.String" jdbcType="VARCHAR" />
             <arg column="FILE_ORDER_NUM" javaType="java.lang.Integer" jdbcType="INTEGER" />
             <arg column="FILE_VERSION" javaType="java.lang.Integer" jdbcType="INTEGER" />
-            <arg column="FILE_CATEGORY" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_HASH_CODE" javaType="java.lang.String" jdbcType="NVARCHAR" />
-            <arg column="FILE_GROUP_ID" javaType="java.lang.String" jdbcType="NVARCHAR" />
+            <arg column="FILE_CATEGORY" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_HASH_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_GROUP_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="FILE_CAPTION" javaType="java.lang.String" jdbcType="VARCHAR" />
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
     FILE_ID, FILE_CREATE_TIME, FILE_CREATOR_ID, FILE_CREATOR_NAME, FILE_NAME, FILE_SIZE,
     FILE_STORE_TYPE, FILE_STORE_PATH, FILE_STORE_NAME, FILE_ORGAN_ID, FILE_ORGAN_NAME,
     FILE_EXTENSION, FILE_DESCRIPTION, FILE_READ_TIME, FILE_STATUS, FILE_ORDER_NUM, FILE_VERSION,
-    FILE_CATEGORY, FILE_HASH_CODE, FILE_GROUP_ID
+    FILE_CATEGORY, FILE_HASH_CODE, FILE_GROUP_ID, FILE_CODE, FILE_CAPTION
   </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
         from TFS_FILE_INFO
-        where FILE_ID = #{fileId,jdbcType=NVARCHAR}
+        where FILE_ID = #{fileId,jdbcType=VARCHAR}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from TFS_FILE_INFO
-    where FILE_ID = #{fileId,jdbcType=NVARCHAR}
+    where FILE_ID = #{fileId,jdbcType=VARCHAR}
   </delete>
     <insert id="insert" parameterType="com.jb4dc.files.dbentities.FileInfoEntity">
     insert into TFS_FILE_INFO (FILE_ID, FILE_CREATE_TIME, FILE_CREATOR_ID,
@@ -48,14 +50,16 @@
       FILE_ORGAN_ID, FILE_ORGAN_NAME, FILE_EXTENSION,
       FILE_DESCRIPTION, FILE_READ_TIME, FILE_STATUS,
       FILE_ORDER_NUM, FILE_VERSION, FILE_CATEGORY,
-      FILE_HASH_CODE, FILE_GROUP_ID)
-    values (#{fileId,jdbcType=NVARCHAR}, #{fileCreateTime,jdbcType=TIMESTAMP}, #{fileCreatorId,jdbcType=NVARCHAR},
-      #{fileCreatorName,jdbcType=NVARCHAR}, #{fileName,jdbcType=NVARCHAR}, #{fileSize,jdbcType=BIGINT},
-      #{fileStoreType,jdbcType=NVARCHAR}, #{fileStorePath,jdbcType=NVARCHAR}, #{fileStoreName,jdbcType=NVARCHAR},
-      #{fileOrganId,jdbcType=NVARCHAR}, #{fileOrganName,jdbcType=NVARCHAR}, #{fileExtension,jdbcType=NVARCHAR},
-      #{fileDescription,jdbcType=NVARCHAR}, #{fileReadTime,jdbcType=INTEGER}, #{fileStatus,jdbcType=NVARCHAR},
-      #{fileOrderNum,jdbcType=INTEGER}, #{fileVersion,jdbcType=INTEGER}, #{fileCategory,jdbcType=NVARCHAR},
-      #{fileHashCode,jdbcType=NVARCHAR}, #{fileGroupId,jdbcType=NVARCHAR})
+      FILE_HASH_CODE, FILE_GROUP_ID, FILE_CODE,
+      FILE_CAPTION)
+    values (#{fileId,jdbcType=VARCHAR}, #{fileCreateTime,jdbcType=TIMESTAMP}, #{fileCreatorId,jdbcType=VARCHAR},
+      #{fileCreatorName,jdbcType=VARCHAR}, #{fileName,jdbcType=VARCHAR}, #{fileSize,jdbcType=BIGINT},
+      #{fileStoreType,jdbcType=VARCHAR}, #{fileStorePath,jdbcType=VARCHAR}, #{fileStoreName,jdbcType=VARCHAR},
+      #{fileOrganId,jdbcType=VARCHAR}, #{fileOrganName,jdbcType=VARCHAR}, #{fileExtension,jdbcType=VARCHAR},
+      #{fileDescription,jdbcType=VARCHAR}, #{fileReadTime,jdbcType=INTEGER}, #{fileStatus,jdbcType=VARCHAR},
+      #{fileOrderNum,jdbcType=INTEGER}, #{fileVersion,jdbcType=INTEGER}, #{fileCategory,jdbcType=VARCHAR},
+      #{fileHashCode,jdbcType=VARCHAR}, #{fileGroupId,jdbcType=VARCHAR}, #{fileCode,jdbcType=VARCHAR},
+      #{fileCaption,jdbcType=VARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="com.jb4dc.files.dbentities.FileInfoEntity">
         insert into TFS_FILE_INFO
@@ -120,52 +124,58 @@
             <if test="fileGroupId != null">
                 FILE_GROUP_ID,
             </if>
+            <if test="fileCode != null">
+                FILE_CODE,
+            </if>
+            <if test="fileCaption != null">
+                FILE_CAPTION,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="fileId != null">
-                #{fileId,jdbcType=NVARCHAR},
+                #{fileId,jdbcType=VARCHAR},
             </if>
             <if test="fileCreateTime != null">
                 #{fileCreateTime,jdbcType=TIMESTAMP},
             </if>
             <if test="fileCreatorId != null">
-                #{fileCreatorId,jdbcType=NVARCHAR},
+                #{fileCreatorId,jdbcType=VARCHAR},
             </if>
             <if test="fileCreatorName != null">
-                #{fileCreatorName,jdbcType=NVARCHAR},
+                #{fileCreatorName,jdbcType=VARCHAR},
             </if>
             <if test="fileName != null">
-                #{fileName,jdbcType=NVARCHAR},
+                #{fileName,jdbcType=VARCHAR},
             </if>
             <if test="fileSize != null">
                 #{fileSize,jdbcType=BIGINT},
             </if>
             <if test="fileStoreType != null">
-                #{fileStoreType,jdbcType=NVARCHAR},
+                #{fileStoreType,jdbcType=VARCHAR},
             </if>
             <if test="fileStorePath != null">
-                #{fileStorePath,jdbcType=NVARCHAR},
+                #{fileStorePath,jdbcType=VARCHAR},
             </if>
             <if test="fileStoreName != null">
-                #{fileStoreName,jdbcType=NVARCHAR},
+                #{fileStoreName,jdbcType=VARCHAR},
             </if>
             <if test="fileOrganId != null">
-                #{fileOrganId,jdbcType=NVARCHAR},
+                #{fileOrganId,jdbcType=VARCHAR},
             </if>
             <if test="fileOrganName != null">
-                #{fileOrganName,jdbcType=NVARCHAR},
+                #{fileOrganName,jdbcType=VARCHAR},
             </if>
             <if test="fileExtension != null">
-                #{fileExtension,jdbcType=NVARCHAR},
+                #{fileExtension,jdbcType=VARCHAR},
             </if>
             <if test="fileDescription != null">
-                #{fileDescription,jdbcType=NVARCHAR},
+                #{fileDescription,jdbcType=VARCHAR},
             </if>
             <if test="fileReadTime != null">
                 #{fileReadTime,jdbcType=INTEGER},
             </if>
             <if test="fileStatus != null">
-                #{fileStatus,jdbcType=NVARCHAR},
+                #{fileStatus,jdbcType=VARCHAR},
             </if>
             <if test="fileOrderNum != null">
                 #{fileOrderNum,jdbcType=INTEGER},
@@ -174,13 +184,19 @@
                 #{fileVersion,jdbcType=INTEGER},
             </if>
             <if test="fileCategory != null">
-                #{fileCategory,jdbcType=NVARCHAR},
+                #{fileCategory,jdbcType=VARCHAR},
             </if>
             <if test="fileHashCode != null">
-                #{fileHashCode,jdbcType=NVARCHAR},
+                #{fileHashCode,jdbcType=VARCHAR},
             </if>
             <if test="fileGroupId != null">
-                #{fileGroupId,jdbcType=NVARCHAR},
+                #{fileGroupId,jdbcType=VARCHAR},
+            </if>
+            <if test="fileCode != null">
+                #{fileCode,jdbcType=VARCHAR},
+            </if>
+            <if test="fileCaption != null">
+                #{fileCaption,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>
@@ -191,43 +207,43 @@
                 FILE_CREATE_TIME = #{fileCreateTime,jdbcType=TIMESTAMP},
             </if>
             <if test="fileCreatorId != null">
-                FILE_CREATOR_ID = #{fileCreatorId,jdbcType=NVARCHAR},
+                FILE_CREATOR_ID = #{fileCreatorId,jdbcType=VARCHAR},
             </if>
             <if test="fileCreatorName != null">
-                FILE_CREATOR_NAME = #{fileCreatorName,jdbcType=NVARCHAR},
+                FILE_CREATOR_NAME = #{fileCreatorName,jdbcType=VARCHAR},
             </if>
             <if test="fileName != null">
-                FILE_NAME = #{fileName,jdbcType=NVARCHAR},
+                FILE_NAME = #{fileName,jdbcType=VARCHAR},
             </if>
             <if test="fileSize != null">
                 FILE_SIZE = #{fileSize,jdbcType=BIGINT},
             </if>
             <if test="fileStoreType != null">
-                FILE_STORE_TYPE = #{fileStoreType,jdbcType=NVARCHAR},
+                FILE_STORE_TYPE = #{fileStoreType,jdbcType=VARCHAR},
             </if>
             <if test="fileStorePath != null">
-                FILE_STORE_PATH = #{fileStorePath,jdbcType=NVARCHAR},
+                FILE_STORE_PATH = #{fileStorePath,jdbcType=VARCHAR},
             </if>
             <if test="fileStoreName != null">
-                FILE_STORE_NAME = #{fileStoreName,jdbcType=NVARCHAR},
+                FILE_STORE_NAME = #{fileStoreName,jdbcType=VARCHAR},
             </if>
             <if test="fileOrganId != null">
-                FILE_ORGAN_ID = #{fileOrganId,jdbcType=NVARCHAR},
+                FILE_ORGAN_ID = #{fileOrganId,jdbcType=VARCHAR},
             </if>
             <if test="fileOrganName != null">
-                FILE_ORGAN_NAME = #{fileOrganName,jdbcType=NVARCHAR},
+                FILE_ORGAN_NAME = #{fileOrganName,jdbcType=VARCHAR},
             </if>
             <if test="fileExtension != null">
-                FILE_EXTENSION = #{fileExtension,jdbcType=NVARCHAR},
+                FILE_EXTENSION = #{fileExtension,jdbcType=VARCHAR},
             </if>
             <if test="fileDescription != null">
-                FILE_DESCRIPTION = #{fileDescription,jdbcType=NVARCHAR},
+                FILE_DESCRIPTION = #{fileDescription,jdbcType=VARCHAR},
             </if>
             <if test="fileReadTime != null">
                 FILE_READ_TIME = #{fileReadTime,jdbcType=INTEGER},
             </if>
             <if test="fileStatus != null">
-                FILE_STATUS = #{fileStatus,jdbcType=NVARCHAR},
+                FILE_STATUS = #{fileStatus,jdbcType=VARCHAR},
             </if>
             <if test="fileOrderNum != null">
                 FILE_ORDER_NUM = #{fileOrderNum,jdbcType=INTEGER},
@@ -236,38 +252,46 @@
                 FILE_VERSION = #{fileVersion,jdbcType=INTEGER},
             </if>
             <if test="fileCategory != null">
-                FILE_CATEGORY = #{fileCategory,jdbcType=NVARCHAR},
+                FILE_CATEGORY = #{fileCategory,jdbcType=VARCHAR},
             </if>
             <if test="fileHashCode != null">
-                FILE_HASH_CODE = #{fileHashCode,jdbcType=NVARCHAR},
+                FILE_HASH_CODE = #{fileHashCode,jdbcType=VARCHAR},
             </if>
             <if test="fileGroupId != null">
-                FILE_GROUP_ID = #{fileGroupId,jdbcType=NVARCHAR},
+                FILE_GROUP_ID = #{fileGroupId,jdbcType=VARCHAR},
+            </if>
+            <if test="fileCode != null">
+                FILE_CODE = #{fileCode,jdbcType=VARCHAR},
+            </if>
+            <if test="fileCaption != null">
+                FILE_CAPTION = #{fileCaption,jdbcType=VARCHAR},
             </if>
         </set>
-        where FILE_ID = #{fileId,jdbcType=NVARCHAR}
+        where FILE_ID = #{fileId,jdbcType=VARCHAR}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.jb4dc.files.dbentities.FileInfoEntity">
     update TFS_FILE_INFO
     set FILE_CREATE_TIME = #{fileCreateTime,jdbcType=TIMESTAMP},
-      FILE_CREATOR_ID = #{fileCreatorId,jdbcType=NVARCHAR},
-      FILE_CREATOR_NAME = #{fileCreatorName,jdbcType=NVARCHAR},
-      FILE_NAME = #{fileName,jdbcType=NVARCHAR},
+      FILE_CREATOR_ID = #{fileCreatorId,jdbcType=VARCHAR},
+      FILE_CREATOR_NAME = #{fileCreatorName,jdbcType=VARCHAR},
+      FILE_NAME = #{fileName,jdbcType=VARCHAR},
       FILE_SIZE = #{fileSize,jdbcType=BIGINT},
-      FILE_STORE_TYPE = #{fileStoreType,jdbcType=NVARCHAR},
-      FILE_STORE_PATH = #{fileStorePath,jdbcType=NVARCHAR},
-      FILE_STORE_NAME = #{fileStoreName,jdbcType=NVARCHAR},
-      FILE_ORGAN_ID = #{fileOrganId,jdbcType=NVARCHAR},
-      FILE_ORGAN_NAME = #{fileOrganName,jdbcType=NVARCHAR},
-      FILE_EXTENSION = #{fileExtension,jdbcType=NVARCHAR},
-      FILE_DESCRIPTION = #{fileDescription,jdbcType=NVARCHAR},
+      FILE_STORE_TYPE = #{fileStoreType,jdbcType=VARCHAR},
+      FILE_STORE_PATH = #{fileStorePath,jdbcType=VARCHAR},
+      FILE_STORE_NAME = #{fileStoreName,jdbcType=VARCHAR},
+      FILE_ORGAN_ID = #{fileOrganId,jdbcType=VARCHAR},
+      FILE_ORGAN_NAME = #{fileOrganName,jdbcType=VARCHAR},
+      FILE_EXTENSION = #{fileExtension,jdbcType=VARCHAR},
+      FILE_DESCRIPTION = #{fileDescription,jdbcType=VARCHAR},
       FILE_READ_TIME = #{fileReadTime,jdbcType=INTEGER},
-      FILE_STATUS = #{fileStatus,jdbcType=NVARCHAR},
+      FILE_STATUS = #{fileStatus,jdbcType=VARCHAR},
       FILE_ORDER_NUM = #{fileOrderNum,jdbcType=INTEGER},
       FILE_VERSION = #{fileVersion,jdbcType=INTEGER},
-      FILE_CATEGORY = #{fileCategory,jdbcType=NVARCHAR},
-      FILE_HASH_CODE = #{fileHashCode,jdbcType=NVARCHAR},
-      FILE_GROUP_ID = #{fileGroupId,jdbcType=NVARCHAR}
-    where FILE_ID = #{fileId,jdbcType=NVARCHAR}
+      FILE_CATEGORY = #{fileCategory,jdbcType=VARCHAR},
+      FILE_HASH_CODE = #{fileHashCode,jdbcType=VARCHAR},
+      FILE_GROUP_ID = #{fileGroupId,jdbcType=VARCHAR},
+      FILE_CODE = #{fileCode,jdbcType=VARCHAR},
+      FILE_CAPTION = #{fileCaption,jdbcType=VARCHAR}
+    where FILE_ID = #{fileId,jdbcType=VARCHAR}
   </update>
 </mapper>

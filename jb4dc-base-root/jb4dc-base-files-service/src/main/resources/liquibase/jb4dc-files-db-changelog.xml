@@ -32,7 +32,7 @@
             <column name="FILE_STATUS" type="NVARCHAR(10)" remarks="文件的状态值"/>
             <column name="FILE_ORDER_NUM" type="INT" remarks="文件的排序号"/>
             <column name="FILE_VERSION" type="INT" remarks="文件的版本号"/>
-            <column name="FILE_CATEGORY" type="NVARCHAR(30)" remarks="文件分类名称"/>
+            <column name="FILE_CATEGORY" type="NVARCHAR(30)" remarks="文件分类名称:eg同一条记录下存在不用种类的文件"/>
             <column name="FILE_HASH_CODE" type="NVARCHAR(100)" remarks="文件Hash值"/>
             <column name="FILE_GROUP_ID" type="NVARCHAR(100)" remarks="文件分组ID"/>
         </createTable>
@@ -50,4 +50,11 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="zhuangrb" id="changeSet-File-0002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="TFS_FILE_INFO">
+            <column name="FILE_CODE" type="NVARCHAR(100)" remarks="文件编号">
+            </column>
+            <column name="FILE_CAPTION" type="NVARCHAR(400)" remarks="文件标题"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
