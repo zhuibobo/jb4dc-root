@@ -114,5 +114,19 @@ var StringUtility = {
                     }
                     return c;
                 });
+    },
+    GetFileExName:function (fileName) {
+        var ext = fileName.substring(fileName.lastIndexOf("."), fileName.length);
+        return ext;
+    },
+    ReplaceSPCharL1:function (source) {
+        var reg=/\\|\/|\?|\？|\*|\"|\“|\”|\'|\‘|\’|\、|\^|\$|\!|\~|\`|\|/g;
+        var temp = source.replace(reg,"");
+        return temp;
+    },
+    ReplaceSPCharL2:function (source) {
+        var reg=/\\|\/|\?|\？|\*|\"|\“|\”|\'|\‘|\’|\<|\>|\{|\}|\[|\]|\【|\】|\：|\:|\、|\^|\$|\!|\~|\`|\|/g;
+        var temp = source.replace(reg,"");
+        return temp;
     }
 };

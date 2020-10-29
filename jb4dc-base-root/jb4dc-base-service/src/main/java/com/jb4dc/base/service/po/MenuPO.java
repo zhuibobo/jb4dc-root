@@ -2,17 +2,17 @@ package com.jb4dc.base.service.po;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jb4dc.base.dbaccess.anno.DBKeyField;
-
 import java.util.Date;
 
 /**
- * Created with IntelliJ IDEA.
- * User: zhuangrb
- * Date: 2019/7/9
- * To change this template use File | Settings | File Templates.
+ *
+ * This class was generated JBuild4DC.
+ * This class corresponds to the database table :tsso_menu
+ *
+ * JBuild4DC do_not_delete_during_merge
  */
 public class MenuPO {
-    //MENU_ID:主键:UUID
+    //MENU_ID:
     @DBKeyField
     private String menuId;
 
@@ -28,7 +28,7 @@ public class MenuPO {
     //MENU_VALUE:菜单值
     private String menuValue;
 
-    //MENU_TYPE:菜单类型:超链接菜单,模块列表,模块窗体
+    //MENU_TYPE:菜单类型:超链接菜单,Web模块列表,Web模块窗体
     private String menuType;
 
     //MENU_OUTER_ID:外部关联ID
@@ -120,9 +120,12 @@ public class MenuPO {
     //MENU_JS_EXPRESSION:扩展的JS表达式
     private String menuJsExpression;
 
+    //MENU_OUTER_OBJECT:外部关联对象
+    private String menuOuterObject;
+
     /**
      * 构造函数
-     * @param menuId 主键
+     * @param menuId
      * @param menuName 菜单名称
      * @param menuSystemId 所属系统ID
      * @param menuText 菜单文本
@@ -157,8 +160,9 @@ public class MenuPO {
      * @param menuDescription 备注
      * @param menuStatus 状态
      * @param menuJsExpression 扩展的JS表达式
+     * @param menuOuterObject 外部关联对象
      **/
-    public MenuPO(String menuId, String menuName, String menuSystemId, String menuText, String menuValue, String menuType, String menuOuterId, String menuOuterName, String menuCreatorId, String menuOrganId, String menuOrganName, String menuIsExpand, String menuIsSystem, String menuLeftUrl, String menuLeftUrlPara, String menuRightUrl, String menuRightUrlPara, Integer menuOrderNum, String menuParentId, String menuParentIdList, String menuTarget, Date menuCreateTime, String menuUpdater, Date menuUpdateTime, String menuUseOrganName, String menuUseOrganId, String menuUseOrganTypeName, String menuUseOrganTypeId, String menuClassName, String menuClassNameHover, String menuClassNameSelected, Integer menuChildCount, String menuDescription, String menuStatus, String menuJsExpression) {
+    public MenuPO(String menuId, String menuName, String menuSystemId, String menuText, String menuValue, String menuType, String menuOuterId, String menuOuterName, String menuCreatorId, String menuOrganId, String menuOrganName, String menuIsExpand, String menuIsSystem, String menuLeftUrl, String menuLeftUrlPara, String menuRightUrl, String menuRightUrlPara, Integer menuOrderNum, String menuParentId, String menuParentIdList, String menuTarget, Date menuCreateTime, String menuUpdater, Date menuUpdateTime, String menuUseOrganName, String menuUseOrganId, String menuUseOrganTypeName, String menuUseOrganTypeId, String menuClassName, String menuClassNameHover, String menuClassNameSelected, Integer menuChildCount, String menuDescription, String menuStatus, String menuJsExpression, String menuOuterObject) {
         this.menuId = menuId;
         this.menuName = menuName;
         this.menuSystemId = menuSystemId;
@@ -194,6 +198,7 @@ public class MenuPO {
         this.menuDescription = menuDescription;
         this.menuStatus = menuStatus;
         this.menuJsExpression = menuJsExpression;
+        this.menuOuterObject = menuOuterObject;
     }
 
     public MenuPO() {
@@ -201,7 +206,7 @@ public class MenuPO {
     }
 
     /**
-     * 主键:UUID
+     *
      * @return java.lang.String
      **/
     public String getMenuId() {
@@ -209,8 +214,8 @@ public class MenuPO {
     }
 
     /**
-     * 主键:UUID
-     * @param menuId 主键
+     *
+     * @param menuId
      **/
     public void setMenuId(String menuId) {
         this.menuId = menuId == null ? null : menuId.trim();
@@ -281,7 +286,7 @@ public class MenuPO {
     }
 
     /**
-     * 菜单类型:超链接菜单,模块列表,模块窗体
+     * 菜单类型:超链接菜单,Web模块列表,Web模块窗体
      * @return java.lang.String
      **/
     public String getMenuType() {
@@ -289,7 +294,7 @@ public class MenuPO {
     }
 
     /**
-     * 菜单类型:超链接菜单,模块列表,模块窗体
+     * 菜单类型:超链接菜单,Web模块列表,Web模块窗体
      * @param menuType 菜单类型
      **/
     public void setMenuType(String menuType) {
@@ -758,5 +763,21 @@ public class MenuPO {
      **/
     public void setMenuJsExpression(String menuJsExpression) {
         this.menuJsExpression = menuJsExpression == null ? null : menuJsExpression.trim();
+    }
+
+    /**
+     * 外部关联对象
+     * @return java.lang.String
+     **/
+    public String getMenuOuterObject() {
+        return menuOuterObject;
+    }
+
+    /**
+     * 外部关联对象
+     * @param menuOuterObject 外部关联对象
+     **/
+    public void setMenuOuterObject(String menuOuterObject) {
+        this.menuOuterObject = menuOuterObject == null ? null : menuOuterObject.trim();
     }
 }

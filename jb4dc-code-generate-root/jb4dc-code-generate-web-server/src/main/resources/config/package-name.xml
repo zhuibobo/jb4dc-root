@@ -27,5 +27,6 @@
     <Package name="Files" entity="com.jb4dc.files.dbentities" dao="com.jb4dc.files.dao" mapperAC="mybatismappers">
     </Package>
     <Package name="QC" entity="com.jb4dc.qcsystem.dbentities" dao="com.jb4dc.qcsystem.dao" mapperAC="mybatismappers">
+        <PackageLevel2Name value="issues"></PackageLevel2Name>
     </Package>
 </Config>

@@ -13,10 +13,14 @@ import java.util.Map;
  */
 public enum MenuTypeEnum implements BaseEnum<EnableTypeEnum, Integer> {
     Root(0,"根菜单"),
-    LinkMenu(1,"超链接菜单"),
-    ModuleWebListMenu(2,"Web模块列表菜单"),
-    ModuleWebFormMenu(3,"Web模块窗体菜单"),
-    EmptyMenu(4,"空菜单");
+    LinkMenu(1,"超链接"),
+    ModuleWebListMenu(2,"Web模块列表"),
+    ModuleWebFormMenu(3,"Web模块窗体"),
+    ModuleFlowGroupMenu(4,"流程分组"),
+    ModuleFlowInstanceMenu(5,"流程实例"),
+    ModuleStaticListMenu(6,"统计列表"),
+    ModulePortalMenu(7,"工作桌面"),
+    EmptyMenu(100,"空");
 
     private Integer value;
     private String displayName;

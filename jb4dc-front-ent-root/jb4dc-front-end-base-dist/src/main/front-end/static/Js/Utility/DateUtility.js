@@ -58,6 +58,9 @@ var DateUtility={
     GetCurrentData:function () {
         return new Date();
     },
+    GetCurrentTimeStamp:function(){
+        return new Date().getTime();
+    },
     DataFormatByTimeStamp:function (timeStamp,formatString) {
         var date = new Date(timeStamp);
         return this.Format(date,formatString);
