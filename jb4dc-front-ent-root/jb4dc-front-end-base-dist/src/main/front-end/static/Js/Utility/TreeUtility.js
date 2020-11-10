@@ -1,11 +1,17 @@
 var TreeUtility={
-    BuildNodePathName:function (treeNode,name,appendText) {
+    BuildNodePathName:function (treeNode,name,appendText,beginIndex) {
+        if(!beginIndex){
+            beginIndex=0;
+        }
         var ary = [];
         var pathNode = treeNode.getPath();
-        for (var i = 0; i < pathNode.length; i++) {
-            ary.push(pathNode[i][name]);
+        for (var i = beginIndex; i < pathNode.length; i++) {
+            ary.push(StringUtility.ReplaceSPCharL2(pathNode[i][name]));
         }
         //ary.push(treeNode[name]);
-        return ary.join("-->")+"-->"+appendText;
+        if(StringUtility.IsNullOrEmpty(appendText)){
+            return ary.join("▷▷");
+        }
+        return ary.join("▷▷")+"▷▷"+StringUtility.ReplaceSPCharL2(appendText);
     }
 }

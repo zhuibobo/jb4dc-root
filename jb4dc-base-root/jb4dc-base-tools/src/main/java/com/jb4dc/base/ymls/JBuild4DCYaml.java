@@ -67,6 +67,8 @@ public class JBuild4DCYaml extends YamlUtility {
 
     private static boolean debug;
 
+    private static String baiduMapJs;
+
     public static String getWarningOperationCode(){
 
         return operationCode;
@@ -84,5 +86,14 @@ public class JBuild4DCYaml extends YamlUtility {
 
     public static boolean isDebug() {
         return debug;
+    }
+
+    public String getBaiduMapJs() {
+        return baiduMapJs;
+    }
+
+    @Value("${jb4dc.baidu-map-js:未设置}")
+    public void setBaiduMapJs(String baiduMapJs) {
+        JBuild4DCYaml.baiduMapJs = baiduMapJs;
     }
 }

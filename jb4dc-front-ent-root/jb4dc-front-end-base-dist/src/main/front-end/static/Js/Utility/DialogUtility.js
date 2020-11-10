@@ -670,5 +670,8 @@ var DialogUtility={
         var openerwin = openerWindow.OpenerWindowObj;
         var autodialogId = openerWindow.FrameWindowId;
         wrwin.DialogUtility._Frame_FramePageCloseDialog(autodialogId);
+    },
+    ToastMessage:function (sender,message) {
+        sender.$Message.info(message);
     }
 }

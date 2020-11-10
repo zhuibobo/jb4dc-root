@@ -38,7 +38,7 @@ var ArrayUtility = {
         return false;
     },
     PushWhenNotExist:function (arr,item,condition) {
-        if(!this.Exist(condition)){
+        if(!this.Exist(arr,condition)){
             arr.push(item);
         }
         return arr;
