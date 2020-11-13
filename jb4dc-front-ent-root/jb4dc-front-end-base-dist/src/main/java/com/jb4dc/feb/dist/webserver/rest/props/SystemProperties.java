@@ -26,4 +26,14 @@ public class SystemProperties {
     public JBuild4DCResponseVo getBaiduMapJsUrl() throws JBuild4DCGenerallyException {
         return JBuild4DCResponseVo.getDataSuccess(jBuild4DCYaml.getBaiduMapJs());
     }
+
+    @RequestMapping(value = "GetSsoLoginUrl")
+    public JBuild4DCResponseVo getSsoLoginUrl() throws JBuild4DCGenerallyException {
+        return JBuild4DCResponseVo.getDataSuccess(jBuild4DCYaml.getSsoLoginUrl());
+    }
+
+    @RequestMapping(value = "GetSsoLogoutUrl")
+    public JBuild4DCResponseVo getSsoLogoutUrl() throws JBuild4DCGenerallyException {
+        return JBuild4DCResponseVo.getDataSuccess(jBuild4DCYaml.getSsoLogoutUrl());
+    }
 }

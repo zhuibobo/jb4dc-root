@@ -69,6 +69,10 @@ public class JBuild4DCYaml extends YamlUtility {
 
     private static String baiduMapJs;
 
+    private static String ssoLoginUrl;
+
+    private static String ssoLogoutUrl;
+
     public static String getWarningOperationCode(){
 
         return operationCode;
@@ -95,5 +99,23 @@ public class JBuild4DCYaml extends YamlUtility {
     @Value("${jb4dc.baidu-map-js:未设置}")
     public void setBaiduMapJs(String baiduMapJs) {
         JBuild4DCYaml.baiduMapJs = baiduMapJs;
+    }
+
+    public String getSsoLoginUrl() {
+        return ssoLoginUrl;
+    }
+
+    @Value("${jb4dc.sso.server.view.login:未设置}")
+    public void setSsoLoginUrl(String ssoLoginUrl) {
+        JBuild4DCYaml.ssoLoginUrl = ssoLoginUrl;
+    }
+
+    public String getSsoLogoutUrl() {
+        return ssoLogoutUrl;
+    }
+
+    @Value("${jb4dc.sso.server.view.logout:未设置}")
+    public void setSsoLogoutUrl(String ssoLogoutUrl) {
+        JBuild4DCYaml.ssoLogoutUrl = ssoLogoutUrl;
     }
 }

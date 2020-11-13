@@ -8,7 +8,7 @@ var SystemMenu={
         this.GetMenuFromServerRendererTo();
     },
     GetMenuFromServerRendererTo:function () {
-        AjaxUtility.Get("/Rest/Frame/Menu/GetMyMenu",{},function (result) {
+        AjaxUtility.Get("/Rest/Frame/MyFrame/GetMyMenu",{},function (result) {
             this._allMenusData=result.data;
             this.RendererMenus(this._allMenusData);
         },this);

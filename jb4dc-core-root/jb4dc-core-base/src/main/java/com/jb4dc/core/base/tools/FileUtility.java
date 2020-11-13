@@ -1,6 +1,10 @@
 package com.jb4dc.core.base.tools;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
+import java.net.URISyntaxException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,7 +14,12 @@ import java.io.*;
  */
 public class FileUtility {
 
-    public static InputStream getStreamByLevel(String filePath) throws FileNotFoundException {
+    static Logger logger= LoggerFactory.getLogger(FileUtility.class);
+
+    static String jarPath;
+    static String jarRootPath;
+
+    public static InputStream getStreamByLevel(String filePath) throws FileNotFoundException, URISyntaxException {
         //"/builder/htmldesign/DesignThemesConfig.xml"
         //ApplicationHome home = new ApplicationHome(FileUtility.class);
         //ApplicationHome home=new ApplicationHome();
@@ -30,4 +39,29 @@ public class FileUtility {
         //return null;
     }
 
+    public static String getRootPath() throws FileNotFoundException, URISyntaxException {
+        String path = PathBaseUtility.getThreadRunRootPath();
+        logger.info("FileUtility.getRootPath:getThreadRunRootPath" + path);
+        if (path.indexOf("classes!") > 0) {
+            path=getJarRootPath()+ File.separator;
+            logger.info("FileUtility.getRootPath:getJarRootPath" + path);
+        }
+        return path.substring(0, path.length() - 1);
+    }
+
+    public static String getJarPath() {
+        return jarPath;
+    }
+
+    public static void setJarPath(String jarPath) {
+        FileUtility.jarPath = jarPath;
+    }
+
+    public static String getJarRootPath() {
+        return jarRootPath;
+    }
+
+    public static void setJarRootPath(String jarRootPath) {
+        FileUtility.jarRootPath = jarRootPath;
+    }
 }

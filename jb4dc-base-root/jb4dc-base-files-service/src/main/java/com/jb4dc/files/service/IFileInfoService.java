@@ -6,7 +6,9 @@ import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.files.dbentities.FileInfoEntity;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 public interface IFileInfoService extends IBaseService<FileInfoEntity> {
@@ -30,11 +32,11 @@ public interface IFileInfoService extends IBaseService<FileInfoEntity> {
 
     FileInfoEntity addSmallFileToDB(JB4DCSession jb4DCSession, MultipartFile file, String objId, String objName, String objType, String fileCategory) throws IOException, JBuild4DCGenerallyException;
 
-    FileInfoEntity addFileToFileSystem(JB4DCSession session, String fileName, byte[] fileByte, String objId, String objName, String objType, String fileCategory) throws JBuild4DCGenerallyException, IOException;
+    FileInfoEntity addFileToFileSystem(JB4DCSession session, String fileName, byte[] fileByte, String objId, String objName, String objType, String fileCategory) throws JBuild4DCGenerallyException, IOException, URISyntaxException;
 
-    FileInfoEntity addFileToFileSystem(JB4DCSession session, MultipartFile file, String objId, String objName, String objType, String fileCategory) throws IOException, JBuild4DCGenerallyException;
+    FileInfoEntity addFileToFileSystem(JB4DCSession session, MultipartFile file, String objId, String objName, String objType, String fileCategory) throws IOException, JBuild4DCGenerallyException, URISyntaxException;
 
-    String buildFilePath(FileInfoEntity fileInfoEntity);
+    String buildFilePath(FileInfoEntity fileInfoEntity) throws URISyntaxException, FileNotFoundException;
 
     byte[] getContentInDB(String fileId);
 }

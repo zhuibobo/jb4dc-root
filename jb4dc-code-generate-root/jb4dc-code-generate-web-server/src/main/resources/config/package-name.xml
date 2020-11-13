@@ -29,4 +29,11 @@
     <Package name="QC" entity="com.jb4dc.qcsystem.dbentities" dao="com.jb4dc.qcsystem.dao" mapperAC="mybatismappers">
         <PackageLevel2Name value="issues"></PackageLevel2Name>
     </Package>
+    <Package name="Grid" entity="com.jb4dc.gridsystem.dbentities" dao="com.jb4dc.gridsystem.dao" mapperAC="mybatismappers">
+        <PackageLevel2Name value="gridinfo"></PackageLevel2Name>
+        <PackageLevel2Name value="build"></PackageLevel2Name>
+        <PackageLevel2Name value="person"></PackageLevel2Name>
+        <PackageLevel2Name value="gridevent"></PackageLevel2Name>
+        <PackageLevel2Name value="enterprise"></PackageLevel2Name>
+    </Package>
 </Config>

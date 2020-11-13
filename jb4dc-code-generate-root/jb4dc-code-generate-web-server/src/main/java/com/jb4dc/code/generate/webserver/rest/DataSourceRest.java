@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,7 +27,7 @@ public class DataSourceRest {
     IDataSourceService dataSourceService;
 
     @RequestMapping(value = "/GetConfig", method = RequestMethod.GET)
-    public JBuild4DCResponseVo getConfig() throws FileNotFoundException, JAXBException {
+    public JBuild4DCResponseVo getConfig() throws FileNotFoundException, JAXBException, URISyntaxException {
         //List<TableGroupEntity> tableGroupEntityList=tableGroupService.getALLASC(JB4DCSessionUtility.getSession());
         DataSourceConfigBO config = dataSourceService.getSimpleConfig();
         //config.getDataSourceSingleVoList().forEach(vo->{vo.setUrl("");vo.setUser("");vo.setPassword("");vo.setDriverName("");});

@@ -2,8 +2,10 @@ package com.jb4dc.code.generate.service.impl;
 
 import com.jb4dc.base.service.exenum.MenuTypeEnum;
 import com.jb4dc.base.service.exenum.TrueFalseEnum;
-import com.jb4dc.base.service.provide.IFrameMenuProvide;
+import com.jb4dc.base.service.po.SsoAppPO;
+import com.jb4dc.base.service.provide.IFramePageProvide;
 import com.jb4dc.base.service.po.MenuPO;
+import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
 
 import java.util.ArrayList;
@@ -15,7 +17,7 @@ import java.util.List;
  * Date: 2019/7/9
  * To change this template use File | Settings | File Templates.
  */
-public class FrameMenuImpl implements IFrameMenuProvide {
+public class FrameMenuImpl implements IFramePageProvide {
     @Override
     public List<MenuPO> getMyFrameMenu(JB4DCSession jb4DCSession) {
         //return null;
@@ -35,6 +37,16 @@ public class FrameMenuImpl implements IFrameMenuProvide {
         result.add(codeGenerate);
         result.add(templateDownLoad);
         return result;
+    }
+
+    @Override
+    public List<SsoAppPO> getMyFrameAuthorityApp(String userId) {
+        return null;
+    }
+
+    @Override
+    public String getMyFrameLogoutUrl(String userId) throws JBuild4DCGenerallyException {
+        return "";
     }
 
     public MenuPO getMenu(String parentId,String id,String name,String text,String value,String type,String leftUrl,String rightUrl,String iconClassName){

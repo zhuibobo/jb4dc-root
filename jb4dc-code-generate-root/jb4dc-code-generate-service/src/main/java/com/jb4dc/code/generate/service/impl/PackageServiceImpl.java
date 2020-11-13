@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,14 +22,14 @@ import java.io.InputStream;
 public class PackageServiceImpl implements IPackageService {
 
     @Override
-    public PackageConfigBO getConfig() throws FileNotFoundException, JAXBException {
+    public PackageConfigBO getConfig() throws FileNotFoundException, JAXBException, URISyntaxException {
         InputStream is = FileUtility.getStreamByLevel("/config/package-name.xml");
         PackageConfigBO configVo= XMLUtility.toObject(is, PackageConfigBO.class);
         return configVo;
     }
 
     @Override
-    public PackageSingleBO getPackageSingleBO(String name) throws FileNotFoundException, JAXBException {
+    public PackageSingleBO getPackageSingleBO(String name) throws FileNotFoundException, JAXBException, URISyntaxException {
         return getConfig().getPackageSingleBOList().parallelStream().filter(vo->vo.getName().equals(name)).findAny().orElse(null);
     }
 }

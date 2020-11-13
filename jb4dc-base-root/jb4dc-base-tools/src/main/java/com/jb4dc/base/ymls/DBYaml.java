@@ -8,6 +8,7 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.Map;
 
 /**
@@ -25,7 +26,7 @@ public class DBYaml extends YamlUtility {
         InputStream resourceStream = null;
         try {
             resourceStream = FileUtility.getStreamByLevel(filePath);
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | URISyntaxException e) {
             e.printStackTrace();
         }
         yamlMap=yaml.load(resourceStream);

@@ -3,7 +3,7 @@ spring:
     name: JB4DC-CODE-GENERATE-WEB-SERVER
     inetutils:
       #客户端的IP
-      preferred-networks: 10.51.2.18
+      preferred-networks: 58.51.184.124
   liquibase:
     enabled: false
   thymeleaf:
@@ -47,7 +47,7 @@ jb4dc:
   sso:
     server:
       name: JB4DC-SSO-WEB-SERVER
-      address: http://58.51.184.124:9103
+      address: http://localhost:9103
       context-path: /SSOSystem
       view:
         login: /Controller/LoginSSOView

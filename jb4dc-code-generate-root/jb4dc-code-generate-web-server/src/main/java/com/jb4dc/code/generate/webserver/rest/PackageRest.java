@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,7 +27,7 @@ public class PackageRest {
     IPackageService packageService;
 
     @RequestMapping(value = "/GetConfig", method = RequestMethod.GET)
-    public JBuild4DCResponseVo getConfig() throws FileNotFoundException, JAXBException {
+    public JBuild4DCResponseVo getConfig() throws FileNotFoundException, JAXBException, URISyntaxException {
         PackageConfigBO config = packageService.getConfig();
         return JBuild4DCResponseVo.getDataSuccess(config);
     }

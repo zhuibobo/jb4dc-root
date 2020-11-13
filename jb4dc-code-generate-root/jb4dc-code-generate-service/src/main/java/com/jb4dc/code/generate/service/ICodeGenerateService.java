@@ -12,6 +12,7 @@ import javax.xml.xpath.XPathExpressionException;
 import java.beans.PropertyVetoException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
 
@@ -22,9 +23,9 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public interface ICodeGenerateService {
-    PageInfo<List<Map<String, Object>>> getTables(String dataSourceId,String searchTableName,Integer pageNum, Integer pageSize) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException;
+    PageInfo<List<Map<String, Object>>> getTables(String dataSourceId,String searchTableName,Integer pageNum, Integer pageSize) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException, URISyntaxException;
 
-    List<SimpleTableFieldBO> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException;
+    List<SimpleTableFieldBO> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException, URISyntaxException;
 
     //String getTableComment(JB4DCSession JB4DCSession, String tableName) throws JBuild4DCGenerallyException;
 
@@ -32,5 +33,5 @@ public interface ICodeGenerateService {
 
     IntrospectedTable getTableInfo(String tableName, String driverName, String url, String user, String password);
 
-    Map<String,String> getTableGenerateCode(String dataSourceId, String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException, JAXBException;
+    Map<String,String> getTableGenerateCode(String dataSourceId, String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException, JAXBException, URISyntaxException;
 }

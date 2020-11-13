@@ -17,6 +17,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
 import java.beans.PropertyVetoException;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class CodeGenerateRest {
     ICodeGenerateService codeGenerateService;
 
     @RequestMapping(value = "/GetListData", method = RequestMethod.POST)
-    public JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum,String dataSourceId, String searchTableName) throws IOException, ParseException, JBuild4DCGenerallyException, PropertyVetoException, JAXBException {
+    public JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum,String dataSourceId, String searchTableName) throws IOException, ParseException, JBuild4DCGenerallyException, PropertyVetoException, JAXBException, URISyntaxException {
         //JB4DCSession JB4DCSession = JB4DCSessionUtility.getSession();
         //Map<String,Object> searchMap= GeneralSearchUtility.deserializationToMap(searchCondition);
         System.out.println(JBuild4DCYaml.isDebug());
@@ -47,14 +48,14 @@ public class CodeGenerateRest {
     }
 
     @RequestMapping(value = "/GetTableGenerateCode", method = RequestMethod.POST)
-    public JBuild4DCResponseVo getTableGenerateCode(String dataSourceId,String tableName,String packageType,String packageLevel2Name,String orderFieldName,String statusFieldName) throws IOException, ParseException, XPathExpressionException, SAXException, ParserConfigurationException, JAXBException {
+    public JBuild4DCResponseVo getTableGenerateCode(String dataSourceId,String tableName,String packageType,String packageLevel2Name,String orderFieldName,String statusFieldName) throws IOException, ParseException, XPathExpressionException, SAXException, ParserConfigurationException, JAXBException, URISyntaxException {
         //JB4DCSession JB4DCSession = JB4DCSessionUtility.getSession();
         Map<String,String> result=codeGenerateService.getTableGenerateCode(dataSourceId,tableName,orderFieldName,statusFieldName,packageType,packageLevel2Name);
         return JBuild4DCResponseVo.success("获取成功",result);
     }
 
     @RequestMapping(value = "/GetTableFields", method = RequestMethod.POST)
-    public JBuild4DCResponseVo getTableFields(String dataSourceId,String tableName) throws IOException, ParseException, JBuild4DCGenerallyException, PropertyVetoException, JAXBException {
+    public JBuild4DCResponseVo getTableFields(String dataSourceId,String tableName) throws IOException, ParseException, JBuild4DCGenerallyException, PropertyVetoException, JAXBException, URISyntaxException {
         //JB4DCSession JB4DCSession = JB4DCSessionUtility.getSession();
         List<SimpleTableFieldBO> result=codeGenerateService.getTableFields(dataSourceId,tableName);
         return JBuild4DCResponseVo.success("获取成功",result);

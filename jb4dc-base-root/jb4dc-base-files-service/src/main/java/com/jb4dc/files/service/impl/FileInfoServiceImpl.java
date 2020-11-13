@@ -5,10 +5,7 @@ import com.jb4dc.base.service.IAddBefore;
 import com.jb4dc.base.service.impl.BaseServiceImpl;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.session.JB4DCSession;
-import com.jb4dc.core.base.tools.DateUtility;
-import com.jb4dc.core.base.tools.PathBaseUtility;
-import com.jb4dc.core.base.tools.StringUtility;
-import com.jb4dc.core.base.tools.UUIDUtility;
+import com.jb4dc.core.base.tools.*;
 import com.jb4dc.files.dao.FileContentMapper;
 import com.jb4dc.files.dao.FileInfoMapper;
 import com.jb4dc.files.dao.FileRefMapper;
@@ -24,7 +21,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -132,7 +131,7 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
-    public FileInfoEntity addFileToFileSystem(JB4DCSession session, String fileName, byte[] fileByte, String objId, String objName, String objType, String fileCategory) throws JBuild4DCGenerallyException, IOException {
+    public FileInfoEntity addFileToFileSystem(JB4DCSession session, String fileName, byte[] fileByte, String objId, String objName, String objType, String fileCategory) throws JBuild4DCGenerallyException, IOException, URISyntaxException {
 
         String fileId = UUIDUtility.getUUID();
 
@@ -218,7 +217,7 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
-    public FileInfoEntity addFileToFileSystem(JB4DCSession session, MultipartFile file,String objId,String objName,String objType,String fileCategory) throws IOException, JBuild4DCGenerallyException {
+    public FileInfoEntity addFileToFileSystem(JB4DCSession session, MultipartFile file,String objId,String objName,String objType,String fileCategory) throws IOException, JBuild4DCGenerallyException, URISyntaxException {
         return this.addFileToFileSystem(session,file.getOriginalFilename(),file.getBytes(),objId,objName,objType,fileCategory);
     }
 
@@ -226,21 +225,31 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     private String RELATIVE_FILE_STORE_PATH="RELATIVE_FILE_STORE_PATH";
     private String FILE_STORE_NAME="FILE_STORE_NAME";
 
-    private Map<String,String> buildRelativeFileSavePath(String fileId, String extensionName){
-        Map<String,String> result=new HashMap<>();
-        String base_path= PathBaseUtility.getThreadRunRootPath()+File.separator+fileRootPath;
-        String file_name=fileId+"."+extensionName.replaceAll("/.","");
-        String relative_file_store_path=DateUtility.getDate_yyyy_MM()+File.separator+file_name;
+    private Map<String,String> buildRelativeFileSavePath(String fileId, String extensionName) throws URISyntaxException, FileNotFoundException {
+        Map<String, String> result = new HashMap<>();
+        String base_path = FileUtility.getRootPath() + File.separator + fileRootPath;
 
-        result.put(FULL_FILE_STORE_PATH,base_path+File.separator+relative_file_store_path);
-        result.put(RELATIVE_FILE_STORE_PATH,relative_file_store_path);
-        result.put(FILE_STORE_NAME,file_name);
+        if(fileRootPath.indexOf(":")>0){
+            base_path=fileRootPath;
+        }
+        String file_name = fileId + "." + extensionName.replaceAll("/.", "");
+        String relative_file_store_path = DateUtility.getDate_yyyy_MM() + File.separator + file_name;
+
+        result.put(FULL_FILE_STORE_PATH, base_path + File.separator + relative_file_store_path);
+        result.put(RELATIVE_FILE_STORE_PATH, relative_file_store_path);
+        result.put(FILE_STORE_NAME, file_name);
         return result;
     }
 
     @Override
-    public String buildFilePath(FileInfoEntity fileInfoEntity){
-        String _path= PathBaseUtility.getThreadRunRootPath()+File.separator+fileRootPath+File.separator+fileInfoEntity.getFileStorePath();
+    public String buildFilePath(FileInfoEntity fileInfoEntity) throws URISyntaxException, FileNotFoundException {
+        String _path="";
+        if(fileRootPath.indexOf(":")>0){
+            _path=fileRootPath+ File.separator + fileRootPath + File.separator + fileInfoEntity.getFileStorePath();
+        }
+        else {
+            _path = FileUtility.getRootPath() + File.separator + fileRootPath + File.separator + fileInfoEntity.getFileStorePath();
+        }
         return _path;
     }
 

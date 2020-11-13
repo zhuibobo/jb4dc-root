@@ -13,10 +13,28 @@
     top: 5px;
     right: 10px;
     z-index: 2000;
-    width: 290px;
+    width: 400px;
     /*background-color: #0a0e45;*/
     font-size: 12px;
     /*color: #0a0e45;*/
+}
+.top-right-wrap .switch-system-warp {
+    display: inline-block;
+    float: left;
+    margin-left: 0px;
+    width: 100px;
+    color: #ffffff;
+    /*background-color: red;*/
+    margin-right: 10px;
+    margin-top: 6px;
+}
+.top-right-wrap .switch-system-warp .btn {
+    padding: 1px 6px;
+    line-height:1.4;
+    /*font-size: 13px;*/
+}
+.top-right-wrap .switch-system-warp .btn-secondary {
+    background-color: transparent;
 }
 .top-right-wrap .user-warp {
     display: inline-block;

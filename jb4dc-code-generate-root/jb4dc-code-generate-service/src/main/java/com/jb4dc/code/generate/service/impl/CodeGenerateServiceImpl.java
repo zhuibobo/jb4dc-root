@@ -7,6 +7,7 @@ import com.jb4dc.base.dbaccess.dynamic.impl.TemporarySqlSessionFactoryBuilder;
 import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.base.service.impl.SQLBuilderServiceImpl;
 import com.jb4dc.base.service.impl.TemporarySQLBuilderService;
+import com.jb4dc.base.service.spring.SpringContextHolder;
 import com.jb4dc.code.generate.bo.CodeGenerateBO;
 import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
 import com.jb4dc.core.base.tools.PathBaseUtility;
@@ -38,11 +39,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
+import javax.swing.*;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
 import java.beans.PropertyVetoException;
 import java.io.*;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -83,7 +86,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
 
 
     @Override
-    public PageInfo<List<Map<String, Object>>> getTables(String dataSourceId,String searchTableName,Integer pageNum, Integer pageSize) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException {
+    public PageInfo<List<Map<String, Object>>> getTables(String dataSourceId,String searchTableName,Integer pageNum, Integer pageSize) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException, URISyntaxException {
         String sql = "";
 
         String _searchTableName = "%%";
@@ -115,7 +118,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     }
 
     @Override
-    public List<SimpleTableFieldBO> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException {
+    public List<SimpleTableFieldBO> getTableFields(String dataSourceId, String tableName) throws JBuild4DCGenerallyException, FileNotFoundException, PropertyVetoException, JAXBException, URISyntaxException {
         String sql="";
         List<SimpleTableFieldBO> result=new ArrayList<>();
         DataSourceSingleBO dataSourceSingleVo=dataSourceService.getDataSourceSingleConfig(dataSourceId);
@@ -153,7 +156,14 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     private String XmlRootFolderKey="XmlRootFolderKey";
     private PackageSingleBO createAboutFolder(PackageSingleBO packageSingleBO){
         //String GenerateCodeFilesPath= PathBaseUtility.getThreadRunRootPath()+"/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
-        String GenerateCodeFilesPath= "D:/JavaProject/jb4dc/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
+        //String GenerateCodeFilesPath= "D:/JavaProject/jb4dc/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
+        String GenerateCodeFilesPath="";
+        if(SpringContextHolder.getActiveProfile().equals("dev")){
+            GenerateCodeFilesPath= "D:/JavaProject/jb4dc/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
+        }
+        else{
+            GenerateCodeFilesPath= "E:/JavaPlat/jb4dcsystem/codegenerate/GenerateCodeFiles"+"/"+DateUtility.getDate_yyyyMMddHHmmssSSS();
+        }
         File tempRootFolder=new File(GenerateCodeFilesPath);
         tempRootFolder.mkdirs();
 
@@ -288,7 +298,7 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
     }
 
     @Override
-    public Map<String, String> getTableGenerateCode(String dataSourceId,String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException, JAXBException {
+    public Map<String, String> getTableGenerateCode(String dataSourceId,String tableName, String orderFieldName, String statusFieldName, String packageType, String packageLevel2Name) throws IOException, ParserConfigurationException, SAXException, XPathExpressionException, JAXBException, URISyntaxException {
         if(!packageLevel2Name.equals("")){
             packageLevel2Name="."+packageLevel2Name;
         }
