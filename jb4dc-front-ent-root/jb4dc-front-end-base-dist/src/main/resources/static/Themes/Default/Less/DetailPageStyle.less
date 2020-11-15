@@ -269,24 +269,38 @@
         font-size: 16px;
     }
 
-    tr {
-        td, th {
-            padding: 6px;
-            border: 1px solid #f0f0f0;
+    >tbody>tr {
+        >td{
+            padding: 8px;
+            border: #d1d1d1 solid 1px;
 
-            input[type="text"], textarea, select {
-                background: transparent;
-                border: 1px solid #d3d7e0;
-                box-sizing: border-box;
-                padding: 4px;
+            textarea,input[type=text],select{
+                display: inline-block;
                 width: 100%;
-                overflow: auto;
+                padding: 4px 7px;
                 font-size: 12px;
+                border: 1px solid #dcdee2;
+                border-radius: 4px;
+                color: #515a6e;
+                background-color: #fff;
+                background-image: none;
+                position: relative;
+                cursor: text;
+                -webkit-transition: border .2s ease-in-out,background .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+                transition: border .2s ease-in-out,background .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+                transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out;
+                transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+            }
+            select{
+                cursor: pointer;
+            }
+            textarea:hover,input[type=text]:hover {
+                border-color: #57a3f3;
             }
         }
-        th {
-            color: #2e6e9e;
-            background-color: #f0f4fa;
+        >td:nth-child(1), >td:nth-child(3), >td:nth-child(5) {
+            background: #f8f8f8;
+            color: #000000;
         }
     }
 

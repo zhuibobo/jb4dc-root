@@ -5,6 +5,8 @@ import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import org.ehcache.Cache;
 import org.ehcache.CacheManager;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: zhuangrb
@@ -36,11 +38,12 @@ public abstract class JB4DCCacheManager {
         cacheManager.getCache(cacheName,String.class,String.class).put(key,value);
     }
 
-    public void put(String cacheName,String key,Object value){
-        cacheManager.getCache(cacheName,String.class,Object.class).put(key,value);
+    public <T> void putT(String cacheName,Class<T> valueType,String key,T value){
+        //cacheManager.getCache(cacheName,String.class,).put(key,value);
+        cacheManager.getCache(cacheName,String.class,valueType).put(key,value);
     }
 
-   /* public static <T> void putT(String cacheName,String key,T value){
+   /*public static <T> void putT(String cacheName,String key,T value){
         cacheManager.getCache(cacheName,String.class,value.getClass()).put(key,value);
     }*/
 
@@ -48,32 +51,32 @@ public abstract class JB4DCCacheManager {
         return (T) cacheManager.getCache(cacheName,String.class,String.class).get(key);
     }
 
-    public <T> T getObject(String cacheName,String key){
-        return (T) cacheManager.getCache(cacheName,String.class,Object.class).get(key);
+    public <T> T getT(String cacheName,Class<T> valueType,String key){
+        return (T) cacheManager.getCache(cacheName,String.class,valueType).get(key);
     }
 
     public boolean exist(String cacheName, String key) throws JBuild4DCGenerallyException {
-        Cache<String, Object> cache = cacheManager.getCache(cacheName, String.class, Object.class);
+        Cache<String, String> cache = cacheManager.getCache(cacheName, String.class, String.class);
         if(cache==null){
             throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"不存在名称为:"+cacheName+"的缓存配置!");
         }
         return cache.get(key) != null ? true : false;
     }
 
-    public <T> T autoGetFromCache(String cacheName,boolean cancelCache,String key,IBuildGeneralObj<T> builder) throws JBuild4DCGenerallyException {
+    /*public <T> T autoGetFromCache(String cacheName, Class<List<T>> valueType, boolean cancelCache, String key, IBuildGeneralObj<T> builder) throws JBuild4DCGenerallyException {
         T result=null;
         if(cancelCache){
             result=builder.BuildObj();
             return result;
         }
         else{
-            result= this.getObject(cacheName,key);
+            result= this.getT(cacheName,valueType,key);
             if(result==null){
                 result=builder.BuildObj();
-                this.put(cacheName,key,result);
+                this.putT(cacheName,valueType,key,result);
                 return result;
             }
             return result;
         }
-    }
+    }*/
 }
