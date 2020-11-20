@@ -15,6 +15,9 @@ public class JBuild4DCGenerallyException extends JBuild4DCBaseException {
     public static int EXCEPTION_BUILDER_CODE = 110004;
     public static int EXCEPTION_CONFIG_CODE = 110005;
     public static int EXCEPTION_CODE_GENERATE_CODE=110006;
+    public static int EXCEPTION_GRID_CODE=110007;
+    public static int EXCEPTION_QC_CODE=110008;
+    public static int EXCEPTION_SITE_CODE=110009;
 
     public JBuild4DCGenerallyException(int errorCode, Exception ex) {
         //super(ex.getCause());

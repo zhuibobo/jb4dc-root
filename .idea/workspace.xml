@@ -22,11 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/BaiduMapUtility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/exception/JBuild4DCGenerallyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/exception/JBuild4DCGenerallyException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/HTML/FrameV2/FrameView.html" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/HTML/FrameV2/FrameView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/HTML/FrameV2/FrameView.html" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/HTML/FrameV2/FrameView.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +104,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31085354" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
@@ -150,6 +150,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ApplicationCodeGenerateWebServer">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="builder" type="Remote">
       <module name="jb4dc-core-base" />
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -266,10 +279,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gulp.js.front-end-base-html" />
         <item itemvalue="Gulp.js.front-end-base-js-utility" />
         <item itemvalue="Gulp.js.front-end-base-themes-less" />
         <item itemvalue="Gulp.js.front-end-base-themes-all" />
-        <item itemvalue="Gulp.js.front-end-base-html" />
         <item itemvalue="Gulp.js.front-end-base-js-external" />
       </list>
     </recent_temporary>
@@ -557,14 +570,10 @@
       <workItem from="1605593444699" duration="405000" />
       <workItem from="1605593868900" duration="369000" />
       <workItem from="1605603482498" duration="605000" />
-      <workItem from="1605605348073" duration="194000" />
-    </task>
-    <task id="LOCAL-00107" summary="创建项目">
-      <created>1567132607679</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1567132607680</updated>
+      <workItem from="1605605348073" duration="256000" />
+      <workItem from="1605682420072" duration="860000" />
+      <workItem from="1605756217581" duration="1516000" />
+      <workItem from="1605865059726" duration="716000" />
     </task>
     <task id="LOCAL-00108" summary="创建项目">
       <created>1568084806127</created>
@@ -902,7 +911,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605448031304</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="创建项目">
+      <created>1605605588119</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1605605588119</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TodoView">
@@ -927,6 +943,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -962,25 +979,25 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1060" y="275" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605594238445" />
-    <state width="1877" height="273" key="GridCell.Tab.0.bottom" timestamp="1605523822551">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state width="2517" height="282" key="GridCell.Tab.0.bottom" timestamp="1605761979472">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1741" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605234052910" />
+    <state width="2517" height="282" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605761979472" />
     <state width="1877" height="273" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1605523822551" />
-    <state width="1877" height="273" key="GridCell.Tab.0.center" timestamp="1605523822551">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state width="2517" height="282" key="GridCell.Tab.0.center" timestamp="1605761979472">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1741" height="274" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605234052910" />
+    <state width="2517" height="282" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605761979472" />
     <state width="1877" height="273" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1605523822551" />
-    <state width="1877" height="273" key="GridCell.Tab.0.left" timestamp="1605523822551">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state width="2517" height="282" key="GridCell.Tab.0.left" timestamp="1605761979472">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1741" height="274" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605234052910" />
+    <state width="2517" height="282" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605761979472" />
     <state width="1877" height="273" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1605523822551" />
-    <state width="1877" height="273" key="GridCell.Tab.0.right" timestamp="1605523822551">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state width="2517" height="282" key="GridCell.Tab.0.right" timestamp="1605761979472">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1741" height="274" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605234052910" />
+    <state width="2517" height="282" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605761979472" />
     <state width="1877" height="273" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1605523822551" />
     <state width="1741" height="274" key="GridCell.Tab.1.bottom" timestamp="1605234052911">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -1022,24 +1039,24 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="821" y="221" key="RollbackChangesDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605252734488" />
-    <state x="781" y="164" key="SettingsEditor" timestamp="1605605543102">
+    <state x="781" y="164" key="SettingsEditor" timestamp="1605756352596">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="781" y="164" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605605543102" />
-    <state x="872" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605605449266">
+    <state x="781" y="164" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605756352596" />
+    <state x="872" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605605590453">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="872" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605605449266" />
+    <state x="872" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605605590453" />
     <state x="3214" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1605448067035" />
     <state x="1010" y="263" key="extract.method.dialog" timestamp="1602665372909">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1010" y="263" key="extract.method.dialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1602665372909" />
-    <state x="982" y="252" width="934" height="560" key="find.popup" timestamp="1605269581441">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="3297" y="236" width="803" height="804" key="find.popup" timestamp="1605865065513">
+      <screen x="2560" y="0" width="1920" height="1040" />
     </state>
     <state x="982" y="252" width="934" height="560" key="find.popup/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605269581441" />
-    <state x="3297" y="252" width="803" height="536" key="find.popup/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1604997205056" />
+    <state x="3297" y="236" width="803" height="804" key="find.popup/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1605865065513" />
     <state x="2607" y="190" key="new project wizard" timestamp="1600596342656">
       <screen x="2560" y="0" width="1920" height="1040" />
     </state>
