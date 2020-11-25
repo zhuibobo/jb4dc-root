@@ -18,7 +18,9 @@
         AjaxUtility.GetSync("/Rest/Frame/MyFrame/GetMyFrameLogoutUrl", {}, function (result) {
             console.log(result);
             if(result.success) {
-                window.location.href = result.data;
+                var sourceHref=window.location.origin+window.location.pathname;
+                var reHref=result.data+"?JBuild4DCSSOLogoutFromUrl="+encodeURIComponent(sourceHref)+"&ts="+Date.now();
+                window.location.href = reHref;
             }
         }, this);
     }
@@ -35,7 +37,7 @@
             $("#spanOrganName").attr("title",sessionUser.organName);
 
             AjaxUtility.Get("/Rest/Frame/MyFrame/GetMyAuthorityApp", {}, function (result) {
-                //myMenusJson = result.data;
+                //myMenusJson = result.data;11111
                 console.log(result);
                 if(result.success){
                     for(var i=0;i<result.data.length;i++){
