@@ -35,5 +35,7 @@
         <PackageLevel2Name value="person"></PackageLevel2Name>
         <PackageLevel2Name value="event"></PackageLevel2Name>
         <PackageLevel2Name value="enterprise"></PackageLevel2Name>
+        <PackageLevel2Name value="terminal"></PackageLevel2Name>
+        <PackageLevel2Name value="setting"></PackageLevel2Name>
     </Package>
 </Config>

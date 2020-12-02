@@ -67,6 +67,16 @@ public class JB4DCSession implements Serializable {
 
     private String ssoSessionToken;
 
+    private String appClientToken;
+
+    public String getAppClientToken() {
+        return appClientToken;
+    }
+
+    public void setAppClientToken(String appClientToken) {
+        this.appClientToken = appClientToken;
+    }
+
     /**
      * @return 拷贝Session对象
      */

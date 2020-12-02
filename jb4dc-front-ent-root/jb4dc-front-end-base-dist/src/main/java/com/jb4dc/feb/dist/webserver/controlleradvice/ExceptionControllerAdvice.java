@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -36,6 +37,14 @@ public class ExceptionControllerAdvice {
 
     @ExceptionHandler(JBuild4DCGenerallyException.class)
     public void processGenerallyException(HttpServletResponse response, HttpServletRequest request, JBuild4DCGenerallyException e) {
+        logger.error(e.getMessage());
+        response.setStatus(HttpServletResponse.SC_OK);
+        response.setContentType("application/json;charset=UTF-8");
+        handlerGenerallyException(response, request, e);
+    }
+
+    @ExceptionHandler(ServletException.class)
+    public void processServletException(HttpServletResponse response, HttpServletRequest request, JBuild4DCGenerallyException e) {
         logger.error(e.getMessage());
         response.setStatus(HttpServletResponse.SC_OK);
         response.setContentType("application/json;charset=UTF-8");

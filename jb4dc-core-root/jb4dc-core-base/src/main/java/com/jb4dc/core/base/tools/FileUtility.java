@@ -46,7 +46,12 @@ public class FileUtility {
             path=getJarRootPath()+ File.separator;
             logger.info("FileUtility.getRootPath:getJarRootPath" + path);
         }
-        return path.substring(0, path.length() - 1);
+        if(path.endsWith(File.separator)) {
+            return path.substring(0, path.length() - 1);
+        }
+        else{
+            return path;
+        }
     }
 
     public static String getJarPath() {

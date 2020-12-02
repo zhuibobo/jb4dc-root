@@ -12,6 +12,7 @@ import com.jb4dc.files.dao.FileRefMapper;
 import com.jb4dc.files.dbentities.FileContentEntity;
 import com.jb4dc.files.dbentities.FileInfoEntity;
 import com.jb4dc.files.dbentities.FileRefEntity;
+import com.jb4dc.files.po.SimpleFilePathPO;
 import com.jb4dc.files.service.IFileInfoService;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -86,6 +87,11 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
+    public List<FileInfoEntity> getFileInfoListByObjectId(JB4DCSession session, String objId){
+        return fileInfoMapper.selectFileInfoListByObjectId(objId,"*");
+    }
+
+    @Override
     public FileInfoEntity addSmallFileToDB(JB4DCSession session,String fileName, byte[] fileByte,String objId,String objName,String objType,String fileCategory) throws IOException, JBuild4DCGenerallyException {
 
         String fileId= UUIDUtility.getUUID();
@@ -145,11 +151,11 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
             throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE, "扩展名不能为空!");
         }
 
-        Map<String, String> fileSaveInfo = buildRelativeFileSavePath(fileId, extensionName);
-        File file = new File(fileSaveInfo.get(FULL_FILE_STORE_PATH));
+        SimpleFilePathPO fileSaveInfo = buildRelativeFileSavePath(fileId, extensionName);
+        File file = new File(fileSaveInfo.getFullFileStorePath());
         FileUtils.writeByteArrayToFile(file, fileByte);
 
-        FileInfoEntity fileInfoEntity = newFileInfoEntity(session, "FileSystem", fileName, (long) fileByte.length, fileCategory, fileId, fileSaveInfo.get(RELATIVE_FILE_STORE_PATH), fileSaveInfo.get(FILE_STORE_NAME), objId, objName);
+        FileInfoEntity fileInfoEntity = newFileInfoEntity(session, "FileSystem", fileName, (long) fileByte.length, fileCategory, fileId, fileSaveInfo.getRelativeFileStorePath(), fileSaveInfo.getFileStoreName(), objId, objName);
         FileRefEntity refEntity = newFileRefEntity(objId, objName, objType, fileId);
 
         fileRefMapper.insertSelective(refEntity);
@@ -221,11 +227,11 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         return this.addFileToFileSystem(session,file.getOriginalFilename(),file.getBytes(),objId,objName,objType,fileCategory);
     }
 
-    private String FULL_FILE_STORE_PATH="FULL_FILE_STORE_PATH";
+    /*private String FULL_FILE_STORE_PATH="FULL_FILE_STORE_PATH";
     private String RELATIVE_FILE_STORE_PATH="RELATIVE_FILE_STORE_PATH";
-    private String FILE_STORE_NAME="FILE_STORE_NAME";
+    private String FILE_STORE_NAME="FILE_STORE_NAME";*/
 
-    private Map<String,String> buildRelativeFileSavePath(String fileId, String extensionName) throws URISyntaxException, FileNotFoundException {
+    private SimpleFilePathPO buildRelativeFileSavePath(String fileId, String extensionName) throws URISyntaxException, FileNotFoundException {
         Map<String, String> result = new HashMap<>();
         String base_path = FileUtility.getRootPath() + File.separator + fileRootPath;
 
@@ -235,10 +241,32 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         String file_name = fileId + "." + extensionName.replaceAll("/.", "");
         String relative_file_store_path = DateUtility.getDate_yyyy_MM() + File.separator + file_name;
 
-        result.put(FULL_FILE_STORE_PATH, base_path + File.separator + relative_file_store_path);
+        SimpleFilePathPO simpleFilePathPO=new SimpleFilePathPO();
+        simpleFilePathPO.setFileStoreName(file_name);
+        simpleFilePathPO.setFullFileStorePath(base_path + File.separator + relative_file_store_path);
+        simpleFilePathPO.setRelativeFileStorePath(relative_file_store_path);
+        /*result.put(FULL_FILE_STORE_PATH, base_path + File.separator + relative_file_store_path);
         result.put(RELATIVE_FILE_STORE_PATH, relative_file_store_path);
-        result.put(FILE_STORE_NAME, file_name);
-        return result;
+        result.put(FILE_STORE_NAME, file_name);*/
+        return simpleFilePathPO;
+    }
+
+    @Override
+    public SimpleFilePathPO buildSavePath(String preFolderName, String recordId, String fileName) throws FileNotFoundException, URISyntaxException {
+        SimpleFilePathPO simpleFilePathPO=new SimpleFilePathPO();
+
+        String base_path = FileUtility.getRootPath() + File.separator + fileRootPath;
+        if (fileRootPath.indexOf(":") > 0) {
+            base_path = fileRootPath;
+        }
+        String file_name = fileName;
+        String full_file_store_path = base_path + File.separator + preFolderName + File.separator + recordId + File.separator + file_name;
+        String relative_file_store_path = preFolderName + File.separator + recordId + File.separator + file_name;
+
+        simpleFilePathPO.setFullFileStorePath(full_file_store_path);
+        simpleFilePathPO.setFileStoreName(fileName);
+        simpleFilePathPO.setRelativeFileStorePath(relative_file_store_path);
+        return simpleFilePathPO;
     }
 
     @Override
