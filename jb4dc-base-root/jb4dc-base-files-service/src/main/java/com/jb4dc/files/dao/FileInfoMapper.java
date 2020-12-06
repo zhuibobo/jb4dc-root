@@ -17,4 +17,6 @@ public interface FileInfoMapper extends BaseMapper<FileInfoEntity> {
     String selectMaxCodeByObjectId(@Param("objId") String objId);
 
     List<FileInfoEntity> selectFileInfoListByObjectId(@Param("objId") String objId,@Param("category")  String category);
+
+    List<FileInfoEntity> selectImageFileInfoList(@Param("objId") String objId,@Param("category") String category);
 }

@@ -3,6 +3,7 @@ package com.jb4dc.feb.dist.webserver.controlleradvice;
 import com.jb4dc.base.tools.JsonUtility;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.exception.JBuild4DCSessionTimeoutException;
+import com.jb4dc.core.base.tools.StringUtility;
 import com.jb4dc.core.base.vo.JBuild4DCResponseVo;
 import org.apache.ibatis.binding.BindingException;
 import org.slf4j.Logger;
@@ -54,6 +55,9 @@ public class ExceptionControllerAdvice {
     private void handlerGenerallyException(HttpServletResponse response, HttpServletRequest request, Exception e) {
         try {
             String msg=e.getMessage();
+            if(StringUtility.isEmpty(msg)){
+                msg="null Exception";
+            }
             String traceMsg=org.apache.commons.lang3.exception.ExceptionUtils.getStackTrace(e);
             response.getWriter().print(JsonUtility.toObjectString(JBuild4DCResponseVo.error(msg,traceMsg)));
         } catch (IOException e1) {

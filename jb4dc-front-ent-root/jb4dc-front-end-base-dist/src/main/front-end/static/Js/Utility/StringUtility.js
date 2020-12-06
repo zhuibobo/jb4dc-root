@@ -22,6 +22,12 @@ var StringUtility = {
     RemoveLastChar: function (str) {
         return str.substring(0, str.length - 1)
     },
+    IsNullOrEmptyTrim:function (obj){
+        if(obj){
+            obj=this.Trim(obj.toString());
+        }
+        return this.IsNullOrEmpty(obj);
+    },
     IsNullOrEmpty: function (obj) {
         return obj == undefined || obj == "" || obj == null || obj == "undefined" || obj == "null"
     },

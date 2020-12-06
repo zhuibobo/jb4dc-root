@@ -79,6 +79,11 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
+    public List<FileInfoEntity> getImageFileInfoListByObjectId(JB4DCSession session, String objId, String category){
+        return fileInfoMapper.selectImageFileInfoList(objId,category);
+    }
+
+    @Override
     public List<FileInfoEntity> getFileInfoListByObjectId(JB4DCSession session, String objId, String category){
         if(category.equals("*")){
             category="%%";
@@ -210,7 +215,7 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         fileInfoEntity.setFileStoreName(file_store_name);
         fileInfoEntity.setFileOrganId(session.getOrganId());
         fileInfoEntity.setFileOrganName(session.getOrganName());
-        fileInfoEntity.setFileExtension(extensionName);
+        fileInfoEntity.setFileExtension(extensionName.toLowerCase());
         fileInfoEntity.setFileDescription("");
         fileInfoEntity.setFileReadTime(0);
         fileInfoEntity.setFileCategory(fileCategory);
