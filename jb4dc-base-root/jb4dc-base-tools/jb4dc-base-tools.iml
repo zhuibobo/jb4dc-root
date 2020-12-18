@@ -82,6 +82,10 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mybatis:mybatis-spring:2.0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.pagehelper:pagehelper:5.1.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.jsqlparser:jsqlparser:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.zxing:core:3.4.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.zxing:javase:3.4.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.beust:jcommander:1.78" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.jai-imageio:jai-imageio-core:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
   </component>
 </module>

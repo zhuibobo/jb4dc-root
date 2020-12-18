@@ -29,7 +29,7 @@ var StringUtility = {
         return this.IsNullOrEmpty(obj);
     },
     IsNullOrEmpty: function (obj) {
-        return obj == undefined || obj == "" || obj == null || obj == "undefined" || obj == "null"
+        return obj == undefined || obj === "" || obj == null || obj == "undefined" || obj == "null"
     },
     IsNotNullOrEmpty:function(obj){
         return !(this.IsNullOrEmpty(obj));

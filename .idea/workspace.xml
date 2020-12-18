@@ -23,15 +23,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_2_1_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_78.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jai_imageio_jai_imageio_core_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_zxing_core_3_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_zxing_javase_3_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/tools/QRCodeZXingUtility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/PrintJS-1.5/print.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/PrintJS-1.5/print.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/PrintJS-1.5/print.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/PrintJS-1.5/print.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/dao/FileInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/dao/FileInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/jb4dc-base-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/jb4dc-base-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/IFileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/IFileInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/impl/FileInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/impl/FileInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/resources/mybatismappers/FileInfoEXMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/resources/mybatismappers/FileInfoEXMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/ymls/JBuild4DCYaml.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/ymls/JBuild4DCYaml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java/com/jb4dc/feb/dist/webserver/controlleradvice/ExceptionControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java/com/jb4dc/feb/dist/webserver/controlleradvice/ExceptionControllerAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-web-app-starter/jb4dc-web-app-starter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-web-app-starter/jb4dc-web-app-starter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-web-app-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-web-app-starter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +127,7 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/Images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/PrintJS-1.5" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -129,18 +145,19 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External\IView-4.X.dist\dist" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\IView-4.X.dist\dist" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-dev-mock-root\jb4dc-dev-mock-web-server\src\main\resources\config" />
-      <recent name="D:\JavaProject\SelfProject\jb4dc-root\jb4dc-code-general-root\jb4dc-code-generate-web-server\src\main\resources\static\HTML\CodeGenerate" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.jb4dc.base.service.exenum" />
       <recent name="com.jb4dc.base.ymls" />
       <recent name="com.jb4dc.base.tools" />
       <recent name="com.jb4dc.core.base.ymls" />
       <recent name="com.jb4dc.core.base.tools" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External\PrintJS-1.5" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\PrintJS-1.5" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Themes\Default\Less\Images" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Themes\Default\Css\Images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.jb4dc.base.service.liquibase" />
@@ -149,12 +166,11 @@
       <recent name="com.jb4dc.base.service" />
       <recent name="com.jb4dc.cloud.config.webserver.beanconfig.liquibase" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Themes\Default\Less\Images" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Themes\Default\Css\Images" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Themes\Default\Less\Images" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\ECharts-4.9.0" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External\IView-4.X.dist\dist" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\IView-4.X.dist\dist" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-dev-mock-root\jb4dc-dev-mock-web-server\src\main\resources\config" />
+      <recent name="D:\JavaProject\SelfProject\jb4dc-root\jb4dc-code-general-root\jb4dc-code-generate-web-server\src\main\resources\static\HTML\CodeGenerate" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -165,17 +181,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ApplicationCodeGenerateWebServer">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="builder" type="Remote">
       <module name="jb4dc-core-base" />
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -621,14 +626,17 @@
       <workItem from="1607065398939" duration="2494000" />
       <workItem from="1607140389353" duration="1842000" />
       <workItem from="1607211954603" duration="1779000" />
-      <workItem from="1607264836731" duration="1014000" />
-    </task>
-    <task id="LOCAL-00114" summary="创建项目">
-      <created>1571057887696</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1571057887696</updated>
+      <workItem from="1607264836731" duration="1092000" />
+      <workItem from="1607303930156" duration="1217000" />
+      <workItem from="1607496204277" duration="1212000" />
+      <workItem from="1607827344157" duration="629000" />
+      <workItem from="1607841609522" duration="12000" />
+      <workItem from="1607857195678" duration="2549000" />
+      <workItem from="1607908901556" duration="5135000" />
+      <workItem from="1607952273158" duration="38000" />
+      <workItem from="1608023019351" duration="653000" />
+      <workItem from="1608112143448" duration="2134000" />
+      <workItem from="1608205697737" duration="918000" />
     </task>
     <task id="LOCAL-00115" summary="创建项目">
       <created>1571656255383</created>
@@ -966,7 +974,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606916524668</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="创建项目">
+      <created>1607265862971</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1607265862971</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1009,10 +1024,10 @@
     </state>
     <state x="734" y="175" width="1174" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605594133354" />
     <state x="3111" y="175" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1605012612797" />
-    <state x="1085" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1606704939622">
+    <state x="1085" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1607916182414">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1085" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606704939622" />
+    <state x="1085" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607916182414" />
     <state x="3374" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1604997516453" />
     <state x="1035" y="222" width="811" height="596" key="#xdebugger.evaluate" timestamp="1605233655086">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -1031,25 +1046,25 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1060" y="275" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606051841910" />
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1607006612787">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state width="2517" height="274" key="GridCell.Tab.0.bottom" timestamp="1607934320676">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606830332856" />
+    <state width="2517" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607934320676" />
     <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607006612787" />
-    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1607006612787">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state width="2517" height="274" key="GridCell.Tab.0.center" timestamp="1607934320676">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="274" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606830332856" />
+    <state width="2517" height="274" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607934320676" />
     <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607006612787" />
-    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1607006612787">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state width="2517" height="274" key="GridCell.Tab.0.left" timestamp="1607934320676">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="274" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606830332856" />
+    <state width="2517" height="274" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607934320676" />
     <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607006612787" />
-    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1607006612787">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state width="2517" height="274" key="GridCell.Tab.0.right" timestamp="1607934320676">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="274" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606830332856" />
+    <state width="2517" height="274" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607934320676" />
     <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607006612787" />
     <state width="2177" height="366" key="GridCell.Tab.1.bottom" timestamp="1606742482721">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -1095,20 +1110,20 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="164" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605756352596" />
-    <state x="3214" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606916527751">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state x="872" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607265864819">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="872" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606307443439" />
+    <state x="872" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607265864819" />
     <state x="3214" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1606916527751" />
     <state x="1010" y="263" key="extract.method.dialog" timestamp="1602665372909">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1010" y="263" key="extract.method.dialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1602665372909" />
-    <state x="3297" y="236" width="803" height="804" key="find.popup" timestamp="1606811503626">
+    <state x="3297" y="236" width="855" height="804" key="find.popup" timestamp="1607857207240">
       <screen x="2560" y="0" width="1920" height="1040" />
     </state>
     <state x="982" y="252" width="934" height="560" key="find.popup/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606656087787" />
-    <state x="3297" y="236" width="803" height="804" key="find.popup/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1606811503626" />
+    <state x="3297" y="236" width="855" height="804" key="find.popup/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607857207240" />
     <state x="63" y="190" key="new project wizard" timestamp="1606051819302">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

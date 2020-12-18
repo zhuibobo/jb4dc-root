@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -289,5 +290,17 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     @Override
     public byte[] getContentInDB(String fileId) {
         return contentMapper.selectByPrimaryKey(fileId).getFileContent();
+    }
+
+    @Override
+    public byte[] getContentInFileSystem(JB4DCSession session,String fileId) throws JBuild4DCGenerallyException, IOException, URISyntaxException {
+        FileInfoEntity fileInfoEntity=getByPrimaryKey(session,fileId);
+        String filePath=buildFilePath(fileInfoEntity);
+        File file = new File(filePath);
+        FileInputStream fileInputStream = new FileInputStream(file);
+        byte[] datas = new byte[fileInputStream.available()];
+        fileInputStream.read(datas);
+        fileInputStream.close();
+        return datas;
     }
 }

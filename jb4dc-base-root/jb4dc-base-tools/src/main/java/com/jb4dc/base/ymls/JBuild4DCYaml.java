@@ -73,6 +73,8 @@ public class JBuild4DCYaml extends YamlUtility {
 
     private static String ssoLogoutUrl;
 
+    private static String httpType;
+
     public static String getWarningOperationCode(){
 
         return operationCode;
@@ -117,5 +119,14 @@ public class JBuild4DCYaml extends YamlUtility {
     @Value("${jb4dc.sso.server.view.logout:未设置}")
     public void setSsoLogoutUrl(String ssoLogoutUrl) {
         JBuild4DCYaml.ssoLogoutUrl = ssoLogoutUrl;
+    }
+
+    public String getHttpType() {
+        return httpType;
+    }
+
+    @Value("${jb4dc.http-type:http}")
+    public void setHttpType(String httpType) {
+        JBuild4DCYaml.httpType = httpType;
     }
 }

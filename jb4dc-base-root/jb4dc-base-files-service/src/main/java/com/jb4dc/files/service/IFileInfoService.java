@@ -46,4 +46,6 @@ public interface IFileInfoService extends IBaseService<FileInfoEntity> {
     String buildFilePath(FileInfoEntity fileInfoEntity) throws URISyntaxException, FileNotFoundException;
 
     byte[] getContentInDB(String fileId);
+
+    byte[] getContentInFileSystem(JB4DCSession session, String fileId) throws JBuild4DCGenerallyException, IOException, URISyntaxException;
 }
