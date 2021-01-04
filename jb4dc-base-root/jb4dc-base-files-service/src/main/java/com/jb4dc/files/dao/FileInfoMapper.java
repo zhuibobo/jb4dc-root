@@ -19,4 +19,6 @@ public interface FileInfoMapper extends BaseMapper<FileInfoEntity> {
     List<FileInfoEntity> selectFileInfoListByObjectId(@Param("objId") String objId,@Param("category")  String category);
 
     List<FileInfoEntity> selectImageFileInfoList(@Param("objId") String objId,@Param("category") String category);
+
+    List<FileInfoEntity> selectVideoFileInfoList(@Param("objId") String objId,@Param("category") String category);
 }

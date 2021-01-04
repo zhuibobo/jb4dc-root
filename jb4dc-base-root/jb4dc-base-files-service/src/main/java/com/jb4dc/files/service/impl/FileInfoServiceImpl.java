@@ -85,6 +85,11 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
+    public List<FileInfoEntity> getVideoFileInfoListByObjectId(JB4DCSession session, String objId, String category){
+        return fileInfoMapper.selectVideoFileInfoList(objId,category);
+    }
+
+    @Override
     public List<FileInfoEntity> getFileInfoListByObjectId(JB4DCSession session, String objId, String category){
         if(category.equals("*")){
             category="%%";

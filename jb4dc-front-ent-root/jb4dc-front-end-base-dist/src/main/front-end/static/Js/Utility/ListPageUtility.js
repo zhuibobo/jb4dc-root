@@ -162,6 +162,13 @@ var ListPageUtility = {
             );
         });
     },
+    IViewCopyRowId:function (selectionRows, idField, pageAppObj){
+        this.IViewTableMareSureSelectedOne(selectionRows).then(function (selectionRows) {
+            var idValue=selectionRows[0][idField];
+            BaseUtility.CopyValueClipboard(idValue);
+            DialogUtility.ToastMessage(pageAppObj,"复制成功!");
+        });
+    },
     //改变状态封装
     IViewChangeServerStatusFace: function (url, selectionRows, idField, statusName, pageAppObj) {
         this.IViewTableMareSureSelected(selectionRows).then(function (selectionRows) {

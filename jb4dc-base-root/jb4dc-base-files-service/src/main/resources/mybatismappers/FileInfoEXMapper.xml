@@ -43,4 +43,8 @@
     <select id="selectImageFileInfoList" resultMap="BaseResultMap">
         select<include refid="Base_Column_List"/> from TFS_FILE_INFO where FILE_ID in (select REF_FILE_ID from TFS_FILE_REF where REF_OBJ_ID=#{objId}) and FILE_CATEGORY like #{category} and FILE_EXTENSION in ('jpg','png','gif','bmp','webp') order by FILE_ORDER_NUM asc
     </select>
+
+    <select id="selectVideoFileInfoList" resultMap="BaseResultMap">
+        select<include refid="Base_Column_List"/> from TFS_FILE_INFO where FILE_ID in (select REF_FILE_ID from TFS_FILE_REF where REF_OBJ_ID=#{objId}) and FILE_CATEGORY like #{category} and FILE_EXTENSION in ('mp4') order by FILE_ORDER_NUM asc
+    </select>
 </mapper>

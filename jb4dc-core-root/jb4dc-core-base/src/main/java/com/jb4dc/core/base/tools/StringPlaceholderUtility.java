@@ -6,5 +6,5 @@ package com.jb4dc.core.base.tools;
  * Date: 2018/7/6
  * To change this template use File | Settings | File Templates.
  */
-public class StringPlaceholderUtility {
-}
+/*public class StringPlaceholderUtility {
+}*/

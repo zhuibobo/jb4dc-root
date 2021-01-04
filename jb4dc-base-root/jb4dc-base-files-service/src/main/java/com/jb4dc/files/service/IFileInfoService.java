@@ -29,6 +29,8 @@ public interface IFileInfoService extends IBaseService<FileInfoEntity> {
 
     List<FileInfoEntity> getImageFileInfoListByObjectId(JB4DCSession session, String objId, String objName);
 
+    List<FileInfoEntity> getVideoFileInfoListByObjectId(JB4DCSession session, String objId, String category);
+
     List<FileInfoEntity> getFileInfoListByObjectId(JB4DCSession session, String objId, String category);
 
     List<FileInfoEntity> getFileInfoListByObjectId(JB4DCSession session, String objId);

@@ -23,30 +23,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_78.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jai_imageio_jai_imageio_core_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_zxing_core_3_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_zxing_javase_3_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/tools/QRCodeZXingUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/PrintJS-1.5/print.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/PrintJS-1.5/print.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/PrintJS-1.5/print.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/PrintJS-1.5/print.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_liquibase_liquibase_core_4_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_liquibase_liquibase_core_4_2_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/jb4dc-base-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/jb4dc-base-client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/dao/FileInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/dao/FileInfoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/IFileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/IFileInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/impl/FileInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/impl/FileInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/resources/mybatismappers/FileInfoEXMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/resources/mybatismappers/FileInfoEXMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/ymls/JBuild4DCYaml.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/ymls/JBuild4DCYaml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-root.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-root.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/jb4dc-code-generate-web-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/jb4dc-code-generate-web-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/tools/StringPlaceholderUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/tools/StringPlaceholderUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/jb4dc-front-end-base-dist.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/jb4dc-front-end-base-dist.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ListPageUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ListPageUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Css/Images/Icon_Left_Edit.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Css/Images/Icon_Left_Edit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Css/Images/Icon_Left_Edit_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Css/Images/Icon_Left_Edit_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Css/Images/Icon_Left_Edit_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Css/Images/Icon_Left_Edit_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Css/Images/Icon_Left_Edit_On.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Css/Images/Icon_Left_Edit_On.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/Images/Icon_Left_Edit.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/Images/Icon_Left_Edit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/Images/Icon_Left_Edit_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/Images/Icon_Left_Edit_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/Images/Icon_Left_Edit_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/Images/Icon_Left_Edit_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/Images/Icon_Left_Edit_On.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/Images/Icon_Left_Edit_On.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/ListPageStyle.less" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/ListPageStyle.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/Images/Icon_Left_Edit.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/Images/Icon_Left_Edit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/Images/Icon_Left_Edit_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/Images/Icon_Left_Edit_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/Images/Icon_Left_Edit_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/Images/Icon_Left_Edit_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/Images/Icon_Left_Edit_On.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/Images/Icon_Left_Edit_On.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/JBuild4DC.css" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/JBuild4DC.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/Images/Icon_Left_Edit.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/Images/Icon_Left_Edit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/Images/Icon_Left_Edit_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/Images/Icon_Left_Edit_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/Images/Icon_Left_Edit_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/Images/Icon_Left_Edit_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/Images/Icon_Left_Edit_On.png" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/Images/Icon_Left_Edit_On.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/ListPageStyle.less" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Less/ListPageStyle.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-web-app-starter/jb4dc-web-app-starter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-web-app-starter/jb4dc-web-app-starter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-web-app-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-web-app-starter/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,6 +192,17 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ApplicationCodeGenerateWebServer">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="builder" type="Remote">
       <module name="jb4dc-core-base" />
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -297,10 +319,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.front-end-base-js-utility" />
         <item itemvalue="Gulp.js.front-end-base-themes-less" />
-        <item itemvalue="Gulp.js.front-end-base-html" />
         <item itemvalue="Gulp.js.front-end-base-themes-all" />
+        <item itemvalue="Gulp.js.front-end-base-js-utility" />
+        <item itemvalue="Gulp.js.front-end-base-html" />
         <item itemvalue="Gulp.js.front-end-base-js-external" />
       </list>
     </recent_temporary>
@@ -636,14 +658,12 @@
       <workItem from="1607952273158" duration="38000" />
       <workItem from="1608023019351" duration="653000" />
       <workItem from="1608112143448" duration="2134000" />
-      <workItem from="1608205697737" duration="918000" />
-    </task>
-    <task id="LOCAL-00115" summary="创建项目">
-      <created>1571656255383</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1571656255384</updated>
+      <workItem from="1608205697737" duration="1002000" />
+      <workItem from="1608862295856" duration="517000" />
+      <workItem from="1608863395888" duration="637000" />
+      <workItem from="1609293466798" duration="776000" />
+      <workItem from="1609331835518" duration="739000" />
+      <workItem from="1609724942915" duration="6040000" />
     </task>
     <task id="LOCAL-00116" summary="创建项目">
       <created>1571664194653</created>
@@ -981,7 +1001,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607265862971</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="创建项目">
+      <created>1608252040073</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1608252040073</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1046,46 +1073,42 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1060" y="275" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606051841910" />
-    <state width="2517" height="274" key="GridCell.Tab.0.bottom" timestamp="1607934320676">
+    <state width="2517" height="274" key="GridCell.Tab.0.bottom" timestamp="1609753386643">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607934320676" />
+    <state width="2517" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1609753386643" />
     <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607006612787" />
-    <state width="2517" height="274" key="GridCell.Tab.0.center" timestamp="1607934320676">
+    <state width="2517" height="274" key="GridCell.Tab.0.center" timestamp="1609753386643">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="274" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607934320676" />
+    <state width="2517" height="274" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1609753386643" />
     <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607006612787" />
-    <state width="2517" height="274" key="GridCell.Tab.0.left" timestamp="1607934320676">
+    <state width="2517" height="274" key="GridCell.Tab.0.left" timestamp="1609753386643">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="274" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607934320676" />
+    <state width="2517" height="274" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1609753386643" />
     <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607006612787" />
-    <state width="2517" height="274" key="GridCell.Tab.0.right" timestamp="1607934320676">
+    <state width="2517" height="274" key="GridCell.Tab.0.right" timestamp="1609753386643">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="274" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607934320676" />
+    <state width="2517" height="274" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1609753386643" />
     <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607006612787" />
     <state width="2177" height="366" key="GridCell.Tab.1.bottom" timestamp="1606742482721">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2177" height="366" key="GridCell.Tab.1.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606742482721" />
-    <state width="1293" height="282" key="GridCell.Tab.1.bottom/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1600699791358" />
     <state width="2177" height="366" key="GridCell.Tab.1.center" timestamp="1606742482720">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2177" height="366" key="GridCell.Tab.1.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606742482720" />
-    <state width="1293" height="282" key="GridCell.Tab.1.center/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1600699791358" />
     <state width="2177" height="366" key="GridCell.Tab.1.left" timestamp="1606742482720">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2177" height="366" key="GridCell.Tab.1.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606742482720" />
-    <state width="1293" height="282" key="GridCell.Tab.1.left/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1600699791358" />
     <state width="2177" height="366" key="GridCell.Tab.1.right" timestamp="1606742482720">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2177" height="366" key="GridCell.Tab.1.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606742482720" />
-    <state width="1293" height="282" key="GridCell.Tab.1.right/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1600699791358" />
     <state width="2177" height="366" key="GridCell.Tab.2.bottom" timestamp="1606742482721">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -1110,25 +1133,24 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="164" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1605756352596" />
-    <state x="872" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607265864819">
+    <state x="872" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608252067744">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="872" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1607265864819" />
+    <state x="872" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1608252067744" />
     <state x="3214" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1606916527751" />
     <state x="1010" y="263" key="extract.method.dialog" timestamp="1602665372909">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1010" y="263" key="extract.method.dialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1602665372909" />
-    <state x="3297" y="236" width="855" height="804" key="find.popup" timestamp="1607857207240">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state x="982" y="252" width="934" height="560" key="find.popup" timestamp="1609739782372">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="982" y="252" width="934" height="560" key="find.popup/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606656087787" />
-    <state x="3297" y="236" width="855" height="804" key="find.popup/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1607857207240" />
+    <state x="982" y="252" width="934" height="560" key="find.popup/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1609739782372" />
+    <state x="3297" y="236" width="855" height="804" key="find.popup/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1609331842554" />
     <state x="63" y="190" key="new project wizard" timestamp="1606051819302">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="63" y="190" key="new project wizard/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1606051819302" />
-    <state x="2607" y="190" key="new project wizard/0.0.2560.1040/2560.0.1920.1040@2560.0.1920.1040" timestamp="1600596342656" />
     <state x="943" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603527347908">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
