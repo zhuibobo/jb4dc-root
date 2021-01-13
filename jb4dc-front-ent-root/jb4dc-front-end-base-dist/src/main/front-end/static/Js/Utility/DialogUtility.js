@@ -672,6 +672,9 @@ var DialogUtility={
         wrwin.DialogUtility._Frame_FramePageCloseDialog(autodialogId);
     },
     ToastMessage:function (sender,message) {
-        sender.$Message.info(message);
+        sender.$Message['success']({
+            background: true,
+            content: message
+        });
     }
 }

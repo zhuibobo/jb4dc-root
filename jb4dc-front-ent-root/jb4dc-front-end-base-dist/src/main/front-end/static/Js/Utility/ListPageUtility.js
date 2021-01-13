@@ -203,7 +203,8 @@ var ListPageUtility = {
             autoSelectedOldRows: false,
             successFunc: null,
             loadDict: false,
-            custParas: {}
+            custParas: {},
+            _expandedALL:false
         };
         config = $.extend(true, {}, config, _config);
         if (!config.tableList) {
@@ -230,12 +231,24 @@ var ListPageUtility = {
                     config.tableList.tableData = new Array();
                     config.tableList.tableData = result.data.list;
                     config.tableList.pageTotal = result.data.total;
+
+                    if(config.tableList.tableData&&config.tableList.tableData.length>0){
+                        for (var i = 0; i < config.tableList.tableData.length; i++) {
+                            if (config._expandedALL) {
+                                config.tableList.tableData[i]._expanded = true;
+                            }
+                        }
+                    }
+
                     if (config.autoSelectedOldRows) {
                         if (config.tableList.selectionRows != null) {
                             for (var i = 0; i < config.tableList.tableData.length; i++) {
                                 for (var j = 0; j < config.tableList.selectionRows.length; j++) {
                                     if (config.tableList.selectionRows[j][config.idField] == config.tableList.tableData[i][config.idField]) {
                                         config.tableList.tableData[i]._checked = true;
+                                    }
+                                    if (config._expandedALL) {
+                                        config.tableList.tableData[i]._expanded = true;
                                     }
                                 }
                             }

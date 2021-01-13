@@ -227,4 +227,14 @@ public class DateUtility {
         sz10LenDate = formater.format(date);
         return sz10LenDate;
     }
+
+    public static String getDate_yyyyMM() {
+        String sz10LenDate;
+        Date date =  new Date();
+
+        SimpleDateFormat formater=new SimpleDateFormat();
+        formater.applyPattern("yyyyMM");
+        sz10LenDate = formater.format(date);
+        return sz10LenDate;
+    }
 }
