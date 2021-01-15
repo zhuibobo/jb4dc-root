@@ -126,6 +126,13 @@ let replaceBlock = {
         replaceArray.push("\n\t</script>");
         return replaceArray.join("");*/
     },
+    replaceLineAwesomeLib: function (search, file) {
+        let replaceArray = new Array();
+        //判断路径后进行引入js的路径
+        let levelPath = calculateFilePath(file);
+        replaceArray.push(refCss(levelPath + 'Themes/Default/Line-Awesome-1.3.0/css/line-awesome.css'));
+        return replaceArray.join("\n\t");
+    },
     replaceBootStrap4Lib: function (search, file) {
         let replaceArray = new Array();
         //判断路径后进行引入js的路径

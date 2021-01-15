@@ -106,5 +106,14 @@ var ArrayUtility = {
             }
         }
         return result;
+    },
+    ToMap:function (source,keyFile){
+        var result={};
+        for(var i=0;i<source.length;i++){
+            if(source[i][keyFile]) {
+                result[source[i][keyFile]]=source[i];
+            }
+        }
+        return result;
     }
 }

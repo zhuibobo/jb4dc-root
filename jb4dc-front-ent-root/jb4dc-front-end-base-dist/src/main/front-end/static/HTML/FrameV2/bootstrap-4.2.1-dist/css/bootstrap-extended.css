@@ -705,8 +705,9 @@ select.form-control {
 
 .dropdown-toggle::after {
     font-size: 0.8rem;
-    font-family: 'LineAwesome';
-    content: "\f110" !important;
+    font-family: "Line Awesome Free";
+    font-weight: 900;
+    content: "\f107" !important;
     border: none !important;
     position: relative;
     top: 0px;

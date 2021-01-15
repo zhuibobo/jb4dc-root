@@ -9,6 +9,11 @@ var DialogUtility={
     DialogId03:"DefaultDialogUtility03",
     DialogId04:"DefaultDialogUtility04",
     DialogId05:"DefaultDialogUtility05",
+    DialogId06:"DefaultDialogUtility06",
+    DialogId07:"DefaultDialogUtility07",
+    DialogId08:"DefaultDialogUtility08",
+    DialogId09:"DefaultDialogUtility09",
+    DialogId10:"DefaultDialogUtility10",
     DialogNewWindowId:"DialogNewWindowId01",
     _GetElem:function(dialogId){
         return $("#"+dialogId);
@@ -676,5 +681,9 @@ var DialogUtility={
             background: true,
             content: message
         });
+    },
+    ShowSelectImageClassDialog:function (options,sureFunc,cancelFunc){
+        var url=BaseUtility.BuildAction("/HTML/SelectDialog/SelectLineAwesomeClass.html",{sureFunc:sureFunc,cancelFunc:cancelFunc});
+        this.OpenIframeWindow(window,"ShowSelectImageClassDialog",url,options,2)
     }
 }
