@@ -18,6 +18,7 @@ public class JBuild4DCGenerallyException extends JBuild4DCBaseException {
     public static int EXCEPTION_GRID_CODE=110007;
     public static int EXCEPTION_QC_CODE=110008;
     public static int EXCEPTION_SITE_CODE=110009;
+    public static int EXCEPTION_WORKFLOW_CODE=110010;
 
     public JBuild4DCGenerallyException(int errorCode, Exception ex) {
         //super(ex.getCause());
@@ -72,5 +73,7 @@ public class JBuild4DCGenerallyException extends JBuild4DCBaseException {
         return new JBuild4DCGenerallyException(errorCode, name+"不能为空!");
     }
 
-
+    public static JBuild4DCGenerallyException getNotSupportMethodException(int errorCode) {
+        return new JBuild4DCGenerallyException(errorCode, "该方法已经弃用！");
+    }
 }

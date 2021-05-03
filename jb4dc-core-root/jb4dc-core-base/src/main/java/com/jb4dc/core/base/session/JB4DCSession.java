@@ -6,6 +6,9 @@ import java.util.Map;
 
 public class JB4DCSession implements Serializable {
 
+    private String cookieSessionId;
+    private String jaSessionId;
+
     /**
      * 用户所在的组织ID
      */
@@ -75,6 +78,22 @@ public class JB4DCSession implements Serializable {
 
     public void setAppClientToken(String appClientToken) {
         this.appClientToken = appClientToken;
+    }
+
+    public String getCookieSessionId() {
+        return cookieSessionId;
+    }
+
+    public void setCookieSessionId(String cookieSessionId) {
+        this.cookieSessionId = cookieSessionId;
+    }
+
+    public String getJaSessionId() {
+        return jaSessionId;
+    }
+
+    public void setJaSessionId(String jaSessionId) {
+        this.jaSessionId = jaSessionId;
     }
 
     /**

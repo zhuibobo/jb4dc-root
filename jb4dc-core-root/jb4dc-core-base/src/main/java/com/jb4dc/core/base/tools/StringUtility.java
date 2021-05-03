@@ -1144,13 +1144,18 @@ public class StringUtility {
         return !isEmpty(str);
     }
 
-    public static String fisrtCharUpperThenLower(String name) {
+    public static String firstCharUpperThenLower(String name) {
         name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
         return name;
     }
 
-    public static String fisrtCharLower(String name) {
+    public static String firstCharLower(String name) {
         name = name.substring(0, 1).toLowerCase() + name.substring(1);
+        return name;
+    }
+
+    public static String firstCharUpper(String name) {
+        name = name.substring(0, 1).toUpperCase() + name.substring(1);
         return name;
     }
 

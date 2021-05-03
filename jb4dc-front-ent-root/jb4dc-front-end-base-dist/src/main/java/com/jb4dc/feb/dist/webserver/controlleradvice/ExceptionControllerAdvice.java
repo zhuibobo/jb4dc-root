@@ -44,6 +44,14 @@ public class ExceptionControllerAdvice {
         handlerGenerallyException(response, request, e);
     }
 
+    @ExceptionHandler(NullPointerException.class)
+    public void processNullPointerException(HttpServletResponse response, HttpServletRequest request, NullPointerException e) {
+        logger.error(e.getMessage());
+        response.setStatus(HttpServletResponse.SC_OK);
+        response.setContentType("application/json;charset=UTF-8");
+        handlerGenerallyException(response, request, e);
+    }
+
     @ExceptionHandler(ServletException.class)
     public void processServletException(HttpServletResponse response, HttpServletRequest request, JBuild4DCGenerallyException e) {
         logger.error(e.getMessage());

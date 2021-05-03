@@ -1,13 +1,11 @@
 package com.jb4dc.code.generate.service.impl.codegenerate;
 
 import com.jb4dc.code.generate.bo.PackageSingleBO;
-import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
 import com.jb4dc.core.base.tools.StringUtility;
 import org.mybatis.generatorex.api.IntrospectedColumn;
 import org.mybatis.generatorex.api.IntrospectedTable;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,7 +27,7 @@ public class CGCodeFragment {
 
         IntrospectedTable introspectedTable=introspectedTableList.get(0);
 
-        String domainObjectName= StringUtility.fisrtCharLower(introspectedTable.getFullyQualifiedTable().getDomainObjectName());
+        String domainObjectName= StringUtility.firstCharLower(introspectedTable.getFullyQualifiedTable().getDomainObjectName());
         builder.append("/*Js Bean*/");
         builder.append(CGTool.newLineChar());
         builder.append(domainObjectName+":{");

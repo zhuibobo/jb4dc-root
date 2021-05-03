@@ -107,7 +107,11 @@
             var li = $('<li id="menu_' + menuId + '"></li>');
             if (level == 1) {
                 li.addClass("nav-item");
-                li.append("<a href=\"#\"><i class=\"las la-stream\"></i><span class=\"menu-title\">" + menuData.menuText + "</span></a>");
+                var className=menuData.menuClassName;
+                if(!className){
+                    className="las la-stream";
+                }
+                li.append("<a href=\"#\"><i class=\""+className+"\"></i><span class=\"menu-title\">" + menuData.menuText + "</span></a>");
             } else {
                 li.append("<a href=\"#\">" + menuData.menuText + "</a>");
             }

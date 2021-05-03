@@ -493,7 +493,7 @@ var DialogUtility={
         }
     },
     OpenNewTabWindow:function(url){
-        var link=$("<a href='"+url+"' style='position:absolute;top: -100px;width: 0px;height: 0px' target='_blank'></a>");
+        var link=$("<a href='"+url+"' style='position:absolute;top: -100px;width: 0px;height: 0px' target='_blank' rel='opener'></a>");
         $(window.document.body).append(link);
         link[0].click();
     },
@@ -682,8 +682,34 @@ var DialogUtility={
             content: message
         });
     },
+    ToastErrorMessage:function (sender,message) {
+        sender.$Message['error']({
+            background: true,
+            content: message
+        });
+    },
+    ToastWarningMessage:function (sender,message) {
+        sender.$Message['warning']({
+            background: true,
+            content: message
+        });
+    },
+    ToastInfoMessage:function (sender,message) {
+        sender.$Message['info']({
+            background: true,
+            content: message
+        });
+    },
     ShowSelectImageClassDialog:function (options,sureFunc,cancelFunc){
+        var defaultOptions = {
+            height: 540,
+            width: 800,
+            modal:true,
+            title:"选择图标",
+            close: function (event, ui) {}
+        };
+        defaultOptions = $.extend(true, {}, defaultOptions, options);
         var url=BaseUtility.BuildAction("/HTML/SelectDialog/SelectLineAwesomeClass.html",{sureFunc:sureFunc,cancelFunc:cancelFunc});
-        this.OpenIframeWindow(window,"ShowSelectImageClassDialog",url,options,2)
+        this.OpenIframeWindow(window,"ShowSelectImageClassDialog",url,defaultOptions,2)
     }
 }

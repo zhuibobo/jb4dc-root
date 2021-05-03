@@ -23,6 +23,10 @@ public class CookieUtility {
         set(response, key, value, null, COOKIE_PATH, age, true);
     }
 
+    public static void set(HttpServletResponse response, String key, String value, boolean ifRemember, String path) {
+        int age = ifRemember?COOKIE_MAX_AGE:-1;
+        set(response, key, value, null, path, age, true);
+    }
     /**
      * 保存
      *

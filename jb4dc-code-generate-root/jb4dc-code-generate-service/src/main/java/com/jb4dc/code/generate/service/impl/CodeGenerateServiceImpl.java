@@ -8,9 +8,6 @@ import com.jb4dc.base.service.ISQLBuilderService;
 import com.jb4dc.base.service.impl.SQLBuilderServiceImpl;
 import com.jb4dc.base.service.impl.TemporarySQLBuilderService;
 import com.jb4dc.base.service.spring.SpringContextHolder;
-import com.jb4dc.code.generate.bo.CodeGenerateBO;
-import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
-import com.jb4dc.core.base.tools.PathBaseUtility;
 import com.jb4dc.code.generate.bo.DataSourceSingleBO;
 import com.jb4dc.code.generate.bo.PackageSingleBO;
 import com.jb4dc.code.generate.bo.SimpleTableFieldBO;
@@ -39,7 +36,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
-import javax.swing.*;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
@@ -249,16 +245,16 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         sqlMapGeneratorConfiguration.setTargetProject(packageSingleBO.getMapperACSavePath());
         context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
 
-        String domainObjectName= StringUtility.fisrtCharUpperThenLower(tableName)+"Entity";
-        String mapperName=StringUtility.fisrtCharUpperThenLower(tableName)+"ACMapper";
-        String daoMapperName=StringUtility.fisrtCharUpperThenLower(tableName)+"Mapper";
+        String domainObjectName= StringUtility.firstCharUpperThenLower(tableName)+"Entity";
+        String mapperName=StringUtility.firstCharUpperThenLower(tableName)+"ACMapper";
+        String daoMapperName=StringUtility.firstCharUpperThenLower(tableName)+"Mapper";
 
         if(tableName.indexOf("_")>0){
             //String shortName=tableName.substring(tableName.indexOf("_")+1);
             String name="";
             String[] names=tableName.split("_");
             for(int i=1;i<names.length;i++){
-                name+=StringUtility.fisrtCharUpperThenLower(names[i]);
+                name+=StringUtility.firstCharUpperThenLower(names[i]);
             }
             domainObjectName=name+"Entity";
             mapperName=name+"ACMapper";
@@ -358,16 +354,16 @@ public class CodeGenerateServiceImpl implements ICodeGenerateService {
         sqlMapGeneratorConfiguration.setTargetProject(packageSingleBO.getMapperACSavePath());
         context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
 
-        String domainObjectName= StringUtility.fisrtCharUpperThenLower(tableName)+"Entity";
-        String mapperName=StringUtility.fisrtCharUpperThenLower(tableName)+"ACMapper";
-        String daoMapperName=StringUtility.fisrtCharUpperThenLower(tableName)+"Mapper";
+        String domainObjectName= StringUtility.firstCharUpperThenLower(tableName)+"Entity";
+        String mapperName=StringUtility.firstCharUpperThenLower(tableName)+"ACMapper";
+        String daoMapperName=StringUtility.firstCharUpperThenLower(tableName)+"Mapper";
 
         if(tableName.indexOf("_")>0){
             //String shortName=tableName.substring(tableName.indexOf("_")+1);
             String name="";
             String[] names=tableName.split("_");
             for(int i=1;i<names.length;i++){
-                name+=StringUtility.fisrtCharUpperThenLower(names[i]);
+                name+=StringUtility.firstCharUpperThenLower(names[i]);
             }
             domainObjectName=name+"Entity";
             mapperName=name+"ACMapper";

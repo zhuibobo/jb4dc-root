@@ -1,12 +1,10 @@
 package com.jb4dc.code.generate.service.impl.codegenerate;
 
 import com.jb4dc.code.generate.bo.PackageSingleBO;
-import com.jb4dc.code.generate.exenum.CodeGenerateTypeEnum;
 import com.jb4dc.core.base.tools.StringUtility;
 import org.mybatis.generatorex.api.IntrospectedTable;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,7 +20,7 @@ public class CGServiceImpl {
 
         IntrospectedTable introspectedTable=introspectedTableList.get(0);
 
-        String daoMapperInstanceName= StringUtility.fisrtCharLower(daoMapperName);
+        String daoMapperInstanceName= StringUtility.firstCharLower(daoMapperName);
         String serviceImplName=introspectedTable.getFullyQualifiedTable().getDomainObjectName().replace("Entity","")+"ServiceImpl";
         String domainObjectName=introspectedTable.getFullyQualifiedTable().getDomainObjectName();
 

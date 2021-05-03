@@ -115,5 +115,13 @@ var ArrayUtility = {
             }
         }
         return result;
+    },
+    Insert:function (source,index,item) {
+        source.splice(index, 0, item);
+    },
+    InsertArray:function (source,index,newAry) {
+        for (var i = 0; i < newAry.length; i++) {
+            source.splice(index++, 0, newAry[i]);
+        }
     }
 }

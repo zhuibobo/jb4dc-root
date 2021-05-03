@@ -5,15 +5,37 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import sun.util.resources.cldr.chr.TimeZoneNames_chr;
 
 import java.io.IOException;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
 
 public class JsonUtility {
+    public static JavaType getJavaType(Type type) {
+        //判断是否带有泛型
+        if (type instanceof ParameterizedType) {
+            Type[] actualTypeArguments = ((ParameterizedType) type).getActualTypeArguments();
+            //获取泛型类型
+            Class rowClass = (Class) ((ParameterizedType) type).getRawType();
+            JavaType[] javaTypes = new JavaType[actualTypeArguments.length];
+            for (int i = 0; i < actualTypeArguments.length; i++) {
+                //泛型也可能带有泛型，递归获取
+                javaTypes[i] = getJavaType(actualTypeArguments[i]);
+            }
+            return TypeFactory.defaultInstance().constructParametricType(rowClass, javaTypes);
+        } else {
+            //简单类型直接用该类构建JavaType
+            Class cla = (Class) type;
+            return TypeFactory.defaultInstance().constructParametricType(cla, new JavaType[0]);
+        }
+    }
+
     public static String toObjectString(Object vo) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         //去掉默认的时间戳格式
@@ -27,7 +49,16 @@ public class JsonUtility {
         return jsonString;
     }
 
+    public static <T> T toObject(String str,JavaType javaType) throws IOException {
+        //JsonUtil
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(str,javaType);
+    }
+
     public static <T> T toObject(String str,Class<T> _class) throws IOException {
+        //JsonUtil
+
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(str,_class);
     }

@@ -56,7 +56,12 @@ var BaseUtility = {
         }
         var _url = this.GetRootPath() + action;
         if (urlPara != "") {
-            _url += "?" + urlPara;
+            if (_url.indexOf("?") > -1) {
+                _url += "&" + urlPara;
+            }
+            else{
+                _url += "?" + urlPara;
+            }
         }
         //alert(_url);
         return this.AppendTimeStampUrl(_url);

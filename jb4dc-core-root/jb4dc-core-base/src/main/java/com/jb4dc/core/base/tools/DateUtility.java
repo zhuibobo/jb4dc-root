@@ -237,4 +237,9 @@ public class DateUtility {
         sz10LenDate = formater.format(date);
         return sz10LenDate;
     }
+
+    public static String getTimestampString(){
+        Date date =  new Date();
+        return String.valueOf(date.getTime());
+    }
 }

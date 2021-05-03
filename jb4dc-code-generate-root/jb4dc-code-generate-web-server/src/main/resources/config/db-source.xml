@@ -36,7 +36,7 @@
         <DBType>mysql</DBType>
         <DriverName>com.mysql.cj.jdbc.Driver</DriverName>
         <DatabaseName>JB4DC_BUILDER_V03</DatabaseName>
-        <Url>jdbc:mysql://58.51.184.124:6316/JB4DC_BUILDER_V03?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
+        <Url>jdbc:mysql://58.51.184.121:6316/JB4DC_BUILDER_V03?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
         <User>root</User>
         <Password>jb4dc#sz#1234</Password>
     </DataSource>
@@ -46,7 +46,7 @@
         <DBType>mysql</DBType>
         <DriverName>com.mysql.cj.jdbc.Driver</DriverName>
         <DatabaseName>JB4DC_SSO_V02</DatabaseName>
-        <Url>jdbc:mysql://58.51.184.124:6316/JB4DC_SSO_V02?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
+        <Url>jdbc:mysql://58.51.184.121:6316/JB4DC_SSO_V02?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
         <User>root</User>
         <Password>jb4dc#sz#1234</Password>
     </DataSource>
@@ -66,7 +66,7 @@
         <DBType>mysql</DBType>
         <DriverName>com.mysql.cj.jdbc.Driver</DriverName>
         <DatabaseName>JB4DC_QC_V02</DatabaseName>
-        <Url>jdbc:mysql://58.51.184.124:6316/JB4DC_QC_V02?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
+        <Url>jdbc:mysql://58.51.184.121:6316/JB4DC_QC_V02?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
         <User>root</User>
         <Password>jb4dc#sz#1234</Password>
     </DataSource>
@@ -76,7 +76,7 @@
         <DBType>mysql</DBType>
         <DriverName>com.mysql.cj.jdbc.Driver</DriverName>
         <DatabaseName>JB4DC_GRID_V02</DatabaseName>
-        <Url>jdbc:mysql://58.51.184.124:6316/JB4DC_GRID_V02?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
+        <Url>jdbc:mysql://58.51.184.121:6316/JB4DC_GRID_V02?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
         <User>root</User>
         <Password>jb4dc#sz#1234</Password>
     </DataSource>

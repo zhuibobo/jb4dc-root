@@ -9,6 +9,9 @@
         <PackageLevel2Name value="user"></PackageLevel2Name>
         <PackageLevel2Name value="menu"></PackageLevel2Name>
     </Package>
+    <Package name="Workflow" entity="com.jb4dc.workflow.dbentities" dao="com.jb4dc.workflow.dao" mapperAC="mybatismappers">
+        <PackageLevel2Name value="integrate.extend"></PackageLevel2Name>
+    </Package>
     <Package name="Builder" entity="com.jb4dc.builder.dbentities" dao="com.jb4dc.builder.dao" mapperAC="mybatismappers">
         <PackageLevel2Name value="datastorage"></PackageLevel2Name>
         <PackageLevel2Name value="dataset"></PackageLevel2Name>
@@ -19,6 +22,7 @@
         <PackageLevel2Name value="flow"></PackageLevel2Name>
         <PackageLevel2Name value="envvar"></PackageLevel2Name>
         <PackageLevel2Name value="api"></PackageLevel2Name>
+        <PackageLevel2Name value="systemsetting"></PackageLevel2Name>
     </Package>
     <Package name="DevMock" entity="com.jb4dc.devmock.dbentities" dao="com.jb4dc.devmock.dao" mapperAC="mybatismappers">
     </Package>

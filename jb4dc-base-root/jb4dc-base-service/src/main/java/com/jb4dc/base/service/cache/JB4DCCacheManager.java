@@ -24,7 +24,7 @@ public abstract class JB4DCCacheManager {
     public static String CACHE_KEY_PROCESS_MODEL_MAIN_IMAGE="JB4DCacheManager.CACHE_KEY_PROCESS_MODEL_MAIN_IMAGE";
     public static String CACHE_KEY_SSO_APP_LOGO="JB4DCacheManager.CACHE_KEY_SSO_APP_LOGO";*/
 
-    private CacheManager cacheManager = null;
+    /*private CacheManager cacheManager = null;
 
     public JB4DCCacheManager(CacheManager _cacheManager) {
         cacheManager=_cacheManager;
@@ -39,13 +39,8 @@ public abstract class JB4DCCacheManager {
     }
 
     public <T> void putT(String cacheName,Class<T> valueType,String key,T value){
-        //cacheManager.getCache(cacheName,String.class,).put(key,value);
         cacheManager.getCache(cacheName,String.class,valueType).put(key,value);
     }
-
-   /*public static <T> void putT(String cacheName,String key,T value){
-        cacheManager.getCache(cacheName,String.class,value.getClass()).put(key,value);
-    }*/
 
     public <T> T getString(String cacheName,String key){
         return (T) cacheManager.getCache(cacheName,String.class,String.class).get(key);
@@ -61,22 +56,5 @@ public abstract class JB4DCCacheManager {
             throw new JBuild4DCGenerallyException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"不存在名称为:"+cacheName+"的缓存配置!");
         }
         return cache.get(key) != null ? true : false;
-    }
-
-    /*public <T> T autoGetFromCache(String cacheName, Class<List<T>> valueType, boolean cancelCache, String key, IBuildGeneralObj<T> builder) throws JBuild4DCGenerallyException {
-        T result=null;
-        if(cancelCache){
-            result=builder.BuildObj();
-            return result;
-        }
-        else{
-            result= this.getT(cacheName,valueType,key);
-            if(result==null){
-                result=builder.BuildObj();
-                this.putT(cacheName,valueType,key,result);
-                return result;
-            }
-            return result;
-        }
     }*/
 }

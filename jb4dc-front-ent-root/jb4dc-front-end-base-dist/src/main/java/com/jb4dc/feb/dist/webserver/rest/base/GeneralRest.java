@@ -113,7 +113,7 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
 
     protected abstract IBaseService<T> getBaseService();
 
-    @RequestMapping(value = "/GetListData", method = RequestMethod.POST)
+    @RequestMapping(value = "/GetListData", method =  {RequestMethod.POST ,RequestMethod.GET })
     public JBuild4DCResponseVo getListData(Integer pageSize, Integer pageNum, String searchCondition, boolean loadDict) throws IOException, ParseException, JBuild4DCGenerallyException {
         JB4DCSession jb4DSession= JB4DCSessionUtility.getSession();
         Map<String,Object> searchMap= GeneralSearchUtility.deserializationToMap(searchCondition);
@@ -134,7 +134,7 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
         //return JBuild4DCResponseVo.success("获取成功",proOrganPageInfo);
     }
 
-    @RequestMapping(value = "/GetDetailData", method = RequestMethod.POST)
+    @RequestMapping(value = "/GetDetailData", method = {RequestMethod.POST ,RequestMethod.GET })
     public JBuild4DCResponseVo getDetailData(String recordId, String op) throws IllegalAccessException, InstantiationException, JsonProcessingException, JBuild4DCGenerallyException {
         T entity;
         JBuild4DCResponseVo responseVo=new JBuild4DCResponseVo();
