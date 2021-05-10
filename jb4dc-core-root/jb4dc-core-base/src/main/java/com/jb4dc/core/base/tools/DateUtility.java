@@ -196,6 +196,19 @@ public class DateUtility {
      * 获取yyyy-MM-dd HH:mm:ss
      * @return
      */
+    public static String getDate_yyyy_MM_dd_HH_mm_ss(Date date) {
+        String sz10LenDate;
+        //Date date =  new Date();
+        SimpleDateFormat formater=new SimpleDateFormat();
+        formater.applyPattern("yyyy-MM-dd HH:mm:ss");
+        sz10LenDate = formater.format(date);
+        return sz10LenDate;
+    }
+
+    /**
+     * 获取yyyy-MM-dd HH:mm:ss
+     * @return
+     */
     public static String getDate_yyyy_MM_dd_HH_mm_ss_SSS() {
         String LenDate;
         Date date =  new Date();

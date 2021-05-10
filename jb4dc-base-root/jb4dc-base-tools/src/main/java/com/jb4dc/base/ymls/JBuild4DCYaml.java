@@ -75,6 +75,8 @@ public class JBuild4DCYaml extends YamlUtility {
 
     private static String httpType;
 
+    private static String feignLoggerLevel="BASIC";
+
     public static String getWarningOperationCode(){
 
         return operationCode;
@@ -128,5 +130,14 @@ public class JBuild4DCYaml extends YamlUtility {
     @Value("${jb4dc.http-type:http}")
     public void setHttpType(String httpType) {
         JBuild4DCYaml.httpType = httpType;
+    }
+
+    public static String getFeignLoggerLevel() {
+        return feignLoggerLevel;
+    }
+
+    @Value("${jb4dc.feignLoggerLevel:BASIC}")
+    public void setFeignLoggerLevel(String feignLoggerLevel) {
+        JBuild4DCYaml.feignLoggerLevel = feignLoggerLevel;
     }
 }

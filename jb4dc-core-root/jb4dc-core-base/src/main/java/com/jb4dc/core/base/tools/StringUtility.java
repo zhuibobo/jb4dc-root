@@ -17,6 +17,10 @@ import java.util.regex.Pattern;
 
 public class StringUtility {
 
+    public static String SP_CHAR1="※";
+    public static String SP_CHAR2="●";
+    public static String SP_CHAR3="◆";
+    public static String SP_CHAR4="★";
 
     private static final char[] bcdLookup = { '0', '1', '2', '3', '4', '5',
             '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };

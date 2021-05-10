@@ -64,6 +64,8 @@ public class JB4DCSession implements Serializable {
      */
     private List<String> roleKeys;
 
+    private List<String> roleNames;
+
     private Map<String,String> exMap;
 
     private boolean fullAuthority;
@@ -198,6 +200,14 @@ public class JB4DCSession implements Serializable {
 
     public void setRoleKeys(List<String> roleKeys) {
         this.roleKeys = roleKeys;
+    }
+
+    public List<String> getRoleNames() {
+        return roleNames;
+    }
+
+    public void setRoleNames(List<String> roleNames) {
+        this.roleNames = roleNames;
     }
 
     public Map<String, String> getExMap() {

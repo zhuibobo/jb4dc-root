@@ -23,70 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/zhuib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_53_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_53_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_53_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_53_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_53_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_53_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_2_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_2_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_2_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_2_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_2_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/aspect/ClientCallRemoteCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/aspect/ClientCallRemoteCacheAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/cache/JB4DCCacheManagerV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/general/JB4DCSessionCenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/general/JB4DCUnitSessionSessionUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/tools/RedisUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jb4dc-root.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jb4dc-root.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_28.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_odysseus_juel_juel_api_2_2_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_odysseus_juel_juel_impl_2_2_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_odysseus_juel_juel_spi_2_2_7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/jb4dc-base-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/jb4dc-base-client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/jb4dc-base-db-access.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/jb4dc-base-files-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-root.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/jb4dc-base-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/cache/JB4DCCacheManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/cache/JB4DCCacheManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/general/JB4DCSessionUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/general/JB4DCSessionUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/jb4dc-base-tools.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/tools/JsonUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/tools/JsonUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-web-server/jb4dc-cloud-config-web-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-config-web-server/jb4dc-cloud-config-web-server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-eureka-web-server/jb4dc-cloud-eureka-web-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-eureka-web-server/jb4dc-cloud-eureka-web-server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-root.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-cloud-root/jb4dc-cloud-root.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-root.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-root.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/jb4dc-code-generate-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/CodeGenerateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/CodeGenerateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/codegenerate/CGCodeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/codegenerate/CGCodeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/codegenerate/CGServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/codegenerate/CGServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/jb4dc-code-generate-web-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/jb4dc-code-generate-web-server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/src/main/resources/config/db-source.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/src/main/resources/config/db-source.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/src/main/resources/config/package-name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/src/main/resources/config/package-name.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/jb4dc-core-base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/jb4dc-core-base.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/exception/JBuild4DCGenerallyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/exception/JBuild4DCGenerallyException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/src/main/java/com/jb4dc/base/client/FeignClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-client/src/main/java/com/jb4dc/base/client/FeignClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/ymls/JBuild4DCYaml.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/ymls/JBuild4DCYaml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/session/JB4DCSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/session/JB4DCSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/tools/CookieUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/tools/CookieUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/tools/DateUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/tools/DateUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/tools/StringUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/tools/StringUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-root.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-root.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/jb4dc-front-end-base-dist.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/jb4dc-front-end-base-dist.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/HTML/FrameV2/FrameView.html" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/HTML/FrameV2/FrameView.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/HTML/SelectDialog/SelectLineAwesomeClass.html" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/HTML/SelectDialog/SelectLineAwesomeClass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ArrayUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ArrayUtility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/BaseUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/BaseUtility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/ListPageStyle.less" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Themes/Default/Less/ListPageStyle.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java/com/jb4dc/feb/dist/webserver/controlleradvice/ExceptionControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java/com/jb4dc/feb/dist/webserver/controlleradvice/ExceptionControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java/com/jb4dc/feb/dist/webserver/rest/base/GeneralRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java/com/jb4dc/feb/dist/webserver/rest/base/GeneralRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/HTML/FrameV2/FrameView.html" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/HTML/FrameV2/FrameView.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/JBuild4DC.css" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Themes/Default/Css/JBuild4DC.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-ent-root.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-ent-root.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-web-app-starter/jb4dc-web-app-starter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-web-app-starter/jb4dc-web-app-starter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-web-app-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-web-app-starter/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
@@ -752,14 +699,12 @@
       <workItem from="1619745802331" duration="5440000" />
       <workItem from="1619859855610" duration="618000" />
       <workItem from="1619938570854" duration="3596000" />
-      <workItem from="1620004045716" duration="573000" />
-    </task>
-    <task id="LOCAL-00120" summary="创建项目">
-      <created>1572537530699</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1572537530699</updated>
+      <workItem from="1620004045716" duration="1014000" />
+      <workItem from="1620027705934" duration="808000" />
+      <workItem from="1620094439745" duration="517000" />
+      <workItem from="1620371125209" duration="2873000" />
+      <workItem from="1620521104864" duration="5543000" />
+      <workItem from="1620608840253" duration="2213000" />
     </task>
     <task id="LOCAL-00121" summary="创建项目">
       <created>1572589099768</created>
@@ -1097,7 +1042,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610720098548</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="创建项目">
+      <created>1620004646826</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1620004646826</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TodoView">
