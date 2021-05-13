@@ -22,12 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/aspect/ClientCallRemoteCacheAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/aspect/ClientCallRemoteCacheAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/cache/JB4DCCacheManagerV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/cache/JB4DCCacheManagerV2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/vo/JBuild4DCResponseVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/vo/JBuild4DCResponseVo.java" afterDir="false" />
-    </list>
+    <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -696,13 +691,7 @@
       <workItem from="1620521104864" duration="5543000" />
       <workItem from="1620608840253" duration="2317000" />
       <workItem from="1620876452048" duration="5684000" />
-    </task>
-    <task id="LOCAL-00122" summary="创建项目">
-      <created>1572590372833</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1572590372833</updated>
+      <workItem from="1620905683662" duration="738000" />
     </task>
     <task id="LOCAL-00123" summary="创建项目">
       <created>1572616966602</created>
@@ -1040,7 +1029,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620618023990</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="创建项目">
+      <created>1620905692044</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1620905692045</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TodoView">
