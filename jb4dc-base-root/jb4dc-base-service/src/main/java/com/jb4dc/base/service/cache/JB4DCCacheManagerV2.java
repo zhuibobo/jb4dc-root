@@ -28,7 +28,10 @@ public class JB4DCCacheManagerV2 {
     public static String Jb4dPlatformBuilderClientCacheName="JB4DC-Builder-Client";
     public static String Jb4dPlatformSSOServerCacheName="JB4DC-SSO-Server";
     public static String Jb4dPlatformSSOClientCacheName="JB4DC-SSO-Client";
+    public static String Jb4dPlatformWorkFlowServerCacheName="JB4DC-WorkFlow-Server";
+    public static String Jb4dPlatformWorkFlowClientCacheName="JB4DC-WorkFlow-Client";
     public static Long DefExpirationTimeSeconds=300L;
+    public static Long ExpirationTime_1Day=86400L;
 
     Logger logger= LoggerFactory.getLogger(this.getClass());
 

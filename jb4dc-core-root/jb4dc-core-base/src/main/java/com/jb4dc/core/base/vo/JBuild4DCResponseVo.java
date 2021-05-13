@@ -16,6 +16,8 @@ public class JBuild4DCResponseVo<T> {
      */
     private String message = "";
 
+    private String cacheKey="";
+
     private String traceMsg="";
 
     /**
@@ -38,6 +40,15 @@ public class JBuild4DCResponseVo<T> {
         this.message = message;
         this.data = data;
         this.errorCode = errorCode;
+    }
+
+    public JBuild4DCResponseVo(boolean success, String message, T data, Integer errorCode, String traceMsg,String cacheKey) {
+        this.success = success;
+        this.message = message;
+        this.data = data;
+        this.errorCode = errorCode;
+        this.traceMsg=traceMsg;
+        this.cacheKey=cacheKey;
     }
 
     public JBuild4DCResponseVo(boolean success, String message, T data, Integer errorCode, String traceMsg) {
@@ -87,6 +98,15 @@ public class JBuild4DCResponseVo<T> {
     public void setTraceMsg(String traceMsg) {
         this.traceMsg = traceMsg;
     }
+
+    public String getCacheKey() {
+        return cacheKey;
+    }
+
+    public void setCacheKey(String cacheKey) {
+        this.cacheKey = cacheKey;
+    }
+
     /**
      * 返回SSSResponse实例
      *
@@ -117,8 +137,16 @@ public class JBuild4DCResponseVo<T> {
         return new JBuild4DCResponseVo(true, message, data, null);
     }
 
+    public static <T> JBuild4DCResponseVo success(String message, T data,String cacheKey) {
+        return new JBuild4DCResponseVo(true, message, data, null,null,cacheKey);
+    }
+
     public static <T> JBuild4DCResponseVo getDataSuccess(T data){
         return success("获取数据成功!",data);
+    }
+
+    public static <T> JBuild4DCResponseVo getDataSuccess(T data,String cacheKey){
+        return success("获取数据成功!",data,cacheKey);
     }
 
     public static JBuild4DCResponseVo deleteSuccess(){

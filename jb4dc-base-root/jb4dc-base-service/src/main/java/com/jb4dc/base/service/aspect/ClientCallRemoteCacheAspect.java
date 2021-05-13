@@ -1,6 +1,7 @@
 package com.jb4dc.base.service.aspect;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.jb4dc.base.service.cache.JB4DCCacheManagerV2;
 import com.jb4dc.base.tools.JsonUtility;
 import com.jb4dc.base.tools.RedisUtility;
 import com.jb4dc.core.base.tools.StringUtility;
@@ -41,13 +42,13 @@ public class ClientCallRemoteCacheAspect {
 
         String sysName="JB4DC-General";
         if(packageName.toUpperCase().indexOf("COM.JB4DC.SSO.CLIENT.REMOTE")==0){
-            sysName="JB4DC-SSO-Client";
+            sysName= JB4DCCacheManagerV2.Jb4dPlatformSSOClientCacheName;//"JB4DC-SSO-Client";
         }
         else if(packageName.toUpperCase().indexOf("COM.JB4DC.BUILDER.CLIENT.REMOTE")==0){
-            sysName="JB4DC-Builder-Client";
+            sysName=JB4DCCacheManagerV2.Jb4dPlatformBuilderClientCacheName;//"JB4DC-Builder-Client";
         }
         else if(packageName.toUpperCase().indexOf("COM.JB4DC.WORKFLOW.CLIENT.REMOTE")==0){
-            sysName="JB4DC-WorkFlow-Client";
+            sysName=JB4DCCacheManagerV2.Jb4dPlatformWorkFlowClientCacheName;//"JB4DC-WorkFlow-Client";
         }
 
         //String moduleName="";
