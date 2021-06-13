@@ -10,5 +10,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ClientCallRemoteCache {
-    int expirationTimeSeconds() default 300;
+    long expirationTimeSeconds() default 300;
 }

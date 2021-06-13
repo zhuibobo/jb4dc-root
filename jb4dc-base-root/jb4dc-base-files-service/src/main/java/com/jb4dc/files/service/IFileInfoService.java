@@ -23,6 +23,8 @@ public interface IFileInfoService extends IBaseService<FileInfoEntity> {
 
     public static final String FILE_OBJ_TYPE_TABLE_NAME= "数据表名";
 
+    String getFileRootPath();
+
     FileInfoEntity getLastVersionFileInfo(JB4DCSession session, String objId, String objName);
 
     List<FileInfoEntity> getFileInfoList(JB4DCSession session, String objId, String objName);
@@ -42,6 +44,8 @@ public interface IFileInfoService extends IBaseService<FileInfoEntity> {
     FileInfoEntity addFileToFileSystem(JB4DCSession session, String fileName, byte[] fileByte, String objId, String objName, String objType, String fileCategory) throws JBuild4DCGenerallyException, IOException, URISyntaxException;
 
     FileInfoEntity addFileToFileSystem(JB4DCSession session, MultipartFile file, String objId, String objName, String objType, String fileCategory) throws IOException, JBuild4DCGenerallyException, URISyntaxException;
+
+    SimpleFilePathPO buildRelativeFileSavePath(String fileId, String extensionName) throws URISyntaxException, FileNotFoundException;
 
     SimpleFilePathPO buildSavePath(String preFolderName, String recordId, String fileName) throws FileNotFoundException, URISyntaxException;
 

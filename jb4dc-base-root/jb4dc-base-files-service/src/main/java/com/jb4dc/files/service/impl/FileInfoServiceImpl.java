@@ -40,6 +40,7 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
 
     String fileRootPath;
 
+    @Override
     public String getFileRootPath() {
         return fileRootPath;
     }
@@ -242,7 +243,8 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     private String RELATIVE_FILE_STORE_PATH="RELATIVE_FILE_STORE_PATH";
     private String FILE_STORE_NAME="FILE_STORE_NAME";*/
 
-    private SimpleFilePathPO buildRelativeFileSavePath(String fileId, String extensionName) throws URISyntaxException, FileNotFoundException {
+    @Override
+    public SimpleFilePathPO buildRelativeFileSavePath(String fileId, String extensionName) throws URISyntaxException, FileNotFoundException {
         Map<String, String> result = new HashMap<>();
         String base_path = FileUtility.getRootPath() + File.separator + fileRootPath;
 

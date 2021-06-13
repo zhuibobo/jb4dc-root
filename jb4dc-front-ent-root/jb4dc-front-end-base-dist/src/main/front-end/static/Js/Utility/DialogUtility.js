@@ -15,6 +15,7 @@ var DialogUtility={
     DialogId09:"DefaultDialogUtility09",
     DialogId10:"DefaultDialogUtility10",
     DialogNewWindowId:"DialogNewWindowId01",
+    DialogWorkFlowFormId:"DefaultDialogWorkFlowFormIdUtility01",
     _GetElem:function(dialogId){
         return $("#"+dialogId);
     },
@@ -32,8 +33,8 @@ var DialogUtility={
     _CreateAlertLoadingMsgElement: function (docObj,dialogId) {
         if(this._GetElem(dialogId).length==0) {
             var dialogEle = $("<div id=" + dialogId + " title='系统提示' style='display:none'>\
-                               <div class='alert-loading-img'></div>\
-                               <div class='alert-loading-txt'></div>\
+                               <div class=\"lds-ring\"><div></div><div></div><div></div><div></div></div>\
+                               <div class='alert-loading-txt-outer'><div class='alert-loading-txt'></div></div>\
                            </div>");
             $(docObj.body).append(dialogEle);
             return dialogEle;
@@ -64,6 +65,9 @@ var DialogUtility={
     },
     _TestRunEnable:function(){
         return true;
+    },
+    RemoveDialogRemainingElem:function (dialogId){
+        $("[aria-describedby='"+dialogId+"']").remove();
     },
     AlertError:function (openerWindow,dialogId,config,htmlMsg,sFunc,timeClosure) {
         var defaultConfig={
@@ -242,13 +246,13 @@ var DialogUtility={
         var htmlElem = this._CreateAlertLoadingMsgElement(openerWindow.document.body,dialogId);
         var defaultConfig = {
             height: 140,
-            width: 300,
-            title:"",
+            width: 350,
+            title:"系统提示",
             show:true,
             modal:true
         };
         var defaultConfig = $.extend(true, {}, defaultConfig, config);
-        $(htmlElem).find(".alert-loading-txt").html(htmlMsg);
+        $(htmlElem).find(".alert-loading-txt").html(htmlMsg?htmlMsg:"数据加载中,请稍候。");
         $(htmlElem).dialog(defaultConfig);
     },
     Confirm : function(openerWindow, htmlMsg, okFn,caller) {

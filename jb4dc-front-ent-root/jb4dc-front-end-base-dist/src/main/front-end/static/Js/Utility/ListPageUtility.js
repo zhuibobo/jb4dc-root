@@ -28,7 +28,7 @@ var ListPageUtility = {
             //alert($("#list-button-wrap").height()+"||"+$("#list-simple-search-wrap").outerHeight());
             pageHeight = pageHeight - $("#list-simple-search-wrap").outerHeight() + fixHeight - $("#list-button-wrap").outerHeight() - $("#list-pager-wrap").outerHeight() - 30;
         } else {
-            pageHeight = pageHeight - $("#list-button-wrap").outerHeight() + fixHeight - ($("#list-pager-wrap").length > 0 ? $("#list-pager-wrap").outerHeight() : 0) - 30;
+            pageHeight = pageHeight - (($("#list-button-wrap").outerHeight())?$("#list-button-wrap").outerHeight():0) + fixHeight - ($("#list-pager-wrap").length > 0 ? $("#list-pager-wrap").outerHeight() : 0) - 30;
         }
         //alert(pageHeight);
         return pageHeight;

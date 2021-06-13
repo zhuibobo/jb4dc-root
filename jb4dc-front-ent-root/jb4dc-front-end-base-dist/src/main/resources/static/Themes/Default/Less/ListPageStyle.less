@@ -10,78 +10,6 @@
         border: @g-wrap-border-color 1px solid;
         border-radius: 4px;
 
-        .inner-wrap{
-            background-color: #ffffff;
-            width: 100%;
-            height: 100%;
-            float: left;
-            border-radius: inherit;
-
-            .tool-bar-wrap{
-                height: 39px;
-                background-color: #4d5d79;
-
-                div{
-                    float: left;
-                    height: 20px;
-                    margin:10px 5px 0 5px;
-                    padding: 0;
-                    width: 20px;
-                    border: 0 none;
-                    background: url("Images/Icon_Left_Edit.png") no-repeat;
-                    cursor: pointer;
-                }
-                div:hover{
-                    background: url("Images/Icon_Left_Edit_On.png") no-repeat;
-                    cursor: pointer;
-                }
-
-                .edit,.edit:hover{
-                    background-position: -30px 0;
-                }
-
-                .del,.del:hover{
-                    background-position: -60px 0;
-                }
-
-                .view,.view:hover{
-                    background-position: -90px 0;
-                }
-
-                .order-up,.order-up:hover{
-                    background-position: -120px 0;
-                }
-
-                .order-down,.order-down:hover{
-                    background-position: -150px 0;
-                }
-
-                .remove,.remove:hover{
-                    background-position: -180px 0;
-                }
-
-                .copy-id,.copy-id:hover{
-                    background-position: -60px -90px;
-                }
-
-                .add2{
-                    background: url("Images/Icon_Left_Edit_2.png") no-repeat;
-                }
-
-                .add3{
-                    background: url("Images/Icon_Left_Edit_3.png") no-repeat;
-                }
-
-                .remove3{
-                    background: url("Images/Icon_Left_Edit_3.png") no-repeat;
-                    background-position: -180px 0 !important;
-                }
-                /*.remove3:hover{
-                    background: url("Images/Icon_Left_Edit_On.png") no-repeat;
-                    background-position: -180px 0 !important;
-                }*/
-            }
-        }
     }
     .right-outer-wrap {
         position: absolute;
@@ -90,6 +18,79 @@
         bottom: 0px;
         border: @g-wrap-border-color 1px solid;
         border-radius: 4px;
+    }
+
+    .inner-wrap{
+        background-color: #ffffff;
+        width: 100%;
+        height: 100%;
+        float: left;
+        border-radius: inherit;
+
+        .tool-bar-wrap{
+            height: 39px;
+            background-color: #4d5d79;
+
+            div{
+                float: left;
+                height: 20px;
+                margin:10px 5px 0 5px;
+                padding: 0;
+                width: 20px;
+                border: 0 none;
+                background: url("Images/Icon_Left_Edit.png") no-repeat;
+                cursor: pointer;
+            }
+            div:hover{
+                background: url("Images/Icon_Left_Edit_On.png") no-repeat;
+                cursor: pointer;
+            }
+
+            .edit,.edit:hover{
+                background-position: -30px 0;
+            }
+
+            .del,.del:hover{
+                background-position: -60px 0;
+            }
+
+            .view,.view:hover{
+                background-position: -90px 0;
+            }
+
+            .order-up,.order-up:hover{
+                background-position: -120px 0;
+            }
+
+            .order-down,.order-down:hover{
+                background-position: -150px 0;
+            }
+
+            .remove,.remove:hover{
+                background-position: -180px 0;
+            }
+
+            .copy-id,.copy-id:hover{
+                background-position: -60px -90px;
+            }
+
+            .add2{
+                background: url("Images/Icon_Left_Edit_2.png") no-repeat;
+            }
+
+            .add3{
+                background: url("Images/Icon_Left_Edit_3.png") no-repeat;
+            }
+
+            .remove3{
+                background: url("Images/Icon_Left_Edit_3.png") no-repeat;
+                background-position: -180px 0 !important;
+            }
+            /*.remove3:hover{
+                background: url("Images/Icon_Left_Edit_On.png") no-repeat;
+                background-position: -180px 0 !important;
+            }*/
+        }
     }
 }
 

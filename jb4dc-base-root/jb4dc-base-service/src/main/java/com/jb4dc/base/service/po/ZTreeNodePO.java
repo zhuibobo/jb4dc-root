@@ -1,5 +1,7 @@
 package com.jb4dc.base.service.po;
 
+import com.jb4dc.core.base.tools.BaseUtility;
+
 /**
  * Created with IntelliJ IDEA.
  * User: zhuangrb
@@ -7,6 +9,8 @@ package com.jb4dc.base.service.po;
  * To change this template use File | Settings | File Templates.
  */
 public class ZTreeNodePO {
+    public static String Icon_Person= "Themes/Png16X16/user_suit.png";
+
     String value;
     String text;
     String id;
@@ -18,9 +22,10 @@ public class ZTreeNodePO {
     String attr3;
     String attr4;
     String nodeTypeName;
+    String icon;
     boolean nocheck;
-
-
+    protected String isParent="false";
+    protected boolean open;
 
     public boolean isNocheck() {
         return nocheck;
@@ -116,5 +121,29 @@ public class ZTreeNodePO {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getIsParent() {
+        return isParent;
+    }
+
+    public void setIsParent(String isParent) {
+        this.isParent = isParent;
+    }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }

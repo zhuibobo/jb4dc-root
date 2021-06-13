@@ -30,8 +30,15 @@ public class JB4DCCacheManagerV2 {
     public static String Jb4dPlatformSSOClientCacheName="JB4DC-SSO-Client";
     public static String Jb4dPlatformWorkFlowServerCacheName="JB4DC-WorkFlow-Server";
     public static String Jb4dPlatformWorkFlowClientCacheName="JB4DC-WorkFlow-Client";
-    public static Long DefExpirationTimeSeconds=300L;
-    public static Long ExpirationTime_1Day=86400L;
+    public static final long DefExpirationTimeSeconds=300L;
+
+    public static final long ExpirationTime_20Minutes=1200L;
+    public static final long ExpirationTime_30Minutes=1800L;
+    public static final long ExpirationTime_1Hours=3600L;
+    public static final long ExpirationTime_4Hours=14400L;
+    public static final long ExpirationTime_8Hours=28800L;
+    public static final long ExpirationTime_1Day=86400L;
+    public static final long ExpirationTime_2Day=172800L;
 
     Logger logger= LoggerFactory.getLogger(this.getClass());
 

@@ -77,6 +77,8 @@ public class JBuild4DCYaml extends YamlUtility {
 
     private static String feignLoggerLevel="BASIC";
 
+    private static String linkId;
+
     public static String getWarningOperationCode(){
 
         return operationCode;
@@ -139,5 +141,14 @@ public class JBuild4DCYaml extends YamlUtility {
     @Value("${jb4dc.feignLoggerLevel:BASIC}")
     public void setFeignLoggerLevel(String feignLoggerLevel) {
         JBuild4DCYaml.feignLoggerLevel = feignLoggerLevel;
+    }
+
+    public static String getLinkId() {
+        return linkId;
+    }
+
+    @Value("${jb4dc.linkId:NotRegLinkId}")
+    public void setLinkId(String linkId) {
+        JBuild4DCYaml.linkId = linkId;
     }
 }
