@@ -46,7 +46,8 @@ public class ExceptionControllerAdvice {
 
     @ExceptionHandler(NullPointerException.class)
     public void processNullPointerException(HttpServletResponse response, HttpServletRequest request, NullPointerException e) {
-        logger.error(e.getMessage());
+        //logger.error(e.getMessage());
+        logger.error("空指针错误!",e);
         response.setStatus(HttpServletResponse.SC_OK);
         response.setContentType("application/json;charset=UTF-8");
         handlerGenerallyException(response, request, e);

@@ -14,7 +14,6 @@
     <artifactId>jb4dc-code-generate-web-server</artifactId>
 
     <dependencies>
-
         <dependency>
             <groupId>jb4dc</groupId>
             <artifactId>jb4dc-code-generate-service</artifactId>
@@ -25,14 +24,18 @@
             <artifactId>itextpdf</artifactId>
             <version>5.5.13.1</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.itextpdf/itext-asian -->
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itext-asian</artifactId>
             <version>5.2.0</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

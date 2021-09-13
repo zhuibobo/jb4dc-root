@@ -35,20 +35,20 @@
         <Caption>应用构建套件</Caption>
         <DBType>mysql</DBType>
         <DriverName>com.mysql.cj.jdbc.Driver</DriverName>
-        <DatabaseName>JB4DC_BUILDER_V03</DatabaseName>
-        <Url>jdbc:mysql://58.51.184.121:6316/JB4DC_BUILDER_V03?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
+        <DatabaseName>JB4DC_BUILDER_V05</DatabaseName>
+        <Url>jdbc:mysql://127.0.0.1:3306/JB4DC_BUILDER_V05?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
         <User>root</User>
-        <Password>jb4dc#sz#1234</Password>
+        <Password>root</Password>
     </DataSource>
     <DataSource>
         <Id>DataSource0002</Id>
         <Caption>单点登录与统一用户管理</Caption>
         <DBType>mysql</DBType>
         <DriverName>com.mysql.cj.jdbc.Driver</DriverName>
-        <DatabaseName>JB4DC_SSO_V02</DatabaseName>
-        <Url>jdbc:mysql://58.51.184.121:6316/JB4DC_SSO_V02?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
+        <DatabaseName>JB4DC_SSO_V05</DatabaseName>
+        <Url>jdbc:mysql://127.0.0.1:3306/JB4DC_SSO_V05?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
         <User>root</User>
-        <Password>jb4dc#sz#1234</Password>
+        <Password>root</Password>
     </DataSource>
     <!--<DataSource>
         <Id>DataSource0003</Id>
@@ -65,10 +65,10 @@
         <Caption>QC系统</Caption>
         <DBType>mysql</DBType>
         <DriverName>com.mysql.cj.jdbc.Driver</DriverName>
-        <DatabaseName>JB4DC_QC_V02</DatabaseName>
-        <Url>jdbc:mysql://58.51.184.121:6316/JB4DC_QC_V02?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
+        <DatabaseName>JB4DC_QC_V05</DatabaseName>
+        <Url>jdbc:mysql://127.0.0.1:3306/JB4DC_QC_V05?characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true&amp;autoReconnect=true&amp;failOverReadOnly=false</Url>
         <User>root</User>
-        <Password>jb4dc#sz#1234</Password>
+        <Password>root</Password>
     </DataSource>
     <DataSource>
         <Id>DataSource0005</Id>

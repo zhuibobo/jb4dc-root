@@ -10,60 +10,46 @@ var BaseUtility = {
     },
     GetTopWindow: function () {
         alert("BaseUtility.GetTopWindow 已停用");
-        /*var windowTop = window;
-        var windowParent = window.dialogArguments || opener || parent;
-        while (windowParent && windowTop != windowParent) {
-            windowTop = windowParent;
-            if(windowTop.IsTopWorkaroundPage){
-                break;
-            }
-            windowParent = windowParent.dialogArguments || windowParent.opener || windowParent.parent;
-        }
-        return windowTop;*/
     },
     TrySetControlFocus:function () {
         alert("BaseUtility.TrySetControlFocus 已停用");
-        /*var cts=$("input[type='text']");
-        for(var i=0;i<cts.length;i++){
-            var ct=$(cts[i]);
-            if (ct.attr("readonly") != "readonly"&& ct.attr("disabled") != "disabled") {
-                try {
-                    ct[0].focus();
-                }
-                catch (e) {
-
-                }
-                return;
-            }
-        }*/
     },
     BuildView:function (action,para) {
         return this.BuildAction(action,para);
-        /*var urlPara = "";
-        if (para) {
-            urlPara = $.param(para);
-        }
-        var _url = this.GetRootPath() + action;
-        if (urlPara != "") {
-            _url += "?" + urlPara;
-        }
-        return this.AppendTimeStampUrl(_url);*/
     },
     BuildAction:function (action,para) {
         var urlPara = "";
         if (para) {
             urlPara = $.param(para);
         }
-        var _url = this.GetRootPath() + action;
+        var _url;
+        if (action.indexOf("../") == 0) {
+            _url = action;
+        } else {
+            _url = this.GetRootPath() + action;
+        }
         if (urlPara != "") {
             if (_url.indexOf("?") > -1) {
                 _url += "&" + urlPara;
-            }
-            else{
+            } else {
                 _url += "?" + urlPara;
             }
         }
-        //alert(_url);
+        return this.AppendTimeStampUrl(_url);
+    },
+    BuildActionNotAppendRootPath:function (action,para) {
+        var urlPara = "";
+        if (para) {
+            urlPara = $.param(para);
+        }
+        var _url = action;
+        if (urlPara != "") {
+            if (_url.indexOf("?") > -1) {
+                _url += "&" + urlPara;
+            } else {
+                _url += "?" + urlPara;
+            }
+        }
         return this.AppendTimeStampUrl(_url);
     },
     RedirectToLogin:function () {

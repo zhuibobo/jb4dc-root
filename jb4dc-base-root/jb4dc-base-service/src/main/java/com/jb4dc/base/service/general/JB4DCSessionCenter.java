@@ -10,7 +10,8 @@ import java.util.UUID;
 @Service
 public class JB4DCSessionCenter {
 
-    public static String WebClientCookieSessionKeyName="JB4DC-Session-Id";
+    public static String WebClientCookieSessionKeyName="JB4DC-Session-Cookie-Id";
+    public static String WebClientHeaderSessionKeyName="JB4DC-Session-Header-Id";
 
     static RedisUtility redisUtility;
 
@@ -32,7 +33,7 @@ public class JB4DCSessionCenter {
     }
 
     public static boolean saveSession(String cookieSessionId,JB4DCSession session) throws JBuild4DCSessionTimeoutException {
-        return redisUtility.set(cookieSessionId,session,7200);
+        return redisUtility.set(cookieSessionId,session,72000);
     }
 
     public static boolean saveSession(String cookieSessionId,JB4DCSession session,int time) throws JBuild4DCSessionTimeoutException {

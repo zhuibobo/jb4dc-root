@@ -304,6 +304,9 @@ var DialogUtility={
                 }
             }
         };
+        if(config&&config.buttons){
+            defaultConfig.buttons={};
+        }
         var defaultConfig = $.extend(true, {}, defaultConfig, config);
         $(htmlElem).html(htmlMsg);
         $(htmlElem).dialog(defaultConfig);

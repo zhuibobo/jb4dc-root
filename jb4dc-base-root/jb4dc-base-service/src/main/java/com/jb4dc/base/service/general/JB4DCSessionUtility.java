@@ -1,10 +1,7 @@
 package com.jb4dc.base.service.general;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jb4dc.base.service.provide.ISessionProvide;
 import com.jb4dc.base.tools.BeanUtility;
-import com.jb4dc.base.tools.JsonUtility;
-import com.jb4dc.base.tools.RedisUtility;
 import com.jb4dc.core.base.exception.JBuild4DCGenerallyException;
 import com.jb4dc.core.base.exception.JBuild4DCRunTimeException;
 import com.jb4dc.core.base.exception.JBuild4DCSessionTimeoutException;
@@ -12,15 +9,14 @@ import com.jb4dc.core.base.session.JB4DCSession;
 import com.jb4dc.core.base.tools.CookieUtility;
 import com.jb4dc.core.base.tools.StringUtility;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.UUID;
+
+import org.springframework.http.server.reactive.ServerHttpRequest;
 
 @Service
 public class JB4DCSessionUtility {
@@ -54,6 +50,22 @@ public class JB4DCSessionUtility {
         ((HttpServletRequest) request).getSession().setAttribute(JB4DCSessionUtility.UserLoginSessionKey, session);
     }
 
+    public static JB4DCSession getSessionForGateWay(ServerHttpRequest serverHttpRequest){
+        String cookieSessionId=serverHttpRequest.getCookies().get(JB4DCSessionCenter.WebClientCookieSessionKeyName).get(0).getValue();
+        return getSession(cookieSessionId);
+    }
+
+    public static JB4DCSession getSession(String sessionId) throws JBuild4DCSessionTimeoutException {
+        if(isUnitTest){
+            return unitTestMockSession;
+        }
+
+        if(StringUtils.isNotEmpty(sessionId)){
+            return JB4DCSessionCenter.getSession(sessionId);
+        }
+        throw new JBuild4DCRunTimeException(JBuild4DCGenerallyException.EXCEPTION_PLATFORM_CODE,"找不到对应的Session信息,SessionId:"+sessionId);
+    }
+
     /**
      * 返回必须通过request请求调用
      * @return
@@ -66,8 +78,8 @@ public class JB4DCSessionUtility {
 
         HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String sessionId= CookieUtility.get(req,JB4DCSessionCenter.WebClientCookieSessionKeyName)!=null?CookieUtility.get(req,JB4DCSessionCenter.WebClientCookieSessionKeyName).getValue():"";
-        if(StringUtils.isEmpty(sessionId)){
-            sessionId=StringUtility.isNotEmpty(req.getHeader("JBuild4DCSSOHeaderToken"))?req.getHeader("JBuild4DCSSOHeaderToken"):"";
+        if(StringUtils.isEmpty(sessionId)&&StringUtility.isNotEmpty(req.getHeader(JB4DCSessionCenter.WebClientHeaderSessionKeyName))) {
+            sessionId = req.getHeader(JB4DCSessionCenter.WebClientHeaderSessionKeyName);
         }
         if(!StringUtils.isEmpty(sessionId)){
             return JB4DCSessionCenter.getSession(sessionId);
@@ -155,10 +167,10 @@ public class JB4DCSessionUtility {
         return b4DSession;
     }
 
-    public static String sendJSessionIdToClient(HttpServletRequest request){
+    /*public static String sendJSessionIdToClient(HttpServletRequest request){
         String jSessionId=request.getSession().getId();
         return jSessionId;
-    }
+    }*/
 
     public static void addSessionAttr(String key,Object value){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -197,10 +209,10 @@ public class JB4DCSessionUtility {
         request.getSession().removeAttribute(UserLoginSessionKey);
     }
 
-    public static void setUserInfoToMV(ModelAndView modelAndView) throws JsonProcessingException {
+    /*public static void setUserInfoToMV(ModelAndView modelAndView) throws JsonProcessingException {
         JB4DCSession jb4DCSession=getSession();
         modelAndView.addObject("currUserEntity", JsonUtility.toObjectString(jb4DCSession));
-    }
+    }*/
 
     public static JB4DCSession getTempSession(String organId,String organName,String userId,String userName){
         JB4DCSession jb4DCSession=new JB4DCSession();

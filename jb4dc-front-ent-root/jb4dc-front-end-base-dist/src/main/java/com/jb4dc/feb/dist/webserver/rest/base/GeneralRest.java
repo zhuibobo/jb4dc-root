@@ -196,9 +196,11 @@ public abstract class GeneralRest<T> implements IGeneralRest<T> {
                 return saveBeforeValidateVo;
             }
         } catch (JBuild4DCGenerallyException e) {
+            e.printStackTrace();
             return JBuild4DCResponseVo.error(e.getMessage());
         }
         catch (Exception e){
+            e.printStackTrace();
             return JBuild4DCResponseVo.error(e.getMessage());
         }
     }

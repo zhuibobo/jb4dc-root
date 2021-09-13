@@ -12,7 +12,7 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class SsoAppPO {
-    //APP_ID:主键:UUID
+    //APP_ID:
     @DBKeyField
     private String appId;
 
@@ -68,9 +68,12 @@ public class SsoAppPO {
     //APP_ORGAN_ID:创建组织ID
     private String appOrganId;
 
+    //APP_CONTEXT_PATH:系统根路径
+    private String appContextPath;
+
     /**
      * 构造函数
-     * @param appId 主键
+     * @param appId
      * @param appCode 集成系统标识键
      * @param appName 集成系统名称
      * @param appPublicKey 公钥
@@ -88,8 +91,9 @@ public class SsoAppPO {
      * @param appStatus 状态
      * @param appCreatorId 创建者的ID
      * @param appOrganId 创建组织ID
+     * @param appContextPath 系统根路径
      **/
-    public SsoAppPO(String appId, String appCode, String appName, String appPublicKey, String appPrivateKey, String appDomain, String appIndexUrl, String appIntegratedType, String appMainImageId, String appType, String appMainId, String appCategory, String appDesc, Integer appOrderNum, Date appCreateTime, String appStatus, String appCreatorId, String appOrganId) {
+    public SsoAppPO(String appId, String appCode, String appName, String appPublicKey, String appPrivateKey, String appDomain, String appIndexUrl, String appIntegratedType, String appMainImageId, String appType, String appMainId, String appCategory, String appDesc, Integer appOrderNum, Date appCreateTime, String appStatus, String appCreatorId, String appOrganId, String appContextPath) {
         this.appId = appId;
         this.appCode = appCode;
         this.appName = appName;
@@ -108,6 +112,7 @@ public class SsoAppPO {
         this.appStatus = appStatus;
         this.appCreatorId = appCreatorId;
         this.appOrganId = appOrganId;
+        this.appContextPath = appContextPath;
     }
 
     public SsoAppPO() {
@@ -115,7 +120,7 @@ public class SsoAppPO {
     }
 
     /**
-     * 主键:UUID
+     *
      * @return java.lang.String
      **/
     public String getAppId() {
@@ -123,8 +128,8 @@ public class SsoAppPO {
     }
 
     /**
-     * 主键:UUID
-     * @param appId 主键
+     *
+     * @param appId
      **/
     public void setAppId(String appId) {
         this.appId = appId == null ? null : appId.trim();
@@ -400,5 +405,21 @@ public class SsoAppPO {
      **/
     public void setAppOrganId(String appOrganId) {
         this.appOrganId = appOrganId == null ? null : appOrganId.trim();
+    }
+
+    /**
+     * 系统根路径
+     * @return java.lang.String
+     **/
+    public String getAppContextPath() {
+        return appContextPath;
+    }
+
+    /**
+     * 系统根路径
+     * @param appContextPath 系统根路径
+     **/
+    public void setAppContextPath(String appContextPath) {
+        this.appContextPath = appContextPath == null ? null : appContextPath.trim();
     }
 }
