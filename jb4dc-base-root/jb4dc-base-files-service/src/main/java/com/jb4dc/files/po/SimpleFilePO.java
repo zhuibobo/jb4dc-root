@@ -2,6 +2,8 @@ package com.jb4dc.files.po;
 
 import org.apache.commons.io.FilenameUtils;
 
+import java.io.InputStream;
+
 /**
  * Created with IntelliJ IDEA.
  * User: zhuangrb
@@ -11,6 +13,7 @@ import org.apache.commons.io.FilenameUtils;
 public class SimpleFilePO {
     private String fileName;
     private byte[] fileByte;
+    private InputStream inputStream;
     private String extensionName;
     private int size;
 
@@ -19,6 +22,11 @@ public class SimpleFilePO {
         this.fileByte = fileByte;
         this.extensionName= FilenameUtils.getExtension(fileName);
         this.size=fileByte.length;
+    }
+
+    public SimpleFilePO(String fileName, byte[] fileByte, InputStream inputStream) {
+        this(fileName,fileByte);
+        this.inputStream = inputStream;
     }
 
     public String getFileName() {
@@ -51,5 +59,13 @@ public class SimpleFilePO {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    public void setInputStream(InputStream inputStream) {
+        this.inputStream = inputStream;
     }
 }

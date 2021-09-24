@@ -252,7 +252,7 @@ var DialogUtility={
             modal:true
         };
         var defaultConfig = $.extend(true, {}, defaultConfig, config);
-        $(htmlElem).find(".alert-loading-txt").html(htmlMsg?htmlMsg:"数据加载中,请稍候。");
+        $(htmlElem).find(".alert-loading-txt").html(htmlMsg?htmlMsg:"系统处理中,请稍候。");
         $(htmlElem).dialog(defaultConfig);
     },
     Confirm : function(openerWindow, htmlMsg, okFn,caller) {

@@ -40,6 +40,8 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
 
     String fileRootPath;
 
+    public static String separator="/";
+
     @Override
     public String getFileRootPath() {
         return fileRootPath;
@@ -149,9 +151,16 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     }
 
     @Override
-    public FileInfoEntity addFileToFileSystem(JB4DCSession session, String fileName, byte[] fileByte, String objId, String objName, String objType, String fileCategory) throws JBuild4DCGenerallyException, IOException, URISyntaxException {
+    public FileInfoEntity addFileToFileSystem(JB4DCSession session,String fileId, MultipartFile file,String objId,String objName,String objType,String fileCategory) throws IOException, JBuild4DCGenerallyException, URISyntaxException {
+        return this.addFileToFileSystem(session,fileId,file.getOriginalFilename(),file.getBytes(),file.getBytes().length,objId,objName,objType,fileCategory,true);
+    }
 
-        String fileId = UUIDUtility.getUUID();
+    @Override
+    public FileInfoEntity addFileToFileSystem(JB4DCSession session,String fileId, String fileName, byte[] fileByte,long fileSize, String objId, String objName, String objType, String fileCategory,boolean savaByte) throws JBuild4DCGenerallyException, IOException, URISyntaxException {
+
+        if(StringUtility.isEmpty(fileId)) {
+            fileId = UUIDUtility.getUUID();
+        }
 
         /*int nextVersion = 1;
         if (StringUtility.isNotEmpty(objId) && StringUtility.isNotEmpty(objName)) {
@@ -164,10 +173,13 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         }
 
         SimpleFilePathPO fileSaveInfo = buildRelativeFileSavePath(fileId, extensionName);
-        File file = new File(fileSaveInfo.getFullFileStorePath());
-        FileUtils.writeByteArrayToFile(file, fileByte);
 
-        FileInfoEntity fileInfoEntity = newFileInfoEntity(session, "FileSystem", fileName, (long) fileByte.length, fileCategory, fileId, fileSaveInfo.getRelativeFileStorePath(), fileSaveInfo.getFileStoreName(), objId, objName);
+        if(savaByte) {
+            File file = new File(fileSaveInfo.getFullFileStorePath());
+            FileUtils.writeByteArrayToFile(file, fileByte);
+        }
+
+        FileInfoEntity fileInfoEntity = newFileInfoEntity(session, "FileSystem", fileName, fileSize, fileCategory, fileId, fileSaveInfo.getRelativeFileStorePath(), fileSaveInfo.getFileStoreName(), objId, objName);
         FileRefEntity refEntity = newFileRefEntity(objId, objName, objType, fileId);
 
         fileRefMapper.insertSelective(refEntity);
@@ -234,11 +246,6 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
         return fileInfoEntity;
     }
 
-    @Override
-    public FileInfoEntity addFileToFileSystem(JB4DCSession session, MultipartFile file,String objId,String objName,String objType,String fileCategory) throws IOException, JBuild4DCGenerallyException, URISyntaxException {
-        return this.addFileToFileSystem(session,file.getOriginalFilename(),file.getBytes(),objId,objName,objType,fileCategory);
-    }
-
     /*private String FULL_FILE_STORE_PATH="FULL_FILE_STORE_PATH";
     private String RELATIVE_FILE_STORE_PATH="RELATIVE_FILE_STORE_PATH";
     private String FILE_STORE_NAME="FILE_STORE_NAME";*/
@@ -246,19 +253,19 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     @Override
     public SimpleFilePathPO buildRelativeFileSavePath(String fileId, String extensionName) throws URISyntaxException, FileNotFoundException {
         Map<String, String> result = new HashMap<>();
-        String base_path = FileUtility.getRootPath() + File.separator + fileRootPath;
+        String base_path =  fileRootPath;
 
         if(fileRootPath.indexOf(":")>0){
             base_path=fileRootPath;
         }
         String file_name = fileId + "." + extensionName.replaceAll("/.", "");
-        String relative_file_store_path = DateUtility.getDate_yyyy_MM() + File.separator + file_name;
+        String relative_file_store_path = DateUtility.getDate_yyyy_MM() + FileInfoServiceImpl.separator + file_name;
 
         SimpleFilePathPO simpleFilePathPO=new SimpleFilePathPO();
         simpleFilePathPO.setFileStoreName(file_name);
-        simpleFilePathPO.setFullFileStorePath(base_path + File.separator + relative_file_store_path);
+        simpleFilePathPO.setFullFileStorePath(base_path + FileInfoServiceImpl.separator + relative_file_store_path);
         simpleFilePathPO.setRelativeFileStorePath(relative_file_store_path);
-        /*result.put(FULL_FILE_STORE_PATH, base_path + File.separator + relative_file_store_path);
+        /*result.put(FULL_FILE_STORE_PATH, base_path + FileInfoServiceImpl.separator + relative_file_store_path);
         result.put(RELATIVE_FILE_STORE_PATH, relative_file_store_path);
         result.put(FILE_STORE_NAME, file_name);*/
         return simpleFilePathPO;
@@ -268,13 +275,13 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     public SimpleFilePathPO buildSavePath(String preFolderName, String recordId, String fileName) throws FileNotFoundException, URISyntaxException {
         SimpleFilePathPO simpleFilePathPO=new SimpleFilePathPO();
 
-        String base_path = FileUtility.getRootPath() + File.separator + fileRootPath;
+        String base_path = fileRootPath;
         if (fileRootPath.indexOf(":") > 0) {
             base_path = fileRootPath;
         }
         String file_name = fileName;
-        String full_file_store_path = base_path + File.separator + preFolderName + File.separator + recordId + File.separator + file_name;
-        String relative_file_store_path = preFolderName + File.separator + recordId + File.separator + file_name;
+        String full_file_store_path = base_path + FileInfoServiceImpl.separator + preFolderName + FileInfoServiceImpl.separator + recordId + FileInfoServiceImpl.separator + file_name;
+        String relative_file_store_path = preFolderName + FileInfoServiceImpl.separator + recordId + FileInfoServiceImpl.separator + file_name;
 
         simpleFilePathPO.setFullFileStorePath(full_file_store_path);
         simpleFilePathPO.setFileStoreName(fileName);
@@ -285,12 +292,19 @@ public class FileInfoServiceImpl extends BaseServiceImpl<FileInfoEntity> impleme
     @Override
     public String buildFilePath(FileInfoEntity fileInfoEntity) throws URISyntaxException, FileNotFoundException {
         String _path="";
-        if(fileRootPath.indexOf(":")>0){
-            _path=fileRootPath+ File.separator + fileRootPath + File.separator + fileInfoEntity.getFileStorePath();
-        }
-        else {
-            _path = FileUtility.getRootPath() + File.separator + fileRootPath + File.separator + fileInfoEntity.getFileStorePath();
-        }
+        //if(fileRootPath.indexOf(":")>0){
+        //    _path=fileRootPath+ FileInfoServiceImpl.separator + fileRootPath + FileInfoServiceImpl.separator + fileInfoEntity.getFileStorePath();
+        //}
+        //else {
+            _path =  fileRootPath + FileInfoServiceImpl.separator + fileInfoEntity.getFileStorePath();
+        //}
+        return _path;
+    }
+
+    @Override
+    public String buildFilePath(String fileStorePath){
+        String _path="";
+        _path =  fileRootPath + FileInfoServiceImpl.separator + fileStorePath;
         return _path;
     }
 

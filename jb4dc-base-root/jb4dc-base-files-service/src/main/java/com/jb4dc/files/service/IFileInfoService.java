@@ -41,15 +41,17 @@ public interface IFileInfoService extends IBaseService<FileInfoEntity> {
 
     FileInfoEntity addSmallFileToDB(JB4DCSession jb4DCSession, MultipartFile file, String objId, String objName, String objType, String fileCategory) throws IOException, JBuild4DCGenerallyException;
 
-    FileInfoEntity addFileToFileSystem(JB4DCSession session, String fileName, byte[] fileByte, String objId, String objName, String objType, String fileCategory) throws JBuild4DCGenerallyException, IOException, URISyntaxException;
+    FileInfoEntity addFileToFileSystem(JB4DCSession session,String fileId, String fileName, byte[] fileByte,long fileSize, String objId, String objName, String objType, String fileCategory,boolean savaByte) throws JBuild4DCGenerallyException, IOException, URISyntaxException;
 
-    FileInfoEntity addFileToFileSystem(JB4DCSession session, MultipartFile file, String objId, String objName, String objType, String fileCategory) throws IOException, JBuild4DCGenerallyException, URISyntaxException;
+    FileInfoEntity addFileToFileSystem(JB4DCSession session,String fileId, MultipartFile file, String objId, String objName, String objType, String fileCategory) throws IOException, JBuild4DCGenerallyException, URISyntaxException;
 
     SimpleFilePathPO buildRelativeFileSavePath(String fileId, String extensionName) throws URISyntaxException, FileNotFoundException;
 
     SimpleFilePathPO buildSavePath(String preFolderName, String recordId, String fileName) throws FileNotFoundException, URISyntaxException;
 
     String buildFilePath(FileInfoEntity fileInfoEntity) throws URISyntaxException, FileNotFoundException;
+
+    String buildFilePath(String fileStorePath);
 
     byte[] getContentInDB(String fileId);
 

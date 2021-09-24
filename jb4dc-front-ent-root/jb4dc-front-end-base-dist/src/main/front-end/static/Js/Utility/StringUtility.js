@@ -34,6 +34,12 @@ var StringUtility = {
     IsNotNullOrEmpty:function(obj){
         return !(this.IsNullOrEmpty(obj));
     },
+    NullToES:function (obj){
+        if(this.IsNullOrEmpty(obj)){
+            return "";
+        }
+        return obj;
+    },
     GetFunctionName: function (func) {
         if (typeof func == "function" || typeof func == "object")
             var fName = ("" + func).match(
