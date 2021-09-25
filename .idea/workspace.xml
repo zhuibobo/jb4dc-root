@@ -23,23 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
-      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/po/SimplePO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Axios-V0.21.4/axios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Axios-V0.21.4/axios.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Axios-V0.21.4/axios.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Axios-V0.21.4/axios.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/Axios-V0.21.4/axios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/Axios-V0.21.4/axios.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/Axios-V0.21.4/axios.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/Axios-V0.21.4/axios.min.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/po/SimpleFilePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/po/SimpleFilePO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/IFileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/IFileInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/impl/FileInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-files-service/src/main/java/com/jb4dc/files/service/impl/FileInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java/com/jb4dc/feb/dist/webserver/rest/base/GeneralRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java/com/jb4dc/feb/dist/webserver/rest/base/GeneralRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/po/SimplePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/po/SimplePO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +108,7 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -142,11 +127,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\Go-2.1.50" />
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External" />
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External\Axios-V0.21.4" />
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-cloud-root\jb4dc-cloud-eureka-web-server\src\main\resources" />
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-code-generate-root\jb4dc-code-generate-web-server\src\main\resources\config" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-code-generate-root\jb4dc-code-generate-web-server\src\main\resources" />
@@ -307,8 +292,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.front-end-base-js-utility" />
         <item itemvalue="Gulp.js.front-end-base-js-external" />
+        <item itemvalue="Gulp.js.front-end-base-js-utility" />
         <item itemvalue="Gulp.js.front-end-base-themes-less" />
         <item itemvalue="Gulp.js.front-end-base-themes-all" />
         <item itemvalue="Gulp.js.front-end-base-html" />
@@ -815,20 +800,10 @@
       <workItem from="1632379586427" duration="361000" />
       <workItem from="1632381090351" duration="872000" />
       <workItem from="1632453397850" duration="1833000" />
-    </task>
-    <task id="LOCAL-00131" summary="创建项目">
-      <created>1575073862952</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1575073862952</updated>
-    </task>
-    <task id="LOCAL-00132" summary="创建项目">
-      <created>1575121805097</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1575121805097</updated>
+      <workItem from="1632492552196" duration="1136000" />
+      <workItem from="1632531284854" duration="665000" />
+      <workItem from="1632553498797" duration="827000" />
+      <workItem from="1632561809780" duration="1896000" />
     </task>
     <task id="LOCAL-00133" summary="创建项目">
       <created>1575427350881</created>
@@ -1159,7 +1134,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631628558213</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="创建项目">
+      <created>1632492729590</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1632492729590</updated>
+    </task>
+    <task id="LOCAL-00181" summary="创建项目">
+      <created>1632492782822</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1632492782822</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1173,6 +1162,200 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/Robot.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/Buttons.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/Figures.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/Quadtree.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/Templates.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/Arrowheads.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/TextEditor.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/ZoomSlider.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/BalloonLink.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/TableLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/PackedLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/RadialLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/SpiralLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/DataInspector.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/HyperlinkText.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/RescalingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/TreeMapLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/FishboneLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/ParallelLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/ScrollingTable.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/SwimLaneLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/ArrangingLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/DragZoomingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/PanelLayoutFlow.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/RowResizingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/DimensioningLink.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/DoubleTreeLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/DragCreatingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/LinkShiftingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/PortShiftingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/SerpentineLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/SpotRotatingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/ParallelRouteLink.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/RoundedRectangles.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/ColumnResizingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/DrawCommandHandler.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/GuidedDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/PolygonDrawingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/ResizeMultipleTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/RotateMultipleTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/FreehandDrawingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/LightBoxContextMenu.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/PolylineLinkingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/SectorReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/TextEditorSelectBox.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/OverviewResizingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/GeometryReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/LinkLabelDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/NodeLabelDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/SnapLinkReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/TextEditorRadioButtons.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/CurvedLinkReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/NonRealtimeDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/VirtualizedPackedLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/RealtimeDragSelectingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/LocalStorageCommandHandler.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/LinkLabelOnPathDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsJSM/OrthogonalLinkReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/Robot.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/Buttons.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/Figures.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/Quadtree.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/Templates.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/Arrowheads.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/TextEditor.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ZoomSlider.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/BalloonLink.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RobotScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/TableLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/TableScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PackedLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PackedScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RadialLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RadialScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SpiralLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SpiralScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DataInspector.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/HyperlinkText.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RescalingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/TreeMapLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/TreeMapScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/FishboneLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/FishboneScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ParallelLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ParallelScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ScrollingTable.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SwimLaneLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ArrangingLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ArrangingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DragZoomingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/HyperlinkScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PanelLayoutFlow.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RescalingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RowResizingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/CheckBoxesScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DimensioningLink.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DoubleTreeLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DragCreatingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/LinkShiftingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PortShiftingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SerpentineLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SerpentineScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SpotRotatingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/TextEditorScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ZoomSliderScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/BalloonLinkScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DragZoomingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ParallelRouteLink.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RoundedRectangles.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ColumnResizingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DimensioningScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DragCreatingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DrawCommandHandler.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/GuidedDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/LinkShiftingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PolygonDrawingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PortShiftingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ResizeMultipleTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RotateMultipleTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SpotRotatingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DataInspectorScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/FreehandDrawingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/LightBoxContextMenu.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ParallelRouteScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PolylineLinkingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SectorReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/TextEditorSelectBox.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ColumnResizingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/GuidedDraggingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/OverviewResizingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PolygonDrawingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ResizeMultipleScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RotateMultipleScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/ScrollingTableScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/FreehandDrawingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/GeometryReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/LinkLabelDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/NodeLabelDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PanelLayoutFlowScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/PolylineLinkingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SectorReshapingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SnapLinkReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/OverviewResizingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/TextEditorRadioButtons.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/CurvedLinkReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/GeometryReshapingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/LinkLabelDraggingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/NodeLabelDraggingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/NonRealtimeDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/SnapLinkReshapingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/VirtualizedPackedLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/DrawCommandHandlerScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/CurvedLinkReshapingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/NonRealtimeDraggingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RealtimeDragSelectingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/LocalStorageCommandHandler.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/LinkLabelOnPathDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/OrthogonalLinkReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/RealtimeDragSelectingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/LinkLabelOnPathDraggingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/OrthogonalLinkReshapingScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/extensionsTS/LocalStorageCommandHandlerScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/bpmn/BPMNScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/bpmn/BPMNClasses.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/storage/GoDropBox.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/storage/GoNetCore.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/storage/GoOneDrive.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/storage/GoGoogleDrive.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/storage/StorageScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/storage/GoCloudStorage.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/storage/GoLocalStorage.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/storage/GoCloudStorageManager.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/storage/StorageScriptMultiple.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/Floorplan.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/Floorplan.d.ts" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/EditorHelper.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/DataInspector.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/FloorplanPalette.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/WallBuildingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/WallReshapingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/FloorplannerScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/NodeLabelDraggingTool.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/projects/floorplannerTS/src/DataInspectorOverrides.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/samplesTS/minimal.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/samplesTS/flowchart.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/samplesTS/minimalModule.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/samplesTS/genogramLayout.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/samplesTS/genogramScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/samplesTS/arrowheadsScript.js" />
+        <option value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50/samplesTS/htmlLightBoxContextMenuScript.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

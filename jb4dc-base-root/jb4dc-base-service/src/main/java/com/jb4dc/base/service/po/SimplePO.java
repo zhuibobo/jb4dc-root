@@ -1,5 +1,10 @@
 package com.jb4dc.base.service.po;
 
+import com.jb4dc.core.base.vo.JBuild4DCResponseVo;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class SimplePO {
     private boolean success;
     private String message;
@@ -45,5 +50,17 @@ public class SimplePO {
 
     public void setData(Object data) {
         this.data = data;
+    }
+
+    public JBuild4DCResponseVo toResponseVo(){
+        JBuild4DCResponseVo responseVo=new JBuild4DCResponseVo();
+        responseVo.setSuccess(success);
+        responseVo.setMessage(message);
+        responseVo.setData(data);
+        Map<String,Object> exKVData=new HashMap<>();
+        exKVData.put("stringValue",stringValue);
+        exKVData.put("booleanValue",booleanValue);
+        responseVo.setExKVData(exKVData);
+        return responseVo;
     }
 }
