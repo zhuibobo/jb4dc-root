@@ -75,7 +75,6 @@ public class JB4DCSessionUtility {
         if(isUnitTest){
             return unitTestMockSession;
         }
-
         HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String sessionId= CookieUtility.get(req,JB4DCSessionCenter.WebClientCookieSessionKeyName)!=null?CookieUtility.get(req,JB4DCSessionCenter.WebClientCookieSessionKeyName).getValue():"";
         if(StringUtils.isEmpty(sessionId)&&StringUtility.isNotEmpty(req.getHeader(JB4DCSessionCenter.WebClientHeaderSessionKeyName))) {
@@ -103,6 +102,20 @@ public class JB4DCSessionUtility {
             throw new JBuild4DCSessionTimeoutException();
         }
         return session;*/
+    }
+
+    public static JB4DCSession getNewPublicJB4DCSession() {
+        JB4DCSession sourceSession = getSession();
+        JB4DCSession newJb4DCSession = new JB4DCSession();
+        newJb4DCSession.setUserId(sourceSession.getUserId());
+        newJb4DCSession.setUserName(sourceSession.getUserName());
+        newJb4DCSession.setOrganId(sourceSession.getOrganId());
+        newJb4DCSession.setOrganName(sourceSession.getOrganName());
+        newJb4DCSession.setMainDepartmentId(sourceSession.getMainDepartmentId());
+        newJb4DCSession.setMainDepartmentName(sourceSession.getMainDepartmentName());
+        newJb4DCSession.setRoleKeys(sourceSession.getRoleKeys());
+        newJb4DCSession.setRoleNames(sourceSession.getRoleNames());
+        return newJb4DCSession;
     }
 
     public static JB4DCSession getSessionAndCheck() throws JBuild4DCGenerallyException {

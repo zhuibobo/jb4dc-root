@@ -38,7 +38,7 @@ public class CGCodeFragment {
             builder.append(introspectedColumn.getJavaProperty()+":");
             //System.out.println(introspectedColumn.getFullyQualifiedJavaType().getFullyQualifiedName());
             if(introspectedColumn.getFullyQualifiedJavaType().getFullyQualifiedName().equals("java.util.Date")){
-                builder.append("DateUtility.GetCurrentData(),");
+                builder.append("DateUtility.GetCurrentDate(),");
             }
             else {
                 if(introspectedColumn.getJavaProperty().toLowerCase().indexOf("issystem")>0){

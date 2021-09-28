@@ -122,6 +122,19 @@ public class JB4DCSession implements Serializable {
         return (JB4DCSession) o;
     }
 
+    /*public JB4DCSession getNewPublicJB4DCSession(){
+        JB4DCSession jb4DCSession=new JB4DCSession();
+        jb4DCSession.setUserId(this.getUserId());
+        jb4DCSession.setUserName(this.getUserName());
+        jb4DCSession.setOrganId(this.getOrganId());
+        jb4DCSession.setOrganName(this.getOrganName());
+        jb4DCSession.setMainDepartmentId(this.getMainDepartmentId());
+        jb4DCSession.setMainDepartmentName(this.getMainDepartmentName());
+        jb4DCSession.setRoleKeys(this.getRoleKeys());
+        jb4DCSession.setRoleNames(this.getRoleNames());
+        return jb4DCSession;
+    }*/
+
     public String getOrganId() {
         return organId;
     }

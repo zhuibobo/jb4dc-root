@@ -1,4 +1,11 @@
 var ArrayUtility = {
+    DeleteWhere:function (arr,condition){
+        for (var i = 0; i < arr.length; i++) {
+            if(condition(arr[i])){
+                ArrayUtility.Delete(arr,i);
+            }
+        }
+    },
     Delete:function (ary, index) {
         ary.splice(index, 1);
     },
@@ -36,6 +43,9 @@ var ArrayUtility = {
             }
         }
         return false;
+    },
+    NotExist:function (arr,condition){
+        return !this.Exist(arr,condition);
     },
     PushWhenNotExist:function (arr,item,condition) {
         if(!this.Exist(arr,condition)){

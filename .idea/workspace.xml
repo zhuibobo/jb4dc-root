@@ -24,7 +24,12 @@
   <component name="ChangeListManager">
     <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/po/SimplePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/po/SimplePO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/general/JB4DCSessionUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/general/JB4DCSessionUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/codegenerate/CGCodeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/codegenerate/CGCodeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/session/JB4DCSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/session/JB4DCSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ArrayUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ArrayUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DateUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DateUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,8 +297,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.front-end-base-js-external" />
         <item itemvalue="Gulp.js.front-end-base-js-utility" />
+        <item itemvalue="Gulp.js.front-end-base-js-external" />
         <item itemvalue="Gulp.js.front-end-base-themes-less" />
         <item itemvalue="Gulp.js.front-end-base-themes-all" />
         <item itemvalue="Gulp.js.front-end-base-html" />
@@ -803,21 +808,14 @@
       <workItem from="1632492552196" duration="1136000" />
       <workItem from="1632531284854" duration="665000" />
       <workItem from="1632553498797" duration="827000" />
-      <workItem from="1632561809780" duration="1896000" />
-    </task>
-    <task id="LOCAL-00133" summary="创建项目">
-      <created>1575427350881</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1575427350882</updated>
-    </task>
-    <task id="LOCAL-00134" summary="创建项目">
-      <created>1575774203583</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1575774203583</updated>
+      <workItem from="1632561809780" duration="2591000" />
+      <workItem from="1632645399252" duration="1045000" />
+      <workItem from="1632659377991" duration="776000" />
+      <workItem from="1632708005716" duration="680000" />
+      <workItem from="1632728433138" duration="2805000" />
+      <workItem from="1632748764876" duration="1982000" />
+      <workItem from="1632791519725" duration="874000" />
+      <workItem from="1632798081911" duration="2171000" />
     </task>
     <task id="LOCAL-00135" summary="创建项目">
       <created>1575812334854</created>
@@ -1148,7 +1146,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632492782822</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="创建项目">
+      <created>1632576123162</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1632576123163</updated>
+    </task>
+    <task id="LOCAL-00183" summary="创建项目">
+      <created>1632576209411</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1632576209412</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1374,6 +1386,20 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="创建项目" />
     <option name="LAST_COMMIT_MESSAGE" value="创建项目" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/po/SimplePO.java</url>
+          <line>54</line>
+          <properties class="com.jb4dc.base.service.po.SimplePO" method="toResponseVo">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,7 +1,7 @@
 //日期时间工具类
 var DateUtility={
-    GetCurrentDataString:function (split) {
-        alert("DateUtility.GetCurrentDataString 已停用");
+    //GetCurrentDataString:function (split) {
+        //alert("DateUtility.GetCurrentDataString 已停用");
         /*this.SetSplit(split);*/
         /*var myDate = new Date();
         var year = myDate.getFullYear();
@@ -14,7 +14,7 @@ var DateUtility={
             day = "0" + day;
         }
         return year + split + month + split + day;*/
-    },
+    //},
     DateFormat:function (myDate,split) {
         alert("DateUtility.GetCurrentDataString 已停用");
         /*this.SetSplit(split);*/
@@ -51,17 +51,23 @@ var DateUtility={
                     ("00"+ o[k]).substr((""+ o[k]).length));
         return formatString;
     },
-    FormatCurrentData:function (formatString) {
+    FormatCurrentDate:function (formatString) {
         var myDate = new Date();
         return this.Format(myDate,formatString);
     },
-    GetCurrentData:function () {
+    GetCurrentDate:function () {
         return new Date();
     },
     GetCurrentTimeStamp:function(){
         return new Date().getTime();
     },
-    DataFormatByTimeStamp:function (timeStamp,formatString) {
+    GetCurrentTimeString:function (){
+        return this.FormatCurrentDate("yyyy-MM-dd hh:mm:ss");
+    },
+    GetCurrentDateString:function (){
+        return this.FormatCurrentDate("yyyy-MM-dd");
+    },
+    DateFormatByTimeStamp:function (timeStamp,formatString) {
         var date = new Date(timeStamp);
         return this.Format(date,formatString);
     }
