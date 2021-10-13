@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../../codebase/webix.css?v=9.0.0" type="text/css" charset="utf-8">
+    <script src="../../../codebase/webix.js?v=9.0.0" type="text/javascript" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="//cdn.webix.com/materialdesignicons/5.8.95/css/materialdesignicons.min.css?v=9.0.0" type="text/css" charset="utf-8">
+    <title>Grid Dashboard - saving state</title>
+</head>
+<body>
+<div id="myDiv">myDivmyDivmyDivmyDiv</div>
+<script type="text/javascript" charset="utf-8">
+
+    var grid = {
+        view: "dashboard", id: "grid",
+        gridColumns: 12, gridRows: 12,
+        cellHeight: 200,
+        factory: function (obj) {
+            console.log(obj);
+            obj.view = "panel";
+            obj.resize = true;
+            obj.icon="mdi mdi-menu";
+            //obj.body = { template: $$("list").getItem(obj.name).value };
+            obj.body = {
+                view: "template",
+                template: function (obj) {
+                    console.log(obj);
+                    let widgetRenderer=$$("list").getItem(obj.obj.name).widgetRenderer;
+                    console.log(widgetRenderer);
+                   return "<div name='template1x' style='height: 100%;background: #0f5768;color: red;overflow: auto'><div style='height: 600px;background: #0f5768;color: red;overflow: auto'></div>Default template with some text inside</div>"
+                },
+                data: {
+                    d1: $$("list").getItem(obj.name).value,
+                    obj:obj
+                },
+                on: {
+                    onViewShow: function () {
+                        /*console.log("------------onViewShow-------------");
+                    console.log(this);
+                    console.log("------------onViewShow-------------");*/
+                    },
+                    onAfterLoad: function () {
+                        /*console.log("------------onAfterLoad-------------");
+                    console.log(this);
+                    console.log("------------onAfterLoad-------------");*/
+                    },
+                    onBlur: function (prev_view) {
+                        /*console.log("------------onBlur-------------");
+                    console.log(this);
+                    console.log("------------onBlur-------------");*/
+                    },
+                    onBeforeRender: function (data) {
+                        /*console.log("------------onBeforeRender-------------");
+                    console.log(this);
+                    console.log(data);
+                    console.log("------------onBeforeRender-------------");*/
+                    },
+                    onAfterRender: function () {
+                        console.log("------------onAfterRender-------------");
+                        console.log(this);
+                        //this.$view.innerHTML=this.data.d1;
+                        let _this = this;
+                        let ele = $("<div>xxx</div>");
+                        ele.click(function () {
+                            alert(_this.data.d1);
+                        });
+                        $(this.$view).find("[name='template1x']").append(ele);
+                        console.log("------------onAfterRender-------------");
+                    }
+                }
+            };
+            if(obj.name=="b"){
+                obj.body.content="myDiv";
+            }
+            //debugger;
+            /*obj.attachEvent("onViewShow", function(){
+                // your handler here
+                console.log("-------------------------");
+                console.log(this);
+                console.log("-------------------------");
+            });*/
+            return obj;
+        },
+        on: {
+            onChange: function () {
+                var state = this.serialize();
+                webix.storage.local.put("grid-dashboard-state", state);
+            }
+        }
+    };
+
+    var menu = webix.ui({
+        view:"contextmenu",
+        click:function(id){
+            if (id === "delete"){
+                var view = this.getContext();
+                view.getParentView().removeView(view);
+            }
+        },
+        data:[
+            { id:"n1", value:"Nothing" },
+            { id:"n2", value:"Nothing" },
+            { id:"delete", value:"Delete" }
+        ]
+    });
+
+    var widgets = {
+        rows: [{
+            type: "header",
+            template: "Widgets, drag from here",
+        }, {
+            view: "list", id: "list",
+            width: 200,
+            drag: "source",
+            template: "#value# - (#dx#x#dy#)",
+            data: [
+                {id: "a", value: "Widget A",widgetRenderer:"widgetRenderer-a", dx: 1, dy: 1},
+                {id: "b", value: "Widget B",widgetRenderer:"widgetRenderer-b", dx: 1, dy: 2},
+                {id: "c", value: "Widget C",widgetRenderer:"widgetRenderer-c", dx: 2, dy: 1},
+                {id: "d", value: "Widget D",widgetRenderer:"widgetRenderer-d", dx: 2, dy: 2},
+                {id: "e", value: "Widget E",widgetRenderer:"widgetRenderer-e", dx: 1, dy: 1},
+                {id: "f", value: "Widget F",widgetRenderer:"widgetRenderer-f", dx: 1, dy: 1},
+                {id: "g", value: "Widget G",widgetRenderer:"widgetRenderer-g", dx: 3, dy: 1}
+            ]
+        }, {
+            view: "button", value: "Reset", click: function () {
+                $$("grid").clearAll();
+            }
+        }]
+    };
+
+    webix.ui({
+        type: "space", cols: [
+            {view: "scrollview", body: grid},
+            widgets
+        ]
+    });
+
+    var state = webix.storage.local.get("grid-dashboard-state");
+    //console.log(state);
+    if (state)
+        $$("grid").restore(state);
+
+    webix.event(document.body, "click", function(ev){
+        var css = ev.target.className;
+        if (css && css.toString().indexOf("panel_icon") != -1){
+            menu.setContext(webix.$$(ev.target));
+            menu.show(ev.target);
+        }
+    });
+</script>
+</body>
+</html>
