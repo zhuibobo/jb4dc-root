@@ -12,6 +12,9 @@
     <Package name="Workflow" entity="com.jb4dc.workflow.dbentities" dao="com.jb4dc.workflow.dao" mapperAC="mybatismappers">
         <PackageLevel2Name value="integrate.extend"></PackageLevel2Name>
     </Package>
+    <Package name="Portlet" entity="com.jb4dc.portlet.dbentities" dao="com.jb4dc.portlet.dao" mapperAC="mybatismappers">
+        <PackageLevel2Name value="portlet"></PackageLevel2Name>
+    </Package>
     <Package name="Builder" entity="com.jb4dc.builder.dbentities" dao="com.jb4dc.builder.dao" mapperAC="mybatismappers">
         <PackageLevel2Name value="datastorage"></PackageLevel2Name>
         <PackageLevel2Name value="dataset"></PackageLevel2Name>

@@ -77,6 +77,20 @@ public class JsonUtility {
         return objectMapper.readValue(str,_class);
     }
 
+    public static <T> T toObjectIgnoreProp(String str,JavaType javaType) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        //去掉默认的时间戳格式
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+        //设置为中国上海时区
+        objectMapper.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+        //序列化时，日期的统一格式
+        objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
+        return objectMapper.readValue(str,javaType);
+    }
+
     public static <T> List<T> toObjectListIgnoreProp(String str, Class<T> _class) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         //去掉默认的时间戳格式
@@ -118,6 +132,13 @@ public class JsonUtility {
         }
         String jsonStr= JsonUtility.toObjectString(entityList);
         return JsonUtility.toObjectListIgnoreProp(jsonStr, _class);
+    }
+
+    public static <T> T clone(T vo) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonString=toObjectString(vo);
+        T deepCopy = toObjectIgnoreProp(jsonString,getJavaType(vo.getClass()));
+        return deepCopy;
     }
     /*public static <T> Map<String,T> toMapT(String jsonString,T obj) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();

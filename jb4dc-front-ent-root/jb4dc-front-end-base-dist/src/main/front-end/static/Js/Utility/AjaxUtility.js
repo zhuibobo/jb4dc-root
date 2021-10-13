@@ -22,11 +22,12 @@ var AjaxUtility={
         return this._InnerAjax(_url,sendData,func,caller,dataType,null,false,"DELETE")
     },
     _InnerAjax:function (_url,sendData,func,caller,dataType,contentType,isAsync,ajaxType) {
-        if(caller){
-            if(caller=="json"){
-                DialogUtility.AlertError(window,DialogUtility.DialogAlertErrorId,{},"由于方法更新,caller参数请传递this",null);
-            }
+        if(caller&&caller=="json") {
+            DialogUtility.AlertError(window, DialogUtility.DialogAlertErrorId, {}, "由于方法更新,caller参数请传递this", null);
         }
+        /*if(caller&&caller.isSubmitting){
+            caller.isSubmitting=true;
+        }*/
         var url = BaseUtility.BuildAction(_url);
         if (dataType == undefined || dataType == null) {
             dataType = "json";

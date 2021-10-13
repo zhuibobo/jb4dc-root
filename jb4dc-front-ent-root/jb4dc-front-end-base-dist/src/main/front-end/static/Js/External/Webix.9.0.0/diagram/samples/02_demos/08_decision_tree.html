@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Diagram: Decision Tree</title>
+		<meta
+			name="viewport"
+			content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no"
+		/>
+
+		<!-- Webix Library -->
+		<script type="text/javascript" src="../../codebase/webix/webix.js"></script>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="../../codebase/webix/webix.css"
+		/>
+
+		<!-- Diagram -->
+		<script type="text/javascript" src="../../codebase/diagram.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../codebase/diagram.css" />
+
+		<script src="data/tree.js"></script>
+		<style>
+			.block {
+				line-height: 19px;
+			}
+			.bold {
+				font-size: 14px;
+				color: #333;
+				font-weight: 500;
+			}
+			.webix_diagram_item_expected .webix_diagram_text {
+				padding-left: 8px;
+				border-color: #ccd7e6;
+				border-style: solid;
+				border-width: 0 0 0 1px;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			webix.ready(function() {
+				if (!webix.env.touch && webix.env.scrollSize) webix.CustomScroll.init();
+
+				const diagram = {
+					view: "diagram",
+					id: "diagram",
+					autoplace: false,
+					item: {
+						width: 120,
+						height: 50,
+						template: obj => {
+							if (obj.type == "profit") return "$" + (obj.value || "");
+							else if (obj.value) {
+								if (obj.type == "expected")
+									return (
+										"Expected value <br><span class='bold'>$" +
+										(obj.value || "") +
+										"</span>"
+									);
+								if (obj.type == "result" || obj.type == "subgroup")
+									return (
+										obj.value +
+										(obj.percent
+											? " <span class='bold'>" + obj.percent + "%</span>"
+											: "")
+									);
+								return obj.value;
+							}
+							return "";
+						},
+					},
+
+					data: data,
+					links: links,
+					shapes: [
+						{
+							id: "mystart",
+							template: "start",
+							lineColor: "#bfc5e6",
+							backgroundColor: "#bfc5e6",
+							fontSize: 13,
+							group: "tree",
+						},
+						{
+							id: "group",
+							template: "default",
+							lineColor: "#deb7e5",
+							backgroundColor: "#deb7e5",
+							fontSize: 13,
+							group: "tree",
+						},
+						{
+							id: "subgroup",
+							template: "default",
+							lineColor: "#b5dcfb",
+							backgroundColor: "#b5dcfb",
+							fontSize: 13,
+							group: "tree",
+						},
+						{
+							id: "result",
+							template: "default",
+							lineColor: "#facddc",
+							backgroundColor: "#facddc",
+							fontSize: 13,
+							group: "tree",
+						},
+						{
+							id: "profit",
+							template: "text",
+							fontWeight: 500,
+							fontSize: 14,
+							group: "tree",
+						},
+						{
+							id: "expected",
+							template: "text",
+							fontSize: 13,
+							textAlign: "left",
+							group: "tree",
+						},
+					],
+				};
+
+				const toolbar = {
+					view: "toolbar",
+					padding: webix.skin.$active.layoutPadding.space,
+					elements: [
+						{},
+						{
+							view: "button",
+							value: "Edit",
+							autowidth: true,
+							css: "webix_primary",
+							click: function() {
+								const diagram = $$("diagram");
+								// blocks, links, shapes, defaults for blocks and links
+								const full_data = diagram.serialize(true);
+
+								$$("editor").show();
+								$$("editor").setValues(full_data);
+							},
+						},
+					],
+				};
+
+				const editor = {
+					view: "diagram-editor",
+					id: "editor",
+					save: () => {
+						const diagram = $$("diagram");
+
+						// clear data
+						diagram.clearAll();
+						diagram.getLinks().clearAll();
+
+						// blocks, links, shapes, defaults for blocks and links
+						const full_data = $$("editor").getValues();
+						diagram.parse(full_data);
+
+						$$("view").show();
+					},
+				};
+
+				webix.ui({
+					animate: false,
+					cells: [
+						{
+							id: "view",
+							rows: [toolbar, diagram],
+						},
+						editor,
+					],
+				});
+			});
+		</script>
+	</body>
+</html>

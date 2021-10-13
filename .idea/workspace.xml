@@ -23,13 +23,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
+      <change afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/search/SearchModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-3.6.0/jquery-3.6.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-3.6.0/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-3.6.0/jquery-3.6.0.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/AUTHORS.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/external/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_444444_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_555555_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_777620_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_777777_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_cc0000_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_ffffff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/jquery-ui.structure.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/jquery-ui.structure.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/jquery-ui.theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/jquery-ui.theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JQuery-UI-1.13.0/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/LoadJsCssUtility.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/java/com/jb4dc/feb/dist/webserver/interceptor/JB4DCSessionInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-3.6.0/jquery-3.6.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-3.6.0/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-3.6.0/jquery-3.6.0.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/AUTHORS.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/external/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_444444_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_555555_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_777620_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_777777_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_cc0000_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/images/ui-icons_ffffff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/jquery-ui.structure.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/jquery-ui.structure.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/jquery-ui.theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/jquery-ui.theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JQuery-UI-1.13.0/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/general/JB4DCSessionUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/general/JB4DCSessionUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/codegenerate/CGCodeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-service/src/main/java/com/jb4dc/code/generate/service/impl/codegenerate/CGCodeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/session/JB4DCSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/session/JB4DCSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ArrayUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ArrayUtility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DateUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DateUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/tools/JsonUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-tools/src/main/java/com/jb4dc/base/tools/JsonUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/src/main/resources/config/package-name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-code-generate-root/jb4dc-code-generate-web-server/src/main/resources/config/package-name.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/AjaxUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/AjaxUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ListPageUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ListPageUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,9 +111,9 @@
         <option value="FxmlFile" />
         <option value="Enum" />
         <option value="AnnotationType" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Interface" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -98,6 +147,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -113,14 +163,14 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/Go-2.1.50" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.7382953" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\DevInstallation\IntelliJ IDEA 2019.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -132,11 +182,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\Go-2.1.50" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External" />
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\JQuery-3.6.0" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\Go-2.1.50" />
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External\Axios-V0.21.4" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-cloud-root\jb4dc-cloud-eureka-web-server\src\main\resources" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-code-generate-root\jb4dc-code-generate-web-server\src\main\resources\config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-code-generate-root\jb4dc-code-generate-web-server\src\main\resources" />
@@ -815,14 +865,31 @@
       <workItem from="1632728433138" duration="2805000" />
       <workItem from="1632748764876" duration="1982000" />
       <workItem from="1632791519725" duration="874000" />
-      <workItem from="1632798081911" duration="2171000" />
-    </task>
-    <task id="LOCAL-00135" summary="创建项目">
-      <created>1575812334854</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1575812334854</updated>
+      <workItem from="1632798081911" duration="2229000" />
+      <workItem from="1632812974067" duration="606000" />
+      <workItem from="1632910519045" duration="417000" />
+      <workItem from="1632911089714" duration="3866000" />
+      <workItem from="1632971724578" duration="94000" />
+      <workItem from="1632972272286" duration="2541000" />
+      <workItem from="1632984861184" duration="1615000" />
+      <workItem from="1632987173463" duration="3646000" />
+      <workItem from="1633166152648" duration="5979000" />
+      <workItem from="1633228243160" duration="3213000" />
+      <workItem from="1633406982191" duration="642000" />
+      <workItem from="1633442147736" duration="1046000" />
+      <workItem from="1633507150843" duration="8156000" />
+      <workItem from="1633530886646" duration="165000" />
+      <workItem from="1633531076198" duration="33000" />
+      <workItem from="1633563840347" duration="57000" />
+      <workItem from="1633613384271" duration="1652000" />
+      <workItem from="1633659077548" duration="44000" />
+      <workItem from="1633663519587" duration="1322000" />
+      <workItem from="1633666501504" duration="784000" />
+      <workItem from="1633704405786" duration="688000" />
+      <workItem from="1633742662091" duration="3266000" />
+      <workItem from="1633852156271" duration="2099000" />
+      <workItem from="1634131179634" duration="846000" />
+      <workItem from="1634132808955" duration="444000" />
     </task>
     <task id="LOCAL-00136" summary="创建项目">
       <created>1575959137624</created>
@@ -1160,7 +1227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632576209412</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="创建项目">
+      <created>1632811426084</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1632811426084</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TodoView">

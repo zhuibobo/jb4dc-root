@@ -255,7 +255,73 @@ var ListPageUtility = {
                         }
                     }
                 }
-            }, this, "json");
+            }, config.pageAppObj, "json");
+    },
+
+    IViewTableBindDataBySearchPostRequestBody: function (_config,searchModel) {
+        var config = {
+            url: "",
+            pageNum: 1,
+            pageSize: 12,
+            pageAppObj: null,
+            tableList: null,
+            idField: "",
+            autoSelectedOldRows: false,
+            successFunc: null,
+            loadDict: false,
+            custParas: {},
+            _expandedALL:false
+        };
+        config = $.extend(true, {}, config, _config);
+        if (!config.tableList) {
+            config.tableList = config.pageAppObj;
+        }
+        ;
+        var sendData = {
+            "pageNum": config.pageNum,
+            "pageSize": config.pageSize,
+            "loadDict": config.loadDict
+        };
+        sendData = $.extend(true, {}, sendData, searchModel);
+        for (var key in config.custParas) {
+            sendData[key] = config.custParas[key];
+        }
+        sendData=JSON.stringify(sendData);
+        AjaxUtility.PostRequestBody(config.url,
+            sendData,
+            function (result) {
+                if (result.success) {
+                    if (typeof (config.successFunc) == "function") {
+                        config.successFunc.call(config.pageAppObj, result,config.pageAppObj);
+                    }
+                    config.tableList.tableData = new Array();
+                    config.tableList.tableData = result.data.list;
+                    config.tableList.pageTotal = result.data.total;
+
+                    if(config.tableList.tableData&&config.tableList.tableData.length>0){
+                        for (var i = 0; i < config.tableList.tableData.length; i++) {
+                            if (config._expandedALL) {
+                                config.tableList.tableData[i]._expanded = true;
+                            }
+                        }
+                    }
+
+                    if (config.autoSelectedOldRows) {
+                        if (config.tableList.selectionRows != null) {
+                            for (var i = 0; i < config.tableList.tableData.length; i++) {
+                                for (var j = 0; j < config.tableList.selectionRows.length; j++) {
+                                    if (config.tableList.selectionRows[j][config.idField] == config.tableList.tableData[i][config.idField]) {
+                                        config.tableList.tableData[i]._checked = true;
+                                    }
+                                    if (config._expandedALL) {
+                                        config.tableList.tableData[i]._expanded = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }, config.pageAppObj, "json");
     },
 
     IViewTableLoadDataSearch: function (url, pageNum, pageSize, searchCondition, pageAppObj, idField, autoSelectedOldRows, successFunc, loadDict, custParas) {

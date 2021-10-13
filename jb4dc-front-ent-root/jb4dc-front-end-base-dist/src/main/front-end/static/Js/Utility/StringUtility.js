@@ -63,6 +63,9 @@ var StringUtility = {
         return origin;
     },*/
     IsSameDomain:function (url1, url2) {
+        if(url2.indexOf("../")==0){
+            return true;
+        }
         var origin1 = /\/\/[\w-.]+(:\d+)?/i.exec(url1)[0];
 
         var open=/\/\/[\w-.]+(:\d+)?/i.exec(url2);

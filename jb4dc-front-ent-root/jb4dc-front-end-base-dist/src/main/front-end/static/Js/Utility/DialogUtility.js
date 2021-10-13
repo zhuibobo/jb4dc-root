@@ -707,7 +707,7 @@ var DialogUtility={
             content: message
         });
     },
-    ShowSelectImageClassDialog:function (options,sureFunc,cancelFunc){
+    ShowSelectImageClassDialog:function (options,sureFunc,cancelFunc,fixPath){
         var defaultOptions = {
             height: 540,
             width: 800,
@@ -716,7 +716,11 @@ var DialogUtility={
             close: function (event, ui) {}
         };
         defaultOptions = $.extend(true, {}, defaultOptions, options);
-        var url=BaseUtility.BuildAction("/HTML/SelectDialog/SelectLineAwesomeClass.html",{sureFunc:sureFunc,cancelFunc:cancelFunc});
+        var viewUrl="HTML/SelectDialog/SelectLineAwesomeClass.html";
+        if(fixPath){
+            viewUrl=fixPath+viewUrl;
+        }
+        var url=BaseUtility.BuildAction(viewUrl,{sureFunc:sureFunc,cancelFunc:cancelFunc});
         this.OpenIframeWindow(window,"ShowSelectImageClassDialog",url,defaultOptions,2)
     }
 }

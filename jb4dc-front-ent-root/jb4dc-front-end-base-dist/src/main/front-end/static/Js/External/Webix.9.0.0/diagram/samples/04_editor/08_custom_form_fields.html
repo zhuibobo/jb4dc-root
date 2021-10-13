@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Diagram Editor: Custom Fields for UML Diagram</title>
+		<meta
+			name="viewport"
+			content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no"
+		/>
+
+		<!-- Webix Library -->
+		<script type="text/javascript" src="../../codebase/webix/webix.js"></script>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="../../codebase/webix/webix.css"
+		/>
+
+		<!-- Diagram -->
+		<script type="text/javascript" src="../../codebase/diagram.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../codebase/diagram.css" />
+
+		<script src="data/umlclass.js"></script>
+		<style>
+			.umlclass {
+				border-radius: 10px;
+				line-height: 14px;
+				font-size: 13px;
+			}
+			.umlclass .webix_diagram_text {
+				padding: 0;
+				text-align: left;
+				align-items: flex-start;
+				justify-content: flex-start;
+			}
+			.umlclass .webix_diagram_text_inner {
+				display: block;
+				width: 100%;
+			}
+			.umlclass ul {
+				border-top: 1px solid #ccd7e6;
+				list-style: none;
+				margin: 0;
+				padding: 10px 10px;
+			}
+			.umlclass .title {
+				padding: 10px 10px 10px 20px;
+				font-weight: 500;
+			}
+			.umlclass .webix_diagram_text {
+				align-items: flex-start;
+				justify-content: flex-start;
+			}
+			.umlclass .webix_diagram_text_inner {
+				display: block;
+			}
+			.text {
+				font-style: italic;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			webix.ready(function() {
+				if (!webix.env.touch && webix.env.scrollSize) webix.CustomScroll.init();
+
+				webix.extend(diagram.locales.en, {
+					Title: "Title",
+					Properties: "Properties",
+					Methods: "Methods",
+				});
+
+				class Styles extends diagram.services.Styles {
+					getBlockValues(item) {
+						const result = super.getBlockValues(item);
+						if (item) {
+							const extra = this.getCustomProps(item);
+							webix.extend(result, extra);
+						}
+
+						return result;
+					}
+					getCustomProps(item) {
+						return {
+							props: (item.props || []).join("\n"),
+							methods: (item.methods || []).join("\n"),
+						};
+					}
+				}
+
+				class CustomForm extends diagram.views.form {
+					config() {
+						const form = super.config();
+						const scrollview = {
+							view: "scrollview",
+							scroll: "y",
+							body: form,
+						};
+
+						return scrollview;
+					}
+
+					GetBlockConfig() {
+						const elements = super.GetBlockConfig();
+						const content = this.GetCustomContentSection();
+
+						elements.splice(1, 1, content);
+
+						return elements;
+					}
+
+					UpdateValue(name) {
+						if (name == "props" || name == "methods") {
+							const elements = this.Form.elements;
+							let newValue = elements[name].getValue().split("\n");
+							this.app.callEvent("form:update", [name, newValue, null]);
+						} else {
+							super.UpdateValue(name);
+						}
+					}
+
+					GetCustomContentSection() {
+						const _ = this._;
+						const skinConfig = this.webix.skin.$active;
+						const headerH =
+							skinConfig.inputHeight - skinConfig.inputPadding * 2;
+
+						return {
+							multi: true,
+							borderless: true,
+							rows: [
+								{
+									header: _("Content"),
+									headerHeight: headerH,
+									headerAltHeight: headerH,
+									css: "webix_de_panel",
+									body: {
+										rows: [
+											this.GetSectionLabel("Title"),
+											{ view: "text", name: "value" },
+											this.GetSectionLabel("Properties"),
+											{
+												view: "textarea",
+												name: "props",
+												height: 80,
+											},
+											this.GetSectionLabel("Methods"),
+											{
+												view: "textarea",
+												name: "methods",
+												height: 80,
+											},
+										],
+									},
+								},
+							],
+						};
+					}
+
+					GetSectionLabel(text) {
+						const _ = this._;
+						return {
+							label: _(text),
+							view: "label",
+							css: "webix_de_sublabel",
+						};
+					}
+				}
+
+				webix.ui({
+					view: "diagram-editor",
+					paddingX: 100,
+					autoplace: false,
+					linkItem: {
+						arrow: "triangle",
+					},
+					type: {
+						css: "umlclass",
+						width: 155,
+						template: obj => {
+							const title =
+								"<div class='title'>" + (obj.value || "") + "</div>";
+							let props = "",
+								methods = "";
+							if (obj.props)
+								props =
+									"<ul class='props'>" +
+									obj.props.map(p => "<li>+ " + p + "</li>").join("") +
+									"</ul>";
+							if (obj.methods)
+								methods =
+									"<ul class='methods'>" +
+									obj.methods.map(m => "<li>+ " + m + "()</li>").join("") +
+									"</ul>";
+							return title + props + methods;
+						},
+					},
+					data: data,
+					links: links,
+					override: new Map([
+						[diagram.views.form, CustomForm],
+						[diagram.services.Styles, Styles],
+					]),
+				});
+			});
+		</script>
+	</body>
+</html>
