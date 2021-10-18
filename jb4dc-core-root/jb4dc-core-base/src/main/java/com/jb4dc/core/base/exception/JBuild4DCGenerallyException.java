@@ -19,6 +19,8 @@ public class JBuild4DCGenerallyException extends JBuild4DCBaseException {
     public static int EXCEPTION_QC_CODE=110008;
     public static int EXCEPTION_SITE_CODE=110009;
     public static int EXCEPTION_WORKFLOW_CODE=110010;
+    public static int EXCEPTION_PORTLET_CODE=110011;
+    public static int EXCEPTION_BIGSCREEN_CODE=110012;
 
     public JBuild4DCGenerallyException(int errorCode, Exception ex) {
         //super(ex.getCause());
