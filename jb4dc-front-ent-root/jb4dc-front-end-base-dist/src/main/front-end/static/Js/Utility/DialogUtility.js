@@ -713,7 +713,27 @@ var DialogUtility={
             width: 800,
             modal:true,
             title:"选择图标",
-            close: function (event, ui) {}
+            close: function (event, ui) {
+                var autodialogId = $(this).attr("id");
+                $(this).find("iframe").remove();
+                $(this).dialog('close')
+                $(this).dialog("destroy");
+                $("#" + autodialogId).remove();
+                if (BrowserInfoUtility.IsIE8DocumentMode()) {
+                    CollectGarbage();
+                }
+                if(typeof(options.close_after_event)=="function"){
+                    options.close_after_event();
+                }
+                try {
+                    if($("#Forfocus").length>0){
+                        $("#Forfocus")[0].focus();
+                    }
+                }
+                catch(e){
+
+                }
+            }
         };
         defaultOptions = $.extend(true, {}, defaultOptions, options);
         var viewUrl="HTML/SelectDialog/SelectLineAwesomeClass.html";

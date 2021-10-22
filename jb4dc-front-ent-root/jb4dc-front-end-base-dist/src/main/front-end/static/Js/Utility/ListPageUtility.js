@@ -490,6 +490,23 @@ var ListPageUtility = {
                 })
             ]);
         },
+        DesignButton: function (h, params, idField, pageAppObj) {
+            return h('Tooltip', {
+                props:{
+                    content:"设计"
+                }
+            },[
+                h('div',{
+                    class: "list-row-button kded",
+                    on: {
+                        click: function () {
+                            //debugger;
+                            pageAppObj.design(params.row[idField], params);
+                        }
+                    }
+                })
+            ]);
+        },
         SelectedButton: function (h, params, idField, pageAppObj,clickEvent) {
             return h('Tooltip', {
                 props:{

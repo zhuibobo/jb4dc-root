@@ -35,4 +35,8 @@ public interface BaseMapper<T> {
     int count();
 
     int nextOrderNum();
+
+    List<T> selectByStatus(String status);
+
+    List<T> selectByStatusASC(String status);
 }

@@ -148,6 +148,16 @@ public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     }
 
     @Override
+    public List<T> getByStatus(JB4DCSession jb4DCSession,String status){
+        return defaultBaseMapper.selectByStatus(status);
+    }
+
+    @Override
+    public  List<T> getByStatusASC(JB4DCSession jb4DCSession,String status){
+        return defaultBaseMapper.selectByStatusASC(status);
+    }
+
+    @Override
     public PageInfo<T> getPage(JB4DCSession jb4DCSession, int pageNum, int pageSize){
         PageHelper.startPage(pageNum, pageSize);
         //PageHelper.

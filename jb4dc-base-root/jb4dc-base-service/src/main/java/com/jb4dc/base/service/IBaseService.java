@@ -53,6 +53,10 @@ public interface IBaseService<T> {
 
     List<T> getALLASC(JB4DCSession jb4DCSession);
 
+    List<T> getByStatus(JB4DCSession jb4DCSession,String status);
+
+    List<T> getByStatusASC(JB4DCSession jb4DCSession,String status);
+
     int getNextOrderNum(JB4DCSession jb4DCSession);
 
     void statusChange(JB4DCSession jb4DCSession, String ids, String status) throws JBuild4DCGenerallyException;

@@ -1,5 +1,5 @@
-var DetailPageUtility={
-    IViewPageToViewStatus:function () {
+var DetailPageUtility= {
+    IViewPageToViewStatus: function () {
         //alert("1");
         return;
         window.setTimeout(function () {
@@ -20,40 +20,47 @@ var DetailPageUtility={
                 var val = $(this).val();
                 $(this).after($("<label />").text(val));
             });
-        },100)
+        }, 100)
     },
-    OverrideObjectValue:function (sourceObject, dataObject) {
+    OverrideObjectValue: function (sourceObject, dataObject) {
         //console.log(dataObject);
-        for(var key in sourceObject){
-            if(dataObject[key]!=undefined&&dataObject[key]!=null&&dataObject[key]!=""){
-                sourceObject[key]=dataObject[key];
+        for (var key in sourceObject) {
+            if (dataObject[key] != undefined && dataObject[key] != null && dataObject[key] != "") {
+                sourceObject[key] = dataObject[key];
             }
         }
     },
-    OverrideObjectValueFull:function (sourceObject, dataObject) {
+    OverrideObjectValueFull: function (sourceObject, dataObject) {
         //console.log(dataObject);
-        for(var key in sourceObject) {
+        for (var key in sourceObject) {
             sourceObject[key] = dataObject[key];
         }
     },
-    BindFormData:function(interfaceUrl,vueFormData,recordId,op,befFunc,afFunc,caller){
+    BindFormData: function (interfaceUrl, vueFormData, recordId, op, befFunc, afFunc, caller) {
         //获取数据并赋值
-        AjaxUtility.Post(interfaceUrl,{recordId:recordId,op:op},function (result) {
-            if(result.success) {
-                if(typeof(befFunc)=="function"){
-                    befFunc(result);
+        AjaxUtility.Post(interfaceUrl, {recordId: recordId, op: op}, function (result) {
+            if (result.success) {
+                if (typeof (befFunc) == "function") {
+                    if (caller) {
+                        befFunc.call(caller, result);
+                    } else {
+                        befFunc(result);
+                    }
                 }
                 DetailPageUtility.OverrideObjectValue(vueFormData, result.data);
-                if(typeof(afFunc)=="function"){
-                    afFunc(result);
+                if (typeof (afFunc) == "function") {
+                    if (caller) {
+                        afFunc.call(caller, result);
+                    } else {
+                        afFunc(result);
+                    }
                 }
-                if(op=="view") {
+                if (op == "view") {
                     DetailPageUtility.IViewPageToViewStatus();
                 }
-            }
-            else {
+            } else {
                 DialogUtility.Alert(window, DialogUtility.DialogAlertId, {}, result.message, null);
             }
-        },caller);
+        }, caller);
     },
 }

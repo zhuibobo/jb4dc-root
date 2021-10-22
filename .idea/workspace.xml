@@ -23,44 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/jsoneditor-cust.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/jsoneditor-minimalist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/jsoneditor-minimalist.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/jsoneditor-minimalist.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/jsoneditor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/jsoneditor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/jsoneditor.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/jsoneditor.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/jsoneditor.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/img/jsoneditor-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/which files do I need.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.6/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/zhuib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/zhuib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/exception/JBuild4DCGenerallyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/exception/JBuild4DCGenerallyException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/img/jsoneditor-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/img/jsoneditor-icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/jsoneditor-minimalist.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/jsoneditor-minimalist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/jsoneditor-minimalist.map" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/jsoneditor-minimalist.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/jsoneditor-minimalist.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/jsoneditor-minimalist.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/jsoneditor.css" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/jsoneditor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/jsoneditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/jsoneditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/jsoneditor.map" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/jsoneditor.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/jsoneditor.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/jsoneditor.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/jsoneditor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/jsoneditor.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor/which files do I need.md" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.0/which files do I need.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/img/jsoneditor-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/img/jsoneditor-icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/jsoneditor-minimalist.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/jsoneditor-minimalist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/jsoneditor-minimalist.map" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/jsoneditor-minimalist.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/jsoneditor-minimalist.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/jsoneditor-minimalist.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/jsoneditor.css" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/jsoneditor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/jsoneditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/jsoneditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/jsoneditor.map" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/jsoneditor.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/jsoneditor.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/jsoneditor.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/jsoneditor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor9.5.0/jsoneditor.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/JsonEditor/which files do I need.md" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/JsonEditor9.5.6/which files do I need.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/src/main/java/com/jb4dc/base/dbaccess/dao/BaseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-db-access/src/main/java/com/jb4dc/base/dbaccess/dao/BaseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/IBaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/IBaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/impl/BaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-base-root/jb4dc-base-service/src/main/java/com/jb4dc/base/service/impl/BaseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DetailPageUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DetailPageUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ListPageUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/ListPageUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,8 +301,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.front-end-base-js-external" />
         <item itemvalue="Gulp.js.front-end-base-js-utility" />
+        <item itemvalue="Gulp.js.front-end-base-js-external" />
         <item itemvalue="Gulp.js.front-end-base-themes-less" />
         <item itemvalue="Gulp.js.front-end-base-themes-all" />
         <item itemvalue="Gulp.js.front-end-base-html" />
@@ -877,14 +848,15 @@
       <workItem from="1634169514081" duration="627000" />
       <workItem from="1634215612961" duration="736000" />
       <workItem from="1634478269921" duration="1234000" />
-      <workItem from="1634561507319" duration="3330000" />
-    </task>
-    <task id="LOCAL-00140" summary="创建项目">
-      <created>1577107912154</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1577107912154</updated>
+      <workItem from="1634561507319" duration="3361000" />
+      <workItem from="1634609274215" duration="32000" />
+      <workItem from="1634612155651" duration="2690000" />
+      <workItem from="1634653368632" duration="1497000" />
+      <workItem from="1634696323061" duration="6149000" />
+      <workItem from="1634788272246" duration="51000" />
+      <workItem from="1634800768549" duration="1794000" />
+      <workItem from="1634890782314" duration="125000" />
+      <workItem from="1634891018224" duration="1222000" />
     </task>
     <task id="LOCAL-00141" summary="创建项目">
       <created>1577502332556</created>
@@ -1222,7 +1194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634137148868</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="创建项目">
+      <created>1634565873354</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1634565873354</updated>
+    </task>
+    <option name="localTasksCounter" value="190" />
     <servers />
   </component>
   <component name="TodoView">
