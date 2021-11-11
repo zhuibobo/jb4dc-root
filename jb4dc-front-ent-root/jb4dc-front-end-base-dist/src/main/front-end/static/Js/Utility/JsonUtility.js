@@ -91,6 +91,12 @@ var JsonUtility = {
     JsonToString:function (obj) {
         return JSON.stringify(obj);
     },
+    JsonToStringRemoveProps:function (obj,propAryNames) {
+        for (let i = 0; i < propAryNames.length; i++) {
+            delete obj[propAryNames[i]];
+        }
+        return JSON.stringify(obj);
+    },
     JsonToStringFormat:function (obj) {
         return JSON.stringify(obj, null, 2);
     },
