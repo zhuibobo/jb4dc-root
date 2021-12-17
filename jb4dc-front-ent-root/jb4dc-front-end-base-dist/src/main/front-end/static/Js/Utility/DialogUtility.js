@@ -314,7 +314,7 @@ var DialogUtility={
             "ElementObj":htmlElem
         };
     },
-    Prompt:function(openerWindow,config,dialogId,labelMsg,okFunc) {
+    Prompt:function(openerWindow,config,dialogId,labelMsg,okFunc,caller) {
         var htmlElem = this._CreateDialogElem(openerWindow.document.body, dialogId);
         var paras = null;
         var textArea=$("<textarea />");
@@ -329,7 +329,13 @@ var DialogUtility={
                     //debugger;
                     if(typeof(okFunc)=="function") {
                         var inputText = textArea.val();
-                        okFunc(inputText);
+                        //okFunc(inputText);
+                        if(caller){
+                            okFunc.call(caller,inputText);
+                        }
+                        else{
+                            return okFunc(inputText);
+                        }
                     }
                     $(htmlElem).dialog("close");
                 },

@@ -8,6 +8,14 @@ var BaseUtility = {
         var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
         return (localhostPath + projectName);
     },
+    GetContextPath:function (){
+        //var fullHref = window.document.location.href;
+        var pathName = window.document.location.pathname;
+        //var lac = fullHref.indexOf(pathName);
+        //var localhostPath = fullHref.substring(0, lac);
+        var projectName = pathName.substring(1, pathName.substr(1).indexOf('/') + 1);
+        return projectName;
+    },
     GetTopWindow: function () {
         alert("BaseUtility.GetTopWindow 已停用");
     },
@@ -25,6 +33,8 @@ var BaseUtility = {
         var _url;
         if (action.indexOf("../") == 0) {
             _url = action;
+        } else if (action.indexOf(StringUtility.FormatWithNames.AppContextPath) >= 0) {
+            _url = StringUtility.FormatWithDefaultValue(action);
         } else {
             _url = this.GetRootPath() + action;
         }

@@ -23,10 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46904259-9e87-4ec3-8467-5df2039f71f1" name="Default Changelist" comment="创建项目">
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/External/LABjs-3.0/LAB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/External/LABjs-3.0/LAB.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/JsonUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/JsonUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/vo/JBuild4DCResponseVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-core-root/jb4dc-core-base/src/main/java/com/jb4dc/core/base/vo/JBuild4DCResponseVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/BaseUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/BaseUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/DialogUtility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/front-end/static/Js/Utility/StringUtility.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/jb4dc-front-ent-root/jb4dc-front-end-base-dist/src/main/resources/static/Js/JBuild4DCLib.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +63,8 @@
         <option value="AnnotationType" />
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -132,11 +133,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External" />
+      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\LABjs-3.0" />
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\JsonEditor9.5.6" />
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External\JsonEditor9.5.6" />
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\resources\static\Js\External" />
-      <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-front-ent-root\jb4dc-front-end-base-dist\src\main\front-end\static\Js\External\JQuery-3.6.0" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JavaProject\jb4dc\jb4dc-root\jb4dc-code-generate-root\jb4dc-code-generate-web-server\src\main\resources" />
@@ -297,8 +298,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.front-end-base-js-utility" />
         <item itemvalue="Gulp.js.front-end-base-js-external" />
+        <item itemvalue="Gulp.js.front-end-base-js-utility" />
         <item itemvalue="Gulp.js.front-end-base-themes-less" />
         <item itemvalue="Gulp.js.front-end-base-themes-all" />
         <item itemvalue="Gulp.js.front-end-base-html" />
@@ -858,14 +859,26 @@
       <workItem from="1636075732405" duration="209000" />
       <workItem from="1636118168671" duration="631000" />
       <workItem from="1636619982643" duration="687000" />
-      <workItem from="1636632630299" duration="701000" />
-    </task>
-    <task id="LOCAL-00142" summary="创建项目">
-      <created>1577673732880</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1577673732881</updated>
+      <workItem from="1636632630299" duration="2102000" />
+      <workItem from="1636680275699" duration="236000" />
+      <workItem from="1636706688390" duration="887000" />
+      <workItem from="1636726773613" duration="609000" />
+      <workItem from="1636769012917" duration="1280000" />
+      <workItem from="1636787183035" duration="762000" />
+      <workItem from="1636859570564" duration="616000" />
+      <workItem from="1636961704687" duration="1924000" />
+      <workItem from="1637025926296" duration="5000" />
+      <workItem from="1637045368823" duration="12000" />
+      <workItem from="1637142972675" duration="5321000" />
+      <workItem from="1637223207993" duration="6362000" />
+      <workItem from="1637245452998" duration="46000" />
+      <workItem from="1637307981966" duration="5171000" />
+      <workItem from="1637377966749" duration="3075000" />
+      <workItem from="1637399926286" duration="1230000" />
+      <workItem from="1637408728795" duration="2164000" />
+      <workItem from="1637458046983" duration="807000" />
+      <workItem from="1637549957828" duration="1228000" />
+      <workItem from="1639739856446" duration="304000" />
     </task>
     <task id="LOCAL-00143" summary="创建项目">
       <created>1578058738623</created>
@@ -1203,7 +1216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634892256585</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="创建项目">
+      <created>1636636026573</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1636636026574</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="TodoView">

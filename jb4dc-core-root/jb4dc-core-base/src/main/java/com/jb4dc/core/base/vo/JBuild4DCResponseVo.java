@@ -145,8 +145,16 @@ public class JBuild4DCResponseVo<T> {
         return success("获取数据成功!",data);
     }
 
-    public static <T> JBuild4DCResponseVo getDataSuccess(T data,String cacheKey){
-        return success("获取数据成功!",data,cacheKey);
+    public static <T> JBuild4DCResponseVo getDataSuccess(T data,String exKey,Object exValue) {
+        JBuild4DCResponseVo jBuild4DCResponseVo = success("获取数据成功!", data);
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put(exKey, exValue);
+        jBuild4DCResponseVo.setExKVData(objectMap);
+        return jBuild4DCResponseVo;
+    }
+
+    public static <T> JBuild4DCResponseVo getDataSuccess(T data,String cacheKey) {
+        return success("获取数据成功!", data, cacheKey);
     }
 
     public static JBuild4DCResponseVo deleteSuccess(){
