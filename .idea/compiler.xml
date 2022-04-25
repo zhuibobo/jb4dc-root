@@ -46,7 +46,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="jb4dc-base-root" options="" />
       <module name="jb4dc-cloud-root" options="" />
-      <module name="jb4dc-code-generate-root" options="" />
+      <module name="jb4dc-code-generate-root" options="-parameters" />
       <module name="jb4dc-core-root" options="" />
       <module name="jb4dc-front-ent-root" options="" />
       <module name="jb4dc-root" options="" />

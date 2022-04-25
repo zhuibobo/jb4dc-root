@@ -165,6 +165,7 @@ var BaseUtility = {
     IsDeleteOperation:function (operationType) {
         return operationType && operationType == this.GetDeleteOperationName();
     },
+
     IsAddOperationByUrl(){
         if (this.GetUrlParaValue("op")){
             if(this.GetUrlParaValue("op")==this.GetAddOperationName()){

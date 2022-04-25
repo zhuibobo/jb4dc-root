@@ -45,4 +45,6 @@
         <PackageLevel2Name value="terminal"></PackageLevel2Name>
         <PackageLevel2Name value="setting"></PackageLevel2Name>
     </Package>
+    <Package name="Education" entity="com.jb4dc.education.dbentities" dao="com.jb4dc.education.dao" mapperAC="mybatismappers">
+    </Package>
 </Config>
